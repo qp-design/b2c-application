@@ -1,0 +1,76 @@
+.moduleC {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: calc(100vh - 60px - 46px);
+
+  .classify {
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: auto;
+    border-radius: 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+
+    &::-webkit-scrollbar {
+      display: none; /* Chrome Safari */
+    }
+
+    .ant-collapse-header-text {
+      font-weight: bolder;
+    }
+
+    .classifyName {
+      user-select: none;
+
+      span {
+        cursor: pointer;
+        padding-left: 10px;
+      }
+
+      &.active {
+        span {
+          background-color: #1890ff;
+          color: #fff;
+          padding: 4px 10px;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fill, 100px);
+    height: 100%;
+    overflow-y: auto;
+
+    .contentItem {
+      height: 100px;
+      text-align: center;
+      padding-top: 20px;
+      cursor: grab;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .typeScroll {
+    height: 100%;
+    overflow-y: auto;
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome Safari */
+    }
+  }
+
+  .template {
+    height: 100%;
+    overflow-y: scroll;
+  }
+}

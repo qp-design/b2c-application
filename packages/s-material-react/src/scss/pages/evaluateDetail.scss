@@ -1,0 +1,74 @@
+.evaluateDetail {
+  padding: 0 20px;
+
+  .topInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-top: 50px;
+
+    .lPart {
+      display: flex;
+      align-items: center;
+      flex: 1;
+
+      .img {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        margin-right: 10px;
+      }
+
+      .goodsInfo {
+        flex: 1;
+
+        .goodsName {
+          font-size: 13px;
+          margin-bottom: 6px;
+        }
+
+        .goodsSize {
+          font-size: 13px;
+          color: #999;
+        }
+      }
+    }
+
+    .rPart {
+      .price {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .rate {
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+
+    .title {
+      font-size: 15px;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+  }
+
+  .evaluate {
+    padding-top: 20px;
+    .content {
+      width: 100%;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    height: 40px;
+    line-height: 27px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 40px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,51 @@
+.goodsSlider {
+  margin: 0 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  border: 1px solid;
+
+  .goodsSliderItem {
+    border: 1px solid #ccc;
+    width: 180px;
+    box-sizing: border-box;
+    margin-right: 10px;
+    display: inline-block;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .img {
+      width: 100%;
+      height: 180px;
+      background-position: center;
+      background-size: cover;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .board {
+      padding: 10px;
+      box-sizing: border-box;
+
+      .title {
+      }
+
+      .info {
+        .lPart {
+          display: flex;
+          align-items: center;
+
+          .price {
+            margin-right: 5px;
+            color: red;
+            font-size: 16px;
+          }
+
+          .marketPrice {
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
+  }
+}

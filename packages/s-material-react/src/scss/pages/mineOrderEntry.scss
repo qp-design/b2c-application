@@ -1,0 +1,50 @@
+.mineOrderEntry {
+  background: #fff;
+  box-shadow: 0 0 10px 0 rgba(231, 227, 227, 0.5);
+  border-radius: 8px;
+  margin: 10px;
+  border: 1px solid rgba(231, 227, 227, 0.5);
+
+  .title {
+    height: 46px;
+    line-height: 46px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #f8f8f8;
+
+    .name {
+      font-size: 15px;
+      margin-left: 13px;
+      font-weight: bold;
+    }
+
+    .more {
+      font-size: 12px;
+      margin-right: 13px;
+      color: #999;
+    }
+  }
+
+  .content {
+    height: 73px;
+    text-align: center;
+    padding-top: 14px;
+    display: flex;
+
+    .contentItem {
+      flex: 1;
+
+      .icon {
+        width: 22px;
+        height: 22px;
+        display: block;
+        margin: 0 auto 7px;
+      }
+
+      .subTitle {
+        display: block;
+        font-size: 14px;
+      }
+    }
+  }
+}

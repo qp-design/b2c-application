@@ -1,0 +1,28 @@
+.classifyNav-two {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  gap: 10px;
+  padding: 10px 0;
+  box-sizing: border-box;
+
+  .classifyNav-two-item {
+    margin: 0 auto;
+
+    .classifyNav-two-item-title {
+      text-align: center;
+
+      &.weight {
+        font-weight: bold;
+      }
+
+      &.italic {
+        font-style: italic;
+      }
+
+      &.decoration {
+        text-decoration: underline;
+      }
+    }
+  }
+}

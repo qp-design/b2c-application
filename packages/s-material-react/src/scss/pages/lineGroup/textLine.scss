@@ -1,0 +1,19 @@
+.textLine {
+  position: relative;
+
+  .blc {
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .txt {
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+  }
+}

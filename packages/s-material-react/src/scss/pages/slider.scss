@@ -1,0 +1,78 @@
+.slider-block {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+swiper-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pc {
+  height: 600px;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.outer-shadow {
+  box-shadow: 4px 4px 4px #969292;
+}
+.silder-title {
+  width: 100%;
+  min-height: 25px;
+  // max-height:50px;
+  padding: 5px 0px;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+.silder-weight {
+  font-weight: 600;
+}
+.silder-italic {
+  font-style: italic;
+}
+.silder-decoration {
+  text-decoration: underline;
+}
+//水平顶部
+.silder-tops {
+  position: absolute;
+  top: 0;
+  height: 30px;
+}
+//垂直顶部
+.silder-tops1 {
+  position: absolute;
+  top: 0;
+  height: 30px;
+}
+
+.silder-bottoms1 {
+  position: absolute;
+  bottom: 0;
+  height: 30px;
+}
+.silder-bottoms {
+  position: absolute;
+  bottom: 0;
+  height: 30px;
+}
+.paddingbtm {
+  padding-bottom: 30px;
+}
+.imgHeights {
+  .adm-swiper-indicator {
+    bottom: 76px !important;
+  }
+  .wx-swiper-dots.wx-swiper-dots-horizontal {
+    margin-bottom: 100rpx;
+  }
+}

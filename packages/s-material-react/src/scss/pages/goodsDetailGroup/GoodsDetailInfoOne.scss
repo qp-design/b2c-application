@@ -1,0 +1,42 @@
+.disSeller {
+  height: 40px;
+  font-size: 15px;
+  color: #fff;
+  border-radius: 20px;
+  background: #8c8c97;
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+}
+.goodsDetail-info-one {
+  background-color: #fff;
+  margin: 0 10px;
+  padding: 13px;
+  border-bottom: 1px solid #ededed;
+
+  .title {
+    font-size: 18px;
+    color: #000000;
+    line-height: 25px;
+  }
+
+  .price {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
+  .handleBar {
+    display: flex;
+    text-align: center;
+    margin-top: 10px;
+
+    .collection {
+      flex: 1;
+    }
+
+    .share {
+      flex: 1;
+    }
+  }
+}

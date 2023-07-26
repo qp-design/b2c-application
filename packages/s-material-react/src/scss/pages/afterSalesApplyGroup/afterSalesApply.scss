@@ -1,0 +1,199 @@
+@import '../../theme/regular';
+
+.afterSalesApply {
+  background-color: #f9fafb;
+  //background-color: green;
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+
+  .submitBtn {
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .afterSalesApplyTip {
+    line-height: 18px;
+    font-size: 12px;
+    color: #ed4444;
+    border-radius: 6px;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 12px 0;
+    margin-bottom: 12px;
+  }
+
+  .afterSalesApplyFillIn {
+    padding: 16px 12px;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 6px;
+    margin-bottom: 12px;
+
+    .fillInLabel {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        font-size: 14px;
+        color: #ed4444;
+      }
+
+      .word {
+        font-size: 14px;
+        color: $fontColor;
+      }
+    }
+
+    .reason {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+
+      .rPart {
+        .choose {
+          font-size: 14px;
+          color: #c3c6cd;
+          align-items: center;
+
+          .chooseResult {
+            color: $fontColor;
+          }
+        }
+      }
+    }
+
+    .price {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+
+      .allPrice {
+        display: flex;
+        align-items: center;
+
+        .single {
+          font-size: 14px;
+          color: $fontColor;
+          font-weight: 500;
+          padding-right: 5px;
+        }
+
+        .count {
+          font-size: 12px;
+          color: #dddddd;
+        }
+      }
+    }
+
+    .reasonPopup {
+      padding: 16px;
+      box-sizing: border-box;
+
+      .title {
+        color: $fontColor;
+        font-weight: 500;
+        line-height: 27px;
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .reasonItem {
+        margin-bottom: 18px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .afterSalesApplySubFillIn {
+    padding: 12px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    margin-bottom: 50px;
+
+    .title {
+      font-weight: 500;
+      color: $fontColor;
+      line-height: 21px;
+      margin-bottom: 12px;
+    }
+
+    .content {
+      background-color: #f9fafb;
+      border-radius: 6px;
+      padding: 12px;
+      box-sizing: border-box;
+
+      .imgGroup {
+        display: flex;
+        margin-top: 15px;
+
+        .add {
+          width: 60px;
+          height: 60px;
+          border: 1px dashed #c3c6cd;
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+
+          .addContent {
+            width: 100%;
+
+            .icon {
+              display: block;
+              margin: 0 auto 4px;
+              color: #c3c6cd !important;
+              font-size: 20px !important;
+              text-align: center;
+            }
+
+            .word {
+              font-size: 12px;
+              width: 100%;
+              text-align: center;
+            }
+
+            .num {
+              font-size: 12px;
+              width: 100%;
+              text-align: center;
+            }
+          }
+        }
+
+        .imgItem {
+          width: 60px;
+          height: 60px;
+          border: 1px solid #ccc;
+          background-size: cover;
+          background-position: center;
+          border-radius: 6px;
+          margin-left: 8px;
+          position: relative;
+
+          .cancel {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            color: #ffffff;
+            background-color: #979797;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}

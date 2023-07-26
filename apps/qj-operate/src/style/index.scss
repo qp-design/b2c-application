@@ -1,0 +1,25 @@
+// 基础字体颜色
+$font-color-base: #888e9b;
+
+// 基础字体颜色高亮
+$font-color-base-active: #3986f6;
+
+// 提示字体颜色
+$font-color-tip: #394259;
+#dataOperate {
+  margin-top: 20px;
+  .ant-form-item:last-child {
+    margin-bottom: 5px;
+  }
+}
+#data-operate-form {
+  .ant-form-item:last-child {
+    .ant-col:first-child {
+      height: 15px;
+    }
+    margin-bottom: 0;
+  }
+  .ant-empty-normal {
+    margin-block: 0;
+  }
+}

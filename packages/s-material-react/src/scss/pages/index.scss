@@ -1,0 +1,62 @@
+@import '../basic/textLine';
+@import './goods.scss';
+@import './title.scss';
+@import './service.scss';
+@import './cube.scss';
+@import './slider.scss';
+@import './orderEntry';
+@import './orderList';
+@import './orderDetail';
+@import './classifyNavGroup/index.scss';
+@import './goodsList';
+@import './searchPage';
+@import './goodsDetailTopInfo';
+@import './goodsDetail';
+@import './evaluateEntry';
+@import './evaluateList';
+@import './evaluateDetail';
+@import './addressList';
+@import './addressDetail';
+@import './placeOrder';
+@import './placeOrderGroup';
+@import './placeOrderResult';
+@import './couponList';
+@import './cart';
+@import './mine';
+@import './mineData';
+@import './mineOrderEntry';
+@import './mineFunction';
+@import './paymentMode';
+@import './footprint';
+@import './collectionList';
+@import './noticeDetail';
+@import './expressinfo';
+@import './articleDetail';
+@import './search.scss';
+@import './searchStyleTwo.scss';
+
+// basic
+@import './lineGroup';
+@import './goodsGroup';
+// business
+@import './goodsClassifyGroup';
+@import './goodsDetailGroup';
+@import './marketingGroup';
+@import './basic/backTopGroup';
+@import './addressListGroup';
+@import './refundGroup';
+@import './refundOnlyGroup';
+@import './afterSalesTypeGroup';
+@import './afterSalesApplyGroup';
+@import './afterSalesDetailGroup';
+@import './afterSalesListGroup';
+@import './mySettingGroup';
+
+//
+//* {
+//    box-sizing: border-box;
+//}
+//
+.design-container .monitor .monitor-node .actived:after {
+  //display: none;
+}

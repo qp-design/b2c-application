@@ -1,0 +1,37 @@
+.mineFunction {
+  padding: 25px 13px 34px;
+  box-sizing: border-box;
+
+  .menuListItem {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .lPart {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin-right: 12px;
+        width: 22px;
+        height: 22px;
+      }
+
+      .label {
+        font-size: 15px;
+        color: #232323;
+      }
+    }
+
+    .tag {
+      width: 6px;
+      height: 10px;
+      //background-color: yellowgreen;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.tipWrap {
+  padding: 0 12px 20px;
+  display: flex;
+  flex-direction: row-reverse;
+
+  .tip {
+    .link {
+      color: #B3A07C;
+      display: inline-block;
+    }
+  }
+}
+

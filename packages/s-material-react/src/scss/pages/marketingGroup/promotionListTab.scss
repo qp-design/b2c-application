@@ -1,0 +1,10 @@
+.promotionListTab {
+  display: flex;
+
+  .promotionListTabItem {
+    flex: 1;
+    height: 43px;
+    line-height: 43px;
+    text-align: center;
+  }
+}

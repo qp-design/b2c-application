@@ -1,0 +1,60 @@
+.sortList {
+  margin-bottom: 24px;
+  ul {
+    padding-left: 0;
+
+    .sortItem {
+      list-style: none;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      background-color: #eeeeee;
+
+      .lPart {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+        padding-right: 10px;
+
+        .handle {
+          span {
+            padding-left: 0;
+          }
+        }
+
+        .handleArea {
+          display: flex;
+          justify-content: space-between;
+
+          .sortGroup {
+            display: flex;
+
+            .icon {
+              font-size: 20px;
+              color: #888;
+              display: block;
+              margin-right: 10px;
+              cursor: pointer;
+            }
+          }
+
+          .hidePart {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .rPart {
+        .choose-container {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .add {
+    width: 100%;
+  }
+}

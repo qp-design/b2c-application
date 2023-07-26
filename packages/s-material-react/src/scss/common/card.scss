@@ -1,0 +1,68 @@
+@import '../basic/textLine.scss';
+
+.card-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 7px;
+  margin-bottom: 12px;
+
+  .card-item-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+  }
+
+  &-info {
+    &-container {
+      display: grid;
+      grid-template-columns: 1fr 60px;
+      grid-auto-flow: dense;
+      line-height: 18px;
+      justify-content: space-between;
+      height: 36px;
+
+      &-title {
+        @include titleLine(2);
+        font-size: 12px;
+      }
+
+      &-price {
+        font-size: 14px;
+        color: #333333;
+        font-weight: 600;
+        text-align: right;
+      }
+    }
+
+    &-sub {
+      display: grid;
+      grid-template-columns: 1fr 60px;
+      justify-content: space-between;
+      color: #999999;
+      font-size: 12px;
+      margin-bottom: 3px;
+      margin-top: 5px;
+
+      .count {
+        text-align: right;
+      }
+    }
+
+    &-tips {
+      display: inline-block;
+      height: 20px;
+      line-height: 20px;
+      background-color: rgba(255, 22, 67, 0.1);
+      border-radius: 3px;
+      color: #ff1643;
+      padding: 2px 4px;
+    }
+
+    .card-item-info-countDown {
+      background-color: rgba(#ff1643, 0.1);
+      color: #ff1643;
+      display: inline-block;
+      padding: 0 2px;
+    }
+  }
+}

@@ -1,0 +1,127 @@
+.goodsClassifyOne {
+  .goodsClassifyOne-headerPart {
+    position: relative;
+    border-bottom: 1px solid #dddddd;
+
+    .goodsClassifyOne-topListWrap {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      display: flex;
+      align-items: center;
+
+      .goodsClassifyOne-topList {
+        flex: 1;
+        margin-left: 15px;
+        display: flex;
+        align-items: center;
+        overflow-x: auto;
+        padding-right: 20px;
+
+        .goodsClassifyOne-topListItem {
+          display: inline-block;
+          border: 1px solid #000000;
+          border-radius: 20px;
+          height: 25px;
+          line-height: 25px;
+          padding: 0 7px;
+          box-sizing: border-box;
+          margin-right: 10px;
+          flex-shrink: 0;
+
+          &.active {
+            //color: red;
+            //border-color: red;
+          }
+        }
+      }
+
+      .goodsClassifyOne-icon {
+        margin-right: 15px;
+      }
+    }
+
+    .goodsClassifyOne-tipWrap {
+      width: 100%;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #ffffff;
+      border: 1px solid #dddddd;
+
+      .goodsClassifyOne-tipWrap-handleBar {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        box-sizing: border-box;
+        padding-right: 15px;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .goodsClassifyOne-tipWrapItemWrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 0 15px 15px;
+        box-sizing: border-box;
+
+        .goodsClassifyOne-tipWrapItem {
+          border: 1px solid #000000;
+          border-radius: 20px;
+          height: 25px;
+          line-height: 25px;
+          text-align: center;
+
+          &.active {
+            color: red;
+            border-color: red;
+          }
+        }
+      }
+    }
+  }
+
+  .goodsClassifyOneContent {
+    display: flex;
+
+    .goodsClassifyOneFloor {
+      width: 100%;
+      display: grid;
+      padding: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      box-sizing: border-box;
+
+      .goodsClassifyOneFloorItem {
+        text-align: center;
+
+        .pic {
+          width: 70px;
+          height: 70px;
+          display: inline-block;
+        }
+
+        .title {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .goodsClassifyOneFloorNoBlc {
+    .adm-side-bar-item-highlight {
+      display: none !important;
+    }
+  }
+
+  .goodsClassifyOneFloorNoRound {
+    svg {
+      display: none !important;
+    }
+  }
+}

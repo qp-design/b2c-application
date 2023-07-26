@@ -2,8 +2,10 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "start:web": "turbo run start --filter=low-code-container --filter=qj-material --filter=qj-operate --filter=./packages/*",
+    "start:taro": "turbo run start --filter=taro-mobile-react --filter=./packages/*",
+    "lint": "turbo run rules",
+    "clean": "rm -rf dist node_modules && rm -rf apps/*/node_modules && rm -rf apps/*/dist && rm -rf packages/*/node_modules && rm -rf packages/*/dist",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
@@ -17,6 +19,7 @@
   "packageManager": "yarn@1.22.19",
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "rules/*"
   ]
 }

@@ -1,0 +1,36 @@
+.up-data-select-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.up-data-select-info:last-child {
+  margin-bottom: 0;
+}
+
+.inner-operate .up-data-select-info button {
+  font-size: 12px;
+  padding: 4px;
+}
+
+.inner-operate .up-data-select-info span {
+  font-size: 12px !important;
+  margin: 0 !important;
+}
+.inner-operate .ant-descriptions-item-content,
+.inner-operate .ant-descriptions-item-label {
+  padding: 8px 12px !important;
+}
+#nothing-query .ant-form-item:last-child {
+  margin-left: -16px;
+}
+#nothing-store .ant-form-item:last-child {
+  margin-left: -16px;
+}
+.pointer {
+  cursor: pointer;
+}
+.ant-modal-body .ant-table-wrapper {
+  min-height: auto !important;
+}

@@ -1,0 +1,19 @@
+.uploadingPage {
+  background: #fff;
+  border-radius: 6px;
+  padding: 10px;
+
+  .uploadingContent {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .uploadingText {
+    background: #f6f6f6;
+    padding: 10px;
+
+    .uploadImg {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.refundOptionStyle {
+  margin-top: 9px;
+  background: #fff;
+  padding: 15px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 10px;
+
+  .optionItem {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .refund_icon {
+      width: 5%;
+    }
+
+    .refund_text {
+      width: 80%;
+
+      .refund_type_title {
+        margin-bottom: 5px;
+      }
+
+      .refund_tip {
+        font-size: 10px;
+        color: rgb(135, 133, 133);
+      }
+    }
+  }
+}

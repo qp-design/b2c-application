@@ -1,0 +1,2 @@
+export declare const tipWord = "\u5982\u90E8\u5206\u5546\u54C1\u672A\u552E\u540E\u6210\u529F, \u5269\u4F59\u5546\u54C1\u5C06\u4E0D\u80FD\u7533\u8BF7\u552E\u540E";
+//# sourceMappingURL=tipConfig.d.ts.map

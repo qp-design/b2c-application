@@ -1,0 +1,23 @@
+.boxPosition {
+  position: sticky;
+  top: 0;
+  padding-top: 0 !important;
+  z-index: 99;
+}
+.search2-weight {
+  font-weight: 600;
+}
+.search2-italic {
+  font-style: italic;
+}
+.search2-decoration {
+  text-decoration: underline;
+}
+.searchBtn {
+  width: 20%;
+  height: 100%;
+}
+.btnBorderRadius {
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+}

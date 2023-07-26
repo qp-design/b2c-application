@@ -1,0 +1,350 @@
+.cart-wrap {
+  padding: 0 10px;
+
+  h4 {
+    font-size: 14px;
+    text-align: left;
+    padding-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .cart-bg {
+    border: solid 1px #efefef;
+    background: #fff;
+
+    .cart-dis-title {
+      margin: 10px;
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px #efefef solid;
+
+      .tips {
+        background: #b79f77;
+        color: #fff;
+        font-size: 12px;
+        border-radius: 20px;
+        padding: 2px 6px;
+      }
+    }
+  }
+}
+
+.promotion-item {
+  display: grid;
+  grid-template-columns: auto 50px;
+  margin-bottom: 10px;
+
+  .content {
+    text-align: left;
+  }
+}
+
+.cart {
+  background-color: #f6f6f6;
+
+  .edit {
+    text-align: right;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 6px 0;
+    //background-color: #fff;
+
+    .btn {
+      display: inline-block;
+      font-size: 12px;
+      margin-right: 10px;
+      color: #333333;
+      padding: 6px 9px;
+    }
+  }
+
+  //.itemGroup {
+  //    overflow: scroll;
+  //    height: calc(100vh - 150px);
+
+  .cartItem {
+    padding: 10px;
+    border-bottom: 1px solid #000000;
+
+    //background-color: #ffffff;
+    .cartItem-box {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: 20px 82px 1fr;
+      gap: 10px;
+      border: 1px solid #e2e2e2;
+      box-shadow: 4px 4px 4px #969292;
+    }
+
+    .checkBoxWrap {
+      position: relative;
+
+      checkbox {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -10px;
+      }
+
+      .wx-checkbox-input {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+      }
+
+      .wx-checkbox-input.wx-checkbox-input-checked {
+        background-color: #000000;
+      }
+
+      .wx-checkbox-input.wx-checkbox-input-checked::before {
+        color: #ffffff;
+        font-size: 14px;
+      }
+    }
+
+    .img {
+      width: 82px;
+      height: 82px;
+      border-radius: 10px;
+    }
+
+    .cartItem-info {
+      .cartItem-goodsName {
+        font-size: 14px;
+        min-height: 28px;
+        line-height: 17px;
+        display: block;
+        margin-bottom: 6px;
+        padding-top: 4px;
+        text-align: left;
+      }
+
+      .cartItem-size {
+        font-size: 12px;
+        color: #bababa;
+        margin-bottom: 6px;
+        text-align: left;
+      }
+
+      .cartItem-handleWrap {
+        display: flex;
+        justify-content: space-between;
+
+        .price {
+          font-size: 12px;
+          color: #000;
+        }
+
+        .stepper {
+          height: 18px;
+          --input-width: 30px;
+          --button-width: 18px;
+        }
+      }
+    }
+  }
+
+  //}
+}
+
+.cart-dashboard {
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 1);
+  border-top: 1px solid #eeeeee;
+  overflow: hidden;
+  position: sticky;
+  bottom: 0;
+
+  .choose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wx-checkbox-input {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+    }
+
+    .wx-checkbox-input.wx-checkbox-input-checked {
+      background-color: #000000;
+    }
+
+    .wx-checkbox-input.wx-checkbox-input-checked::before {
+      color: #ffffff;
+      font-size: 14px;
+    }
+  }
+
+  .check {
+    display: flex;
+    align-items: center;
+
+    .priceGroup {
+      vertical-align: top;
+      margin-right: 8px;
+      color: #a7a7a7;
+      display: grid;
+      grid-template-rows: 50% 50%;
+      height: 100%;
+
+      .discount {
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+      }
+
+      .all {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+      }
+
+      .data {
+        color: #000000;
+      }
+    }
+
+    .btn {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 26px;
+      // border-radius: 20px;
+      // background: #000000;
+      font-size: 14px;
+      // color: #fff;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+
+  .del {
+    .btn {
+      margin-top: 6px;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 26px;
+      border-radius: 20px;
+      background: #ff1643;
+      font-size: 14px;
+      color: #fff;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}
+
+.cart-edit {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  text-align: right;
+  z-index: 100;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 6px 0;
+  //background-color: #ffffff;
+
+  .btn {
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 10px;
+    color: #333333;
+    padding: 6px 9px;
+  }
+}
+
+.cart-promote-active {
+  margin: 0 12px;
+  text-align: left;
+  padding: 10px 0;
+  border-top: 1px solid #efefef;
+  display: grid;
+  cursor: pointer;
+  grid-template-columns: auto 30px;
+}
+
+.cart-list-item {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 20px 82px 1fr;
+  gap: 10px;
+
+  //
+  //background-color: #ffffff;
+  .checkBoxWrap {
+    position: relative;
+
+    checkbox {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -10px;
+    }
+
+    .wx-checkbox-input {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+    }
+
+    .wx-checkbox-input.wx-checkbox-input-checked {
+      background-color: #000000;
+    }
+
+    .wx-checkbox-input.wx-checkbox-input-checked::before {
+      color: #ffffff;
+      font-size: 14px;
+    }
+  }
+
+  .img {
+    width: 82px;
+    height: 82px;
+    border-radius: 10px;
+  }
+
+  .cartItem-info {
+    .cartItem-goodsName {
+      font-size: 14px;
+      min-height: 28px;
+      line-height: 17px;
+      display: block;
+      margin-bottom: 6px;
+      padding-top: 4px;
+      text-align: left;
+    }
+
+    .cartItem-size {
+      font-size: 12px;
+      color: #bababa;
+      margin-bottom: 6px;
+      text-align: left;
+    }
+
+    .cartItem-handleWrap {
+      display: flex;
+      justify-content: space-between;
+
+      .price {
+        font-size: 12px;
+        color: #000;
+      }
+
+      .stepper {
+        height: 18px;
+        --input-width: 30px;
+        --button-width: 18px;
+      }
+    }
+  }
+}

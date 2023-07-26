@@ -1,0 +1,24 @@
+@import '@brushes/webmaterial/css/materials';
+
+.ant-modal-close-x {
+  //.anticon{ padding-top: 20px}
+}
+.ant-modal-body {
+  padding-top: 0;
+  padding-bottom: 0;
+  .ant-table-wrapper {
+    min-height: 400px;
+  }
+}
+.search-material-search .search-material-item {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.formWrap {
+  border: solid 1px #f1f1f1;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  padding: 10px;
+}

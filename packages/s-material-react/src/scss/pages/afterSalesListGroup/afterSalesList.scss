@@ -1,0 +1,100 @@
+@import '../../theme/regular';
+
+.afterSalesList {
+  background-color: #f7f7f7;
+
+  .qj-tabs {
+    background-color: #ffffff;
+  }
+
+  .tabContent {
+    .afterSalesListItem {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 0 12px 12px;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+
+      .title {
+        padding: 6px 0;
+        border-bottom: 1px solid #f1f1f1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .lPart {
+          color: #999999;
+          font-size: 14px;
+        }
+
+        .rPart {
+          display: flex;
+          align-items: center;
+
+          .txt {
+            color: $fontColor;
+            padding-left: 5px;
+            font-size: 12px;
+          }
+        }
+      }
+
+      .goodsInfo {
+        display: flex;
+        padding: 12px 0;
+
+        .lPart {
+          margin-right: 12px;
+
+          .img {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+          }
+        }
+
+        .rPart {
+          flex: 1;
+          text-align: left;
+
+          .goodsName {
+            color: $fontColor;
+            font-size: 14px;
+            margin-bottom: 9px;
+          }
+
+          .count {
+            font-size: 12px;
+            color: #a5a5a5;
+          }
+        }
+      }
+
+      .tip {
+        height: 40px;
+        line-height: 40px;
+        width: 100%;
+        border-radius: 4px;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 12px;
+        box-sizing: border-box;
+
+        .lPart {
+          color: $fontColor;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .noData {
+    .txt {
+      font-size: 16px;
+      text-align: center;
+      padding-top: 50px;
+    }
+  }
+}

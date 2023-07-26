@@ -1,0 +1,90 @@
+.refundMsgPage {
+  background: #fff;
+  border-radius: 6px;
+  padding: 10px;
+
+  .refundItem {
+    .refundMsg {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .inputText {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          color: red;
+          font-size: 18px;
+        }
+
+        .text {
+          font-size: 14px;
+        }
+      }
+
+      .optionText {
+        display: flex;
+        align-items: center;
+
+        .text1 {
+          color: #bdb4b4;
+        }
+
+        .text {
+          display: flex;
+
+          flex-direction: row-reverse;
+          width: 65px;
+
+          .textInp {
+            display: flex;
+            align-items: center;
+          }
+
+          .inputText {
+            display: flex;
+            flex-direction: row-reverse;
+
+            .adm-input-element {
+              // width: 20%;
+            }
+          }
+        }
+
+        .icon {
+          color: #bdb4b4;
+          margin-left: 10px;
+        }
+
+        .icon1 {
+          margin-left: 10px;
+
+          .iconContent {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    .refundTip {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      font-size: 11px;
+      padding: 0;
+      font-weight: 200;
+    }
+
+    .refundTip1 {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      font-size: 11px;
+      padding: 0;
+      font-weight: 200;
+      color: #bdb4b4;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.classifyNav-one {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  gap: 10px;
+  padding: 10px 0;
+  box-sizing: border-box;
+
+  .classifyNav-item {
+    .classifyNav-item-img {
+      margin: 0 auto 5px;
+      width: 60px;
+      height: 60px;
+      display: block;
+    }
+  }
+}

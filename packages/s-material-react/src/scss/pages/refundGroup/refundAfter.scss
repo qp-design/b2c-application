@@ -1,0 +1,13 @@
+@mixin boxStyle {
+  background: #fff;
+  border-radius: 5px;
+}
+
+.refundPage {
+  padding: 15px 10px;
+  background-color: #f6f6f6;
+
+  .goodsMsg {
+    @include boxStyle;
+  }
+}

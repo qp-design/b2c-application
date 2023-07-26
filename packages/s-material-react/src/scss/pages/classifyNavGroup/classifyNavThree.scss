@@ -1,0 +1,36 @@
+.classifyNav-three {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  gap: 10px;
+  padding: 10px 0;
+  box-sizing: border-box;
+
+  .classifyNav-three-item {
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    position: relative;
+
+    .classifyNav-three-item-tag {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      background: red;
+      text-align: center;
+
+      .classifyNav-three-item-txt {
+        &.weight {
+          font-weight: bold;
+        }
+        &.italic {
+          font-style: italic;
+        }
+        &.decoration {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
