@@ -3,6 +3,7 @@
   "scripts": {
     "build": "turbo run build",
     "start:web": "turbo run start --filter=low-code-container --filter=qj-material --filter=qj-operate --filter=./packages/*",
+    "stop": "kill-port --port 4001,4002,8888",
     "start:taro": "turbo run start --filter=taro-mobile-react --filter=./packages/*",
     "lint": "turbo run rules",
     "clean": "rm -rf dist node_modules && rm -rf apps/*/node_modules && rm -rf apps/*/dist && rm -rf packages/*/node_modules && rm -rf packages/*/dist",
@@ -12,6 +13,7 @@
     "@turbo/gen": "^1.9.7",
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
+    "kill-port": "^2.0.1",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },

@@ -88,7 +88,7 @@ const GoodsListJsx: React.FC<FilterType> = ({
                     <Image src={item.dataPic} className={'img'}></Image>
                     <View className={goodsDetail}>
                       <SmoothView className={goodsNameStyle}>{item.goodsName}</SmoothView>
-                      <View className={saleStyle}>已售：{item.goodsNum}</View>
+                      <View className={saleStyle}>12已售：{item.goodsNum}</View>
 
                       <View className={carstyle}>
                         <View className={imgStyle}>

@@ -9,6 +9,7 @@ export default {
       file: 'dist/index.js',
     }
   ],
+  cache: false,
   external: ['@brushes/optimize'],
   plugins: [
     ts({}),

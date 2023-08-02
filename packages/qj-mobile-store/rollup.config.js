@@ -9,6 +9,7 @@ export default {
       dir: 'dist',
     }
   ],
+  cache: false,
   external: ['qj-b2c-api', '@brushes/utils', 'react/jsx-runtime', 'react', 'lodash-es', '@brushes/optimize'],
   plugins: [
     ts({}),

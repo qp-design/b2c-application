@@ -1,3 +1,3 @@
-export * from './skull';
-export * from './pickChinaAddress';
-export * from './switchItem';
+export * from './province'
+export * from './city'
+export * from './area'

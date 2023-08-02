@@ -4587,7 +4587,7 @@ antd-mobile-v5-count@^1.0.1:
   resolved "https://registry.npmjs.org/antd-mobile-v5-count/-/antd-mobile-v5-count-1.0.1.tgz#85f20c46d1635c24e856bcf5ad55e8c98e44a523"
   integrity sha512-YGsiEDCPUDz3SzfXi6gLZn/HpeSMW+jgPc4qiYUr1fSopg3hkUie2TnooJdExgfiETHefH3Ggs58He0OVfegLA==
 
-antd-mobile@^5.24.2:
+antd-mobile@^5.24.2, antd-mobile@^5.32.0:
   version "5.32.0"
   resolved "https://registry.npmjs.org/antd-mobile/-/antd-mobile-5.32.0.tgz#4afff3f6cd84f76795fd83658b1eb184e9cd63c1"
   integrity sha512-Wl24NW8rlsEv19n8NV/tD0/86tIYbdSU3agKeZFSzqwxp/E5x5WstHtQmQbLX2cSog9cojP5/wcqd2s2LGcXtg==
@@ -8807,6 +8807,11 @@ get-symbol-description@^1.0.0:
     call-bind "^1.0.2"
     get-intrinsic "^1.1.1"
 
+get-them-args@1.3.2:
+  version "1.3.2"
+  resolved "https://registry.npmjs.org/get-them-args/-/get-them-args-1.3.2.tgz#74a20ba8a4abece5ae199ad03f2bcc68fdfc9ba5"
+  integrity sha512-LRn8Jlk+DwZE4GTlDbT3Hikd1wSHgLMme/+7ddlqKd7ldwR6LjJgTVWzBnR01wnYGe4KgrXjg287RaI22UHmAw==
+
 get-tsconfig@^4.5.0:
   version "4.6.2"
   resolved "https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.6.2.tgz#831879a5e6c2aa24fe79b60340e2233a1e0f472e"
@@ -10493,6 +10498,14 @@ keyv@3.0.0, keyv@^3.0.0:
   integrity sha512-eguHnq22OE3uVoSYG0LVWNP+4ppamWr9+zWBe1bsNcovIMy6huUJFPgy4mGwCd/rnl3vOLGW1MTlu4c57CT1xA==
   dependencies:
     json-buffer "3.0.0"
+
+kill-port@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/kill-port/-/kill-port-2.0.1.tgz#e5e18e2706b13d54320938be42cb7d40609b15cf"
+  integrity sha512-e0SVOV5jFo0mx8r7bS29maVWp17qGqLBZ5ricNSajON6//kmb7qqqNnml4twNE8Dtj97UQD+gNFOaipS/q1zzQ==
+  dependencies:
+    get-them-args "1.3.2"
+    shell-exec "1.0.2"
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
@@ -14152,6 +14165,11 @@ shebang-regex@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
+
+shell-exec@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/shell-exec/-/shell-exec-1.0.2.tgz#2e9361b0fde1d73f476c4b6671fa17785f696756"
+  integrity sha512-jyVd+kU2X+mWKMmGhx4fpWbPsjvD53k9ivqetutVW/BQ+WIZoDoP4d8vUMGezV6saZsiNoW2f9GIhg9Dondohg==
 
 shell-quote@^1.7.3:
   version "1.8.1"

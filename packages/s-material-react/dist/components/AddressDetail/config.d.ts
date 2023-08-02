@@ -1,3 +1,9 @@
+import { FormInstance, NamePath } from '@brushes/mobile-form';
+export declare const transformConfig: {
+    from: string;
+    to: string;
+    format: (preValue: any) => 1 | 0;
+}[];
 export declare const config: ({
     type: string;
     props: {
@@ -11,6 +17,7 @@ export declare const config: ({
         required: boolean;
         message: string;
     }[];
+    extraProps?: undefined;
 } | {
     type: string;
     props: {
@@ -29,24 +36,65 @@ export declare const config: ({
         required?: undefined;
         message?: undefined;
     })[];
+    extraProps?: undefined;
 } | {
     type: string;
-    label: string;
     name: string;
-    rules: {
-        required: boolean;
-        message: string;
-    }[];
-    props?: undefined;
-} | {
-    type: string;
-    props: {
-        onlyShowClearWhenFocus?: undefined;
-        placeholder?: undefined;
-        type?: undefined;
+    extraProps: {
+        render: ({ form, name }: {
+            form: FormInstance;
+            name: NamePath;
+        }) => JSX.Element;
+        color?: undefined;
     };
+    props?: undefined;
+    label?: undefined;
+    rules?: undefined;
+} | {
+    type: string;
+    name: string;
+    extraProps: {
+        shouldUpdate(currentState: {
+            provinceCode: any;
+        }, prevState: {
+            provinceCode: any;
+        }): boolean;
+        render: ({ form, name }: {
+            form: FormInstance;
+            name: NamePath;
+        }) => JSX.Element;
+        color?: undefined;
+    };
+    props?: undefined;
+    label?: undefined;
+    rules?: undefined;
+} | {
+    type: string;
+    name: string;
+    extraProps: {
+        shouldUpdate(currentState: {
+            cityCode: any;
+        }, prevState: {
+            cityCode: any;
+        }): boolean;
+        render: ({ form, name }: {
+            form: FormInstance;
+            name: NamePath;
+        }) => JSX.Element;
+        color?: undefined;
+    };
+    props?: undefined;
+    label?: undefined;
+    rules?: undefined;
+} | {
+    type: string;
     label: string;
     name: string;
+    extraProps: {
+        color: string;
+        render?: undefined;
+    };
+    props?: undefined;
     rules?: undefined;
 })[];
 //# sourceMappingURL=config.d.ts.map

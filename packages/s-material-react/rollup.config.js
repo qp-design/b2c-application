@@ -9,9 +9,9 @@ export default {
       dir: 'dist',
     }
   ],
+  cache: false,
   external: ['antd', 'dayjs', 'react', 'react/jsx-runtime', 'qj-b2c-api', 'qj-mobile-store',
-    '@brushes/simulate-component', 'classnames', '@brushes/utils', 'lodash-es', 'china-division/dist/provinces.json',
-    'china-division/dist/cities.json', 'china-division/dist/areas.json', 'pubsub-js'],
+    '@brushes/simulate-component', 'classnames', '@brushes/utils', 'lodash-es', '@brushes/mobile-form'],
   plugins: [
     ts({}),
     terser(),

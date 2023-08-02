@@ -16,7 +16,8 @@ const MINI = {
   SAVE_CONTRACT: 'web/oc/contract/saveContract.json', // 加入订单
   SYNC_CONTRACT_STATE: 'web/oc/contract/syncContractState.json', // 查询订单是否创建成功 (单条)
   SYNC_CONTRACT_BATCH_STATE: 'web/oc/contract/syncContractBatchState.json', // 查询订单是否创建成功（批次）
-
+  QUERY_PROVINCE_PAGE: 'web/bs/province/queryProvincePage.json',
+  QUERY_AREA_PAGE: 'web/bs/area/queryAreaPage.json',
   //保存订单去支付{contractBillcode:''}
   SAVE_ORDER_TO_PAY: 'web/pte/pay/saveOrderToPay.json', // 获取支付方式
   QUERY_SHOPPING_TO_CONTRACT: 'web/oc/shopping/queryShoppingToContract.json', // // 购物车结算页面
@@ -168,3 +169,6 @@ export const queryNewTginfoMenuTree = (params = {}) => post(MINI.QUERY_NEW_TGINF
 export const updateShoppingGoodsPmInfo = (params = {}) => post(MINI.UPDATE_SHOPPING_GOODS_PM_INFO, params);
 
 export const updateShoppingGoodsCheckState = (params = {}) => post(MINI.UPDATE_SHOPPING_GOODS_CHECK_STATE, params);
+
+export const queryProvincePage = (params = {}) => post(MINI.QUERY_PROVINCE_PAGE, params);
+export const queryAreaPage = (params = {}) => post(MINI.QUERY_AREA_PAGE, params);
