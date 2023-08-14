@@ -40,7 +40,6 @@ export const CodeWrap = ({form, type}) => {
         }
 
         const result = await sendPhone(phone)
-        console.log(26, result);
         setTimeFlag(true)
         setTime(seconds);
       } catch (err) {

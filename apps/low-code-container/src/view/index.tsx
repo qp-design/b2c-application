@@ -7,8 +7,8 @@ const Index = () => {
   const port = useMemo(() => {
     const path = window.location.host.includes('lc') ? 'lc' : 'lcdev';
     return {
-      // url: `http://container.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
-      url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,
+      url: `http://container.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
+      // url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,
       scope: 'app_container',
       module: './low-code'
     };

@@ -71,6 +71,7 @@ export default {
             dataPic: DEFAULT_IMG
           }
         ],
+        __link__: { target: { value: 'goodDetail' }, defaultQuery: ['skuCode'] },
         goods: [],
         cell: 2,
         circular: true,
@@ -508,6 +509,7 @@ export default {
       name: '商品列表',
       icon: 'icon-a-1',
       props: {
+        __link__: { target: { value: 'goodDetail' }, defaultQuery: ['skuCode'] },
         activeColor: '#e54e29',
         goodsName: true,
         goodsPrice: true,
