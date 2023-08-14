@@ -1,1 +1,0 @@
-(self.webpackChunkqj_material=self.webpackChunkqj_material||[]).push([[818],{5792:()=>{},37818:(a,e,r)=>{"use strict";r.r(e);var s=r(5792),t={};for(const a in s)"default"!==a&&(t[a]=()=>s[a]);r.d(e,t)}}]);
