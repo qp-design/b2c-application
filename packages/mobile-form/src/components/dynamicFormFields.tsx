@@ -22,7 +22,10 @@ export function dynamicFormFields(
       }: FieldType,
       idx: number
     ) => {
-      const { shouldUpdate = (prevValues: any, curValues: any) => false, ...extraPropsRest} = extraProps;
+      const {
+        shouldUpdate = (prevValues: any, curValues: any) => false,
+        ...extraPropsRest
+      } = extraProps;
       const FormItem = Form.Item;
       let name = (
         isUndefined(indx) ? transformName : [indx, transformName]
@@ -41,23 +44,26 @@ export function dynamicFormFields(
         type,
         FieldTypeComponent.text
       );
+
+      const content = (
+        <FieldComponent
+          form={form}
+          name={name}
+          disabled={calIsDisabled(form)}
+          {...extraPropsRest}
+        />
+      );
+
       return (
         <FormItem
           shouldUpdate={shouldUpdate}
           key={(name || idx).toString()}
-          noStyle>
+          noStyle
+        >
           {() =>
             calIsVisible(form) ? (
-              <FormItem
-                {...(['formList'].includes(type) ? {} : formItemProps)}
-                noStyle={['formList', 'slot'].includes(type)}
-              >
-                <FieldComponent
-                  form={form}
-                  name={name}
-                  disabled={calIsDisabled(form)}
-                  {...extraPropsRest}
-                />
+              <FormItem {...formItemProps} noStyle={['slot'].includes(type)}>
+                {content}
               </FormItem>
             ) : null
           }

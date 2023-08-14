@@ -14,6 +14,10 @@ export const initImpl = (dir: string) => {
       // @ts-ignore
       importAll(require.context('./business', false, /\.ts$/));
       break;
+    case 'marketing':
+      // @ts-ignore
+      importAll(require.context('./marketing', false, /\.ts$/));
+      break;
     default:
       break;
   }

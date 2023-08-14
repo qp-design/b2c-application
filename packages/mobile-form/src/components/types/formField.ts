@@ -1,7 +1,7 @@
 import { ButtonProps } from 'antd-mobile';
 import type { FormInstance as FormInstanceO } from 'antd-mobile/es/components/form';
 
-export type FormInstance = FormInstanceO
+export type FormInstance = FormInstanceO;
 type formType =
   | 'textarea'
   | 'checkboxList'
@@ -13,8 +13,7 @@ type formType =
   | 'checkboxGroup'
   | 'select'
   | 'radioGroup'
-  | 'slot'
-
+  | 'slot';
 
 type callResolver = (msg?: string) => void;
 export type submitType<T = any> = [T, callResolver, callResolver];
@@ -39,7 +38,10 @@ export interface FieldType {
   readOnly?: boolean;
   minLength?: number;
   loading?: boolean;
-  extraProps?: { [k: string]: unknown, shouldUpdate?: (e:any, p:any) => boolean };
+  extraProps?: {
+    [k: string]: unknown;
+    shouldUpdate?: (e: any, p: any) => boolean;
+  };
   style?: { [k: string]: unknown };
 }
 

@@ -1,4 +1,4 @@
-import {FormInstance, NamePath} from '@brushes/mobile-form';
+import { FormInstance, NamePath } from '@brushes/mobile-form';
 import { ProvinceComponent, CityComponent, AreaComponent } from '@/components/AddressDetail/components';
 const checkMobile = (_: any, value: any) => {
   return new Promise((resolve, reject) => {
@@ -10,15 +10,19 @@ const checkMobile = (_: any, value: any) => {
   });
 };
 
+interface AddressType {
+  cityCode: string;
+  provinceCode: string;
+}
 export const transformConfig = [
   {
     from: 'addressDefault',
     to: 'addressDefault',
     format: (preValue: any) => {
-      return preValue === true ? 1 : 0
+      return preValue === true ? 1 : 0;
     }
   }
-]
+];
 
 export const config = [
   {
@@ -46,30 +50,27 @@ export const config = [
     type: 'slot',
     name: 'provinceCode',
     extraProps: {
-      render: ({ form, name }: { form: FormInstance; name: NamePath}) =>
-        <ProvinceComponent form={form} name={name}/>
+      render: ({ form, name }: { form: FormInstance; name: NamePath }) => <ProvinceComponent form={form} name={name} />
     }
   },
   {
     type: 'slot',
     name: 'cityCode',
     extraProps: {
-      shouldUpdate(currentState: { provinceCode: any; }, prevState: { provinceCode: any; }) {
-        return currentState.provinceCode !== prevState.provinceCode
+      shouldUpdate(currentState: { provinceCode: string }, prevState: { provinceCode: string }) {
+        return currentState.provinceCode !== prevState.provinceCode;
       },
-      render: ({ form, name }: { form: FormInstance; name: NamePath }) =>
-        <CityComponent form={form} name={name}/>
+      render: ({ form, name }: { form: FormInstance; name: NamePath }) => <CityComponent form={form} name={name} />
     }
   },
   {
     type: 'slot',
     name: 'areaCode',
     extraProps: {
-      shouldUpdate(currentState: { cityCode: any; }, prevState: { cityCode: any; }) {
-        return currentState.cityCode !== prevState.cityCode
+      shouldUpdate(currentState: AddressType, prevState: AddressType) {
+        return currentState.cityCode !== prevState.cityCode;
       },
-      render: ({ form, name }: { form: FormInstance; name: NamePath }) =>
-        <AreaComponent form={form} name={name}/>
+      render: ({ form, name }: { form: FormInstance; name: NamePath }) => <AreaComponent form={form} name={name} />
     }
   },
   {

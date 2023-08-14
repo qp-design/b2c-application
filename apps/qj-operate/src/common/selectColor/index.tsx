@@ -2,12 +2,11 @@ import React, { useRef, useState } from 'react';
 import { Popover } from 'antd';
 import Panel from './panel';
 import './index.scss';
-import { useLowCodeGraph } from 'qj-shared-library';
 
-export const SelectColor = ({ form, value, name }: any) => {
+export const SelectColor = (props: any) => {
+  const { form, value, name, onChange: changeImpl } = props;
   const [color, setColor] = useState(value);
   const originColor = useRef(value);
-  const monitorInstance = useLowCodeGraph();
 
   const onChange = (color: any) => {
     updateColor(color.hex);
@@ -19,9 +18,7 @@ export const SelectColor = ({ form, value, name }: any) => {
 
   const updateColor = (color: string) => {
     setColor(color);
-    form.setFieldValue(name, color);
-    const values = form.getFieldsValue();
-    monitorInstance.updateNode(values);
+    changeImpl(color)
   };
 
   return (

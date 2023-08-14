@@ -36,14 +36,14 @@
     "webpack": "^5.57.1",
     "webpack-cli": "^4.9.0",
     "webpack-dev-server": "^4.3.1",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "tsconfig": "*"
   },
   "dependencies": {
     "@brushes/qj-shared-library": "^0.0.9",
     "@brushes/share-resource": "^1.0.4",
     "@tanstack/react-query": "^4.3.4",
     "antd": "^5.0.2",
-    "dist": "^0.1.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "s-material-react": "*"

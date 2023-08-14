@@ -7,6 +7,9 @@ const basicMenu = initImpl('basic');
 // 业务组件
 const businessMenu = initImpl('business');
 
+// 营销组件
+const marketingMenu = initImpl('marketing');
+
 export const config = [
   {
     code: 'basic',
@@ -17,5 +20,10 @@ export const config = [
     code: 'business',
     label: '业务组件',
     children: businessMenu
+  },
+  {
+    code: 'marketing',
+    label: '营销组件',
+    children: marketingMenu
   }
 ];

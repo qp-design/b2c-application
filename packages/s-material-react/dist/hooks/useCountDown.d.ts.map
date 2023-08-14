@@ -1,1 +1,1 @@
-{"version":3,"file":"useCountDown.d.ts","sourceRoot":"","sources":["../../src/hooks/useCountDown.ts"],"names":[],"mappings":"AAGA,eAAO,MAAM,YAAY,oBACN,MAAM,QACjB,MAAM,IAAI,mBACC,GAAG,cACR,MAAM,GAAG,MAAM;;CA6B5B,CAAC"}
+{"version":3,"file":"useCountDown.d.ts","sourceRoot":"","sources":["../../src/hooks/useCountDown.ts"],"names":[],"mappings":"AAGA,eAAO,MAAM,YAAY,oBAAqB,MAAM,QAAQ,MAAM,IAAI,mBAAmB,GAAG,cAAc,MAAM,GAAG,MAAM;;CA4BxH,CAAC"}

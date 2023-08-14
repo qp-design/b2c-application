@@ -1,5 +1,5 @@
 import { CheckList, Space } from 'antd-mobile';
-import { FormInstance } from 'antd-mobile/es/components/form'
+import { FormInstance } from 'antd-mobile/es/components/form';
 
 type emums = 'vertical' | 'horizontal';
 export default function CheckboxListField({

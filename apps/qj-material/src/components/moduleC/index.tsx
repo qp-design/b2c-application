@@ -8,7 +8,10 @@ import { NodeGraph } from 'qj-shared-library';
 
 const { Panel } = Collapse;
 
-const ModuleC: React.FC<{ defaultValue: NodeGraph, pageConfig: {[v:string]: any} }> = ({ defaultValue, pageConfig }) => {
+const ModuleC: React.FC<{ defaultValue: NodeGraph; pageConfig: { [v: string]: any } }> = ({
+  defaultValue,
+  pageConfig
+}) => {
   const { type, groupType } = defaultValue || {};
   const { handleClassify, classifyIndex, activedIndex, lists, detailIndex } = useMaterialMenu(
     groupType || type,
@@ -16,13 +19,13 @@ const ModuleC: React.FC<{ defaultValue: NodeGraph, pageConfig: {[v:string]: any}
   );
   return (
     <div className={'moduleC'}>
-      <Collapse items={
-        config.map((type, typeIndex) => {
-          return (
-            {
-              key: type.code,
-              label: type.label,
-              children: <>
+      <Collapse
+        items={config.map((type, typeIndex) => {
+          return {
+            key: type.code,
+            label: type.label,
+            children: (
+              <>
                 {type.children.map(({ type, name }: any, itemIndex: number) => (
                   <Fragment key={itemIndex}>
                     <p
@@ -38,10 +41,13 @@ const ModuleC: React.FC<{ defaultValue: NodeGraph, pageConfig: {[v:string]: any}
                   </Fragment>
                 ))}
               </>
-            }
-          );
-        })
-      } defaultActiveKey={['basic', 'business']} ghost className={'classify'}/>
+            )
+          };
+        })}
+        defaultActiveKey={['basic', 'business', 'marketing']}
+        ghost
+        className={'classify'}
+      />
       {lists.map((item, index) => (
         <div
           className={'template typeScroll'}

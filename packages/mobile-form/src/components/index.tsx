@@ -1,6 +1,6 @@
 import { Form, Button, FormProps } from 'antd-mobile';
-import React, {useEffect, useState, memo, ReactNode} from 'react';
-import { FormInstance } from 'antd-mobile/es/components/form'
+import React, { useEffect, useState, memo, ReactNode } from 'react';
+import { FormInstance } from 'antd-mobile/es/components/form';
 import {
   Action,
   FieldType,
@@ -33,11 +33,11 @@ const DynamicFormJsx = ({
   const [fields, setFormFields] = useState<Array<FieldType>>([]);
   const [form] = Form.useForm();
 
-  const {
-    loading,
-    onFinish,
-    onFinishFailed,
-  } = useFormImpl(form, onSubmit, transformSubmitDataConfig);
+  const { loading, onFinish, onFinishFailed } = useFormImpl(
+    form,
+    onSubmit,
+    transformSubmitDataConfig
+  );
 
   useEffect(() => {
     setFormFields(defaultFields);
@@ -46,9 +46,19 @@ const DynamicFormJsx = ({
   return (
     <Form
       footer={
-        footer ? footer : <Button loading={loading} block type='submit' color='primary' size='large'>
-          提交
-        </Button>
+        footer ? (
+          footer
+        ) : (
+          <Button
+            loading={loading}
+            block
+            type="submit"
+            color="primary"
+            size="large"
+          >
+            提交
+          </Button>
+        )
       }
       {...{
         layout,

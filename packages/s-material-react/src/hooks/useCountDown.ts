@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react';
 import { formatTime } from '@/utils';
 
-export const useCountDown = (
-  contractPaydate: number,
-  init: () => void,
-  countdownCancel: any,
-  contractId: string | number
-) => {
+export const useCountDown = (contractPaydate: number, init: () => void, countdownCancel: any, contractId: string | number) => {
   const [resultTime, setResultTime] = useState('');
   useEffect(() => {
     const updateCountDown = () => {
@@ -16,7 +11,7 @@ export const useCountDown = (
       if (timeRemaining < 999 && timeRemaining > 0) {
         countdownCancel(contractId).then(() => {
           init();
-        });
+        })
         return;
       }
       if (timeRemaining > 1000) {

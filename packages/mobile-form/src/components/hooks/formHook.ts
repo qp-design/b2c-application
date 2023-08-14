@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NamePath, submitType, TransformType } from '../types';
 import { FormInstance } from 'antd-mobile/es/components/form';
-import { Toast } from 'antd-mobile'
+import { Toast } from 'antd-mobile';
 import { useImmutableCallback } from '@/util';
 import { useDataComputed } from './useDataComputed';
 
@@ -27,8 +27,8 @@ export function useFormImpl(
           if (msg) {
             Toast.show({
               icon: 'success',
-              content: msg,
-            })
+              content: msg
+            });
           }
         },
         () => {
@@ -38,8 +38,8 @@ export function useFormImpl(
     } catch (err: any) {
       Toast.show({
         icon: 'fail',
-        content: err.message,
-      })
+        content: err.message
+      });
       setIsSubmitting(false);
     }
   });
@@ -54,7 +54,6 @@ export function useFormImpl(
   const resetHandler = useImmutableCallback(() => {
     form.resetFields();
   });
-
 
   return {
     onFinish,

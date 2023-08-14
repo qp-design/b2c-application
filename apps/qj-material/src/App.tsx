@@ -7,7 +7,7 @@ import ModuleC from './components/moduleC';
 import * as Materials from 's-material-react';
 import { useMaterialGraph, NodeGraph } from 'qj-shared-library';
 
-const App = ({ defaultValue, pageConfig }: { defaultValue: NodeGraph; pageConfig: {[v:string]: any} }) => {
+const App = ({ defaultValue, pageConfig }: { defaultValue: NodeGraph; pageConfig: { [v: string]: any } }) => {
   const expGraph = useMaterialGraph();
   useEffect(() => {
     expGraph.init(Materials);
@@ -21,7 +21,7 @@ const App = ({ defaultValue, pageConfig }: { defaultValue: NodeGraph; pageConfig
         </>
       ),
       key: 'item-1',
-      children: <ModuleC defaultValue={defaultValue} pageConfig={pageConfig}/>
+      children: <ModuleC defaultValue={defaultValue} pageConfig={pageConfig} />
     }, // 务必填写 key
     {
       label: (

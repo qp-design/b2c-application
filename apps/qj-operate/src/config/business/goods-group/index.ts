@@ -1,0 +1,13 @@
+export * as Goods from './goods';
+export * as GoodsSlider from './goods-slider';
+export * as GoodsSlideshow from './goods-slideshow';
+export * as GoodsDetailBanner from './goods-detail-banner';
+export * as GoodsDetailInfo from './goods-detail-info';
+export * as GoodsDetailInfoOne from './goods-detail-info-one';
+export * as GoodsDetailSku from './goods-detail-sku';
+export * as GoodsDetailPromotion from './goods-detail-promotion';
+export * as GoodsDetailCoupon from './goods-detail-coupon';
+export * as GoodsDetailAndEvaluate from './goods-detail-and-evaluate';
+export * as GoodsDetailHandleBar from './goods-detail-handle-bar';
+export * as GoodsDetailHandleBarOne from './goods-detail-handle-bar-one';
+export * as GoodsList from './goods-list';

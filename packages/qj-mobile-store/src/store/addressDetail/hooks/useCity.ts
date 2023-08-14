@@ -1,8 +1,8 @@
-import {queryAreaPage} from 'qj-b2c-api';
-import {useEffect, useState} from 'react';
+import { queryAreaPage } from 'qj-b2c-api';
+import { useEffect, useRef, useState } from 'react';
 
 const localCity: {
-  [v: string]: Array<{label: string; value: string}>
+  [v: string]: Array<{ label: string; value: string }>;
 } = {
   '1': [
     {
@@ -28,35 +28,41 @@ const localCity: {
       value: '4'
     }
   ]
-}
+};
 export function useCity(form: any) {
-  const [options, setOption] =
-    useState<Array<{label: string; value: string}>>([]);
-  const provinceCode = form.getFieldValue('provinceCode')
+  const isMounted = useRef(true);
+  const [options, setOption] = useState<Array<{ label: string; value: string }>>([]);
+  const provinceCode = form.getFieldValue('provinceCode');
   useEffect(() => {
     (async () => {
-      form.setFieldValue('cityCode', undefined);
-      form.setFieldValue('areaCode', undefined);
-      if(!provinceCode) {
-        setOption([])
+      if (!isMounted.current) {
+        form.setFieldValue('cityCode', undefined);
+        form.setFieldValue('areaCode', undefined);
+      }
+
+      if (!provinceCode) {
+        setOption([]);
         return;
       }
-      if(['1', '2', '3', '4'].includes(provinceCode)) {
+      if (['1', '2', '3', '4'].includes(provinceCode)) {
         setOption(localCity[provinceCode]);
         return;
       }
-      const data = await queryAreaPage({provinceCode});
-      const arr = data.list.map((item: { areaName: any; areaCode: any; }) => {
+      const data = await queryAreaPage({ provinceCode });
+      const arr = data.list.map((item: { areaName: any; areaCode: any }) => {
         return {
           value: item.areaCode,
           label: item.areaName
-        }
+        };
       });
-      setOption(arr)
-    })()
+      setOption(arr);
+    })();
+    return () => {
+      isMounted.current = false;
+    };
   }, [provinceCode, form]);
 
   return {
     options
-  }
+  };
 }

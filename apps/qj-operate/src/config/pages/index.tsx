@@ -1,4 +1,5 @@
 import { FieldType } from '@brushes/form';
+import {SelectColor} from "@/common";
 export const formConfig: Array<FieldType> = [
   {
     label: '页面名称',
@@ -39,6 +40,32 @@ export const formConfig: Array<FieldType> = [
           label: '深色'
         }
       ]
+    }
+  },
+  {
+    label: '测试',
+    name: 'test',
+    type: 'radioGroup',
+    rules: [{ required: true, message: '请输入标题' }],
+    extraProps: {
+      options: [
+        {
+          value: 1,
+          label: '浅色'
+        },
+        {
+          value: 2,
+          label: '深色'
+        }
+      ]
+    }
+  },
+  {
+    label: '主题色',
+    name: 'themeColor',
+    type: 'slot',
+    extraProps: {
+      render: SelectColor
     }
   }
 ];

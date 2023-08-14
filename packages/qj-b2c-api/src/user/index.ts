@@ -170,5 +170,5 @@ export const updateShoppingGoodsPmInfo = (params = {}) => post(MINI.UPDATE_SHOPP
 
 export const updateShoppingGoodsCheckState = (params = {}) => post(MINI.UPDATE_SHOPPING_GOODS_CHECK_STATE, params);
 
-export const queryProvincePage = (params = {}) => post(MINI.QUERY_PROVINCE_PAGE, params);
-export const queryAreaPage = (params = {}) => post(MINI.QUERY_AREA_PAGE, params);
+export const queryProvincePage = (params = {}) => post(MINI.QUERY_PROVINCE_PAGE, cacheParams(params));
+export const queryAreaPage = (params = {}) => post(MINI.QUERY_AREA_PAGE, cacheParams(params));

@@ -1,1 +1,1 @@
-{"version":3,"file":"province.d.ts","sourceRoot":"","sources":["../../../../src/components/AddressDetail/components/province.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAoB,YAAY,EAAE,QAAQ,EAAC,MAAM,sBAAsB,CAAC;AAG/E,eAAO,MAAM,iBAAiB;UAA0B,YAAY;UAAQ,QAAQ;iBA8BnF,CAAA"}
+{"version":3,"file":"province.d.ts","sourceRoot":"","sources":["../../../../src/components/AddressDetail/components/province.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAqB,YAAY,EAAE,QAAQ,EAAE,MAAM,sBAAsB,CAAC;AAGjF,eAAO,MAAM,iBAAiB;UAA4B,YAAY;UAAQ,QAAQ;iBAiCrF,CAAC"}

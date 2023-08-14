@@ -25,7 +25,7 @@ export function useMaterialsOperate(defaultValue: NodeGraph, form: FormInstance)
         isNeedTransform = get(changedValues, i.from, '');
         if (isNeedTransform !== '') {
           const { key, value } = i.format(isNeedTransform);
-          set(obj, key, value)
+          set(obj, key, value);
           break;
         }
       }

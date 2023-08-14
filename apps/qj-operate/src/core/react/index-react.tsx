@@ -7,13 +7,7 @@ import { formConfigType } from '@/type/formConfig';
 
 const IndexReact = ({ defaultValue }: { defaultValue: NodeGraph }) => {
   const [form] = Form.useForm();
-  const {
-    computedConfig = [],
-    title,
-    info,
-    callbackImpl,
-    initialValues,
-  } = useMaterialsOperate(defaultValue, form);
+  const { computedConfig = [], title, info, callbackImpl, initialValues } = useMaterialsOperate(defaultValue, form);
 
   return (
     <Form form={form} onValuesChange={callbackImpl} initialValues={initialValues}>

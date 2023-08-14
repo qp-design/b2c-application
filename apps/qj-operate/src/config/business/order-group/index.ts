@@ -1,0 +1,11 @@
+export * as PlaceOrderAddress from './place-order-address';
+export * as PlaceOrderGood from './place-order-good';
+export * as PlaceOrderDelivery from './place-order-delivery';
+export * as PlaceOrderCoupon from './place-order-coupon';
+export * as PlaceOrderInfo from './place-order-info';
+export * as PlaceOrderOperate from './place-order-operate';
+export * as PaymentMode from './payment-mode';
+export * as PlaceOrderResult from './place-order-result';
+export * as OrderList from './order-list';
+export * as OrderDetail from './order-detail';
+export * as ExpressInfo from './express-info';

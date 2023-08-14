@@ -9,7 +9,7 @@ import {
   SelectField,
   RadioGroupField,
   SlotField,
-  SwitchField,
+  SwitchField
 } from './dynamic-form/fields';
 
 export const FieldTypeComponent = {
@@ -23,7 +23,7 @@ export const FieldTypeComponent = {
   checkboxGroup: CheckboxGroupField,
   select: SelectField,
   radioGroup: RadioGroupField,
-  slot: SlotField,
+  slot: SlotField
 };
 
 // export const fetchFormComponents = () => FieldTypeComponent;
