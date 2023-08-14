@@ -1,0 +1,14 @@
+.agreement {
+  //position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  color: #B3B3B3;
+  text-align: center;
+
+  .link {
+    display: inline-block;
+    color: #B3A07C;
+  }
+}
