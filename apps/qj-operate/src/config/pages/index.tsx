@@ -1,5 +1,5 @@
 import { FieldType } from '@brushes/form';
-import {SelectColor} from "@/common";
+import { SelectColor } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
     label: '页面名称',

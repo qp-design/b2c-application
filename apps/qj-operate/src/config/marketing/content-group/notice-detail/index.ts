@@ -47,7 +47,7 @@ export const formConfig: Array<FieldType> = [
         width: 100
       }
     }
-  },
+  }
 ];
 
 export const title = '公告详情配置';

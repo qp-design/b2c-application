@@ -18,7 +18,7 @@ export const SelectColor = (props: any) => {
 
   const updateColor = (color: string) => {
     setColor(color);
-    changeImpl(color)
+    changeImpl(color);
   };
 
   return (

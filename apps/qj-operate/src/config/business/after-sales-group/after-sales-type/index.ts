@@ -48,9 +48,8 @@ export const formConfig: Array<FieldType> = [
         width: 100
       }
     }
-  },
+  }
 ];
-
 
 export const title = '售后类型选择配置';
 export const info = '设置售后类型选择的内容或样式。';

@@ -48,9 +48,8 @@ export const formConfig: Array<FieldType> = [
         width: 100
       }
     }
-  },
+  }
 ];
-
 
 export const title = '售后详情配置';
 export const info = '设置售后详情的内容或样式。';

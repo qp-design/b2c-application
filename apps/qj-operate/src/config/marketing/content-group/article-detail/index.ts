@@ -47,7 +47,7 @@ export const formConfig: Array<FieldType> = [
         width: 100
       }
     }
-  },
+  }
 ];
 export const title = '悬浮配置';
 export const info = '灵活设置展示样式。';

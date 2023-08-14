@@ -48,9 +48,8 @@ export const formConfig: Array<FieldType> = [
         width: 100
       }
     }
-  },
+  }
 ];
-
 
 export const title = '申请售后配置';
 export const info = '设置申请售后的内容或样式。';

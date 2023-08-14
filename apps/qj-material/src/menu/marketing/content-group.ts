@@ -11,7 +11,7 @@ export default {
         paddingTop: 30,
         paddingBottom: 30,
         paddingLeft: 10,
-        paddingRight: 10,
+        paddingRight: 10
       }
     },
     {

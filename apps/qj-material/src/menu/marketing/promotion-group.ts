@@ -28,6 +28,6 @@ export default {
         // 下边距
         paddingBottom: 10
       }
-    },
+    }
   ]
-}
+};

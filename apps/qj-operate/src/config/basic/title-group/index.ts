@@ -1,1 +1,1 @@
-export * as Title from './title'
+export * as Title from './title';

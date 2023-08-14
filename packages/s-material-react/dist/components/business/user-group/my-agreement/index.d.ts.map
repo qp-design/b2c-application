@@ -1,1 +1,1 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../../src/components/business/user-group/my-agreement/index.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAqB,MAAM,OAAO,CAAC;AA4C1C,eAAO,MAAM,WAAW,gCAAuB,CAAC"}
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../../src/components/business/user-group/my-agreement/index.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAe,MAAM,OAAO,CAAC;AAMpC,eAAO,MAAM,WAAW,gCAAuB,CAAC"}

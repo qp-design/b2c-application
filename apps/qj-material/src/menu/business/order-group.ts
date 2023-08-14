@@ -1,4 +1,4 @@
-import {DEFAULT_IMG} from '@/common/img/constent';
+import { DEFAULT_IMG } from '@/common/img/constent';
 
 export default {
   type: 'OrderGroup',
@@ -13,7 +13,7 @@ export default {
         paddingTop: 0,
         paddingBottom: 0,
         paddingLeft: 0,
-        paddingRight: 0,
+        paddingRight: 0
       }
     },
     {
@@ -25,7 +25,7 @@ export default {
         paddingTop: 0,
         paddingBottom: 0,
         paddingLeft: 0,
-        paddingRight: 0,
+        paddingRight: 0
       }
     },
     {
@@ -37,7 +37,7 @@ export default {
         paddingTop: 0,
         paddingBottom: 0,
         paddingLeft: 0,
-        paddingRight: 0,
+        paddingRight: 0
       }
     },
     {
@@ -49,7 +49,7 @@ export default {
         paddingTop: 0,
         paddingBottom: 0,
         paddingLeft: 0,
-        paddingRight: 0,
+        paddingRight: 0
       }
     },
     {
@@ -61,7 +61,7 @@ export default {
         paddingTop: 0,
         paddingBottom: 0,
         paddingLeft: 0,
-        paddingRight: 0,
+        paddingRight: 0
       }
     },
     {
@@ -77,7 +77,7 @@ export default {
         paddingTop: 0,
         paddingBottom: 0,
         paddingLeft: 0,
-        paddingRight: 0,
+        paddingRight: 0
       }
     },
     {
@@ -162,7 +162,7 @@ export default {
       props: {
         defaultValue: {
           message: 'message',
-          list: [{time: +new Date(), context: 'context'}],
+          list: [{ time: +new Date(), context: 'context' }],
           dataPic: DEFAULT_IMG,
           count: '10',
           expressName: '顺丰',
