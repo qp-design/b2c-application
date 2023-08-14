@@ -1,9 +1,0 @@
-export * as GoodsDetailBanner from './goodsDetailBanner';
-export * as GoodsDetailInfo from './goodsDetailInfo';
-export * as GoodsDetailInfoOne from './goodsDetailInfoOne';
-export * as GoodsDetailSku from './goodsDetailSku';
-export * as GoodsDetailPromotion from './goodsDetailPromotion';
-export * as GoodsDetailCoupon from './goodsDetailCoupon';
-export * as GoodsDetailAndEvaluate from './goodsDetailAndEvaluate';
-export * as GoodsDetailHandleBar from './goodsDetailHandleBar';
-export * as GoodsDetailHandleBarOne from './goodsDetailHandleBarOne';
