@@ -8,17 +8,15 @@ const initialNoticeDetail = {
   paddingBottom: 0,
   paddingLeft: 0,
   paddingRight: 0
-}
+};
 
-const NoticeDetailJsx:React.FC<typeof initialNoticeDetail> = (
-  {
-    noticeId,
-    paddingTop,
-    paddingBottom,
-    paddingLeft,
-    paddingRight
-  }
-) => {
+const NoticeDetailJsx: React.FC<typeof initialNoticeDetail> = ({
+  noticeId,
+  paddingTop,
+  paddingBottom,
+  paddingLeft,
+  paddingRight
+}) => {
   const { View, Image } = useComponent();
   const { info } = useNoticeDetail(noticeId);
 

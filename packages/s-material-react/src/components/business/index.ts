@@ -2,8 +2,6 @@
 // export * from './payment-mode-group';
 export * from './after-sales-group';
 
-
-
 export * from './user-group';
 export * from './classify-group';
 export * from './search-group';

@@ -9,16 +9,15 @@ const initialAfterSalesList = {
   paddingBottom: 0,
   paddingLeft: 0,
   paddingRight: 0
-}
+};
 
-const AfterSalesListJsx: React.FC<typeof initialAfterSalesList> = (
-  {
-    refreshNum,
-    paddingTop,
-    paddingBottom,
-    paddingLeft,
-    paddingRight
-  }: any) => {
+const AfterSalesListJsx: React.FC<typeof initialAfterSalesList> = ({
+  refreshNum,
+  paddingTop,
+  paddingBottom,
+  paddingLeft,
+  paddingRight
+}: any) => {
   const { View, Tabs } = useComponent();
 
   return (

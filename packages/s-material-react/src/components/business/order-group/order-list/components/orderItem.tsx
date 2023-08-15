@@ -63,7 +63,14 @@ export function Item({
         <View className={'goodsItemWrap'}>
           {goodsList.map((item) => (
             <CardJsx key={item.contractGoodsId} {...item} dataState={dataState}>
-              {dataState === 1 && <CardCount contractPaydate={contractPaydate} init={init} countdownCancel={countdownCancel} contractId={contractId} />}
+              {dataState === 1 && (
+                <CardCount
+                  contractPaydate={contractPaydate}
+                  init={init}
+                  countdownCancel={countdownCancel}
+                  contractId={contractId}
+                />
+              )}
             </CardJsx>
           ))}
         </View>

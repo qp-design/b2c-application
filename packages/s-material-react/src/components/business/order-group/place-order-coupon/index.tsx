@@ -8,7 +8,6 @@ export const PlaceOrderCoupon = ({ refreshNum, goodsNum, skuId, shoppingGoodsId 
   const { View, Text, Popup, SmoothRadio, ScrollView } = useComponent();
   const { amount, shoppingGoodsList } = useOrderGood({ refreshNum, goodsNum, skuId, shoppingGoodsId });
   const { coupon, visible, setVisible, selectCoupon, onChange } = useOrderCoupon(shoppingGoodsList);
-
   return (
     <>
       <View className={'coupon-select'} onClick={() => setVisible(coupon.length !== 0)}>
@@ -26,7 +25,7 @@ export const PlaceOrderCoupon = ({ refreshNum, goodsNum, skuId, shoppingGoodsId 
             <ScrollView>
               <SmoothRadio onChange={onChange}>
                 {coupon.map((item, index) => {
-                  return <Coupon disable={amount < item.discAmount} {...item} key={index} />;
+                  return <Coupon {...item} key={index} />;
                 })}
               </SmoothRadio>
             </ScrollView>

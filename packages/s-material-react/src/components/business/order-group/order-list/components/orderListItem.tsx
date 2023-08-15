@@ -28,7 +28,14 @@ function OrderListItemJsx({
           {data.length > 0 ? (
             <View>
               {data.map((item, index) => (
-                <Item init={init} {...item} key={index} borderRadius={borderRadius} orderSpacing={orderSpacing} countdownCancel={countdownCancel} />
+                <Item
+                  init={init}
+                  {...item}
+                  key={index}
+                  borderRadius={borderRadius}
+                  orderSpacing={orderSpacing}
+                  countdownCancel={countdownCancel}
+                />
               ))}
               <View>{loading ? <Loading /> : null}</View>
             </View>

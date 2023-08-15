@@ -12,31 +12,15 @@ const initialAfterSalesType = {
   paddingLeft: 0,
   paddingRight: 0,
   paddingBottom: 0
-}
+};
 
 export const AfterSalesType: React.FC<typeof initialAfterSalesType> = (props) => {
-  const {
-    contractBillcode,
-    skuCode,
-    dataState,
-    paddingTop,
-    paddingLeft,
-    paddingRight,
-    paddingBottom
-  } = props;
-  const {
-    typeTip,
-    setTypeTip,
-    goodsNum,
-    handleStep,
-    goodsInfo,
-    goApply,
-    loading,
-    goodsPrice
-  } = useAfterSalesChooseType({
-    contractBillcode,
-    skuCode
-  });
+  const { contractBillcode, skuCode, dataState, paddingTop, paddingLeft, paddingRight, paddingBottom } = props;
+  const { typeTip, setTypeTip, goodsNum, handleStep, goodsInfo, goApply, loading, goodsPrice } =
+    useAfterSalesChooseType({
+      contractBillcode,
+      skuCode
+    });
 
   const { View, WrapLoading } = useComponent();
 

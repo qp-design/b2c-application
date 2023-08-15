@@ -4,7 +4,6 @@ import { Tip, FillIn, SubFillIn } from './components';
 import { useAfterSalesApply } from 'qj-mobile-store';
 import { MCAfterSalesApply } from './context';
 
-
 const initialAfterSalesApply = {
   refundType: '',
   contractBillcode: '',
@@ -15,20 +14,19 @@ const initialAfterSalesApply = {
   paddingLeft: 0,
   paddingRight: 0,
   paddingBottom: 0
-}
+};
 
-export const AfterSalesApply: React.FC<typeof initialAfterSalesApply> = (
-  {
-    refundType,
-    contractBillcode,
-    skuCode,
-    goodsNum,
-    goodsPrice,
-    paddingTop,
-    paddingLeft,
-    paddingRight,
-    paddingBottom
-  }) => {
+export const AfterSalesApply: React.FC<typeof initialAfterSalesApply> = ({
+  refundType,
+  contractBillcode,
+  skuCode,
+  goodsNum,
+  goodsPrice,
+  paddingTop,
+  paddingLeft,
+  paddingRight,
+  paddingBottom
+}) => {
   const { View, WrapLoading } = useComponent();
 
   const {
@@ -58,7 +56,7 @@ export const AfterSalesApply: React.FC<typeof initialAfterSalesApply> = (
           paddingTop,
           paddingBottom,
           paddingLeft,
-          paddingRight,
+          paddingRight
         }}
       >
         <MCAfterSalesApply.Provider

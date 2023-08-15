@@ -1,12 +1,12 @@
-import {useFootprint} from 'qj-mobile-store';
-import {FootprintGroup} from './components';
-import {useComponent} from '@brushes/simulate-component';
-import {ScrollWrap} from '@/common/scrollWrap';
-import {memo} from 'react';
+import { useFootprint } from 'qj-mobile-store';
+import { FootprintGroup } from './components';
+import { useComponent } from '@brushes/simulate-component';
+import { ScrollWrap } from '@/common/scrollWrap';
+import { memo } from 'react';
 
 const FootPrintJsx = () => {
-  const {View, ScrollView, SmoothCheckbox, Button, WrapLoading} = useComponent();
-  const {footprintList, edit, setEdit, getSelectItem, delItem, getData, loading} = useFootprint();
+  const { View, ScrollView, SmoothCheckbox, Button, WrapLoading } = useComponent();
+  const { footprintList, edit, setEdit, getSelectItem, delItem, getData, loading } = useFootprint();
 
   return (
     <WrapLoading loading={loading}>
@@ -20,8 +20,7 @@ const FootPrintJsx = () => {
           <ScrollWrap id={'topBar1'}>
             <ScrollView scrollY scrollWithAnimation refresherEnabled={true} onScrollToLower={getData}>
               <SmoothCheckbox onChange={getSelectItem}>
-
-                <FootprintGroup footprintList={footprintList} edit={edit}/>
+                <FootprintGroup footprintList={footprintList} edit={edit} />
               </SmoothCheckbox>
               {edit ? (
                 <View className="handleBar">

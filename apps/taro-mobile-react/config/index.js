@@ -74,12 +74,12 @@ const config = {
     },
   },
   h5: {
-    // compiler: {
-    //   type: 'webpack5',
-    //   prebundle: {
-    //     enable: false
-    //   }
-    // },
+    compiler: {
+      type: 'webpack5',
+      prebundle: {
+        enable: false
+      }
+    },
     publicPath: '/',
     staticDirectory: 'static',
     postcss: {

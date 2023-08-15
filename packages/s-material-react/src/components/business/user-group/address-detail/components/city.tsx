@@ -18,7 +18,6 @@ export const CityComponent = ({ form, name }: { form: FormInstance; name: NamePa
                   const { label } = options.find((item: { value: string; label: string }) => item.value === value) || {
                     label: ''
                   };
-                  console.log(2222222222222);
                   extendAddressData.cityName = label;
                   return Promise.resolve(value);
                 }

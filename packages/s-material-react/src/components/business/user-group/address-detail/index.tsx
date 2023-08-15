@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { memo, type FC } from 'react';
 import { config, transformConfig } from './config';
-import { useComponent } from '@brushes/simulate-component';
+import { useComponent, antdMobile } from '@brushes/simulate-component';
 import { DynamicForm } from '@brushes/mobile-form';
 import { useEditAddress } from 'qj-mobile-store';
 
@@ -22,9 +22,9 @@ const AddressDetailJsx: FC<AddressDetailProps> = ({
   paddingTop,
   paddingBottom
 }) => {
-  const { View, Button } = useComponent();
+  const { View } = useComponent();
+  const { Button } = antdMobile;
   const { onSubmit } = useEditAddress();
-
   return (
     <View
       className={'addressDetail'}
