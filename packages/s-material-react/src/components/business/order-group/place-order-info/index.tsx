@@ -4,7 +4,7 @@ import { useOrderInfo, orderGoodValue, useOrderGood } from 'qj-mobile-store';
 
 export const PlaceOrderInfo = ({ refreshNum, goodsNum, skuId, shoppingGoodsId }: Partial<typeof orderGoodValue>) => {
   const { SmoothView, View } = useComponent();
-  const { payState, amount, disCount, freight } = useOrderGood({ refreshNum, goodsNum, skuId, shoppingGoodsId });
+  const { payState, disCount, freight, payPrice } = useOrderGood({ refreshNum, goodsNum, skuId, shoppingGoodsId });
   const { shoppingCountPrice, comDisMoney } = useOrderInfo(payState);
 
   return (
@@ -26,7 +26,7 @@ export const PlaceOrderInfo = ({ refreshNum, goodsNum, skuId, shoppingGoodsId }:
         <View className={'all placeOrder-blcItem'}>
           <View className={'label'}>总计</View>
           <SmoothView className={'value'} style={{ color: '#000' }}>
-            {fixPrice(amount - disCount + freight)}
+            {fixPrice(payPrice)}
           </SmoothView>
         </View>
       </View>

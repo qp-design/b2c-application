@@ -21,7 +21,6 @@ export const addressInitial = {
 
 export function useOrderAddress(refreshNum: string, goodsNum: number, skuId: string, shoppingGoodsId: string) {
   const [address, setAddress] = useState<typeof addressInitial>(addressInitial);
-
   useEffect(() => {
     (async () => {
       try {
@@ -42,8 +41,9 @@ export function useOrderAddress(refreshNum: string, goodsNum: number, skuId: str
         const result = fetchAddress();
         userAddressData.addressInfo = result;
         setAddress(result);
-        freightCalculation(result.provinceCode);
-      } catch (err) {}
+        freightCalculation(result?.provinceCode);
+      } catch (err) {
+      }
     })();
   }, [refreshNum]);
 

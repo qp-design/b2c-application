@@ -73,6 +73,11 @@ export const useOrderGood = ({ shoppingGoodsId, goodsNum, skuId }: Partial<typeo
     return orderStoreInfo.contractSettlPmoney || 0;
   }, [orderStoreInfo]);
 
+  const payPrice = useMemo(() => {
+    const price = amount - disCount + freight;
+    return price >= 0 ? price : 0;
+  }, [amount, disCount, freight])
+
   const initImpl = async (callback: () => Promise<any>) => {
     try {
       const data = await callback();
@@ -155,6 +160,7 @@ export const useOrderGood = ({ shoppingGoodsId, goodsNum, skuId }: Partial<typeo
     payState,
     ocContractSettlList,
     disCount,
+    payPrice,
     orderStoreInfo,
     freight
   };

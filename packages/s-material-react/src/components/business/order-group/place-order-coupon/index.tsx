@@ -6,7 +6,7 @@ import { ScrollWrap } from '@/common/scrollWrap';
 
 export const PlaceOrderCoupon = ({ refreshNum, goodsNum, skuId, shoppingGoodsId }: Partial<typeof orderGoodValue>) => {
   const { View, Text, Popup, SmoothRadio, ScrollView } = useComponent();
-  const { amount, shoppingGoodsList } = useOrderGood({ refreshNum, goodsNum, skuId, shoppingGoodsId });
+  const { shoppingGoodsList } = useOrderGood({ refreshNum, goodsNum, skuId, shoppingGoodsId });
   const { coupon, visible, setVisible, selectCoupon, onChange } = useOrderCoupon(shoppingGoodsList);
   return (
     <>

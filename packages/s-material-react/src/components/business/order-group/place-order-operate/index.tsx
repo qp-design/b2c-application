@@ -26,7 +26,13 @@ export const PlaceOrderOperate: React.FC<Partial<typeof OrderOerate>> = ({
   shoppingGoodsId
 }) => {
   const { View, Text, WrapLoading } = useComponent();
-  const { amount, list, freight, disCount, payState, orderStoreInfo, ocContractSettlList } = useOrderGood({
+  const {
+    payPrice,
+    list,
+    payState,
+    orderStoreInfo,
+    ocContractSettlList
+  } = useOrderGood({
     refreshNum,
     goodsNum,
     skuId,
@@ -41,7 +47,7 @@ export const PlaceOrderOperate: React.FC<Partial<typeof OrderOerate>> = ({
   );
   return (
     <View className={'placeOrderFooter'}>
-      <Text className={'price'}>合计: {fixPrice(amount - disCount + freight)}</Text>
+      <Text className={'price'}>合计: {fixPrice(payPrice)}</Text>
       <WrapLoading loading={loading}>
         <View
           className={'btn'}
