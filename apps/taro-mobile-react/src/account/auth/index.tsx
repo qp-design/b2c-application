@@ -48,8 +48,8 @@ const Index = () => {
           </View>
         </View>
         {
-          agree?<Button className='btn' open-type='getPhoneNumber' onGetPhoneNumber={getPhone}>微信用户一键登录</Button>:
-            <Button className='btn' onClick={confirmFunc}>微信用户一键登录</Button>
+          agree?<Button className='btn' open-type='getPhoneNumber' onGetPhoneNumber={getPhone}>用户一键登录</Button>:
+            <Button className='btn' onClick={confirmFunc}>用户一键登录</Button>
         }
         <View className='linkReg' onClick={goLogin}>输入手机号码登录/注册</View>
       </View>

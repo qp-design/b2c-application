@@ -8,7 +8,7 @@ import {stackLength} from '@/account/hooks';
 export const useAuth = () => {
   const [bg, setBg] = useState('');
   const [logo, setLogo] = useState('');
-  const [agree, setAgree] = useState(true);
+  const [agree, setAgree] = useState(false);
 
   useEffect(() => {
     getInfo()
