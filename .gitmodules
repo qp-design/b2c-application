@@ -1,3 +1,0 @@
-[submodule "apps/taro-mobile-react"]
-	path = apps/taro-mobile-react
-	url = git@github.com:BrushesTemplate/taro-react-user.git
