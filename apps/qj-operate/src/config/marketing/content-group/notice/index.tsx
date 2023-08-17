@@ -80,7 +80,7 @@ export const formConfig: Array<FieldType> = [
   }
 ];
 
-export const title = '文本配置';
+export const title = '公告配置';
 export const info = '灵活设置展示样式。';
 export const initialValues = {
   cell: 1,

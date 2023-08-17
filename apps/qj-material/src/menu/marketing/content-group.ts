@@ -20,17 +20,10 @@ export default {
       name: '公告列表',
       icon: 'icon-notice',
       props: {
-        borderColor: '#fff3e9',
-        fontSize: '15px',
+        speed: 30,
+        direction: 'horizontal',
         color: '#ff6010',
-        backgroundColor: '#fff9ed',
-        title: '',
-        text: '默认公告内容',
-        margin: 8,
-        paddingTop: 10,
-        paddingLeft: 10,
-        paddingRight: 10,
-        paddingBottom: 0
+        num: 5,
       }
     },
     {
