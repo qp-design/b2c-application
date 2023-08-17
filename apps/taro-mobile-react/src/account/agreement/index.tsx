@@ -1,5 +1,5 @@
 import {View} from '@tarojs/components';
-import HeaderJsx from "@/components/header";
+import {HeaderJsx} from "@brushes/taro-component";
 import {useRouter} from '@tarojs/taro';
 
 import {get} from 'lodash-es';
@@ -14,7 +14,7 @@ const Index = () => {
 
   return (
     <View>
-      <HeaderJsx />
+      <HeaderJsx  navigationBarTitle='平台协议/政策'/>
       <View className='wrap' dangerouslySetInnerHTML={{__html: agreementData}}></View>
     </View>
   )

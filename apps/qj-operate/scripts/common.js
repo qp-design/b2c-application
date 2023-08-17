@@ -1,5 +1,5 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const AntdDayjsWebpackPlugin =  require('antd-dayjs-webpack-plugin');
+
 const path = require('path');
 const {dependencies: deps} = require("../package.json");
 
@@ -9,6 +9,10 @@ module.exports = {
   output: {
     chunkFilename: "[name].[contenthash:8].js",
   },
+  // externals: {
+  //   'antd': 'antd',
+  //   'lodash-es': 'lodash-es'
+  // },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
     alias: {
@@ -39,7 +43,6 @@ module.exports = {
   },
 
   plugins: [
-    new AntdDayjsWebpackPlugin(),
     new ModuleFederationPlugin({
       name: 'qj_operate',
       filename: 'remoteEntry.js',
@@ -48,6 +51,7 @@ module.exports = {
         './operateData': './src/data',
       },
       shared: {
+        ...deps,
         // alias
         "qj-shared-library": {
           singleton: true,
@@ -55,10 +59,10 @@ module.exports = {
           import: "@brushes/qj-shared-library",
           requiredVersion: deps["@brushes/qj-shared-library"],
         },
-        // "antd": {
-        //   singleton: true,
-        //   requiredVersion: deps.antd,
-        // },
+        "antd": {
+          singleton: true,
+          requiredVersion: deps.antd,
+        },
         "react": {
           singleton: true,
           requiredVersion: deps.react,

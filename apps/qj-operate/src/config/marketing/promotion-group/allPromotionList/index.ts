@@ -1,12 +1,12 @@
 import { FieldType } from '@brushes/form';
-import { SelectColor, SelectCoupon } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
     label: '选中颜色',
     name: 'activeColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {

@@ -1,13 +1,13 @@
 import { FieldType } from '@brushes/form';
-import React from 'react';
-import { SelectColor } from '@/common';
+
 export const formConfig: Array<FieldType> = [
   {
     label: '背景颜色',
     name: 'backgroundColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
@@ -30,25 +30,28 @@ export const formConfig: Array<FieldType> = [
   {
     label: '按钮边框颜色',
     name: 'borderColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '按钮字体颜色',
     name: 'color',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '按钮颜色',
     name: 'btnColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {

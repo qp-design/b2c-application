@@ -1,5 +1,5 @@
 import {View} from '@tarojs/components';
-import HeaderJsx from "@/components/header";
+import {HeaderJsx} from "@brushes/taro-component";
 import {AccountForm, AgreementEntry, TopLogo, LinkReg} from "../components";
 
 import {useAccountForm} from "../hooks";

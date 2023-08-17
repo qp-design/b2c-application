@@ -1,6 +1,5 @@
 import { QjIcon } from '@brushes/share-resource';
 import { DragJsx } from 'qj-shared-library';
-import React from 'react';
 
 const MenuItem = ({ lists = [], pageConfig }: { lists: Array<any>; pageConfig: { [v: string]: any } }) => {
   return (

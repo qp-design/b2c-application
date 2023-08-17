@@ -1,7 +1,8 @@
 import { DynamicForm } from '@brushes/form';
 import { useMaterialData } from '@/hooks';
 import { formConfig, transformSubmitDataConfig } from '@/data/config';
-import { Collapse, CollapseProps } from 'antd';
+import Collapse from 'antd/es/collapse';
+import type { CollapseProps } from 'antd/es/collapse';
 const OperateData = () => {
   const { dataSource, onSubmit, isLoading } = useMaterialData();
   return (

@@ -1,13 +1,13 @@
 import { FieldType } from '@brushes/form';
-import { SelectColor } from '@/common';
 
 export const formConfig: Array<FieldType> = [
   {
     label: '选中颜色',
     name: 'selectFontColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {

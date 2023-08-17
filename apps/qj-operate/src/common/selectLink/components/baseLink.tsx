@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Button, List, Form, Input } from 'antd';
+import React from 'react';
+import Button from 'antd/es/button';
+import List from 'antd/es/list';
+import Form from 'antd/es/form';
+import Input from 'antd/es/input';
 import { useBaseLink } from '@/common/selectLink/hooks';
 import { menu } from '@/common/selectLink/config/constant';
 

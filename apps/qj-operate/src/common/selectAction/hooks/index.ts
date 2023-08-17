@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { get } from 'lodash-es';
 import { queryModalData } from '@/hooks';
-import { FormInstance } from 'antd';
+import type { FormInstance } from 'antd/es/form';
 import { NamePath } from '@brushes/form';
 import { createFastContext } from '@brushes/utils';
 import { useLowCodeGraph } from 'qj-shared-library';

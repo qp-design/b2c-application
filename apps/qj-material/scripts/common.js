@@ -1,6 +1,6 @@
-const AntdDayjsWebpackPlugin =  require('antd-dayjs-webpack-plugin');
 const webpack = require('webpack');
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+
 const {dependencies: deps} = require("../package.json");
 
 const path = require("./paths");
@@ -8,6 +8,9 @@ const path = require("./paths");
 module.exports = {
   output: {
     chunkFilename: "[name].[contenthash:8].js",
+  },
+  externals: {
+    antd: 'antd',
   },
   cache: {
     type: 'filesystem',
@@ -48,7 +51,6 @@ module.exports = {
   },
 
   plugins: [
-    new AntdDayjsWebpackPlugin(),
     // new CompressionPlugin(),
     // new CssMinimizerWebpackPlugin(),
     new ModuleFederationPlugin({
@@ -61,6 +63,7 @@ module.exports = {
         './menu': path('src/App'),
       },
       shared: {
+        ...deps,
         "s-material-react": {
           import: "s-material-react",
           requiredVersion: process.env.NODE_ENV === 'development' ? require("../../s-material-react/package.json").version : deps["s-material-react"],

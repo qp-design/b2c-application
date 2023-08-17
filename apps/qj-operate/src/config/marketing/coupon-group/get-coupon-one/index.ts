@@ -1,5 +1,5 @@
 import { FieldType } from '@brushes/form';
-import { SelectColor, SelectCoupon } from '@/common';
+import { SelectCoupon } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
     label: '选择商品',
@@ -13,57 +13,64 @@ export const formConfig: Array<FieldType> = [
   {
     label: '边框颜色',
     name: 'borderColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '背景颜色',
     name: 'bg',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '按钮颜色',
     name: 'btnColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '类型颜色',
     name: 'typeColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '规则颜色',
     name: 'ruleColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '名称颜色',
     name: 'titleColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '有效期颜色',
     name: 'timeColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {

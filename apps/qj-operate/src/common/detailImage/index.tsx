@@ -1,7 +1,4 @@
-import React from 'react';
-
 export const DetailImage = (value: Array<any> | string) => {
-  console.log(4, value);
   if (!Array.isArray(value)) return value;
   return (
     <div className={'detailImage'}>

@@ -4,7 +4,7 @@ import { useImmutableCallback } from '@brushes/form';
 import { useEffect, useMemo } from 'react';
 import { useLowCodeGraph, NodeGraph } from 'qj-shared-library';
 import { get, isEmpty, omit, set, merge } from 'lodash-es';
-import { FormInstance } from 'antd';
+import type { FormInstance } from 'antd/es/form';
 
 export function useMaterialsOperate(defaultValue: NodeGraph, form: FormInstance) {
   const monitorInstance = useLowCodeGraph();
@@ -25,6 +25,8 @@ export function useMaterialsOperate(defaultValue: NodeGraph, form: FormInstance)
         isNeedTransform = get(changedValues, i.from, '');
         if (isNeedTransform !== '') {
           const { key, value } = i.format(isNeedTransform);
+          console.log(26, key, value);
+          form.setFieldValue(key, value);
           set(obj, key, value);
           break;
         }

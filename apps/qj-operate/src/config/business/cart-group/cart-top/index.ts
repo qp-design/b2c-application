@@ -1,5 +1,5 @@
 import type { FieldType } from '@brushes/form';
-import { SelectColor, SelectData } from '@/common';
+import { SelectData } from '@/common';
 import { formConfigType } from '@/type/formConfig';
 
 const sectionTwo: formConfigType = {
@@ -54,25 +54,28 @@ const sectionOne: formConfigType = {
     {
       label: '按钮边框',
       name: 'borderColor',
-      type: 'slot',
+      type: 'color',
       extraProps: {
-        render: SelectColor
+        allowClear: true,
+        showText: true
       }
     },
     {
       label: '按钮字体',
       name: 'textColor',
-      type: 'slot',
+      type: 'color',
       extraProps: {
-        render: SelectColor
+        allowClear: true,
+        showText: true
       }
     },
     {
       label: '按钮颜色',
       name: 'btnColor',
-      type: 'slot',
+      type: 'color',
       extraProps: {
-        render: SelectColor
+        allowClear: true,
+        showText: true
       }
     },
     {

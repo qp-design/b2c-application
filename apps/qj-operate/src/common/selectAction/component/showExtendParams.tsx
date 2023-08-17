@@ -1,4 +1,4 @@
-import { Button } from 'antd';
+import Button from 'antd/es/button';
 import { useActionStore } from '@/common/selectAction/hooks';
 import { useMemo } from 'react';
 

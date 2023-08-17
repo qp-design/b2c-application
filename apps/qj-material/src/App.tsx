@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './index.scss';
 import Tabs from 'antd/es/tabs';
 import { QjIcon } from '@brushes/share-resource';

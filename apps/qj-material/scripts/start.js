@@ -2,6 +2,7 @@ const common = require('./common');
 const { merge } = require('webpack-merge');
 const path = require("./paths");
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
 const defaultConfig = {
   devServer: {
     static: {
@@ -13,6 +14,9 @@ const defaultConfig = {
     port: 4001,
   },
   plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerPort: 11111
+    }),
     // new BundleAnalyzerPlugin({
     //   analyzerPort: 1111
     // }),

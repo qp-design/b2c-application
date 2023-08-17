@@ -1,4 +1,4 @@
-import TabBar from '@/components/custom-common';
+import {TabBar} from '@brushes/taro-component';
 import './index.scss';
 const Index = () => {
   return <TabBar />

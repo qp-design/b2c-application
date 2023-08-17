@@ -1,8 +1,6 @@
 export * from './selectGoods';
-// export * from './selectPicture';
 export * from './selectPictureOrVideo';
 export * from './selectData';
-export * from './selectColor';
 export * from './selectCube';
 export * from './swiperComponent';
 export * from './selectGoodsGroup';

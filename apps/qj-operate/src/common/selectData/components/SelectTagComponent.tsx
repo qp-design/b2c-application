@@ -1,6 +1,8 @@
 //@ts-nocheck
 import { QjIcon } from '@brushes/share-resource';
-import { Button, Popconfirm, Descriptions } from 'antd';
+import Button from 'antd/es/button';
+import Popconfirm from 'antd/es/popconfirm';
+import Descriptions from 'antd/es/descriptions';
 import { useUpSelect, useDownSelect, useUpSelectCommon, useDownSelectCommon } from '../hooks';
 import { Fragment, memo } from 'react';
 

@@ -1,4 +1,4 @@
-import { SelectColor, SelectData } from '@/common';
+import { SelectData } from '@/common';
 import { formConfigType } from '@/type/formConfig';
 export const title = '操作栏';
 export const info = '操作栏的配置。';
@@ -76,17 +76,19 @@ const sectionOne: formConfigType = {
     {
       label: '左侧按钮字体颜色',
       name: 'lPartColor',
-      type: 'slot',
+      type: 'color',
       extraProps: {
-        render: SelectColor
+        allowClear: true,
+        showText: true
       }
     },
     {
       label: '左侧按钮背景',
       name: 'lPartBgColor',
-      type: 'slot',
+      type: 'color',
       extraProps: {
-        render: SelectColor
+        allowClear: true,
+        showText: true
       }
     },
     {
@@ -109,17 +111,19 @@ const sectionOne: formConfigType = {
     {
       label: '右侧按钮字体颜色',
       name: 'rPartColor',
-      type: 'slot',
+      type: 'color',
       extraProps: {
-        render: SelectColor
+        allowClear: true,
+        showText: true
       }
     },
     {
       label: '右侧按钮背景',
       name: 'rPartBgColor',
-      type: 'slot',
+      type: 'color',
       extraProps: {
-        render: SelectColor
+        allowClear: true,
+        showText: true
       }
     },
     {

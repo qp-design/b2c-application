@@ -1,8 +1,10 @@
 import { NamePath } from '@brushes/form';
 import { QjIcon } from '@brushes/share-resource';
 import { Wrapper } from '@brushes/webmaterial';
-import React, { useState } from 'react';
-import { Button, Modal } from 'antd';
+import { useState } from 'react';
+import Button from 'antd/es/button';
+import Modal from 'antd/es/modal';
+
 import UploadForm from './uploadForm';
 import { useQueryClient } from '@tanstack/react-query';
 

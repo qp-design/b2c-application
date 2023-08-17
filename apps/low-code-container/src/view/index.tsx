@@ -1,11 +1,11 @@
 import './index.scss';
-import React, { useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import Root from './root';
 
 const Index = () => {
   const [coe, setCoe] = useState(1);
   const port = useMemo(() => {
-    const path = window.location.host.includes('lc') ? 'lc' : 'lcdev';
+    const path = window.location.host.includes('lcdev') ? 'lcdev' : 'lc';
     return {
       url: `http://container.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
       // url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,

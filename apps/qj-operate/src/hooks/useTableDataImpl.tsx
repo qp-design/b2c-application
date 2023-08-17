@@ -1,5 +1,7 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { FormInstance, Popconfirm, Space } from 'antd';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import type { FormInstance } from 'antd/es/form';
+import Popconfirm from 'antd/es/popconfirm';
+import Space from 'antd/es/space';
 import { NamePath } from '@brushes/form';
 import { produce } from 'immer';
 import { QjIcon } from '@brushes/share-resource';

@@ -1,5 +1,5 @@
 import { FieldType } from '@brushes/form';
-import { SelectColor, SwiperComponent } from '@/common';
+import { SwiperComponent } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
     label: '搜索',
@@ -69,9 +69,10 @@ export const formConfig: Array<FieldType> = [
   {
     label: '字体颜色',
     name: 'fontColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
@@ -94,9 +95,10 @@ export const formConfig: Array<FieldType> = [
   {
     label: '搜索框背景色',
     name: 'backgroundColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {

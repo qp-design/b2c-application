@@ -1,4 +1,6 @@
-import { List, Image, Radio } from 'antd';
+import List from 'antd/es/list';
+import Image from 'antd/es/image';
+import Radio from 'antd/es/radio';
 import React from 'react';
 import '../index.scss';
 import { useFileContext } from '@/common/selectPictureOrVideo/store';

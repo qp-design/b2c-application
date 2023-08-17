@@ -1,5 +1,5 @@
 import { FieldType } from '@brushes/form';
-import { SelectColor, SelectGoods, SelectPicture, SwiperComponent } from '@/common';
+import { SelectGoods, SelectPicture } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
     label: '选择商品',
@@ -150,17 +150,19 @@ export const formConfig: Array<FieldType> = [
   {
     label: '按钮颜色',
     name: 'btnBg',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '按钮文字颜色',
     name: 'btnColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {

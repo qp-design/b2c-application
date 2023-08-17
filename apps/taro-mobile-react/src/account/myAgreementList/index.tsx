@@ -1,6 +1,6 @@
 import {useRef} from "react";
 import { View } from '@tarojs/components';
-import HeaderJsx from "@/components/header";
+import { HeaderJsx } from "@brushes/taro-component";
 import {useAgreement} from "@/account/hooks";
 import {IconMobile} from '@brushes/simulate-component';
 import './index.scss'
@@ -20,7 +20,7 @@ const Index = () => {
 
   return (
     <View className='myAgreementList'>
-      <HeaderJsx />
+      <HeaderJsx  navigationBarTitle={'我的协议'}/>
       <View className='list'>
         {
           config.current.map((item, index) => {

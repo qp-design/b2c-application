@@ -1,6 +1,5 @@
 import { FieldType } from '@brushes/form';
-import React from 'react';
-import { SelectColor, SwiperComponent } from '@/common';
+import { SwiperComponent } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
     label: '高度',
@@ -58,9 +57,10 @@ export const formConfig: Array<FieldType> = [
   {
     label: '背景颜色',
     name: 'backgroundColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {

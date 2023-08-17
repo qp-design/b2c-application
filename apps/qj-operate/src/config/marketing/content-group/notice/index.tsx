@@ -1,6 +1,5 @@
 import { FieldType } from '@brushes/form';
-import React from 'react';
-import { SelectColor } from '@/common';
+
 export const formConfig: Array<FieldType> = [
   {
     label: '滚动速度',
@@ -73,9 +72,10 @@ export const formConfig: Array<FieldType> = [
   {
     label: '字体颜色',
     name: 'color',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   }
 ];

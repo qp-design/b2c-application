@@ -1,13 +1,12 @@
 import { FieldType } from '@brushes/form';
-import React from 'react';
-import { SelectColor, SwiperComponent } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
     label: '背景色',
     name: 'TextLineBgColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
@@ -102,17 +101,19 @@ export const formConfig: Array<FieldType> = [
   {
     label: '字体颜色',
     name: 'fontColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '线条颜色',
     name: 'lineColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {

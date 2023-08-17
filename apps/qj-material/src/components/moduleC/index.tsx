@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import Collapse from 'antd/es/collapse';
 import { config } from '@/menu';
 import MenuItem from './menuItem';

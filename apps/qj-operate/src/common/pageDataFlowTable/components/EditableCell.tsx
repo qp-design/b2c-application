@@ -1,5 +1,6 @@
-import React, { FC, HTMLAttributes, ReactNode } from 'react';
-import { Form, Input } from 'antd';
+import { FC, HTMLAttributes, ReactNode } from 'react';
+import Input from 'antd/es/input';
+import Form from 'antd/es/form';
 interface EditableCellProps extends HTMLAttributes<HTMLElement> {
   editing: boolean;
   dataIndex: string;

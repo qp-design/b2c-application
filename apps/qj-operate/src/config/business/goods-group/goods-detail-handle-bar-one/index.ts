@@ -1,5 +1,5 @@
 import { FieldType } from '@brushes/form';
-import { SelectColor } from '@/common';
+
 export const formConfig: Array<FieldType> = [
   {
     label: '客服显示',
@@ -38,25 +38,28 @@ export const formConfig: Array<FieldType> = [
   {
     label: '左侧按钮边框颜色',
     name: 'lBtnBorderColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '左侧按钮字体颜色',
     name: 'lBtnFontColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '左侧按钮颜色',
     name: 'lBtnColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
@@ -79,25 +82,28 @@ export const formConfig: Array<FieldType> = [
   {
     label: '右侧按钮边框颜色',
     name: 'rBtnBorderColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '右侧按钮字体颜色',
     name: 'rBtnFontColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '右侧按钮颜色',
     name: 'rBtnColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {

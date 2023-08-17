@@ -1,5 +1,10 @@
 //@ts-nocheck
-import { Button, Descriptions, Modal, Divider, Space, Tag } from 'antd';
+import Button from 'antd/es/button';
+import Descriptions from 'antd/es/descriptions';
+import Modal from 'antd/es/modal';
+import Divider from 'antd/es/divider';
+import Space from 'antd/es/space';
+import Tag from 'antd/es/tag';
 import { QjIcon } from '@brushes/share-resource';
 import { UpDataComponent, DownDataComponent } from '@/common/selectData/components';
 import { FastContextProvider, useFastStore } from './store';

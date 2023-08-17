@@ -40,7 +40,8 @@ const config = {
         '@brushes/simulate-component',
         's-material-react',
         "qj-mobile-store",
-        "qj-b2c-api"
+        "qj-b2c-api",
+        "@brushes/taro-component"
       ]
     }
   },

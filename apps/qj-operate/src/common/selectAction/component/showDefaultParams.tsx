@@ -1,5 +1,4 @@
-import { NamePath } from '@brushes/form';
-import { FormInstance, Button } from 'antd';
+import Button from 'antd/es/button';
 import { useActionStore } from '@/common/selectAction/hooks';
 
 export const ShowDefaultParams = () => {

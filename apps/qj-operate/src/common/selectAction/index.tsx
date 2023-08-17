@@ -1,5 +1,7 @@
-import React, { type FC, useMemo } from 'react';
-import { Button, Descriptions, FormInstance } from 'antd';
+import { type FC, useMemo } from 'react';
+import Button from 'antd/es/button';
+import Descriptions from 'antd/es/descriptions';
+import type { FormInstance } from 'antd/es/form';
 import { PlusOutlined } from '@ant-design/icons';
 import Modal from 'antd/es/modal/Modal';
 import { ActionContextProvider, useDataInit, useSelectAction, useSubmit } from './hooks';

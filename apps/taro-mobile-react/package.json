@@ -62,7 +62,8 @@
     "qj-b2c-api": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "s-material-react": "*"
+    "s-material-react": "*",
+    "@brushes/taro-component": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",

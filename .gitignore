@@ -7,7 +7,9 @@ node_modules
 .idea
 # testing
 coverage
-
+packages/form/*
+packages/taro-component/*
+packages/mobile-form/*
 # next.js
 .next/
 out/

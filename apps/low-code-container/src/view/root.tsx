@@ -1,4 +1,3 @@
-import React from 'react';
 // @ts-ignore
 import { FederationModule } from 'qj-shared-library';
 

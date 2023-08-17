@@ -1,5 +1,4 @@
 import { FieldType } from '@brushes/form';
-import React from 'react';
 import { SelectCube, SwiperComponent } from '@/common';
 import AddButton from '@/common/addButton';
 

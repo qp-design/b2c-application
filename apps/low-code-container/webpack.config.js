@@ -1,5 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
@@ -40,6 +42,9 @@ module.exports = {
   },
 
   plugins: [
+    // new BundleAnalyzerPlugin({
+    //   analyzerPort: 11118
+    // }),
     new ModuleFederationPlugin({
       name: "kezi",
       shared: {
@@ -48,6 +53,10 @@ module.exports = {
           singleton: true,
           import: "@brushes/qj-shared-library",
           requiredVersion: deps['@brushes/qj-shared-library'],
+        },
+        "antd": {
+          singleton: true,
+          requiredVersion: deps.antd,
         },
         react: {
           singleton: true,

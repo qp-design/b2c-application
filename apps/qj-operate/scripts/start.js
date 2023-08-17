@@ -1,7 +1,7 @@
 const common = require('./common');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const defaultConfig = {
 
@@ -14,9 +14,9 @@ const defaultConfig = {
   },
 
   plugins: [
-    // new BundleAnalyzerPlugin({
-    //   analyzerPort: 2222
-    // }),
+    new BundleAnalyzerPlugin({
+      analyzerPort: 11112
+    }),
     new webpack.DefinePlugin({
       'process.env': `window._env_operate` //构建时定义process.env值为window._env_的值
     }),

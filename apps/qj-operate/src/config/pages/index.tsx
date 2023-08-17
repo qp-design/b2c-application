@@ -1,5 +1,5 @@
 import { FieldType } from '@brushes/form';
-import { SelectColor } from '@/common';
+
 export const formConfig: Array<FieldType> = [
   {
     label: '页面名称',
@@ -63,9 +63,10 @@ export const formConfig: Array<FieldType> = [
   {
     label: '主题色',
     name: 'themeColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   }
 ];

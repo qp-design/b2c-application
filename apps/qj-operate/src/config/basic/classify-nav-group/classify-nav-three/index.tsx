@@ -1,6 +1,5 @@
 import { FieldType } from '@brushes/form';
-import React from 'react';
-import { SelectColor, SelectCube } from '@/common';
+import { SelectCube } from '@/common';
 import AddButton from '@/common/addButton';
 export const formConfig: Array<FieldType> = [
   {
@@ -45,17 +44,19 @@ export const formConfig: Array<FieldType> = [
   {
     label: '导航边框颜色',
     name: 'navBorderColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '背景颜色',
     name: 'navBgColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
@@ -133,17 +134,19 @@ export const formConfig: Array<FieldType> = [
   {
     label: '字体颜色',
     name: 'fontColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '背景颜色',
     name: 'tagBgColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {

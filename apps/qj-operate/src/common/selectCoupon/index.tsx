@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Button, FormInstance } from 'antd';
+import { useState } from 'react';
+import Button from 'antd/es/button';
+import type { FormInstance } from 'antd/es/form';
 import Modal from 'antd/es/modal/Modal';
 import { Wrapper } from '@brushes/webmaterial';
 import { CouponJsx } from '@/common/selectCoupon/coupon';

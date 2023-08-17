@@ -1,6 +1,7 @@
-import React, { memo, useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { queryGoodsClassTree } from 'qj-b2c-api';
-import { Tree, Spin } from 'antd';
+import Tree from 'antd/es/tree';
+import Spin from 'antd/es/spin';
 import { isEmpty } from 'lodash-es';
 import { classifyLink, goodsListLink } from '../config/routerPath';
 

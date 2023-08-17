@@ -1,17 +1,20 @@
-import { Button, FormInstance, Space, message } from 'antd';
+import type { FormInstance } from 'antd/es/form';
+import Button from 'antd/es/button';
+import Space from 'antd/es/space';
+import message from 'antd/es/message';
 import { PictureJsx } from './picture';
-import React, { useRef } from 'react';
+import { useRef, FC } from 'react';
 import { useLowCodeGraph } from 'qj-shared-library';
 import { NamePath } from '@brushes/form';
 import { isEmpty } from 'lodash-es';
-// const { get, isEmpty} = _;
+
 interface Props {
   name: NamePath;
   handleCancel: () => void;
   form: FormInstance;
 }
 
-const TabsPic: React.FC<Props> = ({ handleCancel, name, form, ...props }) => {
+const TabsPic: FC<Props> = ({ handleCancel, name, form, ...props }) => {
   const monitorInstance = useLowCodeGraph();
   const defaultValue = form.getFieldValue(name);
   const ref = useRef<Array<string | number>>([]);

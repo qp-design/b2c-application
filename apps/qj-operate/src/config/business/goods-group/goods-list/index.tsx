@@ -1,5 +1,4 @@
-import React from 'react';
-import { SelectColor, SwiperComponent } from '@/common';
+import { SwiperComponent } from '@/common';
 import { formConfigType } from '@/type/formConfig';
 import { SelectAction } from '@/common/selectAction';
 
@@ -32,9 +31,10 @@ const sectionOne: formConfigType = {
     {
       label: '选中文字颜色',
       name: 'activeColor',
-      type: 'slot',
+      type: 'color',
       extraProps: {
-        render: SelectColor
+        allowClear: true,
+        showText: true
       }
     },
     {

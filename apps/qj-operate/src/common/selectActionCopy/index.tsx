@@ -1,5 +1,8 @@
-import React, { type FC } from 'react';
-import { Button, FormInstance, Select, Form } from 'antd';
+import { type FC } from 'react';
+import Button from 'antd/es/button';
+import type { FormInstance } from 'antd/es/form';
+import Form from 'antd/es/form';
+import Select from 'antd/es/select';
 import { PlusOutlined } from '@ant-design/icons';
 import Modal from 'antd/es/modal/Modal';
 import { useSelectAction } from './hooks';

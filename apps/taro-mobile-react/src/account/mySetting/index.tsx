@@ -1,5 +1,5 @@
 import { View } from '@tarojs/components';
-import HeaderJsx from "@/components/header";
+import { HeaderJsx } from "@brushes/taro-component";
 import {IconMobile} from '@brushes/simulate-component';
 import Taro from '@tarojs/taro';
 import {miniLogout} from 'qj-b2c-api';

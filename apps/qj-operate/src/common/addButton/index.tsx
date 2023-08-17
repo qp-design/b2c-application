@@ -1,5 +1,6 @@
-import React, { type FC } from 'react';
-import { Button, type ButtonProps } from 'antd';
+import { type FC } from 'react';
+import Button from 'antd/es/button';
+import type { ButtonProps } from 'antd/es/button';
 import { PlusOutlined } from '@ant-design/icons';
 
 interface AddButtonProps {

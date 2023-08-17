@@ -1,9 +1,12 @@
-import { Button, FormInstance, Space, Table } from 'antd';
+import Button from 'antd/es/button';
+import type { FormInstance } from 'antd/es/form';
+import Space from 'antd/es/space';
+import Table from 'antd/es/table';
 import { useCoupon } from '@brushes/webstore';
 import { SpacingJsx } from '@/common';
 import { SearchMaterials } from '@brushes/webmaterial';
 import { defaultFormConfig, defaultColumns } from './config';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { TableRowSelection } from 'antd/es/table/interface';
 import { useLowCodeGraph } from 'qj-shared-library';
 

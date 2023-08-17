@@ -1,4 +1,4 @@
-import {BaseWrapCommon} from "@/components/baseWrapCommon";
+import {BaseWrapCommon} from "@brushes/taro-component";
 
 const Index = () => {
   return (

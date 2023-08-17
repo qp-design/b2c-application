@@ -1,4 +1,4 @@
-import { Spin } from 'antd';
+import Spin from 'antd/es/spin';
 import { usePicture } from '@brushes/webstore';
 import { DynamicForm, NamePath } from '@brushes/form';
 import { defaultFormConfig } from '../config';

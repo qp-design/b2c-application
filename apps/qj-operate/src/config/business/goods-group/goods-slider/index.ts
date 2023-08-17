@@ -1,5 +1,5 @@
 import { FieldType } from '@brushes/form';
-import { SelectColor, SelectGoods, SelectPicture, SwiperComponent } from '@/common';
+import { SelectGoods } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
     label: '选择商品',
@@ -81,17 +81,19 @@ export const formConfig: Array<FieldType> = [
   {
     label: '组件边框颜色',
     name: 'wrapBorderColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '组件背景颜色',
     name: 'wrapBgColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
@@ -131,9 +133,10 @@ export const formConfig: Array<FieldType> = [
   {
     label: '商品底色',
     name: 'goodsBgColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {

@@ -1,7 +1,5 @@
 import { FieldType } from '@brushes/form';
-import React from 'react';
-import { SelectColor, SelectLink } from '@/common';
-import AddButton from '@/common/addButton';
+import { SelectLink } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
     label: '倒角',
@@ -24,25 +22,28 @@ export const formConfig: Array<FieldType> = [
   {
     label: '左侧按钮字体颜色',
     name: 'leftColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '左侧按钮背景颜色',
     name: 'leftButtonColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '左侧按钮边框颜色',
     name: 'leftBorderColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
@@ -83,25 +84,28 @@ export const formConfig: Array<FieldType> = [
   {
     label: '右侧按钮字体颜色',
     name: 'rightColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '右侧按钮背景颜色',
     name: 'rightButtonColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {
     label: '右侧按钮边框颜色',
     name: 'rightBorderColor',
-    type: 'slot',
+    type: 'color',
     extraProps: {
-      render: SelectColor
+      allowClear: true,
+      showText: true
     }
   },
   {

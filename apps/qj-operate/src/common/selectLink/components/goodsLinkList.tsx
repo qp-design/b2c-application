@@ -1,5 +1,8 @@
 import React from 'react';
-import { Table, Form, Input, Button } from 'antd';
+import Table from 'antd/es/table';
+import Form from 'antd/es/form';
+import Input from 'antd/es/input';
+import Button from 'antd/es/button';
 import { useGoodsLink } from '@/common/selectLink/hooks';
 
 const GoodsLinkList = ({ handleChoose, charArr }: any) => {

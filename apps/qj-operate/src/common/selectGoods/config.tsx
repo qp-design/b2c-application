@@ -1,4 +1,3 @@
-import React from 'react';
 import { FieldType } from '@brushes/form';
 import { ColumnsType } from 'antd/es/table';
 

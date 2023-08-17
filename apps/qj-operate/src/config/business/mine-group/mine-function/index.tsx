@@ -1,5 +1,4 @@
 import { FieldType } from '@brushes/form';
-import React from 'react';
 import { SortList } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
