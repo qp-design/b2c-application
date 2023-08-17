@@ -1,4 +1,4 @@
-import {BaseWrapCommon} from "../../../../../packages/taro-component/src/components/baseWrapCommon";
+import {BaseWrapCommon} from "@brushes/taro-component";
 // 支付结果页
 const Index = () => {
   return (
