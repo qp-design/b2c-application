@@ -1,7 +1,6 @@
-import { type FC } from 'react';
-import Button from 'antd/es/button';
-import type { ButtonProps } from 'antd/es/button';
-import { PlusOutlined } from '@ant-design/icons';
+import React, { type FC } from 'react';
+import { Button, type ButtonProps } from 'antd';
+import { QjIcon } from '@brushes/share-resource';
 
 interface AddButtonProps {
   add: ButtonProps['onClick'];
@@ -13,7 +12,7 @@ const AddButton: FC<AddButtonProps> = ({ add, title = '添加链接', type = 'pr
     <Button
       type={type}
       block
-      icon={<PlusOutlined />}
+      icon={<QjIcon style={{ fontSize: 14, fontWeight: 500, color: '#aaa' }} name={'icon-zengjia'} />}
       style={{
         marginBottom: 24
       }}

@@ -1,5 +1,4 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-
 const path = require('path');
 const {dependencies: deps} = require("../package.json");
 
@@ -9,10 +8,10 @@ module.exports = {
   output: {
     chunkFilename: "[name].[contenthash:8].js",
   },
-  // externals: {
-  //   'antd': 'antd',
-  //   'lodash-es': 'lodash-es'
-  // },
+  externals: {
+    'lodash-es': '_',
+    'antd/es': 'antd/es'
+  },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
     alias: {
@@ -41,8 +40,8 @@ module.exports = {
       },
     ],
   },
-
   plugins: [
+
     new ModuleFederationPlugin({
       name: 'qj_operate',
       filename: 'remoteEntry.js',

@@ -1,14 +1,12 @@
-import { useEffect, useState } from 'react';
-import Collapse from 'antd/es/collapse';
+import React, { useEffect, useState } from 'react';
+import {} from 'antd';
 import { NodeGraph } from 'qj-shared-library';
 import { Pages } from '@/config';
 import IndexReact from './index-react';
 import { isEmpty } from 'lodash-es';
 import { useImmutableCallback } from '@brushes/form';
 import IndexPage from './index-page';
-import type { CollapseProps } from 'antd/es/collapse';
-
-const { Panel } = Collapse;
+import { CollapseProps, Collapse } from 'antd';
 
 const PageIndex = ({
   defaultValue,

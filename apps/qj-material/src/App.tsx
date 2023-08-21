@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import './index.scss';
-import Tabs from 'antd/es/tabs';
+import {Tabs} from 'antd';
 import { QjIcon } from '@brushes/share-resource';
 import TemplateC from './components/templateC';
 import ModuleC from './components/moduleC';

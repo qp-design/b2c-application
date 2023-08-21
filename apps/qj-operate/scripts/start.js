@@ -1,7 +1,7 @@
 const common = require('./common');
 const webpack = require('webpack');
-const { merge } = require('webpack-merge');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { merge } = require('webpack-merge');
 
 const defaultConfig = {
 

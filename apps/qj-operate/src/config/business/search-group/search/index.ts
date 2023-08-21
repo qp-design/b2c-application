@@ -1,6 +1,5 @@
 import { FieldType } from '@brushes/form';
 import { SwiperComponent } from '@/common';
-import type { Color } from 'antd/es/color-picker';
 export const formConfig: Array<FieldType> = [
   {
     label: '搜索',
@@ -160,24 +159,3 @@ export const formConfig: Array<FieldType> = [
 
 export const title = '搜索配置';
 export const info = '设置搜索1的样式。';
-
-export const transformField = [
-  {
-    from: 'fontColor', // 老的key
-    format: (value: Color) => {
-      return {
-        key: 'fontColor', // 新增的key
-        value: value.toHexString()
-      };
-    }
-  },
-  {
-    from: 'backgroundColor', // 老的key
-    format: (value: Color) => {
-      return {
-        key: 'backgroundColor', // 新增的key
-        value: value.toHexString()
-      };
-    }
-  }
-];

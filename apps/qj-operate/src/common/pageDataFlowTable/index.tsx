@@ -1,9 +1,6 @@
-import type { FC } from 'react';
+import React, { type FC } from 'react';
 import { ColumnsType } from 'antd/es/table';
-import Table from 'antd/es/table';
-import Button from 'antd/es/button';
-import type { FormInstance } from 'antd/es/form';
-import type { TableProps } from 'antd/es/table';
+import { Table, Button, FormInstance, TableProps } from 'antd';
 import { EditableCell } from './components';
 import { usePageDataFlowTable, ETableType } from './hooks';
 import './index.scss';

@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { dynamicFormFields, NamePath } from '@brushes/form';
-import type { FormInstance } from 'antd/es/form';
+import { FormInstance } from 'antd';
 import { useLowCodeGraph } from 'qj-shared-library';
 import { maxBy } from 'lodash-es';
 

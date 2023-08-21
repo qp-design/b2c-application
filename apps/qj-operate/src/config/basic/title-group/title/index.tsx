@@ -1,4 +1,6 @@
 import { FieldType } from '@brushes/form';
+import React from 'react';
+
 export const formConfig: Array<FieldType> = [
   {
     label: '标题内容',
@@ -234,7 +236,7 @@ export const formConfig: Array<FieldType> = [
 //       name: "color",
 //       type: "slot",
 //       extraProps: {
-//         render: SelectColor,
+//         render:
 //       },
 //     },
 //     {
@@ -242,7 +244,7 @@ export const formConfig: Array<FieldType> = [
 //       name: "backgroundColor",
 //       type: "slot",
 //       extraProps: {
-//         render: SelectColor,
+//         render:
 //       },
 //     },
 //   ]

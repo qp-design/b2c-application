@@ -9,9 +9,13 @@ module.exports = {
   output: {
     chunkFilename: "[name].[contenthash:8].js",
   },
-  externals: {
-    antd: 'antd',
-  },
+  // externalsType: 'script',
+  // externals: {
+  //   'antd': [
+  //     'https://cdn.jsdelivr.net/npm/antd@5.8.3/dist/antd.min.js',
+  //     'antd'
+  //   ],
+  // },
   cache: {
     type: 'filesystem',
     idleTimeout: 10,
@@ -51,6 +55,7 @@ module.exports = {
   },
 
   plugins: [
+
     // new CompressionPlugin(),
     // new CssMinimizerWebpackPlugin(),
     new ModuleFederationPlugin({
@@ -73,10 +78,10 @@ module.exports = {
           import: "@brushes/qj-shared-library",
           requiredVersion: deps["@brushes/qj-shared-library"],
         },
-        // "antd": {
-        //   singleton: true,
-        //   requiredVersion: deps.antd,
-        // },
+        "antd": {
+          singleton: true,
+          requiredVersion: deps.antd,
+        },
         "react": {
           singleton: true,
           requiredVersion: deps.react,

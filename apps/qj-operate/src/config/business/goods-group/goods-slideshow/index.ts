@@ -1,5 +1,5 @@
 import { FieldType } from '@brushes/form';
-import { SelectGoods, SelectPicture } from '@/common';
+import { SelectGoods, SelectPicture, SwiperComponent } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
     label: '选择商品',

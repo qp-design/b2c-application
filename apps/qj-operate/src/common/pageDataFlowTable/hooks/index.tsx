@@ -1,7 +1,6 @@
-import Button from 'antd/es/button';
-import type { FormInstance } from 'antd/es/form';
+import { Button, FormInstance } from 'antd';
 import { ColumnsType } from 'antd/es/table';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { PageArgsDataType, PageStoreDataType } from '@/common/pageDataFlowTable/config';
 export const enum ETableType {
   PAGE_ARGS,

@@ -1,7 +1,6 @@
-import Button from 'antd/es/button';
-import type { FormInstance } from 'antd/es/form';
-import { useEffect, useMemo, useRef, useState, FC } from 'react';
-import Modal from 'antd/es/modal/Modal';
+import { Button, FormInstance } from 'antd';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { Modal } from 'antd';
 import { LinkContent } from './linkContent';
 import { goodsDetailLink, articleDetail } from './config/routerPath';
 import { useLowCodeGraph } from 'qj-shared-library';
@@ -23,7 +22,7 @@ export interface resultDataType {
   params?: Object;
 }
 
-export const SelectLink: FC<LinkType> = ({ callback = noop, form, type = '', name, parentName = [] }) => {
+export const SelectLink: React.FC<LinkType> = ({ callback = noop, form, type = '', name, parentName = [] }) => {
   const computedName = useMemo(() => parentName.concat(name), [parentName, name]);
 
   const [modalShow, setModalShow] = useState(false);

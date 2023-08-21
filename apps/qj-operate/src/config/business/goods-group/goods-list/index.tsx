@@ -1,3 +1,4 @@
+import React from 'react';
 import { SwiperComponent } from '@/common';
 import { formConfigType } from '@/type/formConfig';
 import { SelectAction } from '@/common/selectAction';

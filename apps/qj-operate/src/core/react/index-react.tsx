@@ -1,6 +1,6 @@
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { dynamicFormFields } from '@brushes/form';
-import Form from 'antd/es/form';
+import { Form } from 'antd';
 import { NodeGraph } from 'qj-shared-library';
 import { useMaterialsOperate } from '@/hooks';
 import { formConfigType } from '@/type/formConfig';

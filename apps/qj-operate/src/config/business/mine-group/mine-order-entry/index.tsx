@@ -1,5 +1,6 @@
 import { FieldType } from '@brushes/form';
-import { SortList } from '@/common';
+import React from 'react';
+import { SelectGoods, SortList } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
     label: '标题',

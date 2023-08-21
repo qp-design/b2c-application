@@ -1,5 +1,5 @@
-import { memo, useMemo } from 'react';
-import Tabs from 'antd/es/tabs';
+import React, { memo, useMemo } from 'react';
+import { Tabs } from 'antd';
 import BaseLink from './components/baseLink';
 import GoodsClassifyLink from './components/goodsClassifyLink';
 import GoodsList from './components/goodsList';

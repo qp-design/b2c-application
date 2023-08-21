@@ -3,7 +3,7 @@ import { pagesModelTagValue } from '@/data/localModal';
 import { useLowCodeGraph } from 'qj-shared-library';
 import { updatePfsModelTagValueDataDomain } from 'qj-b2c-api';
 import { NamePath } from '@brushes/form';
-import type { FormInstance } from 'antd/es/form';
+import { FormInstance } from 'antd';
 import { useEffect } from 'react';
 import { isEmpty } from 'lodash-es';
 import { queryModalData } from '@/hooks';

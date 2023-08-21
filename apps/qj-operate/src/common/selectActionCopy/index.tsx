@@ -1,10 +1,6 @@
-import { type FC } from 'react';
-import Button from 'antd/es/button';
-import type { FormInstance } from 'antd/es/form';
-import Form from 'antd/es/form';
-import Select from 'antd/es/select';
-import { PlusOutlined } from '@ant-design/icons';
-import Modal from 'antd/es/modal/Modal';
+import React, { type FC } from 'react';
+import { Button, FormInstance, Select, Form, Modal } from 'antd';
+import { QjIcon } from '@brushes/share-resource';
 import { useSelectAction } from './hooks';
 import { SelectLink } from '..';
 interface SelectActionProps {
@@ -15,7 +11,12 @@ export const SelectAction: FC<SelectActionProps> = ({ form, name }) => {
   const { isShow, onOpen, onClose } = useSelectAction();
   return (
     <>
-      <Button type={'dashed'} block icon={<PlusOutlined />} onClick={onOpen}>
+      <Button
+        type={'dashed'}
+        block
+        icon={<QjIcon style={{ fontSize: 14, fontWeight: 500, color: '#aaa' }} name={'icon-zengjia'} />}
+        onClick={onOpen}
+      >
         添加
       </Button>
       <Modal

@@ -1,8 +1,8 @@
-import { useState, FC } from 'react';
-import Slider from 'antd/es/slider';
+import React, { useState } from 'react';
+import { Slider } from 'antd';
 import { useLowCodeGraph } from 'qj-shared-library';
 
-export const SwiperComponent: FC = ({ form, value, name }: any) => {
+export const SwiperComponent: React.FC = ({ form, value, name }: any) => {
   const [val, setVal] = useState(value);
   const monitorInstance = useLowCodeGraph();
 

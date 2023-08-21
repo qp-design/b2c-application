@@ -1,5 +1,5 @@
 import { isEmpty } from 'lodash-es';
-import message from 'antd/es/message';
+import { message } from 'antd';
 import { DataType, dataTypeEum } from '../store/fastContext';
 import { useFastStore } from '../store';
 

@@ -1,7 +1,7 @@
 //@ts-nocheck
 import React from 'react';
 import { useArticleDetail } from '@/common/selectLink/hooks';
-import Table from 'antd/es/table';
+import { Table } from 'antd';
 
 const ArticleDetail = ({ handleChoose, charArr }: any) => {
   const { list, total, loading, onChange, columns } = useArticleDetail({ handleChoose });

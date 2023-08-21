@@ -1,4 +1,5 @@
 export * from './selectGoods';
+// export * from './selectPicture';
 export * from './selectPictureOrVideo';
 export * from './selectData';
 export * from './selectCube';

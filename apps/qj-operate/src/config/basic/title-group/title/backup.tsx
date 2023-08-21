@@ -1,5 +1,5 @@
 import { FieldType } from '@brushes/form';
-
+import React from 'react';
 import { formConfigType } from '@/type/formConfig';
 
 const sectionOne: formConfigType = {

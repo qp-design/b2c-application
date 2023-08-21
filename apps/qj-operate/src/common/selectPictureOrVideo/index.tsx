@@ -1,8 +1,6 @@
-import { useState, useMemo } from 'react';
-import type { FormInstance } from 'antd/es/form';
-import Image from 'antd/es/image';
-import Modal from 'antd/es/modal/Modal';
-import { Wrapper } from '@brushes/webmaterial';
+import React, { useState, useMemo } from 'react';
+import { FormInstance, Image, Modal } from 'antd';
+import { Wrapper } from '../wrapper';
 import { QjIcon } from '@brushes/share-resource';
 import { NamePath } from '@brushes/form';
 import TabsPic from './component';

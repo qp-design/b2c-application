@@ -1,5 +1,5 @@
 //@ts-nocheck
-import Table from 'antd/es/table';
+import { Table } from 'antd';
 import { useDownData } from '@/common/selectData/hooks';
 import { SelectTagComponent } from './SelectTagComponent';
 

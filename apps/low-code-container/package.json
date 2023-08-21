@@ -2,11 +2,12 @@
   "name": "low-code-container",
   "version": "1.0.0",
   "scripts": {
-    "prebuild": "rm -rf build/dist/ && rm -rf dist/ && prettier --write src/ ",
+    "prebuild": "rm -rf build/dist/ && rm -rf dist",
     "build": "webpack --mode production",
     "postbuild": "cp -R ./dist ./build",
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=8888 npx serve",
+    "local": "prettier --write src/",
     "start": "webpack serve --open --mode development --live-reload --hot --no-client-overlay",
     "start:live": "webpack serve --open --mode development --live-reload --hot"
   },
@@ -32,8 +33,7 @@
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
-    "@brushes/qj-shared-library": "^0.0.9",
-    "antd": "^5.8.3",
+    "@brushes/qj-shared-library": "^0.1.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "sass-loader": "^13.2.0"

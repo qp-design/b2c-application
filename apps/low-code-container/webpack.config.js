@@ -54,10 +54,6 @@ module.exports = {
           import: "@brushes/qj-shared-library",
           requiredVersion: deps['@brushes/qj-shared-library'],
         },
-        "antd": {
-          singleton: true,
-          requiredVersion: deps.antd,
-        },
         react: {
           singleton: true,
           requiredVersion: deps.react,

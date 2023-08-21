@@ -1,6 +1,5 @@
 import React from 'react';
-import Input from 'antd/es/input';
-import Form from 'antd/es/form';
+import { Input, Form } from 'antd';
 import './index.scss';
 const FormItem = Form.Item;
 

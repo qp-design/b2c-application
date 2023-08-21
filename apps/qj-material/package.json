@@ -2,10 +2,11 @@
   "name": "qj-material",
   "version": "1.0.0",
   "scripts": {
-    "prebuild": "rm -rf build/dist/ && rm -rf dist/ && prettier --write src/ ",
+    "prebuild": "rm -rf build/dist/ && rm -rf dist/",
     "build": "webpack --mode production --config ./scripts/build.js",
     "postbuild": "cp -R ./dist ./build",
     "build:dev": "webpack --mode development --config ./scripts/start.js",
+    "local": "prettier --write src/",
     "start": "webpack serve --mode development --config ./scripts/start.js --live-reload --hot --no-client-overlay",
     "start:live": "webpack serve --mode development --config ./scripts/start.js --live-reload --hot --no-client-overlay"
   },
@@ -39,9 +40,9 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@brushes/qj-shared-library": "^0.0.9",
-    "@brushes/share-resource": "^1.0.4",
-    "antd": "^5.0.2",
+    "@brushes/qj-shared-library": "^0.1.2",
+    "@brushes/share-resource": "^1.1.2",
+    "antd": "^5.8.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "s-material-react": "*"

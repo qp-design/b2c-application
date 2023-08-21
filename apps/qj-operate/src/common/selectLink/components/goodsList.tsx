@@ -1,6 +1,5 @@
-import { useRef } from 'react';
-import Button from 'antd/es/button';
-import List from 'antd/es/list';
+import React, { useRef } from 'react';
+import { Button, List } from 'antd';
 import { goodsListLink } from '../config/routerPath';
 
 const GoodsList = ({ handleChoose, result }: any) => {

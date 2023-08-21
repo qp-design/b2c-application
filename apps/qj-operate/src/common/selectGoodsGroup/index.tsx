@@ -1,10 +1,11 @@
-import { FC } from 'react';
+import React, { useEffect } from 'react';
+import { Form } from 'antd';
 import { dynamicFormFields } from '@brushes/form';
 
 import './index.scss';
 import { SelectGoods } from '../selectGoods';
 
-export const SelectGoodsGroup: FC = ({ form, name, parentName = [] }: any) => {
+export const SelectGoodsGroup: React.FC = ({ form, name, parentName = [] }: any) => {
   console.log(name);
   const [ind] = name;
   return (

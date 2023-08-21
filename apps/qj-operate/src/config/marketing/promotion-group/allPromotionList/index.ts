@@ -1,4 +1,5 @@
 import { FieldType } from '@brushes/form';
+import { SelectCoupon } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
     label: '选中颜色',

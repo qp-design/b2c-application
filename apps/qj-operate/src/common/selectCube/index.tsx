@@ -1,3 +1,4 @@
+import React from 'react';
 import { SelectPicture } from '@/common';
 import { SelectLink } from '@/common';
 import SelectInfo from '../selectInfo';

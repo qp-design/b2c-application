@@ -1,4 +1,5 @@
 import { FieldType } from '@brushes/form';
+import React from 'react';
 export const formConfig: Array<FieldType> = [
   {
     label: '头像样式',

@@ -1,6 +1,6 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 import { dynamicFormFields, useImmutableCallback } from '@brushes/form';
-import Form from 'antd/es/form';
+import { Form } from 'antd';
 import { useLowCodeGraph } from 'qj-shared-library';
 import { Pages } from '@/config';
 

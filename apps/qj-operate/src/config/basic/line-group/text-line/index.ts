@@ -1,4 +1,6 @@
 import { FieldType } from '@brushes/form';
+import React from 'react';
+import { SwiperComponent } from '@/common';
 export const formConfig: Array<FieldType> = [
   {
     label: '背景色',

@@ -1,9 +1,6 @@
-import { type FC, useMemo } from 'react';
-import Button from 'antd/es/button';
-import Descriptions from 'antd/es/descriptions';
-import type { FormInstance } from 'antd/es/form';
-import { PlusOutlined } from '@ant-design/icons';
-import Modal from 'antd/es/modal/Modal';
+import React, { type FC, useMemo } from 'react';
+import { Button, Descriptions, FormInstance, Modal } from 'antd';
+import { QjIcon } from '@brushes/share-resource';
 import { ActionContextProvider, useDataInit, useSelectAction, useSubmit } from './hooks';
 import { DynamicForm } from '@brushes/form';
 import { formConfig } from '@/common/selectAction/config';
@@ -42,7 +39,10 @@ const DataInfo = ({ menuOpcode, ...rest }: { menuOpcode: string; [v: string]: an
   return (
     <div onClick={onOpen}>
       {!menuOpcode ? (
-        <Button type={'dashed'} icon={<PlusOutlined />}>
+        <Button
+          type={'dashed'}
+          icon={<QjIcon style={{ fontSize: 14, fontWeight: 500, color: '#aaa' }} name={'icon-zengjia'} />}
+        >
           添加
         </Button>
       ) : (

@@ -1,6 +1,5 @@
 //@ts-nocheck
-import Tabs from 'antd/es/tabs';
-import type { TabsProps } from 'antd/es/tabs';
+import { Tabs, TabsProps } from 'antd';
 import { DynamicForm, FieldType } from '@brushes/form';
 import { useUpData } from '../hooks';
 import './index.css';

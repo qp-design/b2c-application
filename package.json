@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "start:web": "turbo run start --filter=low-code-container --filter=qj-material --filter=qj-operate --filter=./packages/*",
+    "start:web": "turbo run start --concurrency 11 --filter=low-code-container --filter=qj-material --filter=qj-operate --filter=./packages/*",
     "stop": "kill-port --port 4001,4002,8888",
     "start:taro": "turbo run start --filter=taro-mobile-react --filter=./packages/*",
     "lint": "turbo run rules",
@@ -10,11 +10,11 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@turbo/gen": "^1.9.7",
-    "eslint": "^7.32.0",
+    "@turbo/gen": "^1.10.12",
+    "eslint": "^8.47.0",
     "eslint-config-custom": "*",
     "kill-port": "^2.0.1",
-    "prettier": "^2.5.1",
+    "prettier": "^3.0.2",
     "turbo": "latest"
   },
   "name": "qj-b2c-application",

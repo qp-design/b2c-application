@@ -1,6 +1,6 @@
 import { DynamicForm, TransformType, FieldType } from '@brushes/form';
-import { uploadImpl } from '@brushes/webstore';
-import { useMemo } from 'react';
+import { uploadImpl } from '@brushes/operate-webstore';
+import React, { useMemo } from 'react';
 import { useFileContext } from '@/common/selectPictureOrVideo/store';
 
 const UploadForm = ({ onSubmit }: { onSubmit: () => void }) => {

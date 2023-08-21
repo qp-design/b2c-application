@@ -1,5 +1,4 @@
 import type { FieldType } from '@brushes/form';
-
 export const formConfig: Array<FieldType> = [
   {
     label: '背景颜色',

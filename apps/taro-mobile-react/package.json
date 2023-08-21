@@ -41,10 +41,12 @@
   "dependencies": {
     "@babel/runtime": "^7.21.0",
     "@brushes/request": "^0.2.1",
+    "@brushes/taro-component": "*",
     "@brushes/taro-hooks": "^0.2.4",
     "@brushes/utils": "latest",
     "@tarojs/components": "3.6.2",
     "@tarojs/helper": "3.6.2",
+    "@tarojs/mini-runner": "^3.6.13",
     "@tarojs/plugin-framework-react": "3.6.2",
     "@tarojs/plugin-html": "3.6.2",
     "@tarojs/plugin-platform-alipay": "3.6.2",
@@ -58,12 +60,11 @@
     "@tarojs/runtime": "3.6.2",
     "@tarojs/shared": "3.6.2",
     "@tarojs/taro": "3.6.2",
-    "qj-mobile-store": "*",
     "qj-b2c-api": "*",
+    "qj-mobile-store": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "s-material-react": "*",
-    "@brushes/taro-component": "*"
+    "s-material-react": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",

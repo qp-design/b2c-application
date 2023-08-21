@@ -1,9 +1,6 @@
-import type { FormInstance } from 'antd/es/form';
-import Button from 'antd/es/button';
-import Modal from 'antd/es/modal';
-import Table from 'antd/es/table';
+import { Button, FormInstance, Modal, Table } from 'antd';
 import { DynamicForm, FieldType, NamePath } from '@brushes/form';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTableDataImpl } from '@/hooks';
 
 // 新增编辑的表单

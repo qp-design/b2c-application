@@ -1,5 +1,6 @@
+import React from 'react';
 import { FieldType } from '@brushes/form';
-import type { ColumnsType } from 'antd/es/table';
+import { ColumnsType } from 'antd/es/table';
 import dayjs from 'dayjs';
 
 export const defaultFormConfig: Array<FieldType> = [

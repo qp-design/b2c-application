@@ -23,7 +23,7 @@ export default {
         speed: 30,
         direction: 'horizontal',
         color: '#ff6010',
-        num: 5,
+        num: 5
       }
     },
     {
