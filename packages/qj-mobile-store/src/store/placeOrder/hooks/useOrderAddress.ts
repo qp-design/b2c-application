@@ -42,8 +42,7 @@ export function useOrderAddress(refreshNum: string, goodsNum: number, skuId: str
         userAddressData.addressInfo = result;
         setAddress(result);
         freightCalculation(result?.provinceCode);
-      } catch (err) {
-      }
+      } catch (err) {}
     })();
   }, [refreshNum]);
 

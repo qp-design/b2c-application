@@ -76,7 +76,7 @@ export const useOrderGood = ({ shoppingGoodsId, goodsNum, skuId }: Partial<typeo
   const payPrice = useMemo(() => {
     const price = amount - disCount + freight;
     return price >= 0 ? price : 0;
-  }, [amount, disCount, freight])
+  }, [amount, disCount, freight]);
 
   const initImpl = async (callback: () => Promise<any>) => {
     try {

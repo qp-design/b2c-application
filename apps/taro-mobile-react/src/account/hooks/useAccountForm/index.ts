@@ -29,7 +29,14 @@ export const useAccountForm = (type?: string) => {
   const [form] = Form.useForm();
   const [submitLock, setSubmitLock] = useState(false);
 
-  const onFinish = async (formVal) => {
+  const onFinish = async (agree, formVal ) => {
+    if(!agree) {
+      Taro.showModal({
+        title: '温馨提示',
+        content: '阅读并同意《用户协议》和《隐私政策》'
+      })
+      return
+    }
     if (submitLock) return;
     switch (type) {
       case 'reg':
@@ -221,6 +228,6 @@ export const useAccountForm = (type?: string) => {
     goRegister,
     goAccountLogin,
     goMobileLogin,
-    goForgetPwd
+    goForgetPwd,
   }
 }

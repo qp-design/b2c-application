@@ -12,7 +12,6 @@ const CommonJsx = ({route, ...rest}: { route : string; [v:string]: any}) => {
     });
   }, [title])
 
-  console.log(15, pageConfig);
   return (
   <FastContextProvider value={initialValue}>
     <HeaderJsx navigationBarTitle={title} />

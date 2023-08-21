@@ -26,13 +26,7 @@ export const PlaceOrderOperate: React.FC<Partial<typeof OrderOerate>> = ({
   shoppingGoodsId
 }) => {
   const { View, Text, WrapLoading } = useComponent();
-  const {
-    payPrice,
-    list,
-    payState,
-    orderStoreInfo,
-    ocContractSettlList
-  } = useOrderGood({
+  const { payPrice, list, payState, orderStoreInfo, ocContractSettlList } = useOrderGood({
     refreshNum,
     goodsNum,
     skuId,

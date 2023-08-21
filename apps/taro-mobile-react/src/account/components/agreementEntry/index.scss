@@ -6,9 +6,29 @@
   z-index: 99;
   color: #B3B3B3;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .link {
     display: inline-block;
     color: #B3A07C;
+  }
+
+  .read {
+    .wx-checkbox-input {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+
+    .wx-checkbox-input.wx-checkbox-input-checked {
+      background-color: #000000;
+    }
+
+    .wx-checkbox-input.wx-checkbox-input-checked::before {
+      color: #ffffff;
+      font-size: 14px;
+    }
   }
 }

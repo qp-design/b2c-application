@@ -4,7 +4,7 @@ import {Form} from 'antd-mobile';
 import {MobileItem, CodeItem, PasswordItem, SubmitBtn, AccountItem, ReadOnlyItem} from "./components";
 import {useAccountForm} from "../../hooks";
 
-export const AccountForm = ({type, btnText, txt, originPhone}: {type: string; btnText: string; txt?: string; originPhone?: string}) => {
+export const AccountForm = ({type, btnText, txt, originPhone, agree}: {agree?:boolean ,type: string; btnText: string; txt?: string; originPhone?: string}) => {
   const {form, onFinish} = useAccountForm(type)
 
   return (
@@ -14,7 +14,7 @@ export const AccountForm = ({type, btnText, txt, originPhone}: {type: string; bt
         footer={
           <SubmitBtn btnText={btnText} />
         }
-        onFinish={onFinish}
+        onFinish={onFinish.bind(null, agree)}
       >
         {
           ['accountLogin'].includes(type) ? <AccountItem /> : null

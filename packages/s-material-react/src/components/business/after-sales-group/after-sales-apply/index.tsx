@@ -83,7 +83,10 @@ export const AfterSalesApply: React.FC<typeof initialAfterSalesApply> = ({
           <Tip />
           <FillIn />
           <SubFillIn />
-          <View className={'submitBtn'} onClick={handleSubmit.bind(null, goodsNum, contractBillcode, refundType)}>
+          <View
+            className={'submitBtn'}
+            onClick={handleSubmit.bind(null, goodsNum, contractBillcode, refundType, goodsPrice)}
+          >
             确定
           </View>
         </MCAfterSalesApply.Provider>
