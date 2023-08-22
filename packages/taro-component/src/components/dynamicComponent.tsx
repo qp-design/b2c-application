@@ -1,19 +1,21 @@
 //@ts-nocheck
 import { get, noop } from 'lodash-es';
-import * as materials from 's-material-react';
 import { Fragment, memo } from 'react';
 import { useDataSource, useDataSourceWithContext } from '@brushes/taro-hooks';
 import { View } from '@tarojs/components';
 import Taro from '@tarojs/taro';
+import { getMaterial } from '@/utils';
 
 // eslint-disable-next-line react/display-name
 const ComponentWithContext = memo(({ component_devil_type, withPageStore, ...rest }: { component_devil_type: string; withPageStore: Map<string, any> }) => {
+  const materials = getMaterial();
   const MaterialsComponent = get(materials, component_devil_type, noop);
   const storeProps = useDataSourceWithContext(withPageStore);
   return <MaterialsComponent {...rest} $_dataSource={storeProps} />;
 });
 
 const ComponentNoContext = memo(({ component_devil_type, withPageStore, ...rest }: { component_devil_type: string }) => {
+  const materials = getMaterial();
   const MaterialsComponent = get(materials, component_devil_type, noop);
   return <MaterialsComponent {...rest} />;
 });

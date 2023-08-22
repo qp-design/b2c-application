@@ -1,12 +1,12 @@
-module.exports = {
+import type { UserConfigExport } from "@tarojs/cli";
+
+export default {
   outputRoot: `unpackage/dist/build/${process.env.TARO_ENV}`,
   env: {
     NODE_ENV: '"production"',
     REACT_APP_BASE_URL: '"https://b2cweapp6dff6fda8bf545fe99c23ae0a0e94730.saas.qjclouds.cn/"',
     REACT_APP_SESSION_KEY: '"saas-token"',
     REACT_APP_APPLICATION: '""',
-  },
-  defineConstants: {
   },
   mini: {},
   h5: {
@@ -22,7 +22,6 @@ module.exports = {
     //    */
     //   chain.plugin('analyzer')
     //     .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [])
-
     //   /**
     //    * 如果 h5 端首屏加载时间过长，可以使用 prerender-spa-plugin 插件预加载首页。
     //    * @docs https://github.com/chrisvfritz/prerender-spa-plugin
@@ -39,4 +38,4 @@ module.exports = {
     //     }))
     // }
   }
-}
+} satisfies UserConfigExport

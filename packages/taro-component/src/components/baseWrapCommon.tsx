@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 import Taro from '@tarojs/taro';
 import { ScrollView } from '@tarojs/components';
 import { CommonJsx } from './index';

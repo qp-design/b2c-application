@@ -14,9 +14,9 @@ const defaultConfig = {
     port: 4001,
   },
   plugins: [
-    new BundleAnalyzerPlugin({
-      analyzerPort: 11111
-    }),
+    // new BundleAnalyzerPlugin({
+    //   analyzerPort: 11111
+    // }),
   ]
 }
 module.exports = () => {

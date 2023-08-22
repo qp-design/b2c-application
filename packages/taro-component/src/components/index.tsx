@@ -1,7 +1,8 @@
+//@ts-nocheck
 import { usePageConfig, FastContextProvider } from '@brushes/taro-hooks';
 import HeaderJsx from './header';
 import DynamicComponent from './dynamicComponent';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Taro from '@tarojs/taro';
 
 export const CommonJsx = ({ route, ...rest }: { route: string; [v: string]: any }) => {
