@@ -1,4 +1,4 @@
-import { Checkbox } from 'antd-mobile';
+import { useComponent } from '@brushes/simulate-component';
 
 export default function CheckboxField({
   label,
@@ -6,5 +6,6 @@ export default function CheckboxField({
 }: {
   label?: string;
 }) {
+  const { Checkbox } = useComponent();
   return <Checkbox {...extraProps}>{label}</Checkbox>;
 }

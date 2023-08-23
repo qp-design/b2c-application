@@ -10,7 +10,7 @@ export default {
     }
   ],
   cache:false,
-  external: ['antd-mobile', 'react', 'lodash-es', 'react/jsx-runtime', '@brushes/simulate-component'],
+  external: ['antd-mobile', '@brushes/utils', 'react', 'lodash-es', 'react/jsx-runtime', '@brushes/simulate-component'],
   plugins: [
     ts({}),
     terser(),

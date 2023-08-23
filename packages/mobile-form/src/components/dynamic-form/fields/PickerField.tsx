@@ -1,19 +1,20 @@
 import { useComponent } from '@brushes/simulate-component';
 import { useMemo } from 'react';
+import { getEnv } from '@brushes/utils';
+
 const PickField = ({
   options = [],
   placeholder = '请选择',
   value = '',
-  onChange = (e: any) => {},
-  name
+  onChange = (e: any) => {}
 }: {
   placeholder?: string;
-  name: string;
   options: Array<{ label: string; value: string }>;
   value?: string;
   onChange: (e: any) => void;
 }) => {
-  const { Picker } = useComponent();
+  const isTaro = getEnv();
+  const { Picker, View } = useComponent();
   const optionName = useMemo(
     () => options.map((item) => item.label),
     [options]
@@ -32,14 +33,20 @@ const PickField = ({
   };
 
   return (
-    <Picker
-      value={value}
-      mode="selector"
-      range={optionName}
-      onChange={changeImpl}
-    >
-      {!value ? placeholder : showName}
-    </Picker>
+    <>
+      {isTaro ? (
+        <Picker
+          value={value}
+          mode="selector"
+          range={optionName}
+          onChange={changeImpl}
+        >
+          {!value ? placeholder : showName}
+        </Picker>
+      ) : (
+        <View>{!value ? placeholder : showName}</View>
+      )}
+    </>
   );
 };
 export default PickField;
