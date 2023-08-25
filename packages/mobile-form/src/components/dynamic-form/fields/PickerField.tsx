@@ -21,7 +21,7 @@ const PickField = ({
   );
 
   const showName = useMemo(() => {
-    const { label = '' } =
+    const { label = '重新选择' } =
       options.find((item: any) => item.value === value) || {};
     return label;
   }, [value, options]);
@@ -35,12 +35,7 @@ const PickField = ({
   return (
     <>
       {isTaro ? (
-        <Picker
-          value={value}
-          mode="selector"
-          range={optionName}
-          onChange={changeImpl}
-        >
+        <Picker mode="selector" range={optionName} onChange={changeImpl}>
           {!value ? placeholder : showName}
         </Picker>
       ) : (

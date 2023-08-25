@@ -1,6 +1,6 @@
 {
   "name": "@brushes/mobile-form",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "'组件库'",
   "main": "dist/index.js",
   "sideEffects": [
