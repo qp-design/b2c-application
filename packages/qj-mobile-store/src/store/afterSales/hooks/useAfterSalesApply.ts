@@ -32,6 +32,15 @@ export const useAfterSalesApply = ({ contractBillcode, skuCode }: useAfterSalesA
     })();
   }, []);
 
+  const fixPrice = (num: number = 0) => {
+    if (num) {
+      return num.toLocaleString('en-Us', {
+        minimumFractionDigits: 2
+      });
+    }
+    return `0`;
+  };
+
   const getGoodsInfo = async () => {
     try {
       const result = await getRefundGoods({
@@ -79,9 +88,9 @@ export const useAfterSalesApply = ({ contractBillcode, skuCode }: useAfterSalesA
     setFillInVal(e.detail.value);
   };
 
-  const handleSubmit = async (goodsNum: number, contractBillcode: string, refundType: string) => {
-    console.log(83, 123123123);
+  const handleSubmit = async (goodsNum: number, contractBillcode: string, refundType: string, goodsPrice: any) => {
     const { contractGoodsCode, goodsCamount, contractGoodsPrice } = goodsInfo;
+    console.log(83, goodsNum, contractGoodsPrice, goodsPrice);
 
     if (!reason) {
       showToast('请填写退款信息', 'none');
@@ -95,11 +104,13 @@ export const useAfterSalesApply = ({ contractBillcode, skuCode }: useAfterSalesA
           contractGoodsCode, //商品单号
           goodsCamount, //商品选购数量
           refundGoodsNum: +goodsNum, //商品退数量
-          refundGoodsAmt: +goodsNum * contractGoodsPrice //商品退金额
+          // refundGoodsAmt: +goodsNum * contractGoodsPrice //商品退金额
+          refundGoodsAmt: fixPrice(goodsPrice / +goodsNum) //计算后的退款总金额再除商品数量
         }
       ],
       contractBillcode: contractBillcode, //订单编号
-      refundMoney: +goodsNum * +contractGoodsPrice, //售后单退款金额
+      // refundMoney: +goodsNum * +contractGoodsPrice, //售后单退款金额
+      refundMoney: goodsPrice,
       refundEx: reason, //售后单退款原因
       refundMeo: fillInVal, //用户填写的退款原因描述
       ocRefundFileDomainList: transformArr(imgGroup), //上传的图片url

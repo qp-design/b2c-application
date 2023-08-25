@@ -3,6 +3,8 @@ import {useEffect, useRef, useState} from "react";
 import Taro from '@tarojs/taro';
 import {get} from 'lodash-es';
 
+
+
 export const useAgreement = (type?:string) => {
   const [agreementData, setAgreementData] = useState('');
   const proappCode = useRef('');
@@ -40,8 +42,10 @@ export const useAgreement = (type?:string) => {
   }
 
 
+
+
   return {
     agreementData,
-    goDetail
+    goDetail,
   }
 }

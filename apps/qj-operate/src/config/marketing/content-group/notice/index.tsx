@@ -9,15 +9,15 @@ export const formConfig: Array<FieldType> = [
     extraProps: {
       options: [
         {
-          value: 40,
+          value: 4,
           label: '快'
         },
         {
-          value: 30,
+          value: 3,
           label: '正常'
         },
         {
-          value: 20,
+          value: 2,
           label: '慢'
         }
       ]
