@@ -35,7 +35,11 @@ const PickField = ({
   return (
     <>
       {isTaro ? (
-        <Picker mode="selector" range={optionName} onChange={changeImpl}>
+        <Picker
+          mode="selector"
+          range={optionName}
+          onChange={changeImpl}
+        >
           {!value ? placeholder : showName}
         </Picker>
       ) : (
