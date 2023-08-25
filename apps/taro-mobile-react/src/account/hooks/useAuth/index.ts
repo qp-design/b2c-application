@@ -34,6 +34,8 @@ export const useAuth = () => {
   }
 
   const getPhone = async (e) => {
+    if(!e.detail.code) return;
+
     Taro.login({
       success: async (res) => {
         const warrantyResult = await warrantyLogin({
