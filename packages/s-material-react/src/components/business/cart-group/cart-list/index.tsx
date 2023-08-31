@@ -1,6 +1,6 @@
 import {useComponent} from '@brushes/simulate-component';
 import {useCartListNext} from 'qj-mobile-store';
-import { type Link, navigator } from 'shared-utils';
+import { type Link, navigatorLink } from '@brushes/shared-utils'
 import { navigatorHandler } from '@brushes/utils';
 import { Dispatch, Fragment, memo, useMemo, useState } from 'react';
 import { fixPrice } from '@/utils';
@@ -158,7 +158,7 @@ const OperateDisTitle = ({disNextMsg, link}: {disNextMsg:string, link: Link}) =>
     if(isEmpty(link)) {
       return null
     } else {
-      return <View style={{color: '#ED4444', textAlign: 'right'}} onClick={() => navigator(link, {})}>去凑单
+      return <View style={{color: '#ED4444', textAlign: 'right'}} onClick={() => navigatorLink(link, {})}>去凑单
         <IconMobile style={{ fontSize: '14px', color: '#888'}} value={'xiangyou1'}/>
       </View>
     }

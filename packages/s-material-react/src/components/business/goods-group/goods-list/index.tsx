@@ -2,7 +2,8 @@
 import React, { memo, useMemo, useState } from 'react';
 import { useComponent } from '@brushes/simulate-component';
 import { Filter } from './components';
-import { type Link, navigator, useGoodsList } from 'qj-mobile-store';
+import { type Link, navigatorLink } from '@brushes/shared-utils'
+import { useGoodsList } from 'qj-mobile-store';
 import { ScrollWrap } from '@/common/scrollWrap';
 import classNames from 'classnames';
 import { fixPrice } from '@/utils';
@@ -77,7 +78,7 @@ const GoodsListJsx: React.FC<FilterType> = ({
               {list.map((item) => {
                 return (
                   <View
-                    onClick={() => navigator(__link__, { skuCode: item.skuCode })}
+                    onClick={() => navigatorLink(__link__, { skuCode: item.skuCode })}
                     className={'listItem'}
                     key={item.skuCode}
                     style={{

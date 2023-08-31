@@ -71,19 +71,4 @@ const configs: formConfigType = {
   ]
 };
 
-
-const sectionThree: formConfigType = {
-  title: '行为流',
-  formConfig: [
-    {
-      label: '',
-      name: ['__link__'],
-      type: 'slot',
-      extraProps: {
-        render: SelectAction
-      }
-    }
-  ]
-};
-
-export const formConfig: Array<formConfigType> = [configs, sectionTwo, sectionThree];
+export const formConfig: Array<formConfigType> = [configs, sectionTwo];
