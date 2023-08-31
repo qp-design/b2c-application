@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import Taro from '@tarojs/taro';
 import { ScrollView } from '@tarojs/components';

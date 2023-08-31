@@ -33,19 +33,15 @@ const PickField = ({
   };
 
   return (
-    <>
+    <View class={'pickWrap'}>
       {isTaro ? (
-        <Picker
-          mode="selector"
-          range={optionName}
-          onChange={changeImpl}
-        >
+        <Picker mode="selector" range={optionName} onChange={changeImpl}>
           {!value ? placeholder : showName}
         </Picker>
       ) : (
         <View>{!value ? placeholder : showName}</View>
       )}
-    </>
+    </View>
   );
 };
 export default PickField;

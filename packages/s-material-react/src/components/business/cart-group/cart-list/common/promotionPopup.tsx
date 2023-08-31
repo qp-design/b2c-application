@@ -1,7 +1,7 @@
 import { ScrollWrap } from '@/common/scrollWrap';
 import { Promotion } from './promotion';
 import { useComponent } from '@brushes/simulate-component';
-import { Dispatch } from 'react';
+import {Dispatch} from 'react';
 
 interface PromotionType {
   setVisible: Dispatch<boolean>;
@@ -18,6 +18,7 @@ export const PromotionPopup: React.FC<PromotionType> = ({
   promotion
 }) => {
   const { Popup, ScrollView, View, SmoothRadio } = useComponent();
+
   return (
     <Popup popupVisible={visible} popupHandler={setVisible}>
       <View className={'goodsDetail-coupon-popup'}>
@@ -25,7 +26,13 @@ export const PromotionPopup: React.FC<PromotionType> = ({
           <ScrollView>
             <SmoothRadio onChange={onChange}>
               {promotion.map((item, index) => {
-                return <Promotion checked={item.promotionCode === promotionCode} {...item} key={index} />;
+                return (
+                  <Promotion
+                    checked={item.promotionCode === promotionCode}
+                    {...item}
+                    key={index}
+                  />
+                );
               })}
             </SmoothRadio>
           </ScrollView>

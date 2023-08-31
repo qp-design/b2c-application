@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import {} from 'antd';
 import { NodeGraph } from 'qj-shared-library';
 import { Pages } from '@/config';
 import IndexReact from './index-react';
@@ -7,7 +6,6 @@ import { isEmpty } from 'lodash-es';
 import { useImmutableCallback } from '@brushes/form';
 import IndexPage from './index-page';
 import { CollapseProps, Collapse } from 'antd';
-
 const PageIndex = ({
   defaultValue,
   pageConfig,

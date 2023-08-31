@@ -10,7 +10,6 @@ module.exports = {
   },
   externals: {
     'lodash-es': '_',
-    'antd/es': 'antd/es'
   },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
@@ -41,7 +40,6 @@ module.exports = {
     ],
   },
   plugins: [
-
     new ModuleFederationPlugin({
       name: 'qj_operate',
       filename: 'remoteEntry.js',

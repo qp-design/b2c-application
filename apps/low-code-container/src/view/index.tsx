@@ -3,12 +3,16 @@ import { useMemo, useRef, useState } from 'react';
 import Root from './root';
 import { Button } from 'antd';
 const Index = () => {
+  const isNeedJump = useMemo(() => {
+    console.log(7, window.location.href.includes('platform=B2B'));
+    return window.location.href.includes('platform=B2B')
+  }, [])
   const [coe, setCoe] = useState(1);
   const port = useMemo(() => {
     const path = window.location.host.includes('lcdev') ? 'lcdev' : 'lc';
     return {
-      url: `http://container.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
-      // url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,
+      // url: `http://container.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
+      url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,
       scope: 'app_container',
       module: './low-code'
     };
@@ -25,13 +29,27 @@ const Index = () => {
     }
   ]);
 
+  const clickImpl = (value: number) => {
+    if(isNeedJump && value === 2) {
+      openIpml()
+    } else {
+      setCoe(value);
+    }
+  }
+
+  const openIpml = () => {
+    window.open(`${localStorage.getItem('operate') || ''}paas/index/index.html#/shopindex?host=${(
+      localStorage.getItem('operate') || ''
+    ).slice(0, -1)}&token=${localStorage.getItem('operate-info')}`)
+  }
+
   return (
     <div className={'indexWrap'}>
       <div className={'tabWrap'}>
         <Button type="link"></Button>
         <ul>
           {config.current.map((item) => (
-            <li key={item.value} className={item.value === coe ? 'active' : ''} onClick={(e) => setCoe(item.value)}>
+            <li key={item.value} className={item.value === coe ? 'active' : ''} onClick={(e) => clickImpl(item.value)}>
               {item.label}
             </li>
           ))}
@@ -43,7 +61,7 @@ const Index = () => {
         ) : (
           <iframe
             className={`contentO active`}
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
             src={`${localStorage.getItem('operate') || ''}/paas/b2c-bus-pc-saas/index.html#/dashboard?host=${(
               localStorage.getItem('operate') || ''
             ).slice(0, -1)}&token=${localStorage.getItem('operate-info')}`}

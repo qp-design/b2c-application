@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import {memo} from 'react';
 import { useComponent } from '@brushes/simulate-component';
 
 interface PromotionType {
@@ -9,12 +9,14 @@ interface PromotionType {
 
 const PromotionJsx: React.FC<PromotionType> = ({ promotionName, checked, promotionCode }) => {
   const { View, Radio } = useComponent();
-
   return (
     <View className="promotion-item">
       <View className={'content'}>{promotionName}</View>
       <View className={'choose'}>
-        <Radio checked={checked} value={promotionCode}></Radio>
+        <Radio
+          data-code={checked}
+          checked={checked}
+          value={promotionCode}></Radio>
       </View>
     </View>
   );

@@ -25,13 +25,14 @@ const DynamicFormJsx = ({
   footer,
   layout = 'horizontal',
   onSubmit,
+  form: defaultForm,
   fields: defaultFields,
   transformSubmitDataConfig = [],
   otherAction = [],
   ...restFormConfig
 }: FormAddProps) => {
   const [fields, setFormFields] = useState<Array<FieldType>>([]);
-  const [form] = Form.useForm();
+  const form = Form.useForm()[0];
 
   const { loading, onFinish, onFinishFailed } = useFormImpl(
     form,

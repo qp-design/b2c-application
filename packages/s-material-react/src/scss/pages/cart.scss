@@ -1,3 +1,5 @@
+@import '../basic/textLine.scss';
+
 .cart-wrap {
   padding: 0 10px;
 
@@ -15,8 +17,8 @@
     .cart-dis-title {
       margin: 10px;
       padding-bottom: 10px;
-      display: flex;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 40px 100px 1fr;
       border-bottom: 1px #efefef solid;
 
       .tips {
@@ -25,6 +27,18 @@
         font-size: 12px;
         border-radius: 20px;
         padding: 2px 6px;
+      }
+      .title{
+        text-align: left;
+        padding-left: 10px;
+        @include titleLine(1);
+      }
+      &-msg {
+        display: grid;
+        grid-template-columns: 1fr 60px;
+        .dis-msg{
+          @include titleLine(1);
+        }
       }
     }
   }

@@ -1,6 +1,6 @@
-import { FieldType } from '@brushes/form';
 import { formConfigType } from '@/type/formConfig';
 import { SelectData } from '@/common';
+import {SelectAction} from '@/common/selectAction';
 
 export const title = '购物车卡片';
 export const info = '购物车卡片的配置';
@@ -70,7 +70,20 @@ const configs: formConfigType = {
     }
   ]
 };
-export const formConfig: Array<{
-  title: string;
-  formConfig: Array<FieldType>;
-}> = [configs, sectionTwo];
+
+
+const sectionThree: formConfigType = {
+  title: '行为流',
+  formConfig: [
+    {
+      label: '',
+      name: ['__link__'],
+      type: 'slot',
+      extraProps: {
+        render: SelectAction
+      }
+    }
+  ]
+};
+
+export const formConfig: Array<formConfigType> = [configs, sectionTwo, sectionThree];

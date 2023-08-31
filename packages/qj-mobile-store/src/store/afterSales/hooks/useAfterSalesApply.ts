@@ -90,8 +90,6 @@ export const useAfterSalesApply = ({ contractBillcode, skuCode }: useAfterSalesA
 
   const handleSubmit = async (goodsNum: number, contractBillcode: string, refundType: string, goodsPrice: any) => {
     const { contractGoodsCode, goodsCamount, contractGoodsPrice } = goodsInfo;
-    console.log(83, goodsNum, contractGoodsPrice, goodsPrice);
-
     if (!reason) {
       showToast('请填写退款信息', 'none');
       return;

@@ -38,6 +38,7 @@ export default {
       name: '购物车卡片',
       icon: 'icon-a-1',
       props: {
+        // __link__: { target: { value: 'allPromotionList' } },
         dataSource: {
           pageStore: {
             select: [],

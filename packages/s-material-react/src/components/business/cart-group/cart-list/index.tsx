@@ -1,10 +1,12 @@
-import { useComponent } from '@brushes/simulate-component';
-import { useCartListNext } from 'qj-mobile-store';
+import {useComponent} from '@brushes/simulate-component';
+import {useCartListNext} from 'qj-mobile-store';
+import { type Link, navigator } from 'shared-utils';
 import { navigatorHandler } from '@brushes/utils';
 import { Dispatch, Fragment, memo, useMemo, useState } from 'react';
 import { fixPrice } from '@/utils';
 import { PromotionPopup } from './common/promotionPopup';
 import { NoData } from '@/common/noData';
+import { isEmpty } from 'lodash-es';
 
 interface CardItemType {
   goodsName: string;
@@ -91,19 +93,29 @@ const PromotionItem = ({
     updatePm(shoppingGoodsId, e.detail.value);
   };
 
+  const couponSelectImpl = (e: any) => {
+    const flag = e.target.dataset.code;
+    if(flag) {
+      setVisible(false);
+      updatePm(shoppingGoodsId, '-');
+    }
+  }
+
   return (
     <>
       <View className={'cart-promote-active'} onClick={() => setVisible(true)}>
-        {promotName}
+        <View>{promotName}</View>
         <View>修改</View>
       </View>
-      <PromotionPopup
-        promotionCode={promotionCode}
-        onChange={onChange}
-        promotion={promotion || []}
-        visible={visible}
-        setVisible={setVisible}
-      />
+      <View onClick={couponSelectImpl}>
+        <PromotionPopup
+          promotionCode={promotionCode}
+          onChange={onChange}
+          promotion={promotion || []}
+          visible={visible}
+          setVisible={setVisible}
+        />
+      </View>
     </>
   );
 };
@@ -140,21 +152,44 @@ const CardItems = ({ shoppingGoodsList = [], ...rest }: { shoppingGoodsList: Arr
   );
 };
 
+const OperateDisTitle = ({disNextMsg, link}: {disNextMsg:string, link: Link}) => {
+  const { View, IconMobile } = useComponent();
+  const content = useMemo(() => {
+    if(isEmpty(link)) {
+      return null
+    } else {
+      return <View style={{color: '#ED4444', textAlign: 'right'}} onClick={() => navigator(link, {})}>去凑单
+        <IconMobile style={{ fontSize: '14px', color: '#888'}} value={'xiangyou1'}/>
+      </View>
+    }
+  }, [link]);
+
+  return (
+    <View className={'cart-dis-title-msg'}>
+      <View className={'dis-msg'}>{disNextMsg}</View>
+      { content }
+    </View>
+  )
+}
 const DisTitle = ({
   disNextMsg,
   promotionName,
-  pbName
+  pbName,
+  link
 }: {
   pbName: string;
   disNextMsg: string;
   promotionName: string;
+  link: Link
 }) => {
   const { View, SmoothView } = useComponent();
   return (
     <View className={'cart-dis-title'}>
       <SmoothView className={'tips'}>{pbName}</SmoothView>
-      <SmoothView style={{ padding: '0 10px' }}>{promotionName}</SmoothView>
-      <SmoothView>{disNextMsg}</SmoothView>
+      <SmoothView className={'title'}>{promotionName}</SmoothView>
+      {
+        disNextMsg && <OperateDisTitle link={link} disNextMsg={disNextMsg}/>
+      }
     </View>
   );
 };
@@ -169,6 +204,7 @@ interface CartListType {
     cartSelect: Array<any>;
     cartUpdateCount: number;
   };
+  __link__?: Link
 }
 
 export const CartList: React.FC<CartListType> = ({
@@ -178,6 +214,7 @@ export const CartList: React.FC<CartListType> = ({
     cartSelect: [],
     cartUpdateCount: 0
   },
+  __link__ = {},
   cartItemRadius = '10px'
 }) => {
   const { SmoothCheckbox, WrapLoading, View } = useComponent();
@@ -200,7 +237,7 @@ export const CartList: React.FC<CartListType> = ({
                     <h4>{memberCname}</h4>
                     <View className={'cart-bg'} style={{ borderRadius: cartItemRadius }}>
                       {promotionName ? (
-                        <DisTitle disNextMsg={disNextMsg} promotionName={promotionName} pbName={pbName} />
+                        <DisTitle link={__link__} disNextMsg={disNextMsg} promotionName={promotionName} pbName={pbName} />
                       ) : null}
                       <CardItems
                         promotionCode={promotionCode}

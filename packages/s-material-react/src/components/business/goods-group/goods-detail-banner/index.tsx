@@ -16,7 +16,6 @@ export const GoodsDetailBanner: React.FC<typeof GoodsDetailBannerInitial & { [v:
   const skuCode = useDataPageQuery(rest, 'skuNo');
   const { rsGoodsFileDomainList = [] } = useGoodDetail(skuCode);
   const banner = useBanner(rsGoodsFileDomainList);
-
   return (
     <SliderInner
       selectImg={banner}

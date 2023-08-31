@@ -28,7 +28,8 @@
   "license": "ISC",
   "dependencies": {
     "@brushes/simulate-component": "*",
-    "classnames": "^2.3.2"
+    "classnames": "^2.3.2",
+    "shared-utils": "*"
   },
   "devDependencies": {
     "@brushes/mobile-form": "*",

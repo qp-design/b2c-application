@@ -1,11 +1,28 @@
 import { useComponent } from '@brushes/simulate-component';
+import { ReactNode } from 'react';
 
 export default function CheckboxField({
-  label,
-  ...extraProps
+  value,
+  onChange,
+  initialValue,
+  ...restProps
 }: {
-  label?: string;
+  optionValue: any;
+  initialValue: { value: any; label: ReactNode };
+  value: any;
+  onChange: (e: any) => void;
 }) {
-  const { Checkbox } = useComponent();
-  return <Checkbox {...extraProps}>{label}</Checkbox>;
+  const { SmoothCheckbox, Checkbox } = useComponent();
+  const { value: optionValue, label: labelInfo } = initialValue;
+  const onChangeImpl = (e: any) => {
+    const { value } = e.detail;
+    onChange(value[0]);
+  };
+
+  return (
+    <SmoothCheckbox value={value} onChange={onChangeImpl} {...restProps}>
+      <Checkbox value={optionValue}></Checkbox>
+      {labelInfo}
+    </SmoothCheckbox>
+  );
 }
