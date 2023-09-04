@@ -64,7 +64,7 @@ const SwiperJsx: React.FC<SwiperType> = ({
   const { SmoothSwiper, View } = useComponent();
   const list = useCube(defaultValue, selectImg || []);
 
-  console.log(67, list, selectImg)
+  console.log(67, list, selectImg);
   const domContext = (item: itemType) => {
     return (
       <View

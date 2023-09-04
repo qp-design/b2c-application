@@ -1,14 +1,4 @@
-import { FormInstance, NamePath } from '@brushes/mobile-form';
-import { ProvinceComponent, CityComponent, AreaComponent } from './components';
-const checkMobile = (_: any, value: any) => {
-  return new Promise((resolve, reject) => {
-    if (!/^1[3456789]\d{9}$/.test(value) && value) {
-      reject('请输入正确手机号');
-    } else {
-      resolve('');
-    }
-  });
-};
+import { ProvinceComponent, CityComponent, AreaComponent, checkMobile } from '@brushes/shared-utils';
 
 interface AddressType {
   cityCode: string;
@@ -50,27 +40,30 @@ export const config = [
     type: 'slot',
     name: 'provinceCode',
     extraProps: {
-      render: ({ form, name }: { form: FormInstance; name: NamePath }) => <ProvinceComponent form={form} name={name} />
+      label: '所在省',
+      render: ProvinceComponent
     }
   },
   {
     type: 'slot',
     name: 'cityCode',
     extraProps: {
+      label: '所在市',
       shouldUpdate(currentState: { provinceCode: string }, prevState: { provinceCode: string }) {
         return currentState.provinceCode !== prevState.provinceCode;
       },
-      render: ({ form, name }: { form: FormInstance; name: NamePath }) => <CityComponent form={form} name={name} />
+      render: CityComponent
     }
   },
   {
     type: 'slot',
     name: 'areaCode',
     extraProps: {
+      label: '所在区',
       shouldUpdate(currentState: AddressType, prevState: AddressType) {
         return currentState.cityCode !== prevState.cityCode;
       },
-      render: ({ form, name }: { form: FormInstance; name: NamePath }) => <AreaComponent form={form} name={name} />
+      render: AreaComponent
     }
   },
   {

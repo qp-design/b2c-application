@@ -3,7 +3,7 @@ import { useComponent } from '@brushes/simulate-component';
 import { navigatorHandler } from '@brushes/utils';
 import { useService } from '@/utils';
 import { GoodsDetailPopup } from '../common/goodsDetailPopup';
-import { useGoodSku, popupImplement, useGoodDetail } from 'qj-mobile-store';
+import { useGoodSku, popupImplement, useGoodDetail, useGoodSpecAndPrice } from 'qj-mobile-store';
 import { noop } from 'lodash-es';
 import { memo } from 'react';
 import { useDataPageQuery } from '@/hooks/useDataPageQuery';
@@ -33,9 +33,13 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
     rPartColor,
     rPartBgColor,
     rPartStyle,
-    dispatchPageStore
+    dispatchPageStore,
+    ...rest
   }) => {
     const { Text, View, IconMobile } = useComponent();
+    const skuCode = useDataPageQuery(rest, 'skuNo');
+    const { rsSkuDomainList } = useGoodDetail(skuCode);
+    const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
     const { servicePopup } = useService();
     const { addCardPopup, buyOpenPopup } = popupImplement(dispatchPageStore);
     return (
@@ -77,7 +81,7 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
               borderBottomRightRadius: rPartStyle
             }}
           >
-            立即购买
+            {goodInfo.goodsPro === '10' ? '预售抢购' : '立即购买'}
           </View>
         </View>
       </View>

@@ -1,6 +1,6 @@
-import {useComponent} from '@brushes/simulate-component';
-import {useCartListNext} from 'qj-mobile-store';
-import { type Link, navigatorLink } from '@brushes/shared-utils'
+import { useComponent } from '@brushes/simulate-component';
+import { useCartListNext } from 'qj-mobile-store';
+import { type Link, navigatorLink } from '@brushes/shared-utils';
 import { navigatorHandler } from '@brushes/utils';
 import { Dispatch, Fragment, memo, useMemo, useState } from 'react';
 import { fixPrice } from '@/utils';
@@ -95,11 +95,11 @@ const PromotionItem = ({
 
   const couponSelectImpl = (e: any) => {
     const flag = e.target.dataset.code;
-    if(flag) {
+    if (flag) {
       setVisible(false);
       updatePm(shoppingGoodsId, '-');
     }
-  }
+  };
 
   return (
     <>
@@ -152,25 +152,28 @@ const CardItems = ({ shoppingGoodsList = [], ...rest }: { shoppingGoodsList: Arr
   );
 };
 
-const OperateDisTitle = ({disNextMsg, link}: {disNextMsg:string, link: Link}) => {
+const OperateDisTitle = ({ disNextMsg, link }: { disNextMsg: string; link: Link }) => {
   const { View, IconMobile } = useComponent();
   const content = useMemo(() => {
-    if(isEmpty(link)) {
-      return null
+    if (isEmpty(link)) {
+      return null;
     } else {
-      return <View style={{color: '#ED4444', textAlign: 'right'}} onClick={() => navigatorLink(link, {})}>去凑单
-        <IconMobile style={{ fontSize: '14px', color: '#888'}} value={'xiangyou1'}/>
-      </View>
+      return (
+        <View style={{ color: '#ED4444', textAlign: 'right' }} onClick={() => navigatorLink(link, {})}>
+          去凑单
+          <IconMobile style={{ fontSize: '14px', color: '#888' }} value={'xiangyou1'} />
+        </View>
+      );
     }
   }, [link]);
 
   return (
     <View className={'cart-dis-title-msg'}>
       <View className={'dis-msg'}>{disNextMsg}</View>
-      { content }
+      {content}
     </View>
-  )
-}
+  );
+};
 const DisTitle = ({
   disNextMsg,
   promotionName,
@@ -180,16 +183,14 @@ const DisTitle = ({
   pbName: string;
   disNextMsg: string;
   promotionName: string;
-  link: Link
+  link: Link;
 }) => {
   const { View, SmoothView } = useComponent();
   return (
     <View className={'cart-dis-title'}>
       <SmoothView className={'tips'}>{pbName}</SmoothView>
       <SmoothView className={'title'}>{promotionName}</SmoothView>
-      {
-        disNextMsg && <OperateDisTitle link={link} disNextMsg={disNextMsg}/>
-      }
+      {disNextMsg && <OperateDisTitle link={link} disNextMsg={disNextMsg} />}
     </View>
   );
 };
@@ -204,7 +205,7 @@ interface CartListType {
     cartSelect: Array<any>;
     cartUpdateCount: number;
   };
-  __link__?: Link
+  __link__?: Link;
 }
 
 export const CartList: React.FC<CartListType> = ({
@@ -237,7 +238,12 @@ export const CartList: React.FC<CartListType> = ({
                     <h4>{memberCname}</h4>
                     <View className={'cart-bg'} style={{ borderRadius: cartItemRadius }}>
                       {promotionName ? (
-                        <DisTitle link={__link__} disNextMsg={disNextMsg} promotionName={promotionName} pbName={pbName} />
+                        <DisTitle
+                          link={__link__}
+                          disNextMsg={disNextMsg}
+                          promotionName={promotionName}
+                          pbName={pbName}
+                        />
                       ) : null}
                       <CardItems
                         promotionCode={promotionCode}
