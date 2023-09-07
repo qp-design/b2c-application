@@ -6,6 +6,7 @@ import { isEmpty } from 'lodash-es';
 import { useImmutableCallback } from '@brushes/form';
 import IndexPage from './index-page';
 import { CollapseProps, Collapse } from 'antd';
+
 const PageIndex = ({
   defaultValue,
   pageConfig,

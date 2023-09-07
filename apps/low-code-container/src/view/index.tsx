@@ -2,7 +2,8 @@ import './index.scss';
 import { useMemo, useRef, useState } from 'react';
 import Root from './root';
 import { Button } from 'antd';
-import {FastContextProvider} from '@brushes/shared-utils';
+
+import { Provider } from '@brushes/shared-store';
 const Index = () => {
   const isNeedJump = useMemo(() => {
     return window.location.href.includes('platform=B2B')
@@ -44,7 +45,6 @@ const Index = () => {
   }
 
   return (
-    <FastContextProvider value={{model: '10'}}>
     <div className={'indexWrap'}>
       <div className={'tabWrap'}>
         <Button type="link"></Button>
@@ -71,8 +71,8 @@ const Index = () => {
         )}
       </div>
     </div>
-    </FastContextProvider>
   );
 };
 
-export default Index;
+// eslint-disable-next-line react/display-name
+export default () => <Provider><Index /></Provider>;

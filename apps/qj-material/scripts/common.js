@@ -62,7 +62,6 @@ module.exports = {
       name: 'qj_material',
       filename: 'remoteEntry.js',
       remotes: {
-        // 'app-container': 'app_container@http://localhost:8888/remoteEntry.js',
       },
       exposes: {
         './menu': path('src/App'),

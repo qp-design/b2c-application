@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import {Collapse} from 'antd';
+import {Collapse } from 'antd';
 import { config } from '@/menu';
 import MenuItem from './menuItem';
 import './index.scss';

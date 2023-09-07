@@ -1,5 +1,6 @@
 import {Select} from 'antd';
 import './index.scss';
+import { useStore } from '@brushes/shared-store';
 
 const { Option } = Select;
 const fakeData = [
@@ -37,6 +38,7 @@ const fakeData = [
 const fakeArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const TemplateC = () => {
+  const [ , setModule] = useStore(state => state.module)
   return (
     <div className={'TemplateC'}>
       <Select defaultValue={'all'} style={{ width: '100%' }}>
@@ -49,7 +51,7 @@ const TemplateC = () => {
       <div className={'templateWrap'}>
         {fakeArr.map((item) => {
           return (
-            <div className={'templateItem'} key={item}>
+            <div className={'templateItem'} key={item} onClick={() => setModule({ module: item + ''})}>
               模版-{item}
             </div>
           );
