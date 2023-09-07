@@ -4,7 +4,7 @@ import { queryModalData } from '@/hooks';
 import { FormInstance } from 'antd';
 import { NamePath } from '@brushes/form';
 import { createFastContext } from '@brushes/utils';
-import { useLowCodeGraph } from 'qj-shared-library';
+import { useLowCodeGraph } from '@brushes/qj-shared-library';
 
 export const useSelectAction = () => {
   const [isOpen, setOpen] = useActionStore((state) => state['isOpen']);

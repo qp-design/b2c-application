@@ -10,7 +10,7 @@ export default {
     }
   ],
   cache: false,
-  external: ['qj-b2c-api', '@brushes/utils', 'react/jsx-runtime', 'react', 'lodash-es', '@brushes/optimize'],
+  external: ['qj-b2c-api', '@brushes/utils', 'react/jsx-runtime', 'react', 'lodash-es', '@brushes/optimize', '@brushes/shared-utils'],
   plugins: [
     ts({}),
     terser(),

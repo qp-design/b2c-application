@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Slider } from 'antd';
-import { useLowCodeGraph } from 'qj-shared-library';
+import { useLowCodeGraph } from '@brushes/qj-shared-library';
 
 export const SwiperComponent: React.FC = ({ form, value, name }: any) => {
   const [val, setVal] = useState(value);

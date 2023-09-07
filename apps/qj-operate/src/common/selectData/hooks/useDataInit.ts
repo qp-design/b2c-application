@@ -1,6 +1,6 @@
 import { useFastStore } from '../store';
 import { pagesModelTagValue } from '@/data/localModal';
-import { useLowCodeGraph } from 'qj-shared-library';
+import { useLowCodeGraph } from '@brushes/qj-shared-library';
 import { updatePfsModelTagValueDataDomain } from 'qj-b2c-api';
 import { NamePath } from '@brushes/form';
 import { FormInstance } from 'antd';

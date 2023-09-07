@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useMaterialGraph } from 'qj-shared-library';
+import { useMaterialGraph } from '@brushes/qj-shared-library';
 
 export function useMaterialMenu(type: string, config: Array<any>) {
   const expPageGraph = useMaterialGraph();

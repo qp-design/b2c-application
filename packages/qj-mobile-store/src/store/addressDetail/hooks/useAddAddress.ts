@@ -1,11 +1,10 @@
 import { queryAddressBymerberCode, saveAddress } from 'qj-b2c-api';
 import { getPagesRefreshStore, navigatorBackImpl, updatePagesRefreshStore } from '@brushes/utils';
 import { removeRequestCacheByKey } from '@brushes/optimize';
-import { extendAddressData } from './extendData';
+import { extendAddressData } from '@brushes/shared-utils';
 
 export function useEditAddress() {
   const onSubmit = async (values: any, suc: any, error: any) => {
-    console.log(7, values, extendAddressData);
     try {
       await saveAddress({ ...values, ...extendAddressData });
       removeRequestCacheByKey(queryAddressBymerberCode);

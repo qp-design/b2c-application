@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { dynamicFormFields, NamePath } from '@brushes/form';
 import { FormInstance } from 'antd';
-import { useLowCodeGraph } from 'qj-shared-library';
+import { useLowCodeGraph } from '@brushes/qj-shared-library';
 import { maxBy } from 'lodash-es';
 
 function getImageBounding(list: Array<Object>, computedName: string) {

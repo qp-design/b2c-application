@@ -5,7 +5,7 @@ import { SearchMaterials } from '../search';
 import { defaultFormConfig, defaultColumns } from './config';
 import React, { useRef } from 'react';
 import { TableRowSelection } from 'antd/es/table/interface';
-import { useLowCodeGraph } from 'qj-shared-library';
+import { useLowCodeGraph } from '@brushes/qj-shared-library';
 
 export const CouponJsx = ({
   form,

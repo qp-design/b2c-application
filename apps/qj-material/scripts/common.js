@@ -73,11 +73,6 @@ module.exports = {
           import: "s-material-react",
           requiredVersion: process.env.NODE_ENV === 'development' ? require("../../s-material-react/package.json").version : deps["s-material-react"],
         },
-        "qj-shared-library": {
-          singleton: true,
-          import: "@brushes/qj-shared-library",
-          requiredVersion: deps["@brushes/qj-shared-library"],
-        },
         "antd": {
           singleton: true,
           requiredVersion: deps.antd,

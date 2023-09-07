@@ -41,7 +41,7 @@
     "@brushes/mobile-form": "^0.0.3",
     "@brushes/request": "^0.2.1",
     "@brushes/taro-component": "*",
-    "@brushes/taro-hooks": "^0.2.4",
+    "@brushes/taro-hooks": "^0.2.6",
     "@brushes/utils": "^0.2.3",
     "@tarojs/components": "3.6.6",
     "@tarojs/helper": "3.6.6",

@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { dynamicFormFields, useImmutableCallback } from '@brushes/form';
 import { Form } from 'antd';
-import { useLowCodeGraph } from 'qj-shared-library';
+import { useLowCodeGraph } from '@brushes/qj-shared-library';
 import { Pages } from '@/config';
 
 const IndexPage = memo(({ pageConfig }: { pageConfig: any }) => {

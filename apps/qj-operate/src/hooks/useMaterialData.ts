@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { getPfsModelTagValueDataByTginfo, updatePfsModelTagValueDataDomain } from 'qj-b2c-api';
 import { useImmutableCallback } from '@brushes/utils';
 import { pagesModelTagValue } from '@/data/localModal';
-import { useLowCodeGraph } from 'qj-shared-library';
+import { useLowCodeGraph } from '@brushes/qj-shared-library';
 
 export const queryModalData = async (pageId: string): Promise<any> => {
   try {

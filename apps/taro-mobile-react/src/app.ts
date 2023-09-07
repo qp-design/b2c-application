@@ -3,8 +3,7 @@ import { PropsWithChildren } from 'react'
 import { useLaunch } from '@tarojs/taro'
 import { setTaro, getStorage } from '@brushes/utils';
 import { fly, wxEngine } from "@brushes/request";
-import { initApplication } from '@brushes/taro-hooks';
-import { setMaterial } from '@brushes/taro-component';
+import { initApplication, setMaterial } from '@brushes/taro-hooks';
 import {appendPath, tabBarList} from '@/routerMap';
 import { queryNewTginfoMenuTree, getPfsModelTagValueByTginfo } from 'qj-b2c-api';
 import * as materials from 's-material-react';

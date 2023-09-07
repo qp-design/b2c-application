@@ -5,7 +5,7 @@ import { QjIcon } from '@brushes/share-resource';
 import TemplateC from './components/templateC';
 import ModuleC from './components/moduleC';
 import * as Materials from 's-material-react';
-import { useMaterialGraph, NodeGraph } from 'qj-shared-library';
+import { useMaterialGraph, NodeGraph } from '@brushes/qj-shared-library';
 
 const App = ({ defaultValue, pageConfig }: { defaultValue: NodeGraph; pageConfig: { [v: string]: any } }) => {
   const expGraph = useMaterialGraph();

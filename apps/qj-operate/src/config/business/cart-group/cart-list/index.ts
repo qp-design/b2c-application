@@ -1,6 +1,6 @@
 import { formConfigType } from '@/type/formConfig';
 import { SelectData } from '@/common';
-import {SelectAction} from '@/common/selectAction';
+import { SelectAction } from '@/common/selectAction';
 
 export const title = '购物车卡片';
 export const info = '购物车卡片的配置';

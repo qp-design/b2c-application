@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NodeGraph } from 'qj-shared-library';
+import { NodeGraph } from '@brushes/qj-shared-library';
 import { Pages } from '@/config';
 import IndexReact from './index-react';
 import { isEmpty } from 'lodash-es';

@@ -2,17 +2,17 @@ import './index.scss';
 import { useMemo, useRef, useState } from 'react';
 import Root from './root';
 import { Button } from 'antd';
+import {FastContextProvider} from '@brushes/shared-utils';
 const Index = () => {
   const isNeedJump = useMemo(() => {
-    console.log(7, window.location.href.includes('platform=B2B'));
     return window.location.href.includes('platform=B2B')
   }, [])
   const [coe, setCoe] = useState(1);
   const port = useMemo(() => {
-    const path = window.location.host.includes('lcdev') ? 'lcdev' : 'lc';
+    const path = window.location.host.includes('lcdev') || process.env.NODE_ENV === 'development' ? 'lcdev' : 'lc';
     return {
-      // url: `http://container.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
-      url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,
+      url: `http://container.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
+      // url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,
       scope: 'app_container',
       module: './low-code'
     };
@@ -38,12 +38,13 @@ const Index = () => {
   }
 
   const openIpml = () => {
-    window.open(`${localStorage.getItem('operate') || ''}paas/index/index.html#/shopindex?host=${(
+    window.open(`${localStorage.getItem('operate') || ''}paas/b2b-bus-pc-saas/index.html#/homeYs?host=${(
       localStorage.getItem('operate') || ''
     ).slice(0, -1)}&token=${localStorage.getItem('operate-info')}`)
   }
 
   return (
+    <FastContextProvider value={{model: '10'}}>
     <div className={'indexWrap'}>
       <div className={'tabWrap'}>
         <Button type="link"></Button>
@@ -62,7 +63,7 @@ const Index = () => {
           <iframe
             className={`contentO active`}
             referrerPolicy="no-referrer-when-downgrade"
-            src={`${localStorage.getItem('operate') || ''}/paas/b2c-bus-pc-saas/index.html#/dashboard?host=${(
+            src={`${localStorage.getItem('operate') || ''}paas/b2c-bus-pc-saas/index.html#/dashboard?host=${(
               localStorage.getItem('operate') || ''
             ).slice(0, -1)}&token=${localStorage.getItem('operate-info')}`}
             title={'后台'}
@@ -70,6 +71,7 @@ const Index = () => {
         )}
       </div>
     </div>
+    </FastContextProvider>
   );
 };
 

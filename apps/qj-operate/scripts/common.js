@@ -44,18 +44,13 @@ module.exports = {
       name: 'qj_operate',
       filename: 'remoteEntry.js',
       exposes: {
+        './b2config': './src/config',
         './operate': './src/core',
         './operateData': './src/data',
       },
       shared: {
         ...deps,
         // alias
-        "qj-shared-library": {
-          singleton: true,
-          // 实际引入名字
-          import: "@brushes/qj-shared-library",
-          requiredVersion: deps["@brushes/qj-shared-library"],
-        },
         "antd": {
           singleton: true,
           requiredVersion: deps.antd,

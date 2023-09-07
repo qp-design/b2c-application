@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Modal } from 'antd';
 import { LinkContent } from './linkContent';
 import { goodsDetailLink, articleDetail } from './config/routerPath';
-import { useLowCodeGraph } from 'qj-shared-library';
+import { useLowCodeGraph } from '@brushes/qj-shared-library';
 import { NamePath } from '@brushes/form';
 import { noop } from 'lodash-es';
 import './index.scss';

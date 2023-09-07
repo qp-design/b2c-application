@@ -1,7 +1,7 @@
 import { Button, FormInstance, Space, message } from 'antd';
 import { PictureJsx } from './picture';
 import React, { useRef } from 'react';
-import { useLowCodeGraph } from 'qj-shared-library';
+import { useLowCodeGraph } from '@brushes/qj-shared-library';
 import { NamePath } from '@brushes/form';
 import { isEmpty } from 'lodash-es';
 // const { get, isEmpty} = _;

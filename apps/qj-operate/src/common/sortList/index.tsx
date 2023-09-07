@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { QjIcon } from '@brushes/share-resource';
 import { SelectLink, SelectPicture } from '@/common';
-import { useLowCodeGraph } from 'qj-shared-library';
+import { useLowCodeGraph } from '@brushes/qj-shared-library';
 import { Button } from 'antd';
 
 import './index.scss';

@@ -49,11 +49,6 @@ module.exports = {
       name: "kezi",
       shared: {
         ...deps,
-        "qj-shared-library": {
-          singleton: true,
-          import: "@brushes/qj-shared-library",
-          requiredVersion: deps['@brushes/qj-shared-library'],
-        },
         antd: {
           singleton: true,
           requiredVersion: deps.antd,

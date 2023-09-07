@@ -1,1 +1,1 @@
-export * from '@brushes/qj-shared-library';
+export * from '@brushes/@brushes/qj-shared-library';

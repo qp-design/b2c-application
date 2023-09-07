@@ -33,6 +33,7 @@ const config = {
       force: true,
       enable: false,
       // exclude: [
+      //   '@brushes/taro-component',
       //   '@brushes/taro-hooks',
       //   '@brushes/request',
       //   'antd-mobile',

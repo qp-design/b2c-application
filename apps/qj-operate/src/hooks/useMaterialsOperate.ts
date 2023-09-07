@@ -2,10 +2,11 @@
 import * as config from '../config';
 import { useImmutableCallback } from '@brushes/form';
 import { useEffect, useMemo } from 'react';
-import { useLowCodeGraph, NodeGraph } from 'qj-shared-library';
+import { useLowCodeGraph, NodeGraph } from '@brushes/qj-shared-library';
 import { get, isEmpty, omit, set, merge } from 'lodash-es';
 import { FormInstance } from 'antd';
 
+console.log(9, config);
 export function useMaterialsOperate(defaultValue: NodeGraph, form: FormInstance) {
   const monitorInstance = useLowCodeGraph();
   const initialValues = defaultValue.props;
