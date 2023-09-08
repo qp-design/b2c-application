@@ -11,10 +11,10 @@ coverage
 .next/
 out/
 build
-packages/form
-packages/mobile-form
-packages/taro-component
-packages/shared-utils
+#packages/form
+#packages/mobile-form
+#packages/taro-component
+#packages/shared-utils
 # misc
 .DS_Store
 *.pem
