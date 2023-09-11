@@ -36,9 +36,9 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
     dispatchPageStore,
     ...rest
   }) => {
-    const { Text, View, IconMobile } = useComponent();
+    const { View, IconMobile } = useComponent();
     const skuCode = useDataPageQuery(rest, 'skuNo');
-    const { rsSkuDomainList } = useGoodDetail(skuCode);
+    const { rsSkuDomainList, goodPro } = useGoodDetail(skuCode);
     const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
     const { servicePopup } = useService();
     const { addCardPopup, buyOpenPopup } = popupImplement(dispatchPageStore);
@@ -46,7 +46,7 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
       <View className={'goodsDetailHandleBar'}>
         <View className={'linkGroup server'} onClick={servicePopup} style={{ display: serverShow ? 'block' : 'none' }}>
           <IconMobile value={'kehufuwukefu'} style={{ fontSize: 22, display: 'block' }} />
-          <Text className={'txt'}>客服</Text>
+          <View className={'txt'}>客服</View>
         </View>
 
         <View
@@ -55,22 +55,24 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
           style={{ display: cartShow ? 'block' : 'none' }}
         >
           <IconMobile value={'gouwuche'} style={{ fontSize: 22, display: 'block' }} />
-          <Text className={'txt'}>购物车</Text>
+          <View className={'txt'}>购物车</View>
         </View>
 
         <View className={'goods-detail-btn-group'}>
-          <View
-            className={'btn addCart'}
-            onClick={addCardPopup}
-            style={{
-              color: lPartColor,
-              backgroundColor: lPartBgColor,
-              borderTopLeftRadius: lPartStyle,
-              borderBottomLeftRadius: lPartStyle
-            }}
-          >
-            加入购物车
-          </View>
+          {
+            goodPro === '26' ? null : <View
+              className={'btn addCart'}
+              onClick={addCardPopup}
+              style={{
+                color: lPartColor,
+                backgroundColor: lPartBgColor,
+                borderTopLeftRadius: lPartStyle,
+                borderBottomLeftRadius: lPartStyle
+              }}
+            >
+              加入购物车
+            </View>
+          }
           <View
             onClick={buyOpenPopup}
             className={'btn buy'}

@@ -8,7 +8,7 @@ import { NoData } from './component';
 import { useDataPageQuery } from '@/hooks/useDataPageQuery';
 
 export const GoodsDetailCoupon = ({ ...rest }) => {
-  const { View, Text, Popup } = useComponent();
+  const { View, Text, Popup, Image } = useComponent();
   const skuCode = useDataPageQuery(rest, 'skuNo');
   const { rsSkuDomainList } = useGoodDetail(skuCode);
   const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
@@ -19,7 +19,7 @@ export const GoodsDetailCoupon = ({ ...rest }) => {
         <Text className={'label'}>优惠券</Text>
         <View className={'info'}>
           <Text className={'label'}>请选择优惠券</Text>
-          <img src={THREE_DOTS} alt="" className={'icon'} />
+          <Image src={THREE_DOTS} alt="" className={'icon'} />
         </View>
       </View>
       <Popup popupVisible={visible} popupHandler={setVisible}>

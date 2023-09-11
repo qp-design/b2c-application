@@ -1,9 +1,10 @@
 //@ts-nocheck
 import { useComponent } from '@brushes/simulate-component';
-import { actionName, popupImplement, useAddShopping, useGoodSkuStore, useGoodSpecAndPrice } from 'qj-mobile-store';
+import { actionName, useAddShopping, useGoodSkuStore, useGoodSpecAndPrice } from 'qj-mobile-store';
 import { SkuItems, SkuItemType } from './skuItem';
+import { ScrollWrap } from '@/common/scrollWrap';
 import { fixPrice } from '@/utils';
-import { memo, useMemo } from 'react';
+import { memo } from 'react';
 
 interface skuInfoType {
   goodsShowname: string;
@@ -99,7 +100,7 @@ const DetailHandler: React.FC<DetailType> = ({ cashImpl, addShoppingImpl, addCar
 };
 export const InnerComponent: React.FC<GoodsDetailPopupType> = memo(
   ({ dispatchPageStore, goodsCode, skuInfo, rsSkuDomainList }) => {
-    const { View } = useComponent();
+    const { View, ScrollView } = useComponent();
     const { spec, goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
     const {
       handleChooseSize, // 规格选择方法
@@ -111,10 +112,14 @@ export const InnerComponent: React.FC<GoodsDetailPopupType> = memo(
 
     return (
       <View className={'goodsDetail-size-popup'}>
-        <View className={'content'}>
-          <SkuComponent skuInfo={skuInfo} handleChooseSize={handleChooseSize} spec={spec} goodInfo={goodInfo} />
-          <GoodSkuCount handleStep={handleStep.bind(null, goodInfo.goodsNum)} />
-        </View>
+        <ScrollWrap>
+          <ScrollView>
+          <View className={'content'}>
+            <SkuComponent skuInfo={skuInfo} handleChooseSize={handleChooseSize} spec={spec} goodInfo={goodInfo} />
+            <GoodSkuCount handleStep={handleStep.bind(null, goodInfo.goodsNum)} />
+          </View>
+          </ScrollView>
+        </ScrollWrap>
         <DetailHandler cashImpl={cashImpl} addShoppingImpl={addShoppingImpl} addCardImpl={addCardImpl} />
       </View>
     );

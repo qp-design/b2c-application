@@ -18,8 +18,6 @@ const refundGoodsDetailJsx: React.FC<DetailType> = ({ title, dataPic, goodsName,
   const getAmountNum = (value) => {
     setAmount(value);
   };
-  console.log('当前退货数量为', amount);
-
   const btnStyle = useMemo(() => {
     return classNames(
       'goods_nums',

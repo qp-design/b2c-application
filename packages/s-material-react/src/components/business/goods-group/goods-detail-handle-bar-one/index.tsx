@@ -38,7 +38,7 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
     dispatchPageStore,
     ...rest
   }) => {
-    const { Text, View, IconMobile } = useComponent();
+    const { View, IconMobile } = useComponent();
     const skuCode = useDataPageQuery(rest, 'skuNo');
     const { rsSkuDomainList } = useGoodDetail(skuCode);
     const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
@@ -48,7 +48,7 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
       <View className={'goodsDetailHandleBarOne'}>
         <View className={'linkGroup server'} onClick={servicePopup} style={{ display: serverShow ? 'block' : 'none' }}>
           <IconMobile value={'kehufuwukefu'} style={{ fontSize: 22, display: 'block' }} />
-          <Text className={'txt'}>客服</Text>
+          <View className={'txt'}>客服</View>
         </View>
 
         <View
@@ -57,7 +57,7 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
           style={{ display: cartShow ? 'block' : 'none' }}
         >
           <IconMobile value={'gouwuche'} style={{ fontSize: 22, display: 'block' }} />
-          <Text className={'txt'}>购物车</Text>
+          <View className={'txt'}>购物车</View>
         </View>
 
         <View className={'goods-detail-one-btn-group'}>
@@ -83,7 +83,7 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
               borderRadius: rBtnStyle === 1 ? '20px' : '0'
             }}
           >
-            {goodInfo.goodsPro === '10' ? '预售抢购' : '立即购买'}
+            {goodInfo.goodsPro === '10' ? '预售抢购' : '1立即购买'}
           </View>
         </View>
       </View>

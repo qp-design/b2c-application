@@ -35,12 +35,9 @@ const uploadingJsx = () => {
         sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
         sourceType: ['album'], // 可以指定来源是相册还是相机，默认二者都有，在H5浏览器端支持使用 `user` 和 `environment`分别指定为前后摄像头
         success: function (res: any) {
-          console.log('上传图片-相册', res);
           var tempFilePath: any[] = [];
           // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
           tempFilePath.push(res.tempFilePaths[0]);
-          console.log('上传路径', tempFilePath);
-
           setUploadImgPath((pre: any): any => [...pre, ...tempFilePath]);
           setVisible(false);
         }
@@ -49,8 +46,6 @@ const uploadingJsx = () => {
   };
   //点击删除图片
   const DeleteImg = (index: any) => {
-    console.log('下标', index);
-
     const imgList = uploadImgPath.slice();
     imgList.splice(index, 1);
 
@@ -69,8 +64,6 @@ const uploadingJsx = () => {
       });
     }
   };
-  console.log('图片路径', uploadImgPath);
-
   return (
     <View className="select_img">
       <View className="icon_img" onClick={clickUpload}>

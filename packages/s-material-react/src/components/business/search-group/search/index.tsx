@@ -33,7 +33,6 @@ const SearchJsx: React.FC<SearchType> = ({
   otherStyles = [],
   __pageConfig
 }) => {
-  console.log(36, __pageConfig);
   const { View, Image } = useComponent();
   const otherStyle = useMemo(() => {
     return classNames('txt', ...otherStyles);
