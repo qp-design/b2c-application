@@ -1,5 +1,5 @@
 import { FieldType } from '@brushes/form';
-import { SelectCoupon } from '@/common';
+import { SelectCoupon } from 'operate-common';
 export const formConfig: Array<FieldType> = [
   {
     label: '选择商品',

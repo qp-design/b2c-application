@@ -7,7 +7,7 @@ import { get, isEmpty, omit, set, merge } from 'lodash-es';
 import { FormInstance } from 'antd';
 
 console.log(9, config);
-export function useMaterialsOperate(defaultValue: NodeGraph, form: FormInstance) {
+export function useMaterialsOperate(defaultValue: NodeGraph, form: FormInstance, appendConfig: any) {
   const monitorInstance = useLowCodeGraph();
   const initialValues = defaultValue.props;
   const {
@@ -15,7 +15,7 @@ export function useMaterialsOperate(defaultValue: NodeGraph, form: FormInstance)
     title,
     info,
     transformField = []
-  } = get(config, defaultValue.type, { formConfig: [], title: '', info: '' });
+  } = get({ ...config, ...appendConfig }, defaultValue.type, { formConfig: [], title: '', info: '' });
 
   const callbackImpl = useImmutableCallback((changedValues: any, allValues: any) => {
     let obj = {};

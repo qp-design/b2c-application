@@ -5,9 +5,17 @@ import { NodeGraph } from '@brushes/qj-shared-library';
 import { useMaterialsOperate } from '@/hooks';
 import { formConfigType } from '@/type/formConfig';
 
-const IndexReact = ({ defaultValue }: { defaultValue: NodeGraph }) => {
+const IndexReact = ({ defaultValue, ...restProps }: { defaultValue: NodeGraph }) => {
   const [form] = Form.useForm();
-  const { computedConfig = [], title, info, callbackImpl, initialValues } = useMaterialsOperate(defaultValue, form);
+  // @ts-ignore
+  const { appendConfig = {} } = restProps;
+  const {
+    computedConfig = [],
+    title,
+    info,
+    callbackImpl,
+    initialValues
+  } = useMaterialsOperate(defaultValue, form, appendConfig);
 
   return (
     <Form form={form} onValuesChange={callbackImpl} initialValues={initialValues}>

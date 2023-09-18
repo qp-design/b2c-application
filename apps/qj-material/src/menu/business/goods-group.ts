@@ -242,7 +242,7 @@ export default {
                 type: 'pageQuery',
                 value: 'skuCode'
               },
-              nextKey: 'skuNo'
+              nextKey: 'skuCode'
             }
           ]
         },
@@ -265,7 +265,7 @@ export default {
                 type: 'pageQuery',
                 value: 'skuCode'
               },
-              nextKey: 'skuNo'
+              nextKey: 'skuCode'
             }
           ]
         },
@@ -292,7 +292,7 @@ export default {
                 type: 'pageQuery',
                 value: 'skuCode'
               },
-              nextKey: 'skuNo'
+              nextKey: 'skuCode'
             }
           ]
         },
@@ -326,7 +326,7 @@ export default {
                 type: 'pageQuery',
                 value: 'skuCode'
               },
-              nextKey: 'skuNo'
+              nextKey: 'skuCode'
             },
             {
               prevKey: {
@@ -353,7 +353,7 @@ export default {
                 type: 'pageQuery',
                 value: 'skuCode'
               },
-              nextKey: 'skuNo'
+              nextKey: 'skuCode'
             }
           ]
         }
@@ -372,7 +372,7 @@ export default {
                 type: 'pageQuery',
                 value: 'skuCode'
               },
-              nextKey: 'skuNo'
+              nextKey: 'skuCode'
             }
           ]
         }
@@ -391,7 +391,7 @@ export default {
                 type: 'pageQuery',
                 value: 'skuCode'
               },
-              nextKey: 'skuNo'
+              nextKey: 'skuCode'
             }
           ]
         },
@@ -421,7 +421,7 @@ export default {
                 type: 'pageQuery',
                 value: 'skuCode'
               },
-              nextKey: 'skuNo'
+              nextKey: 'skuCode'
             },
             {
               prevKey: {
@@ -469,7 +469,7 @@ export default {
                 type: 'pageQuery',
                 value: 'skuCode'
               },
-              nextKey: 'skuNo'
+              nextKey: 'skuCode'
             },
             {
               prevKey: {

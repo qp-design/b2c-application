@@ -103,15 +103,3 @@ export function popupImplement(dispatchPageStore = noop) {
     buyOpenPopup // // 打开立即购物弹出框
   };
 }
-
-const map = new Map();
-
-export const getGoodDetailWithCache = (skuCode: string) => {
-  let existedSkuCode = map.get(skuCode);
-
-  if (!existedSkuCode) {
-    existedSkuCode = getGoodDetail(skuCode);
-    map.set(skuCode, existedSkuCode);
-  }
-  return existedSkuCode;
-};

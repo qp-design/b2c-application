@@ -1,6 +1,6 @@
 import { DynamicForm } from '@brushes/form';
 import { useMaterialData } from '@/hooks';
-import { formConfig, transformSubmitDataConfig } from '@/data/config';
+import { formConfig, transformSubmitDataConfig } from 'operate-common';
 import { Collapse, CollapseProps } from 'antd';
 const OperateData = () => {
   const { dataSource, onSubmit, isLoading } = useMaterialData();
@@ -25,7 +25,7 @@ const WrapperOperate = ({ pageId }: { pageId: string }) => {
   const items: CollapseProps['items'] = [
     {
       key: '1',
-      label: <div style={{ fontSize: 16, fontWeight: 600 }}>{'页面数据中心'}</div>,
+      label: <div style={{ fontSize: 16, fontWeight: 600 }}>{'页面数据中心1'}</div>,
       children: <OperateData key={pageId} />
     }
   ];

@@ -1,0 +1,46 @@
+{
+  "name": "operate-common",
+  "version": "0.0.2",
+  "description": "'配置项通用包'",
+  "main": "dist/index.js",
+  "sideEffects": [
+    "*.scss",
+    "*.css"
+  ],
+  "files": [
+    "dist",
+    "css",
+    "iconfont"
+  ],
+  "scripts": {
+    "start": "concurrently npm:start:*",
+    "start:ts": "rollup -c -w",
+    "start:css": "npx nodemon --config ./nodemon.json",
+    "build": "rm -rf dist/ && prettier --write src/ && rollup -c",
+    "push": "git add . && git commit -m",
+    "postpush": "git push",
+    "prepublishOnly": "echo 我们准备发布npm包",
+    "publishOnly": "npm run build && npm run push",
+    "postpublishOnly": "npm version patch && npm publish && git push"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash-es": "^4.17.21"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "@brushes/form": "*",
+    "@brushes/operate-webstore": "^0.0.2",
+    "@brushes/qj-shared-library": "*",
+    "@tanstack/react-query": "*",
+    "@types/node": ">18.0.0",
+    "antd": "^5.9.1",
+    "lzutf8": "^0.6.3",
+    "prettier": "^2.7.1",
+    "qj-b2b-api": "^0.0.8",
+    "react": "^18.0.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": ">4.0.0"
+  }
+}

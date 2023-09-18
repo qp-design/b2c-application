@@ -114,10 +114,10 @@ export const InnerComponent: React.FC<GoodsDetailPopupType> = memo(
       <View className={'goodsDetail-size-popup'}>
         <ScrollWrap>
           <ScrollView>
-          <View className={'content'}>
-            <SkuComponent skuInfo={skuInfo} handleChooseSize={handleChooseSize} spec={spec} goodInfo={goodInfo} />
-            <GoodSkuCount handleStep={handleStep.bind(null, goodInfo.goodsNum)} />
-          </View>
+            <View className={'content'}>
+              <SkuComponent skuInfo={skuInfo} handleChooseSize={handleChooseSize} spec={spec} goodInfo={goodInfo} />
+              <GoodSkuCount handleStep={handleStep.bind(null, goodInfo.goodsNum)} />
+            </View>
           </ScrollView>
         </ScrollWrap>
         <DetailHandler cashImpl={cashImpl} addShoppingImpl={addShoppingImpl} addCardImpl={addCardImpl} />

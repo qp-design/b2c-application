@@ -4,18 +4,22 @@ import { fixPrice } from '@/utils';
 import { GoodsDetailCollection } from './goodsDetailCollection';
 import { useComponent } from '@brushes/simulate-component';
 import { useGoodFootprint, useGoodDetail, useGoodSpecAndPrice } from 'qj-mobile-store';
-import { useDataPageQuery } from '@/hooks/useDataPageQuery';
 
 const GoodsDetailInfoInitial = {
   priceShow: true,
   mPriceShow: true,
   salesVolumeShow: true,
-  collectionShow: true
+  collectionShow: true,
+  skuCode: ''
 };
 
-export const GoodsDetailInfo: React.FC<typeof GoodsDetailInfoInitial> = ({ priceShow, collectionShow, ...rest }) => {
+export const GoodsDetailInfo: React.FC<typeof GoodsDetailInfoInitial> = ({
+  skuCode,
+  priceShow,
+  collectionShow,
+  ...rest
+}) => {
   const { View, SmoothView } = useComponent();
-  const skuCode = useDataPageQuery(rest, 'skuNo');
   const { rsSkuDomainList } = useGoodDetail(skuCode);
   const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
   useGoodFootprint(skuCode);

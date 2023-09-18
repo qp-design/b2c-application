@@ -21,7 +21,7 @@ export function useMaterialMenu(type: string, config: Array<any>) {
         }
       }
     }
-  }, [type]);
+  }, [type, config]);
 
   useEffect(() => {
     const sub = expPageGraph.activedPageId$.subscribe((value: any) => {

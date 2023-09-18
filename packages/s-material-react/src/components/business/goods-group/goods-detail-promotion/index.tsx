@@ -1,11 +1,9 @@
 //@ts-nocheck
 import { useComponent } from '@brushes/simulate-component';
 import { useGoodDetail, useGoodSpecAndPrice, usePromotion } from 'qj-mobile-store';
-import { useDataPageQuery } from '@/hooks/useDataPageQuery';
 
-export const GoodsDetailPromotion = ({ ...rest }) => {
+export const GoodsDetailPromotion = ({ skuCode }) => {
   const { View, Text } = useComponent();
-  const skuCode = useDataPageQuery(rest, 'skuNo');
   const { rsSkuDomainList } = useGoodDetail(skuCode);
   const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
   const promotionList = usePromotion(rsSkuDomainList, goodInfo.skuCode || skuCode);

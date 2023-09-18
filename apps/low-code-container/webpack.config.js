@@ -49,6 +49,10 @@ module.exports = {
       name: "kezi",
       shared: {
         ...deps,
+        "@brushes/shared-store": {
+          singleton: true,
+          requiredVersion: deps['@brushes/shared-store'],
+        },
         antd: {
           singleton: true,
           requiredVersion: deps.antd,

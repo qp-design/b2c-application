@@ -3,6 +3,7 @@ import { useMemo, useRef, useState } from 'react';
 import Root from './root';
 import { Button } from 'antd';
 import { Provider } from '@brushes/shared-store';
+
 const Index = () => {
   const isNeedJump = useMemo(() => {
     return window.location.href.includes('platform=B2B')

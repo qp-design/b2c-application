@@ -9,7 +9,8 @@ import { CollapseProps, Collapse } from 'antd';
 const PageIndex = ({
   defaultValue,
   pageConfig,
-  pageId = 'index'
+  pageId = 'index',
+  ...restProps
 }: {
   pageId: string;
   defaultValue: NodeGraph;
@@ -42,7 +43,7 @@ const PageIndex = ({
         expandIconPosition={'end'}
         items={items}
       />
-      {!isEmpty(defaultValue) ? <IndexReact key={defaultValue.id} defaultValue={defaultValue} /> : null}
+      {!isEmpty(defaultValue) ? <IndexReact key={defaultValue.id} defaultValue={defaultValue} {...restProps} /> : null}
     </>
   );
 };

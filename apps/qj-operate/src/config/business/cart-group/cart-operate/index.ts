@@ -1,5 +1,5 @@
 import type { FieldType } from '@brushes/form';
-import { SelectData } from '@/common';
+import { SelectData } from 'operate-common';
 import { formConfigType } from '@/type/formConfig';
 
 const sectionTwo: formConfigType = {

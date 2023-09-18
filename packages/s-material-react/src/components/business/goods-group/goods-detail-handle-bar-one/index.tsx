@@ -6,7 +6,6 @@ import { useService } from '@/utils';
 import { GoodsDetailPopup } from '../common/goodsDetailPopup';
 import { useGoodSku, popupImplement, useGoodDetail, useGoodSpecAndPrice } from 'qj-mobile-store';
 import { noop } from 'lodash-es';
-import { useDataPageQuery } from '@/hooks/useDataPageQuery';
 
 const GoodsDetailHandleBarInitial = {
   serverShow: true,
@@ -20,7 +19,8 @@ const GoodsDetailHandleBarInitial = {
   rBtnColor: '#000000',
   rBtnStyle: 1,
   popupVisible: false,
-  dispatchPageStore: noop
+  dispatchPageStore: noop,
+  skuCode: ''
 };
 
 const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
@@ -36,10 +36,9 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
     rBtnColor,
     rBtnStyle,
     dispatchPageStore,
-    ...rest
+    skuCode
   }) => {
     const { View, IconMobile } = useComponent();
-    const skuCode = useDataPageQuery(rest, 'skuNo');
     const { rsSkuDomainList } = useGoodDetail(skuCode);
     const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
     const { servicePopup } = useService();
@@ -94,15 +93,15 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
 export const GoodsDetailHandleBarOne: React.FC<typeof GoodsDetailHandleBarInitial> = ({
   popupVisible = false,
   dispatchPageStore = noop,
+  skuCode,
   ...rest
 }) => {
-  const skuCode = useDataPageQuery(rest, 'skuNo');
   const { rsSpecValueDomainList, goodsCode, rsSkuDomainList } = useGoodDetail(skuCode);
   const skuInfo = useGoodSku(rsSpecValueDomainList);
 
   return (
     <>
-      <HandlerBar {...rest} dispatchPageStore={dispatchPageStore} />
+      <HandlerBar skuCode={skuCode} {...rest} dispatchPageStore={dispatchPageStore} />
       <GoodsDetailPopup
         dispatchPageStore={dispatchPageStore}
         popupVisible={popupVisible}

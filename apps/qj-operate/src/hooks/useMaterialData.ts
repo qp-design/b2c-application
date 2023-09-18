@@ -1,22 +1,23 @@
 import { useEffect, useState, useRef } from 'react';
-import { getPfsModelTagValueDataByTginfo, updatePfsModelTagValueDataDomain } from 'qj-b2c-api';
+import { getPfsModelDataByModelId, updatePfsModelDataByModelId } from 'qj-b2b-api';
 import { useImmutableCallback } from '@brushes/utils';
-import { pagesModelTagValue } from '@/data/localModal';
+import { pagesModelTagValue } from 'operate-common';
 import { useLowCodeGraph } from '@brushes/qj-shared-library';
+import lz from 'lzutf8';
 
 export const queryModalData = async (pageId: string): Promise<any> => {
   try {
-    const data = await getPfsModelTagValueDataByTginfo({
-      menuOpcode: pageId,
-      proappCode: '021'
+    const { dataObj: data } = await getPfsModelDataByModelId({
+      modelId: pageId
     });
-    const parseData = JSON.parse(data.modelTagvalueData) || { pageStore: [], pageQuery: [] };
+    let json = /^{/.test(data.modelConmod) ? data.modelConmod : lz.decompress(lz.decodeBase64(data.modelConmod));
+    const parseData = JSON.parse(json) || { pageStore: [], pageQuery: [] };
     pagesModelTagValue[pageId] = {
       data: parseData,
-      id: data.modelTagvalueId
+      id: data.modelId
     };
     return {
-      id: data.modelTagvalueId,
+      id: data.modelId,
       data: parseData
     };
   } catch (err) {}
@@ -48,11 +49,13 @@ export function useMaterialData() {
   const onSubmit = useImmutableCallback(async (values: any, suc: any, error: any) => {
     suc();
     try {
-      const data = await updatePfsModelTagValueDataDomain({
-        modelTagvalueCode: monitorInstance.modeId,
-        modelTagvalueId: modelTagvalueId.current,
-        modelTagvalueData: JSON.stringify(values)
+      const params = lz.encodeBase64(lz.compress(JSON.stringify(values)));
+
+      const data = await updatePfsModelDataByModelId({
+        modelId: monitorInstance.modeId,
+        modelConmod: params
       });
+
       pagesModelTagValue[monitorInstance.modeId] = {
         data: values,
         id: modelTagvalueId.current

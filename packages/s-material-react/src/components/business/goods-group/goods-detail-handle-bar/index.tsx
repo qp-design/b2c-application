@@ -6,7 +6,6 @@ import { GoodsDetailPopup } from '../common/goodsDetailPopup';
 import { useGoodSku, popupImplement, useGoodDetail, useGoodSpecAndPrice } from 'qj-mobile-store';
 import { noop } from 'lodash-es';
 import { memo } from 'react';
-import { useDataPageQuery } from '@/hooks/useDataPageQuery';
 
 const GoodsDetailHandleBarInitial = {
   serverShow: true,
@@ -20,6 +19,7 @@ const GoodsDetailHandleBarInitial = {
   $_dataSource: {
     popupVisible: false
   },
+  skuCode: '',
   dispatchPageStore: noop
 };
 
@@ -34,10 +34,9 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
     rPartBgColor,
     rPartStyle,
     dispatchPageStore,
-    ...rest
+    skuCode
   }) => {
     const { View, IconMobile } = useComponent();
-    const skuCode = useDataPageQuery(rest, 'skuNo');
     const { rsSkuDomainList, goodPro } = useGoodDetail(skuCode);
     const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
     const { servicePopup } = useService();
@@ -59,8 +58,8 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
         </View>
 
         <View className={'goods-detail-btn-group'}>
-          {
-            goodPro === '26' ? null : <View
+          {goodPro === '26' ? null : (
+            <View
               className={'btn addCart'}
               onClick={addCardPopup}
               style={{
@@ -72,7 +71,7 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
             >
               加入购物车
             </View>
-          }
+          )}
           <View
             onClick={buyOpenPopup}
             className={'btn buy'}
@@ -94,15 +93,15 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
 export const GoodsDetailHandleBar: React.FC<typeof GoodsDetailHandleBarInitial> = ({
   $_dataSource = {},
   dispatchPageStore = noop,
+  skuCode,
   ...rest
 }) => {
-  const skuCode = useDataPageQuery(rest, 'skuNo');
   const { rsSpecValueDomainList, goodsCode, rsSkuDomainList } = useGoodDetail(skuCode);
   const skuInfo = useGoodSku(rsSpecValueDomainList);
   const { popupVisible } = $_dataSource;
   return (
     <>
-      <HandlerBar {...rest} dispatchPageStore={dispatchPageStore} />
+      <HandlerBar skuCode={skuCode} {...rest} dispatchPageStore={dispatchPageStore} />
       <GoodsDetailPopup
         dispatchPageStore={dispatchPageStore}
         popupVisible={popupVisible}

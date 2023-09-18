@@ -1,5 +1,5 @@
 import { FieldType } from '@brushes/form';
-import { SwiperComponent } from '@/common';
+import { SwiperComponent } from 'operate-common';
 export const formConfig: Array<FieldType> = [
   {
     label: '搜索',

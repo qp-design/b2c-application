@@ -7,15 +7,23 @@ import { removeRequestCacheByKey } from '@brushes/optimize';
 export function useCartOperate(select: Array<any> = [], cardGoods: Array<any> = [], dispatchPageStore: Dispatch<any> = noop) {
   const cartDetail = useMemo(() => {
     let num = 0,
+      canPayIds = [],
       amount = 0;
-    cardGoods.forEach((item: any) => {
-      if (select.includes(item.shoppingGoodsId + '')) {
+
+    for (let item of cardGoods) {
+      if (!select.includes(item.shoppingGoodsId + '')) {
+        continue;
+      }
+      if (item.dataState === 0) {
+        canPayIds.push(item.shoppingGoodsId + '');
         num += item.goodsCamount;
         amount += item.goodsCamount * item.pricesetNprice;
       }
-    });
+    }
+
     return {
       num,
+      canPayIds,
       amount
     };
   }, [select, cardGoods]);
@@ -47,8 +55,7 @@ export function useCartOperate(select: Array<any> = [], cardGoods: Array<any> = 
   });
 
   const toOrderImpl = useImmutableCallback(() => {
-    console.log(50, select);
-    if (select.length === 0) {
+    if (cartDetail.canPayIds.length === 0) {
       taroMessage('购物数量不能为空');
       return;
     }
@@ -56,7 +63,7 @@ export function useCartOperate(select: Array<any> = [], cardGoods: Array<any> = 
     removeRequestCacheByKey(queryShoppingToContract);
     // 跳转到确认订单
     navigatorHandler('orderDetermine', {
-      shoppingGoodsId: select.join(',')
+      shoppingGoodsId: cartDetail.canPayIds.join(',')
     });
   });
 

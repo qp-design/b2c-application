@@ -1,4 +1,4 @@
-import { SelectData } from '@/common';
+import { SelectData } from 'operate-common';
 import { formConfigType } from '@/type/formConfig';
 export const title = '操作栏';
 export const info = '操作栏的配置。';
@@ -14,7 +14,7 @@ const sectionTwo: formConfigType = {
         initialValue: {
           componentOption: [
             {
-              value: 'skuNo',
+              value: 'skuCode',
               label: '商品编码'
             },
             {

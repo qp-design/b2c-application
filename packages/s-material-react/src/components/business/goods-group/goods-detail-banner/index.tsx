@@ -1,19 +1,18 @@
 import React from 'react';
 import { SliderInner } from '@/components/basic/slider-group/slider/slider';
 import { useGoodDetail, useBanner } from 'qj-mobile-store';
-import { useDataPageQuery } from '@/hooks/useDataPageQuery';
 
 const GoodsDetailBannerInitial = {
   autoplay: false,
-  vertical: false
+  vertical: false,
+  skuCode: ''
 };
 
 export const GoodsDetailBanner: React.FC<typeof GoodsDetailBannerInitial & { [v: string]: any }> = ({
   autoplay,
   vertical,
-  ...rest
+  skuCode
 }) => {
-  const skuCode = useDataPageQuery(rest, 'skuNo');
   const { rsGoodsFileDomainList = [] } = useGoodDetail(skuCode);
 
   const banner = useBanner(rsGoodsFileDomainList);

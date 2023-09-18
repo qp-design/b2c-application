@@ -1,7 +1,6 @@
 import { FieldType } from '@brushes/form';
 import React from 'react';
-import { SelectCube } from '@/common';
-import AddButton from '@/common/addButton';
+import { SelectCube, AddButton } from 'operate-common';
 export const formConfig: Array<FieldType> = [
   {
     label: '分类导航配置',

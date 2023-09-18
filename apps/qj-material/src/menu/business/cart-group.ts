@@ -42,7 +42,8 @@ export default {
         dataSource: {
           pageStore: {
             select: [],
-            updateCount: 0
+            updateCount: 0,
+            isEditor: false
           }
         },
         __dataSource__: {
@@ -54,6 +55,13 @@ export default {
                 value: 'select'
               },
               nextKey: 'cartSelect'
+            },
+            {
+              prevKey: {
+                type: 'pageStore',
+                value: 'isEditor'
+              },
+              nextKey: 'cartIsEditor'
             },
             {
               prevKey: {

@@ -1,7 +1,6 @@
 import { FieldType } from '@brushes/form';
 import React from 'react';
-import { SelectLink } from '@/common';
-import AddButton from '@/common/addButton';
+import { SelectLink, AddButton } from 'operate-common';
 export const formConfig: Array<FieldType> = [
   {
     label: '倒角',

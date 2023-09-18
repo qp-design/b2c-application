@@ -7,10 +7,12 @@ import { fixPrice } from '@/utils';
 import { PromotionPopup } from './common/promotionPopup';
 import { NoData } from '@/common/noData';
 import { isEmpty } from 'lodash-es';
+import { useStore } from '@brushes/shared-store';
 
 interface CardItemType {
   goodsName: string;
   skuName: string;
+  dataState: number;
   goodsCamount: number;
   shoppingGoodsId: number;
   pricesetNprice: number;
@@ -18,7 +20,7 @@ interface CardItemType {
 }
 
 const ItemInfo: React.FC<CardItemType> = memo(
-  ({ goodsName, skuName, goodsCamount, shoppingGoodsId, pricesetNprice, handleStep }) => {
+  ({ goodsName, dataState, skuName, goodsCamount, shoppingGoodsId, pricesetNprice, handleStep }) => {
     const { View, SmoothView, NumStep } = useComponent();
     return (
       <>
@@ -30,7 +32,9 @@ const ItemInfo: React.FC<CardItemType> = memo(
           </View>
           <View className={'cartItem-handleWrap'}>
             <SmoothView className={'price'}>{fixPrice(pricesetNprice)}</SmoothView>
-            <NumStep count={goodsCamount} handleStep={handleStep.bind(null, shoppingGoodsId, goodsCamount)} />
+            {dataState === 0 && (
+              <NumStep count={goodsCamount} handleStep={handleStep.bind(null, shoppingGoodsId, goodsCamount)} />
+            )}
           </View>
         </View>
       </>
@@ -38,37 +42,83 @@ const ItemInfo: React.FC<CardItemType> = memo(
   }
 );
 
-const ItemImage = memo(({ dataPic, skuCode }: { dataPic: string; skuCode: string }) => {
-  const { Image } = useComponent();
-  return (
-    <Image
-      className={'img'}
-      src={dataPic}
-      onClick={() =>
-        navigatorHandler('goodDetail', {
-          skuCode
-        })
-      }
-    />
-  );
-});
+const ItemImage = memo(({ dataPic, dataState, skuCode }: { dataPic: string; dataState: number; skuCode: string }) => {
+  const { Image, View } = useComponent();
 
-const ItemCheck = memo(({ shoppingGoodsId, select = [] }: { shoppingGoodsId: number; select: Array<any> }) => {
-  const { View, Checkbox } = useComponent();
+  const Icon = useMemo(() => {
+    let url = '';
+    switch (dataState) {
+      case 3:
+      case 1:
+        url = 'https://brushes.oss-cn-shanghai.aliyuncs.com/static/lowcode-platform/goodsLose.png';
+        break;
+      case 2:
+        url = 'https://brushes.oss-cn-shanghai.aliyuncs.com/static/lowcode-platform/offshelf.png';
+        break;
+    }
+    if (dataState !== 0) {
+      return (
+        <View className={'bg'}>
+          <Image className={'icon-img'} src={url} />
+        </View>
+      );
+    }
+    return null;
+  }, [dataState]);
+
   return (
-    <View className={'checkBoxWrap'}>
-      <Checkbox
-        checked={select.includes(shoppingGoodsId + '')}
-        value={shoppingGoodsId}
-        style={{
-          '--icon-size': '16px',
-          '--font-size': '14px',
-          '--gap': '6px'
-        }}
+    <View className={'cart-item-image'}>
+      {Icon}
+      <Image
+        className={'img'}
+        src={dataPic}
+        onClick={() =>
+          navigatorHandler('goodDetail', {
+            skuCode
+          })
+        }
       />
     </View>
   );
 });
+
+const ItemCheck = memo(
+  ({
+    cartIsEditor,
+    shoppingGoodsId,
+    dataState,
+    select = []
+  }: {
+    shoppingGoodsId: number;
+    cartIsEditor: boolean;
+    dataState: number;
+    select: Array<any>;
+  }) => {
+    const { View, Checkbox } = useComponent();
+    const checked = useMemo(() => {
+      if (!cartIsEditor) {
+        return dataState === 0 && select.includes(shoppingGoodsId + '');
+      } else {
+        return select.includes(shoppingGoodsId + '');
+      }
+    }, [select, cartIsEditor, shoppingGoodsId, dataState]);
+
+    return (
+      <View className={'checkBoxWrap'}>
+        <Checkbox
+          disabled={!cartIsEditor && dataState !== 0}
+          checked={checked}
+          value={shoppingGoodsId}
+          style={{
+            '--icon-size': '16px',
+            '--font-size': '14px',
+            '--gap': '6px'
+          }}
+        />
+      </View>
+    );
+  }
+);
 
 const PromotionItem = ({
   promotion = [],
@@ -122,11 +172,16 @@ const PromotionItem = ({
 
 const CardItem = memo(({ item, ...rest }: { item: any; [v: string]: any }) => {
   const { View } = useComponent();
-  const { select } = rest;
+  const { select, cartIsEditor } = rest;
   return (
     <View className={'cart-list-item'}>
-      <ItemCheck select={select} shoppingGoodsId={item.shoppingGoodsId} />
-      <ItemImage dataPic={item.dataPic} skuCode={item.skuCode} />
+      <ItemCheck
+        cartIsEditor={cartIsEditor}
+        dataState={item.dataState}
+        select={select}
+        shoppingGoodsId={item.shoppingGoodsId}
+      />
+      <ItemImage dataState={item.dataState} dataPic={item.dataPic} skuCode={item.skuCode} />
       <ItemInfo {...item} {...rest} />
     </View>
   );
@@ -204,6 +259,7 @@ interface CartListType {
   $_dataSource: {
     cartSelect: Array<any>;
     cartUpdateCount: number;
+    cartIsEditor: boolean;
   };
   __link__?: Link;
 }
@@ -213,13 +269,14 @@ export const CartList: React.FC<CartListType> = ({
   dispatchPageStore,
   $_dataSource = {
     cartSelect: [],
-    cartUpdateCount: 0
+    cartUpdateCount: 0,
+    cartIsEditor: false
   },
   __link__ = {},
   cartItemRadius = '10px'
 }) => {
   const { SmoothCheckbox, WrapLoading, View } = useComponent();
-  const { cartSelect, cartUpdateCount } = $_dataSource;
+  const { cartSelect, cartUpdateCount, cartIsEditor } = $_dataSource;
   const { loading, cartList, onChange, handleStep, updatePm } = useCartListNext(
     refreshNum,
     cartUpdateCount,
@@ -246,6 +303,7 @@ export const CartList: React.FC<CartListType> = ({
                         />
                       ) : null}
                       <CardItems
+                        cartIsEditor={cartIsEditor}
                         promotionCode={promotionCode}
                         handleStep={handleStep}
                         select={cartSelect}

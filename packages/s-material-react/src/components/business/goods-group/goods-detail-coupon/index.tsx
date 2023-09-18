@@ -5,11 +5,9 @@ import { Coupon } from '@/common/coupon';
 import { useCoupon, useGoodDetail, useGoodSpecAndPrice } from 'qj-mobile-store';
 import { ScrollWrap } from '@/common/scrollWrap';
 import { NoData } from './component';
-import { useDataPageQuery } from '@/hooks/useDataPageQuery';
 
-export const GoodsDetailCoupon = ({ ...rest }) => {
+export const GoodsDetailCoupon = ({ skuCode, ...rest }) => {
   const { View, Text, Popup, Image } = useComponent();
-  const skuCode = useDataPageQuery(rest, 'skuNo');
   const { rsSkuDomainList } = useGoodDetail(skuCode);
   const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
   const { coupon, visible, setVisible } = useCoupon(rsSkuDomainList, goodInfo.skuCode || skuCode);

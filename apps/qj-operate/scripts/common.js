@@ -44,8 +44,8 @@ module.exports = {
       name: 'qj_operate',
       filename: 'remoteEntry.js',
       exposes: {
-        './b2config': './src/config',
         './operate': './src/core',
+        './template': './src/template',
         './operateData': './src/data',
       },
       shared: {

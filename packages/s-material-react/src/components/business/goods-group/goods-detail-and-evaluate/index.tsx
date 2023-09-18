@@ -5,12 +5,12 @@ import { GoodsDetailInfo } from './goodsDetailInfo';
 import { useComponent } from '@brushes/simulate-component';
 import { Dispatch, Fragment, useState } from 'react';
 import { useGoodDetail, useEvaluate } from 'qj-mobile-store';
-import { useDataPageQuery } from '@/hooks/useDataPageQuery';
 
 const GoodsDetailAndEvaluateInitial = {
   evaluateShow: true,
   evaluateImgShow: true,
-  evaluateImg: 2
+  evaluateImg: 2,
+  skuCode: ''
 };
 
 interface TabsProps {
@@ -60,11 +60,10 @@ export const GoodsDetailAndEvaluate: React.FC<typeof GoodsDetailAndEvaluateIniti
   evaluateShow,
   evaluateImgShow,
   evaluateImg,
-  ...rest
+  skuCode
 }) => {
   const { View } = useComponent();
   const [tabActive, setTabActive] = useState(0);
-  const skuCode = useDataPageQuery(rest, 'skuNo');
   const { goodsRemark, goodsCode } = useGoodDetail(skuCode);
   const evaluate = useEvaluate(goodsCode);
   return (

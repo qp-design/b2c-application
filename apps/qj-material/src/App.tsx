@@ -1,16 +1,24 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import './index.scss';
 import {Tabs} from 'antd';
 import { QjIcon } from '@brushes/share-resource';
-import TemplateC from './components/templateC';
+import Template from '@/common/template';
 import ModuleC from './components/moduleC';
 import * as Materials from 's-material-react';
 import { useMaterialGraph, NodeGraph } from '@brushes/qj-shared-library';
 
-const App = ({ defaultValue, pageConfig }: { defaultValue: NodeGraph; pageConfig: { [v: string]: any } }) => {
+const App = ({ defaultValue, pageConfig, menuConfig = undefined, appendMaterial = {} }: { defaultValue: NodeGraph; pageConfig: { [v: string]: any }; menuConfig?: Array<any>; appendMaterial?: any }) => {
   const expGraph = useMaterialGraph();
+  const tep = useMemo(() => {
+    const path = window.location.host.includes('lcdev') || process.env.NODE_ENV === 'development' ? 'lcdev' : 'lc';
+    return {
+      url: `http://b2boperate.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
+      scope: `b2bqj_operate`,
+      module: './template'
+    }
+  }, []);
   useEffect(() => {
-    expGraph.init(Materials);
+    expGraph.init({...Materials, ...appendMaterial});
   }, []);
   const items = [
     {
@@ -21,7 +29,7 @@ const App = ({ defaultValue, pageConfig }: { defaultValue: NodeGraph; pageConfig
         </>
       ),
       key: 'item-1',
-      children: <ModuleC defaultValue={defaultValue} pageConfig={pageConfig} />
+      children: <ModuleC menuConfig={menuConfig} defaultValue={defaultValue} pageConfig={pageConfig} />
     }, // 务必填写 key
     {
       label: (
@@ -31,7 +39,7 @@ const App = ({ defaultValue, pageConfig }: { defaultValue: NodeGraph; pageConfig
         </>
       ),
       key: 'item-2',
-      children: <TemplateC />
+      children: <Template port={tep} materials={{...Materials, ...appendMaterial}}/>
     }
   ];
 

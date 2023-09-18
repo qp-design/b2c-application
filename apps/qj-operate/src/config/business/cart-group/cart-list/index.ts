@@ -1,6 +1,5 @@
 import { formConfigType } from '@/type/formConfig';
-import { SelectData } from '@/common';
-import { SelectAction } from '@/common/selectAction';
+import { SelectData } from 'operate-common';
 
 export const title = '购物车卡片';
 export const info = '购物车卡片的配置';
@@ -22,6 +21,10 @@ const sectionTwo: formConfigType = {
             {
               label: '组件更新',
               value: 'cartUpdateCount'
+            },
+            {
+              label: '购物车编辑',
+              value: 'cartIsEditor'
             }
           ],
           data: [

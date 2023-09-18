@@ -7,19 +7,21 @@ import { useMaterialMenu } from '../hooks';
 import { NodeGraph } from '@brushes/qj-shared-library';
 
 
-const ModuleC: React.FC<{ defaultValue: NodeGraph; pageConfig: { [v: string]: any } }> = ({
+const ModuleC: React.FC<{ defaultValue: NodeGraph; menuConfig: any; pageConfig: { [v: string]: any } }> = ({
   defaultValue,
-  pageConfig
+  pageConfig,
+  menuConfig = config
 }) => {
+  console.log(15, menuConfig, config);
   const { type, groupType } = defaultValue || {};
   const { handleClassify, classifyIndex, activedIndex, lists, detailIndex } = useMaterialMenu(
     groupType || type,
-    config
+    menuConfig
   );
   return (
     <div className={'moduleC'}>
       <Collapse
-        items={config.map((type, typeIndex) => {
+        items={menuConfig.map((type, typeIndex) => {
           return {
             key: type.code,
             label: type.label,

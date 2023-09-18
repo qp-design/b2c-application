@@ -1,6 +1,6 @@
 import { FieldType } from '@brushes/form';
 import React from 'react';
-import { SelectPicture } from '@/common';
+import { SelectPicture } from 'operate-common';
 export const formConfig: Array<FieldType> = [
   {
     label: '视频地址',
