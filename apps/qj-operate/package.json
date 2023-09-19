@@ -2,10 +2,14 @@
   "name": "qj-operate",
   "version": "1.0.0",
   "scripts": {
-    "prebuild": "rm -rf build/dist/ && rm -rf dist/ && prettier --write src/ ",
-    "build": "webpack --mode production --config ./scripts/build.js",
-    "postbuild": "cp -R ./dist ./build",
-    "build:dev": "webpack --mode development --config ./scripts/start.js",
+    "first": "rm -rf build/ && rm -rf dist/ && prettier --write src/",
+    "second": "webpack --mode production --config scripts/build.js",
+    "prebuild:pro": "npm run first",
+    "prebuild": "npm run first",
+    "build:pro": "npm run second",
+    "build": "npm run second",
+    "postbuild": "node ./scripts/push.js --branch=dev",
+    "postbuild:pro": "node ./scripts/push.js --branch=master",
     "start": "webpack serve --mode development --config ./scripts/start.js --live-reload --hot --no-client-overlay",
     "start:live": "webpack serve --mode development --config ./scripts/start.js --live-reload --hot --no-client-overlay"
   },

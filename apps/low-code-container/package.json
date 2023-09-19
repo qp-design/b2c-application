@@ -2,14 +2,16 @@
   "name": "low-code-container",
   "version": "1.0.0",
   "scripts": {
-    "prebuild": "rm -rf build/dist/ && rm -rf dist",
-    "build": "webpack --mode production",
-    "postbuild": "cp -R ./dist ./build",
-    "build:dev": "webpack --mode development",
-    "build:start": "cd dist && PORT=8888 npx serve",
-    "local": "prettier --write src/",
-    "start": "webpack serve --open --mode development --live-reload --hot --no-client-overlay",
-    "start:live": "webpack serve --open --mode development --live-reload --hot"
+    "first": "rm -rf build/ && rm -rf dist/ && prettier --write src/",
+    "second": "webpack --mode production --config scripts/index.js",
+    "prebuild:pro": "npm run first",
+    "prebuild": "npm run first",
+    "build:pro": "npm run second",
+    "build": "npm run second",
+    "postbuild": "node ./scripts/push.js --branch=dev",
+    "postbuild:pro": "node ./scripts/push.js --branch=master",
+    "start": "webpack serve --mode development --config scripts/index.js --live-reload --hot --no-client-overlay",
+    "start:live": "webpack serve --mode development --config scripts/index.js --live-reload --hot --no-client-overlay"
   },
   "license": "MIT",
   "devDependencies": {

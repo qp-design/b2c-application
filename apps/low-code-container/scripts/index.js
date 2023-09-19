@@ -2,7 +2,8 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-const deps = require("./package.json").dependencies;
+const deps = require("../package.json").dependencies;
+
 module.exports = {
   output: {
     // filename: '[contenthash:8].js',

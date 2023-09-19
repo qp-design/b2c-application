@@ -12,7 +12,6 @@ const ModuleC: React.FC<{ defaultValue: NodeGraph; menuConfig: any; pageConfig: 
   pageConfig,
   menuConfig = config
 }) => {
-  console.log(15, menuConfig, config);
   const { type, groupType } = defaultValue || {};
   const { handleClassify, classifyIndex, activedIndex, lists, detailIndex } = useMaterialMenu(
     groupType || type,

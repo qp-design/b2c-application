@@ -12,8 +12,8 @@ const App = ({ defaultValue, pageConfig, menuConfig = undefined, appendMaterial 
   const tep = useMemo(() => {
     const path = window.location.host.includes('lcdev') || process.env.NODE_ENV === 'development' ? 'lcdev' : 'lc';
     return {
-      url: `http://b2boperate.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
-      scope: `b2bqj_operate`,
+      url: `http://operate.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
+      scope: `qj_operate`,
       module: './template'
     }
   }, []);

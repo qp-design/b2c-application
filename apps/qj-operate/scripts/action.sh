@@ -5,7 +5,7 @@ branch="$1"
 # 进入到 Git 仓库目录
 cd build
 git init
-git remote add origin git@gitlab.qianjiangcloud.com:avengers/qj-material.git
+git remote add origin git@gitlab.qianjiangcloud.com:avengers/qj-operate.git
 git checkout -b $branch
 # 添加所有修改的文件
 git add .
