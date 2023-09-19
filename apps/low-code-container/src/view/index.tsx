@@ -6,8 +6,8 @@ import { Provider } from '@brushes/shared-store';
 
 const Index = () => {
   const isNeedJump = useMemo(() => {
-    return window.location.href.includes('platform=B2B')
-  }, [])
+    return window.location.href.includes('platform=B2B');
+  }, []);
   const [coe, setCoe] = useState(1);
   const port = useMemo(() => {
     const path = window.location.host.includes('lcdev') || process.env.NODE_ENV === 'development' ? 'lcdev' : 'lc';
@@ -31,18 +31,20 @@ const Index = () => {
   ]);
 
   const clickImpl = (value: number) => {
-    if(isNeedJump && value === 2) {
-      openIpml()
+    if (isNeedJump && value === 2) {
+      openIpml();
     } else {
       setCoe(value);
     }
-  }
+  };
 
   const openIpml = () => {
-    window.open(`${localStorage.getItem('operate') || ''}paas/b2b-bus-pc-saas/index.html#/homeYs?host=${(
-      localStorage.getItem('operate') || ''
-    ).slice(0, -1)}&token=${localStorage.getItem('operate-info')}`)
-  }
+    window.open(
+      `${localStorage.getItem('operate') || ''}paas/b2b-bus-pc-saas/index.html#/homeYs?host=${(
+        localStorage.getItem('operate') || ''
+      ).slice(0, -1)}&token=${localStorage.getItem('operate-info')}`
+    );
+  };
 
   return (
     <div className={'indexWrap'}>
@@ -75,4 +77,8 @@ const Index = () => {
 };
 
 // eslint-disable-next-line react/display-name
-export default () => <Provider><Index /></Provider>;
+export default () => (
+  <Provider>
+    <Index />
+  </Provider>
+);
