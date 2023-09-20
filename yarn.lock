@@ -10312,6 +10312,13 @@ qj-b2b-api@*, qj-b2b-api@^0.0.8:
   dependencies:
     "@brushes/optimize" "^1.0.5"
 
+qj-b2b-api@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.npmjs.org/qj-b2b-api/-/qj-b2b-api-0.0.9.tgz#4b25bad3a637a62126a879b05a697e113f06a29d"
+  integrity sha512-K1H4ONZzOdrl5vYONaQSGwS7TYN+VBXuDKrBUt7iBVbvRdpjrdY2N7Yg36//ftMWtNsJvohZVBO56C3uGywIWA==
+  dependencies:
+    "@brushes/optimize" "^1.0.5"
+
 qrcode.react@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/qrcode.react/-/qrcode.react-3.1.0.tgz#5c91ddc0340f768316fbdb8fff2765134c2aecd8"

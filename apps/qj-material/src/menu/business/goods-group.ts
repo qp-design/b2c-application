@@ -448,7 +448,8 @@ export default {
         // 操作栏右侧按钮背景颜色
         rPartBgColor: '#000000',
         // 操作栏右侧按钮样式
-        rPartStyle: '20px'
+        rPartStyle: '20px',
+        platform: 'b2c',
       }
     },
     {
@@ -500,7 +501,8 @@ export default {
         // 操作栏右侧按钮颜色
         rBtnColor: '#000000',
         // 操作栏右侧按样式 1:圆角 2:直角
-        rBtnStyle: 1
+        rBtnStyle: 1,
+        platform: 'b2c',
       }
     },
     {
