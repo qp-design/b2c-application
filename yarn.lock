@@ -1243,6 +1243,18 @@
     "@babel/helper-validator-identifier" "^7.22.19"
     to-fast-properties "^2.0.0"
 
+"@brushes/form@*":
+  version "0.1.4"
+  resolved "https://registry.npmjs.org/@brushes/form/-/form-0.1.4.tgz#d301cf25affae9169b4c9e9aea18ee38cb4dc152"
+  integrity sha512-pdnK6jJwsXNIJme3phc2IAijc2+v+IMODMYW4P3zttbQL0U6pFwcJGggA33Q33TpKdydSMlPcQsKep/VsImyFQ==
+
+"@brushes/mobile-form@*":
+  version "0.0.5"
+  resolved "https://registry.npmjs.org/@brushes/mobile-form/-/mobile-form-0.0.5.tgz#78616671fe917c9cae9d8882f43871be9f68a998"
+  integrity sha512-4k/dSCg6kZFS+ct52FKvFvp+xQpyH0gS/PBs783UfHBQRlAnn+oI/xyX42nsad3pEzTMSa2CGkTPBPNEPS8xiA==
+  dependencies:
+    lodash-es "^4.17.21"
+
 "@brushes/mobile-form@^0.0.3":
   version "0.0.3"
   resolved "https://registry.npmjs.org/@brushes/mobile-form/-/mobile-form-0.0.3.tgz#d97a6c639184d72fc21511f0e3705c9a2dc6bd26"
@@ -1270,7 +1282,7 @@
     rxjs "^7.5.6"
     sortablejs "^1.15.0"
 
-"@brushes/request@*", "@brushes/request@^0.2.1", "@brushes/request@latest":
+"@brushes/request@^0.2.1", "@brushes/request@latest":
   version "0.2.1"
   resolved "https://registry.npmjs.org/@brushes/request/-/request-0.2.1.tgz#6ef1fc64254b4c7948d870cd4a84a2d6e741248d"
   integrity sha512-F0vm750foMe07xW4B4lFJcgrhvrycpQCyULk+1H8AGoQL1jlf0GeYjwNh+/iEgCMC3wsr4YWJ92W7etttILwhA==
@@ -1278,10 +1290,25 @@
     flyio "^0.6.14"
     qs "6.5.3"
 
-"@brushes/share-resource@^1.0.3", "@brushes/share-resource@^1.1.2":
+"@brushes/share-resource@^1.1.2":
   version "1.1.2"
   resolved "https://registry.npmjs.org/@brushes/share-resource/-/share-resource-1.1.2.tgz#9cd4c53902072ab28a3207ef72b6818e11ac21d1"
   integrity sha512-cH47eoiXgx9vRAFyddK51pbcctcJlze3Ed78mNuo+YMG0W6Qo3NLQT5EP8Yd9OXqMrmTrWe19SschGFXp5cfDQ==
+
+"@brushes/shared-store@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.npmjs.org/@brushes/shared-store/-/shared-store-0.0.5.tgz#97b54c8663680d1314caf08943f6813898614f5e"
+  integrity sha512-DXjSj2PWwBXG37gE8FIrwa6NOU4JkTlv2tt5FTAHGvxVr4B7q+FnM0dUB7lmAJScxSSoAC8JXFsULrxmroX/vg==
+
+"@brushes/shared-utils@*":
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/@brushes/shared-utils/-/shared-utils-0.0.6.tgz#67fbe39351bb0df9d88289e385b08ac943e56b55"
+  integrity sha512-3eQQrZXvpK712Ny1r5ji0eDJ2Od8RxAunAEsD8nyTxdVc9LpIQuJrsxlX7pLtZICJCdbveIi4fX7XBz0rI1k/A==
+
+"@brushes/shared-utils@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.npmjs.org/@brushes/shared-utils/-/shared-utils-0.0.4.tgz#aa2a586989e24834a9bee3b02499cf250b801856"
+  integrity sha512-Da8YfGagjgleIIw0eyKgySVkQI26MwU85eTW5zz80uvUlK83zlDsOBmmqQW4ABtIzgK1pb56MqG4iJxCwCLd9Q==
 
 "@brushes/simulate-component@^0.2.8":
   version "0.2.8"
@@ -1290,12 +1317,17 @@
   dependencies:
     antd-mobile "^5.24.2"
 
+"@brushes/taro-component@*":
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/@brushes/taro-component/-/taro-component-0.0.8.tgz#e074506acc574ae68feaa7426c56cb037a954e1e"
+  integrity sha512-e4gmn9nHGe0Pox6LxMt4gDPoKPS0gDh75BnS4B/gYKtZVN9HO0GbrzC4acRc8rz8pX8WBx407LSw0bfFYKLqLQ==
+
 "@brushes/taro-hooks@^0.3.2":
   version "0.3.2"
   resolved "https://registry.npmjs.org/@brushes/taro-hooks/-/taro-hooks-0.3.2.tgz#665e6ab7346aa3aecc81af1b985b878dac4a1814"
   integrity sha512-BncTM4+1zRVmRSBmyoI96PcjJ5LrhAfdTYUsuf8WSwb0LL9rAkAzo4Ad87hYgw3ipLzGSxlg1cGsi4o4LcMbyA==
 
-"@brushes/utils@*", "@brushes/utils@^0.2.2", "@brushes/utils@^0.2.3", "@brushes/utils@latest":
+"@brushes/utils@^0.2.3", "@brushes/utils@latest":
   version "0.2.3"
   resolved "https://registry.npmjs.org/@brushes/utils/-/utils-0.2.3.tgz#afa3bd6080381bc91292320edfb336ba01ffcfc9"
   integrity sha512-esF2+xdF2IRvpE6Y80j9gt2fE7EiWE4s48QpogjCt20JzuCYPT9Qn+7mdfRz2byEYftqviGQ9qOzAaE06NrgQQ==
@@ -3390,7 +3422,7 @@ antd-mobile-v5-count@^1.0.1:
   resolved "https://registry.npmjs.org/antd-mobile-v5-count/-/antd-mobile-v5-count-1.0.1.tgz#85f20c46d1635c24e856bcf5ad55e8c98e44a523"
   integrity sha512-YGsiEDCPUDz3SzfXi6gLZn/HpeSMW+jgPc4qiYUr1fSopg3hkUie2TnooJdExgfiETHefH3Ggs58He0OVfegLA==
 
-antd-mobile@^5.24.2, antd-mobile@^5.32.0:
+antd-mobile@^5.24.2:
   version "5.32.4"
   resolved "https://registry.npmjs.org/antd-mobile/-/antd-mobile-5.32.4.tgz#0dfaf5d700441f5394a992bff6dd4f93a3166b88"
   integrity sha512-8/jcFRXD/+1qw5bnBMun6gC/XSHSExDHfmZ/OexzhKRzdJxLPr5oxzfO5TwPtV/EPt3H2c0/KVRvSyMyJYkydA==
@@ -3413,7 +3445,7 @@ antd-mobile@^5.24.2, antd-mobile@^5.32.0:
     tslib "^2.5.0"
     use-sync-external-store "^1.2.0"
 
-antd@^5.6.4, antd@^5.8.3, antd@^5.9.1:
+antd@^5.8.3, antd@^5.9.1:
   version "5.9.1"
   resolved "https://registry.npmjs.org/antd/-/antd-5.9.1.tgz#ebc8c4e00718d7cf8d53213ca867a9410b0ddf91"
   integrity sha512-kMjoDCUSNLyktgz2nX0wNys6Ni3DqVLWXiEDao/TESBsqQIrqkAQAbg1q1kX7Pw8yKXcnrx6tR5Fbv+TMKB72w==

@@ -11,7 +11,7 @@ const defaultConfig = {
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
-    port: 40011,
+    port: 4001,
   },
   plugins: [
     // new BundleAnalyzerPlugin({

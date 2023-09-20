@@ -6,7 +6,7 @@ const { merge } = require('webpack-merge');
 const defaultConfig = {
 
   devServer: {
-    port: 40021,
+    port: 4002,
     historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
