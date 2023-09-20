@@ -1300,15 +1300,10 @@
   resolved "https://registry.npmjs.org/@brushes/shared-store/-/shared-store-0.0.5.tgz#97b54c8663680d1314caf08943f6813898614f5e"
   integrity sha512-DXjSj2PWwBXG37gE8FIrwa6NOU4JkTlv2tt5FTAHGvxVr4B7q+FnM0dUB7lmAJScxSSoAC8JXFsULrxmroX/vg==
 
-"@brushes/shared-utils@*":
-  version "0.0.6"
-  resolved "https://registry.npmjs.org/@brushes/shared-utils/-/shared-utils-0.0.6.tgz#67fbe39351bb0df9d88289e385b08ac943e56b55"
-  integrity sha512-3eQQrZXvpK712Ny1r5ji0eDJ2Od8RxAunAEsD8nyTxdVc9LpIQuJrsxlX7pLtZICJCdbveIi4fX7XBz0rI1k/A==
-
-"@brushes/shared-utils@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/@brushes/shared-utils/-/shared-utils-0.0.4.tgz#aa2a586989e24834a9bee3b02499cf250b801856"
-  integrity sha512-Da8YfGagjgleIIw0eyKgySVkQI26MwU85eTW5zz80uvUlK83zlDsOBmmqQW4ABtIzgK1pb56MqG4iJxCwCLd9Q==
+"@brushes/shared-utils@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.npmjs.org/@brushes/shared-utils/-/shared-utils-0.0.7.tgz#068331573fdcd52c34358c7b193980af04f6e260"
+  integrity sha512-VqgWmxX7KBxoeUaJGA53fqYRYD97KVQjTAJoQNOY/eVWuM9MgUxxNhTdbghgQRmN3Xg9PZ116c72rKoJOXPGDg==
 
 "@brushes/simulate-component@^0.2.8":
   version "0.2.8"

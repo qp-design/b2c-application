@@ -14,7 +14,7 @@
     "postpublishOnly": "npm version patch && npm publish && git push"
   },
   "devDependencies": {
-    "@brushes/shared-utils": "^0.0.4",
+    "@brushes/shared-utils": "^0.0.7",
     "@types/lodash-es": "^4.17.7",
     "@brushes/utils": "latest",
     "rollup-plugin-typescript2": "^0.34.1",
