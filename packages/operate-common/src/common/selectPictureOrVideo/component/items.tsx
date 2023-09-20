@@ -1,7 +1,6 @@
 import { List, Image, Radio } from 'antd';
 import React from 'react';
 import { useFileContext } from '@/common/selectPictureOrVideo/store';
-import { Video } from 's-material-react';
 const baseUrl = process.env.REACT_APP_BASE_URL;
 const path = process.env.REACT_IMG_PATH || '';
 
