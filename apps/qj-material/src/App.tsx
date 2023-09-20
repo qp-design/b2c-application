@@ -22,7 +22,8 @@ const App = ({
   const tep = useMemo(() => {
     const path = window.location.host.includes('lc.') ? 'lc' : 'lcdev';
     return {
-      url: `http://operate.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
+      url: `http://localhost:4002/remoteEntry.js?id=${new Date().valueOf()}`,
+      // url: `http://operate.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
       scope: `qj_operate`,
       module: './template'
     };
