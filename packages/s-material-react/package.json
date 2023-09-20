@@ -34,7 +34,7 @@
     "@brushes/mobile-form": "*",
     "@brushes/request": "^0.2.1",
     "@brushes/shared-utils": "^0.0.7",
-    "@brushes/utils": "latest",
+    "@brushes/utils": "^0.2.4",
     "@rollup/plugin-terser": "^0.4.0",
     "@types/node": ">=18.15.7",
     "@types/react": "^18.0.28",

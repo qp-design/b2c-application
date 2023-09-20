@@ -1,6 +1,6 @@
 //@ts-nocheck;
 import { PropsWithChildren } from 'react'
-import { useLaunch } from '@tarojs/taro'
+import Taro, { useLaunch } from '@tarojs/taro'
 import { setTaro, getStorage } from '@brushes/utils';
 import { fly, wxEngine } from "@brushes/request";
 import { initApplication, setMaterial } from '@brushes/taro-hooks';
@@ -9,9 +9,6 @@ import { queryNewTginfoMenuTree, getPfsModelTagValueByTginfo } from 'qj-b2c-api'
 import * as materials from 's-material-react';
 import {safeArea} from "./utils";
 import './app.scss'
-
-// eslint-disable-next-line import/no-commonjs
-const Taro = require('@tarojs/taro');
 
 setTaro(Taro);
 function App({ children }: PropsWithChildren<any>) {
