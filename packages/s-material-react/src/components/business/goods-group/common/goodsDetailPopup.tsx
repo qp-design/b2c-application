@@ -5,6 +5,7 @@ import { SkuItems, SkuItemType } from './skuItem';
 import { ScrollWrap } from '@/common/scrollWrap';
 import { fixPrice } from '@/utils';
 import { memo } from 'react';
+import classNames from 'classnames';
 
 interface skuInfoType {
   goodsShowname: string;
@@ -79,6 +80,21 @@ interface DetailType {
 const DetailHandler: React.FC<DetailType> = ({ cashImpl, addShoppingImpl, addCardImpl }) => {
   const { Text, View } = useComponent();
   const isNeedButton = useGoodSkuStore((state) => state.isNeedButton);
+  const offShelf = useGoodSkuStore((state) => state['offShelf']);
+
+  if (offShelf) {
+    return (
+      <View
+        className={classNames({
+          btnWrap: true,
+          offShelf
+        })}
+      >
+        <Text className={'btn'}>已下架</Text>
+      </View>
+    );
+  }
+
   return (
     <>
       {isNeedButton ? (
@@ -108,7 +124,7 @@ export const InnerComponent: React.FC<GoodsDetailPopupType> = memo(
       addCardImpl, // 加入购物车
       cashImpl, // 立即购物
       addShoppingImpl // 立即购物 - 购物车
-    } = useAddShopping(goodsCode, skuInfo, dispatchPageStore);
+    } = useAddShopping(goodsCode, skuInfo, rsSkuDomainList, dispatchPageStore);
 
     return (
       <View className={'goodsDetail-size-popup'}>

@@ -1,4 +1,6 @@
 import { useComponent } from '@brushes/simulate-component';
+import { useGoodSkuStore } from 'qj-mobile-store';
+import classNames from 'classnames';
 
 export interface SkuItemType {
   skuName: string;
@@ -12,7 +14,7 @@ interface LocalType extends SkuItemType {
 }
 export const SkuItems: React.FC<LocalType> = ({ skuName, handleChooseSize, spec, skuOption, index }) => {
   const { View, Text } = useComponent();
-
+  const offShelf = useGoodSkuStore((state) => state['offShelf']);
   return (
     <View className={'sizeArr'}>
       <Text className={'title'}>{skuName}</Text>
@@ -20,7 +22,11 @@ export const SkuItems: React.FC<LocalType> = ({ skuName, handleChooseSize, spec,
         {skuOption.map((item: any, ind: number) => {
           return (
             <View
-              className={`sizeItem ${spec[index] === item.specValueValue ? 'active' : ''}`}
+              className={classNames({
+                sizeItem: true,
+                active: spec[index] === item.specValueValue,
+                offShelf: spec[index] === item.specValueValue && offShelf
+              })}
               key={ind}
               onClick={handleChooseSize.bind(null, item.specValueValue, index)}
             >

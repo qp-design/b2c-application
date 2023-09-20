@@ -97,7 +97,7 @@ export const GoodsDetailHandleBarOne: React.FC<typeof GoodsDetailHandleBarInitia
   ...rest
 }) => {
   const { rsSpecValueDomainList, goodsCode, rsSkuDomainList } = useGoodDetail(skuCode);
-  const skuInfo = useGoodSku(rsSpecValueDomainList);
+  const skuInfo = useGoodSku(rsSpecValueDomainList, rsSkuDomainList);
 
   return (
     <>

@@ -1,12 +1,12 @@
 import { checkSkuSpec, addCardSku } from '@/utils/payment';
 import { getPagesRefreshStore, navigatorHandler, taroMessage, updatePagesRefreshStore } from '@brushes/utils';
-import { get, isEmpty, noop } from 'lodash-es';
+import { get, isEmpty, noop, orderBy } from 'lodash-es';
 import { useEffect } from 'react';
 import { goodStore } from '../store';
 import { actionName, popupImplement } from '../utils';
 import { useImmutableCallback } from '@/utils/useImmutableCallback';
 
-export function useAddShopping(goodsCode: string, skuInfo: Object, dispatchPageStore = noop) {
+export function useAddShopping(goodsCode: string, skuInfo: Object, rsSkuDomainList: Array<any>, dispatchPageStore = noop) {
   const { dispatch, closePopup } = popupImplement(dispatchPageStore);
   useEffect(() => {
     // 初始化
@@ -15,23 +15,34 @@ export function useAddShopping(goodsCode: string, skuInfo: Object, dispatchPageS
     dispatch({
       type: 'initGoodSku',
       payload: {
+        offShelf: false,
         count: 1,
         spec: specDefaultValue
       }
     });
   }, [skuInfo]);
 
+  const isExistImpl = (params: string) => {
+    return rsSkuDomainList.some((item) => item.skuName === params);
+  };
+
   const handleChooseSize = useImmutableCallback((value: string, index: number) => {
     const currentState = goodStore.getState();
     const { spec: specOne } = currentState;
     //@ts-ignore
     specOne[index] = value;
+
+    const isExist = isExistImpl(orderBy(specOne).join('/'));
     dispatch({
       type: 'select',
       payload: {
+        offShelf: !isExist,
         spec: [...specOne]
       }
     });
+    if (!isExist) {
+      taroMessage('该规格已下架', 'none');
+    }
   });
 
   const handleStep = (goodsNum: number, type: actionName) => {

@@ -3,9 +3,10 @@ import { useComponent } from '@brushes/simulate-component';
 import { navigatorHandler } from '@brushes/utils';
 import { useService } from '@/utils';
 import { GoodsDetailPopup } from '../common/goodsDetailPopup';
-import { useGoodSku, popupImplement, useGoodDetail, useGoodSpecAndPrice } from 'qj-mobile-store';
+import { useGoodSku, popupImplement, useGoodDetail, useGoodSpecAndPrice, useGoodSkuStore } from 'qj-mobile-store';
 import { noop } from 'lodash-es';
 import { memo } from 'react';
+import classNames from 'classnames';
 
 const GoodsDetailHandleBarInitial = {
   serverShow: true,
@@ -36,7 +37,8 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
     dispatchPageStore,
     skuCode
   }) => {
-    const { View, IconMobile } = useComponent();
+    const { View, IconMobile, Text } = useComponent();
+    const offShelf = useGoodSkuStore((state) => state['offShelf']);
     const { rsSkuDomainList, goodPro } = useGoodDetail(skuCode);
     const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
     const { servicePopup } = useService();
@@ -58,32 +60,40 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
         </View>
 
         <View className={'goods-detail-btn-group'}>
-          {goodPro === '26' ? null : (
-            <View
-              className={'btn addCart'}
-              onClick={addCardPopup}
-              style={{
-                color: lPartColor,
-                backgroundColor: lPartBgColor,
-                borderTopLeftRadius: lPartStyle,
-                borderBottomLeftRadius: lPartStyle
-              }}
-            >
-              加入购物车
+          {offShelf ? (
+            <View className={'btn addCart offShelf'}>
+              <Text className={'btn'}>已下架</Text>
             </View>
+          ) : (
+            <>
+              {goodPro === '26' ? null : (
+                <View
+                  className={'btn addCart'}
+                  onClick={addCardPopup}
+                  style={{
+                    color: lPartColor,
+                    backgroundColor: lPartBgColor,
+                    borderTopLeftRadius: lPartStyle,
+                    borderBottomLeftRadius: lPartStyle
+                  }}
+                >
+                  加入购物车
+                </View>
+              )}
+              <View
+                onClick={buyOpenPopup}
+                className={'btn buy'}
+                style={{
+                  color: rPartColor,
+                  backgroundColor: rPartBgColor,
+                  borderTopRightRadius: rPartStyle,
+                  borderBottomRightRadius: rPartStyle
+                }}
+              >
+                {goodInfo.goodsPro === '10' ? '预售抢购' : '立即购买'}
+              </View>
+            </>
           )}
-          <View
-            onClick={buyOpenPopup}
-            className={'btn buy'}
-            style={{
-              color: rPartColor,
-              backgroundColor: rPartBgColor,
-              borderTopRightRadius: rPartStyle,
-              borderBottomRightRadius: rPartStyle
-            }}
-          >
-            {goodInfo.goodsPro === '10' ? '预售抢购' : '立即购买'}
-          </View>
         </View>
       </View>
     );
@@ -97,7 +107,7 @@ export const GoodsDetailHandleBar: React.FC<typeof GoodsDetailHandleBarInitial> 
   ...rest
 }) => {
   const { rsSpecValueDomainList, goodsCode, rsSkuDomainList } = useGoodDetail(skuCode);
-  const skuInfo = useGoodSku(rsSpecValueDomainList);
+  const skuInfo = useGoodSku(rsSpecValueDomainList, rsSkuDomainList);
   const { popupVisible } = $_dataSource;
   return (
     <>

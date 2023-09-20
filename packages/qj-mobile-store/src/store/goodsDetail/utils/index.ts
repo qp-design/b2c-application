@@ -12,6 +12,7 @@ interface GoodsDetailType {
   goodsNum: number;
   orderType: 1 | 0;
   isNeedButton: boolean;
+  offShelf: boolean;
 }
 
 export type actionName = 'plus' | 'minus' | 'select' | 'popupImpl' | 'initGoodSku';

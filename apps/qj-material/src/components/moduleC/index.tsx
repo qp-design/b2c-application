@@ -1,11 +1,10 @@
 import { Fragment } from 'react';
-import {Collapse } from 'antd';
+import { Collapse } from 'antd';
 import { config } from '@/menu';
 import MenuItem from './menuItem';
 import './index.scss';
 import { useMaterialMenu } from '../hooks';
 import { NodeGraph } from '@brushes/qj-shared-library';
-
 
 const ModuleC: React.FC<{ defaultValue: NodeGraph; menuConfig: any; pageConfig: { [v: string]: any } }> = ({
   defaultValue,

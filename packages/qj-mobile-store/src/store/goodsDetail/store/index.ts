@@ -6,7 +6,8 @@ export const goodStore = createStore({
   isNeedButton: false,
   goodsNum: 1,
   spec: [],
-  orderType: 0
+  orderType: 0,
+  offShelf: false
 });
 
 export function useGoodSkuStore(selector = (state: any) => state) {

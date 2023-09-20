@@ -185,6 +185,9 @@
       border-bottom-right-radius: 20px;
     }
   }
+  .offShelf {
+    border-radius: 20px;
+  }
 }
 
 .goodsDetailTab {
@@ -438,10 +441,14 @@
           margin-bottom: 10px;
 
           &.active {
-            //background: #346fc2;
             background: #000000;
             color: #fff;
             border-color: #1a1a1a;
+          }
+          &.offShelf {
+            background: #999;
+            color: #fff;
+            border-color: #e1e1e1;
           }
         }
       }
@@ -475,6 +482,9 @@
       border-radius: 20px;
       text-align: center;
       color: #ffffff;
+    }
+    &.offShelf .btn {
+      background: #999;
     }
   }
 }

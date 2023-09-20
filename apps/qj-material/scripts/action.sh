@@ -11,7 +11,7 @@ git checkout -b $branch
 git add .
 
 # 提交并添加提交消息
-git commit -m "feat: master"
+git commit -m "feat: $branch"
 
 # 推送到远程仓库
 git push -f origin $branch

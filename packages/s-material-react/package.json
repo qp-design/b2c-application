@@ -1,6 +1,6 @@
 {
   "name": "s-material-react",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "'组件库'",
   "main": "dist/index.js",
   "sideEffects": [
