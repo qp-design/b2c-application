@@ -1,14 +1,9 @@
-//@ts-nocheck
 import { useComponent } from '@brushes/simulate-component';
-import { useExpressInfo } from 'qj-mobile-store';
 import { get } from 'lodash-es';
 import type { FC } from 'react';
-import type { ExpressInfoProps } from '../index';
 
-interface ExpressInfoTopProps extends ExpressInfoProps {}
 
-export const ExpressInfoTop: FC<ExpressInfoTopProps> = ({ code, defaultValue }) => {
-  const { info, detail, stateObj } = useExpressInfo(code);
+export const ExpressInfoTop: FC<any> = ({defaultValue, info, detail, stateObj }) => {
   const { View } = useComponent();
   const bg = get(info, 'packageList[0].contractGoodsList[0].dataPic', defaultValue.dataPic);
   const num = get(info, 'packageList.length', defaultValue.count);
