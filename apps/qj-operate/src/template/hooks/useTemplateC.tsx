@@ -31,19 +31,28 @@ const columns = (conditions: Array<boolean>) =>
   new Array(conditions.map((item) => Number(item)).reduce((pre, next) => (pre += next), 0)).fill('auto').join(' ') +
   ' auto';
 export const useTemplateC = (form: FormInstance) => {
-  const [, setModule] = useStore((state) => state['module']);
+  const [module, setModule] = useStore((state) => state['module']);
   const [isUpdate] = useStore((state) => state['isUpdate']);
   const [, setThemeConfig] = useStore((state) => state['theme']);
   const [templates, setTemplates] = useState<Array<Template>>([]);
   const [isAdd, setIsAdd] = useState<boolean>(false);
   const [open, setOpen] = useState(false);
-  const [page, setPage] = useState<string>('1');
+  const [page] = useState<number>(1);
   const currentTemplate = useRef<Partial<Template> | null>();
   useEffect(() => {
-    loadTemplates();
+    init();
   }, [isUpdate]);
 
-  console.log(46, isUpdate);
+  function init() {
+    if (module) {
+      const { dataState } = templates.find((item) => item.mmodelCode === module) || {};
+      if (!dataState) {
+        return;
+      }
+    }
+    loadTemplates();
+  }
+
   function findOActiveModule(arr: any) {
     if (arr.length === 0) return;
     const filterObj = arr.find((obj: any) => obj.hasOwnProperty('mmodelUse'));
@@ -52,21 +61,20 @@ export const useTemplateC = (form: FormInstance) => {
     setThemeConfig({ theme: resultObj });
   }
 
-  const loadTemplates = async (controlled_page?: string, controlled_rows?: string) => {
+  const loadTemplates = async (controlled_page?: number, controlled_rows?: string) => {
     const { list = [] } =
       (await queryPfsMmodelPage({
         page: controlled_page ?? page,
-        rows: controlled_rows ?? '10'
+        rows: controlled_rows ?? '50' //暂时处理 后面这里要调整
       })) || {};
     findOActiveModule(list);
-    list.length && setPage((preState) => preState + 1);
-    setTemplates(controlled_page ? list : (preState) => preState.concat(list));
+    setTemplates(list);
   };
 
   const onApply = async (template: (typeof templates)[0]) => {
     try {
       await publishMmodel({ mmodelId: template.mmodelId });
-      loadTemplates('1', String(templates.length));
+      loadTemplates(1, String(templates.length));
     } catch (err) {
       message.error(err.msg);
     }
@@ -76,7 +84,7 @@ export const useTemplateC = (form: FormInstance) => {
     const res = await deletePfsMmodel({ mmodelId: template.mmodelId });
     if (res.success) {
       message.success(res.msg);
-      loadTemplates('1', String(templates.length));
+      loadTemplates(1, String(templates.length));
     }
   };
   const onEdit = (template: (typeof templates)[0]) => {
@@ -123,7 +131,7 @@ export const useTemplateC = (form: FormInstance) => {
   };
 
   const callback = () => {
-    loadTemplates('1', String(isAdd ? templates.length + 1 : templates.length));
+    loadTemplates(1, String(isAdd ? templates.length + 1 : templates.length));
     setOpen(false);
   };
 
@@ -133,15 +141,16 @@ export const useTemplateC = (form: FormInstance) => {
     });
     if (res.success) {
       message.success(res.msg);
-      loadTemplates('1', String(templates.length + 1));
+      loadTemplates(1, String(templates.length + 1));
       setOpen(false);
     }
   };
   const SingleTemplate: FC<{ instance: Template; tag?: string }> = memo(function SingleTemplate({ instance, tag }) {
+    const isActive = module ? module === instance.mmodelCode : instance.mmodelUse;
     return (
       <div
         key={tag}
-        style={Object.assign({}, instance.mmodelUse ? { backgroundColor: 'rgba(57, 134, 246, 0.60)' } : {})}
+        style={{ backgroundColor: isActive ? 'rgba(57, 134, 246, 0.60)' : '#fff' }}
         className={'templateItem'}
       >
         <div onClick={() => onClick(instance)}>{instance.mmodelName}</div>
@@ -181,6 +190,7 @@ export const useTemplateC = (form: FormInstance) => {
       </div>
     );
   });
+
   const renderTemplates = useMemo(() => {
     return templates.map((item) => {
       if (item.mmodelUse) {
@@ -192,7 +202,7 @@ export const useTemplateC = (form: FormInstance) => {
       }
       return <SingleTemplate instance={item} key={item.mmodelCode} />;
     });
-  }, [templates]);
+  }, [templates, module]);
   return {
     isAdd,
     open,
