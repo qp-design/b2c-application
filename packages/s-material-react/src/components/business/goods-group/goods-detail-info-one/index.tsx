@@ -1,7 +1,7 @@
 //@ts-nocheck
 import React, { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
-import { useGoodDetail, useGoodFootprint, useGoodSpecAndPrice } from 'qj-mobile-store';
+import {useGoodDetail, useGoodFootprint, useGoodSkuStore, useGoodSpecAndPrice} from 'qj-mobile-store';
 import { HandleBar } from './handleBar';
 import { fixPrice } from '@/utils';
 
@@ -21,9 +21,10 @@ const GoodsDetailInfoOneJsx: React.FC<typeof initGoodsDetailInfoOne> = ({
   const { View, SmoothView } = useComponent();
   const { rsSkuDomainList } = useGoodDetail(skuCode);
   const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
+  const spec = useGoodSkuStore((state: any) => state.spec);
 
   useGoodFootprint(skuCode);
-
+  console.log(26, goodInfo, 'spec', spec);
   return (
     <View className={'goodsDetail-info-one'}>
       <SmoothView

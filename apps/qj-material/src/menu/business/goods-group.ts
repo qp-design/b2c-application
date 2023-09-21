@@ -249,7 +249,8 @@ export default {
         // 轮播图是否纵向滚动
         vertical: false,
         // 轮播图是否自动播放
-        autoplay: false
+        autoplay: false,
+        Position: 'none'
       }
     },
     {
@@ -449,7 +450,7 @@ export default {
         rPartBgColor: '#000000',
         // 操作栏右侧按钮样式
         rPartStyle: '20px',
-        platform: 'b2c',
+        platform: 'b2c'
       }
     },
     {
@@ -502,7 +503,7 @@ export default {
         rBtnColor: '#000000',
         // 操作栏右侧按样式 1:圆角 2:直角
         rBtnStyle: 1,
-        platform: 'b2c',
+        platform: 'b2c'
       }
     },
     {

@@ -23,6 +23,8 @@ export const GoodsDetailInfo: React.FC<typeof GoodsDetailInfoInitial> = ({
   const { rsSkuDomainList } = useGoodDetail(skuCode);
   const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
   useGoodFootprint(skuCode);
+
+  console.log(26, goodInfo);
   return (
     <View className={'goodsDetail-topInfo'}>
       <View className={'lPart'}>

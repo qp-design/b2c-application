@@ -16,6 +16,8 @@ export const initialValue = {
   brandCode: '',
   pntreeCode: '',
   memberCode: '',
+  goodsThdate: '',
+  goodsOdate: '',
   rsSkuDomainList: []
 };
 

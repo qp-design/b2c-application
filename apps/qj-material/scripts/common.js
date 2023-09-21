@@ -68,10 +68,6 @@ module.exports = {
       },
       shared: {
         ...deps,
-        "s-material-react": {
-          import: "s-material-react",
-          requiredVersion: process.env.NODE_ENV === 'development' ? require("../../s-material-react/package.json").version : deps["s-material-react"],
-        },
         "antd": {
           singleton: true,
           requiredVersion: deps.antd,

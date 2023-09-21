@@ -35,7 +35,7 @@ interface SwiperType {
 }
 
 const SwiperJsx: React.FC<SwiperType> = ({
-  Position,
+  Position = 'none',
   className = '',
   className1 = '',
   defaultValue = [],
