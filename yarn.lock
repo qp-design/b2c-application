@@ -11354,7 +11354,7 @@
 
 "s-material-react@*", "s-material-react@file:/Users/joker/Documents/workspace/lowCodeRepo/b2c-lowcode/packages/s-material-react":
   "resolved" "file:packages/s-material-react"
-  "version" "1.5.10"
+  "version" "1.5.12"
   dependencies:
     "@brushes/simulate-component" "^0.2.8"
     "classnames" "^2.3.2"

@@ -1,18 +1,17 @@
 import { useComponent } from '@brushes/simulate-component';
 import { RateItem } from '@/common/rateItem';
-import { useRef } from 'react';
 import { NoData } from '@/common/noData';
 
 export const GoodsDetailEvaluate = ({ evaluateArr }: any) => {
   const { View } = useComponent();
-  const list = useRef(evaluateArr);
+
 
   return (
     <View className={'goodsDetailEvaluate'}>
-      {list.current.length ? (
+      {evaluateArr.length ? (
         <View>
-          <View className={'topInfo'}>评价 ({list.current.length})</View>
-          {list.current.slice(0, 5).map((item: any, index: number) => {
+          <View className={'topInfo'}>评价 ({evaluateArr.length})</View>
+          {evaluateArr.slice(0, 5).map((item: any, index: number) => {
             return <RateItem item={item} key={index} />;
           })}
         </View>

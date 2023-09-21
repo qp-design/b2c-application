@@ -13,7 +13,7 @@ export const useEvaluate = (goodsCode: string) => {
           page: 1,
           rows: 10
         });
-        setEvaluate(data || []);
+        setEvaluate(data.list || []);
       } catch (err) {}
     })();
   }, [goodsCode]);
