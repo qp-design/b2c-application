@@ -6,7 +6,7 @@ export const GoodsDetailPromotion = ({ skuCode }) => {
   const { View, Text } = useComponent();
   const { rsSkuDomainList } = useGoodDetail(skuCode);
   const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
-  const promotionList = usePromotion(rsSkuDomainList, goodInfo.skuCode || skuCode);
+  const promotionList = usePromotion(rsSkuDomainList, goodInfo.skuCode);
 
   return (
     <View className={'goodsDetail-promotion'}>

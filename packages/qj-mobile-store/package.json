@@ -1,6 +1,6 @@
 {
   "name": "qj-mobile-store",
-  "version": "1.3.8",
+  "version": "1.3.9",
   "type": "module",
   "main": "dist/index.js",
   "license": "MIT",
@@ -16,7 +16,7 @@
   "devDependencies": {
     "@brushes/shared-utils": "^0.0.7",
     "@types/lodash-es": "^4.17.7",
-    "@brushes/utils": "latest",
+    "@brushes/utils": "^0.2.4",
     "rollup-plugin-typescript2": "^0.34.1",
     "typescript": "^5.0.2",
     "tsconfig": "*",

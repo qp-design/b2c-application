@@ -2,7 +2,7 @@ import { ExpressInfoStep, ExpressInfoTop } from './components';
 import { useComponent } from '@brushes/simulate-component';
 import type { FC } from 'react';
 import { memo } from 'react';
-import {useExpressInfo} from "qj-mobile-store";
+import { useExpressInfo } from 'qj-mobile-store';
 export interface ExpressInfoProps {
   defaultValue: {
     message: string;
@@ -14,7 +14,7 @@ export interface ExpressInfoProps {
     result: string;
   };
   code: string;
-  platform: string
+  platform: string;
 }
 const ExpressInfoJsx: FC<ExpressInfoProps> = ({ code, defaultValue }) => {
   const { View } = useComponent();

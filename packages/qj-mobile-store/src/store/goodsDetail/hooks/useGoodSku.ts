@@ -19,7 +19,6 @@ export function useGoodSku(rsSpecValueDomainList: Array<any>, rsSkuDomainList: A
   return useMemo(() => {
     const skuList = computedSkuImpl(rsSpecValueDomainList);
     const spec = get(rsSkuDomainList, '[0]skuName', '').split('/');
-
     return {
       skuList,
       spec

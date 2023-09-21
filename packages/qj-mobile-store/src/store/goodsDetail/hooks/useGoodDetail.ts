@@ -25,6 +25,7 @@ export const useGoodDetail = (skuCode: string) => {
     (async () => {
       try {
         const goodsDetailResult = await getGoodDetail(skuCode);
+        //@ts-ignore
         setState(goodsDetailResult || initialValue);
       } catch (err: any) {}
     })();

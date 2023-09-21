@@ -235,7 +235,6 @@ export function usePlaceOrder({ skuId, goodsNum, shoppingGoodsId }: PaymentOrder
         ...payload
         // areaCode: 110000
       });
-      console.log(237, data);
       payState.current.freight = data.dataObj;
       resultPrice();
     } catch (err) {

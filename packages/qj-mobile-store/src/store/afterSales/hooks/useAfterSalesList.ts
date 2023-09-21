@@ -18,12 +18,6 @@ export const useAfterSalesList = (item: any, refreshNum: number) => {
     init();
   }, [refreshNum]);
 
-  useEffect(() => {
-    console.log('父组件, 挂载');
-    return () => {
-      console.log('父组件, 卸载');
-    };
-  }, [afterSalesList]);
   const init = useImmutableCallback(() => {
     page.current = 0;
     setAfterSalesList([]);

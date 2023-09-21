@@ -2,8 +2,7 @@ import { useComponent } from '@brushes/simulate-component';
 import { get } from 'lodash-es';
 import type { FC } from 'react';
 
-
-export const ExpressInfoTop: FC<any> = ({defaultValue, info, detail, stateObj }) => {
+export const ExpressInfoTop: FC<any> = ({ defaultValue, info, detail, stateObj }) => {
   const { View } = useComponent();
   const bg = get(info, 'packageList[0].contractGoodsList[0].dataPic', defaultValue.dataPic);
   const num = get(info, 'packageList.length', defaultValue.count);

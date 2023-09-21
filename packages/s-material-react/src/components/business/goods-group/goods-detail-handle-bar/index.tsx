@@ -6,7 +6,6 @@ import { GoodsDetailPopup } from '../common/goodsDetailPopup';
 import { useGoodSku, popupImplement, useGoodDetail, useGoodSpecAndPrice, useGoodSkuStore } from 'qj-mobile-store';
 import { noop } from 'lodash-es';
 import { memo } from 'react';
-import classNames from 'classnames';
 
 const GoodsDetailHandleBarInitial = {
   serverShow: true,

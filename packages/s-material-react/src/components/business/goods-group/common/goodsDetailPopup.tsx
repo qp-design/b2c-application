@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { useComponent } from '@brushes/simulate-component';
 import { actionName, useAddShopping, useGoodSkuStore, useGoodSpecAndPrice } from 'qj-mobile-store';
 import { SkuItems, SkuItemType } from './skuItem';
@@ -17,6 +16,8 @@ interface skuInfoType {
 export interface GoodsDetailPopupType {
   skuInfo: skuInfoType;
   goodsCode: string;
+  dispatchPageStore: (e: any) => void;
+  popupVisible?: boolean;
   rsSkuDomainList: Array<any>;
 }
 
@@ -40,7 +41,11 @@ const SkuComponent = ({
 }: {
   skuInfo: skuInfoType;
   spec: Array<any>;
-  goodInfo: Object;
+  goodInfo: {
+    dataPic: string;
+    goodsName: string;
+    pricesetNprice: number;
+  };
   handleChooseSize: (value: string, index: number) => void;
 }) => {
   const { Image, View } = useComponent();
@@ -125,14 +130,13 @@ export const InnerComponent: React.FC<GoodsDetailPopupType> = memo(
       cashImpl, // 立即购物
       addShoppingImpl // 立即购物 - 购物车
     } = useAddShopping(goodsCode, skuInfo, rsSkuDomainList, dispatchPageStore);
-
     return (
       <View className={'goodsDetail-size-popup'}>
         <ScrollWrap>
           <ScrollView>
             <View className={'content'}>
               <SkuComponent skuInfo={skuInfo} handleChooseSize={handleChooseSize} spec={spec} goodInfo={goodInfo} />
-              <GoodSkuCount handleStep={handleStep.bind(null, goodInfo.goodsNum)} />
+              <GoodSkuCount handleStep={handleStep.bind(null, goodInfo.goodsNum, goodInfo.goodsMinnum)} />
             </View>
           </ScrollView>
         </ScrollWrap>

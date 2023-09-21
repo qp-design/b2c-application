@@ -7,7 +7,6 @@ export const SelectGoodsGroup: React.FC = ({
   name,
   parentName = []
 }: any) => {
-  console.log(name);
   const [ind] = name;
   return (
     <div className={'SelectGoodsGroupItem'}>

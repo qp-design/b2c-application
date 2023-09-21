@@ -1,6 +1,6 @@
 {
   "name": "s-material-react",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "description": "'组件库'",
   "main": "dist/index.js",
   "sideEffects": [
@@ -44,7 +44,7 @@
     "nodemon": "^2.0.22",
     "prettier": "^2.8.7",
     "qj-b2c-api": "*",
-    "qj-b2b-api": "^0.0.9",
+    "qj-b2b-api": "^0.1.0",
     "qj-mobile-store": "*",
     "react": "^18.2.0",
     "rollup-plugin-typescript2": "^0.34.1",

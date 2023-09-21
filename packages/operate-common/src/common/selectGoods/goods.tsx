@@ -34,7 +34,6 @@ export const GoodsJsx = ({
   };
 
   const saveImpl = () => {
-    console.log(26, name, ref.current);
     form.setFieldValue(name, ref.current);
     const values = form.getFieldsValue();
     monitorInstance.updateNode(values);

@@ -61,7 +61,6 @@ export const useArticleDetail = ({ handleChoose }: any) => {
   };
 
   const onChange = (arr: any, item: any) => {
-    console.log(59, item[0]['doclistId']);
     const doclistId = item[0]['doclistId'];
     handleChoose(
       {

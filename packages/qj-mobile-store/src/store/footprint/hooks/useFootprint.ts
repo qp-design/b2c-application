@@ -33,7 +33,6 @@ export const useFootprint = () => {
       if (result.list?.length === 0) return;
       setFootprintList((val) => {
         if (page.current === 1) {
-          console.log('第一页');
           return result.list;
         }
         return val.concat(result.list || []);

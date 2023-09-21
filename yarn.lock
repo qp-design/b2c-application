@@ -10349,10 +10349,10 @@ qj-b2b-api@*, qj-b2b-api@^0.0.8:
   dependencies:
     "@brushes/optimize" "^1.0.5"
 
-qj-b2b-api@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.npmjs.org/qj-b2b-api/-/qj-b2b-api-0.0.9.tgz#4b25bad3a637a62126a879b05a697e113f06a29d"
-  integrity sha512-K1H4ONZzOdrl5vYONaQSGwS7TYN+VBXuDKrBUt7iBVbvRdpjrdY2N7Yg36//ftMWtNsJvohZVBO56C3uGywIWA==
+qj-b2b-api@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.npmjs.org/qj-b2b-api/-/qj-b2b-api-0.1.0.tgz#4bda0fa9c38433dfc50fbfbc6bfe0e79d5f841ce"
+  integrity sha512-33CB21yrvGUmb/Wp5WV5W0G4HjTc0y5vY1ubB6DWgGsshN7tGBuyR+XtIVC9lbAYkzsLK0eHBKaCuw2J4Pvu+A==
   dependencies:
     "@brushes/optimize" "^1.0.5"
 

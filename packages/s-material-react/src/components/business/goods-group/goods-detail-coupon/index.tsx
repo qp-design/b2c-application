@@ -10,7 +10,7 @@ export const GoodsDetailCoupon = ({ skuCode, ...rest }) => {
   const { View, Text, Popup, Image } = useComponent();
   const { rsSkuDomainList } = useGoodDetail(skuCode);
   const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
-  const { coupon, visible, setVisible } = useCoupon(rsSkuDomainList, goodInfo.skuCode || skuCode);
+  const { coupon, visible, setVisible } = useCoupon(rsSkuDomainList, goodInfo.skuCode);
   return (
     <>
       <View className={'goodsDetail-coupon'} onClick={() => setVisible(true)}>

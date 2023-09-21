@@ -11,7 +11,6 @@ export const ExtendParams = ({
   form: FormInstance;
 }) => {
   const [extendOption] = useActionStore((state) => state['extendOption']);
-  console.log(8, extendOption);
   return (
     <>
       {dynamicFormFields(

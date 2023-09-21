@@ -11,19 +11,20 @@ export function useAddShopping(goodsCode: string, skuInfo: Object, rsSkuDomainLi
   useEffect(() => {
     // 初始化
     const specDefaultValue = get(skuInfo, 'spec', []);
+    const goodsMinnum = get(rsSkuDomainList, '[0]goodsMinnum', 1);
     if (isEmpty(specDefaultValue)) return;
     dispatch({
       type: 'initGoodSku',
       payload: {
         offShelf: false,
-        count: 1,
+        count: goodsMinnum || 1,
         spec: specDefaultValue
       }
     });
   }, [skuInfo]);
 
   const isExistImpl = (params: string) => {
-    return rsSkuDomainList.some((item) => item.skuName === params);
+    return rsSkuDomainList.find((item) => item.skuName === params) || {};
   };
 
   const handleChooseSize = useImmutableCallback((value: string, index: number) => {
@@ -32,23 +33,25 @@ export function useAddShopping(goodsCode: string, skuInfo: Object, rsSkuDomainLi
     //@ts-ignore
     specOne[index] = value;
 
-    const isExist = isExistImpl(orderBy(specOne).join('/'));
+    const skuItem = isExistImpl(orderBy(specOne).join('/'));
+    const isExist = isEmpty(skuItem);
     dispatch({
       type: 'select',
       payload: {
-        offShelf: !isExist,
+        offShelf: isExist,
+        count: skuItem.goodsMinnum || 1,
         spec: [...specOne]
       }
     });
-    if (!isExist) {
+    if (isExist) {
       taroMessage('该规格已下架', 'none');
     }
   });
 
-  const handleStep = (goodsNum: number, type: actionName) => {
+  const handleStep = (goodsNum: number, goodsMinnum: number, type: actionName) => {
     const { count } = goodStore.getState();
-    if (count === 1 && type === 'minus') {
-      taroMessage('不能小于1', 'none');
+    if (count === goodsMinnum && type === 'minus') {
+      taroMessage(`不能小于${goodsMinnum}`, 'none');
       return;
     }
     if (type === 'plus' && count === goodsNum) {
