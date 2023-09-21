@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useState } from 'react';
-import { getEnv, getStorage, getTaro } from '@brushes/utils';
-import { queryOcsconfigList } from 'qj-b2c-api';
-import { queryOcserviceConfPageByMember } from 'qj-b2b-api';
+import {useEffect, useMemo, useState} from 'react';
+import {getEnv, getStorage, getTaro} from '@brushes/utils';
+import {queryOcsconfigList} from 'qj-b2c-api';
+import {queryOcserviceConfPageByMember} from 'qj-b2b-api';
+import {get} from 'lodash-es';
 
 export const useService = (platform = 'b2c') => {
   const [list, setList] = useState<string[]>([]);
@@ -28,16 +29,17 @@ export const useService = (platform = 'b2c') => {
     }
   };
 
-  const handleList = (list: any) => {
-    let arr = [];
+  const handleList = (list: Array<any>) => {
+    if (list.length === 0) return ['未知客服信息'];
+    let arr: string[] = [];
     if (platform === 'b2c') {
-      const target = list[0].ocsOcserviceReDomain.ocsOcserviceConfReDomainList || [];
+      const target = get(list[0], 'ocsOcserviceReDomain.ocsOcserviceConfReDomainList') || [];
       for (let i = 0; i < target.length; i++) {
         const item = target[i];
-        arr.push(`${item.ocserviceConfRemark}: ${item.ocserviceConfValue}`);
+        arr.push(`${get(item, 'ocserviceConfRemark')}: ${get(item, 'ocserviceConfValue')}`);
       }
     } else if (platform === 'b2b') {
-      arr.push(`客服电话: ${list[0].ocserviceConfValue}`);
+      arr.push(`客服电话: ${get(list[0], 'ocserviceConfValue')}`);
     }
     return arr;
   };

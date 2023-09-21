@@ -14,7 +14,7 @@ const Index = () => {
 
   return (
     <View>
-      <HeaderJsx  navigationBarTitle='平台协议/政策'/>
+      <HeaderJsx  navigationBarTitle='平台协议/政策' />
       <View className='wrap' dangerouslySetInnerHTML={{__html: agreementData}}></View>
     </View>
   )
