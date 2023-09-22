@@ -26,7 +26,6 @@ const GoodsDetailInfoOneJsx: React.FC<typeof initGoodsDetailInfoOne> = ({
   const spec = useGoodSkuStore((state: any) => state.spec);
 
   useGoodFootprint(skuCode);
-  console.log(26, goodInfo, 'spec', spec);
   return (
     <View className={'goodsDetail-info-one'}>
       <SmoothView

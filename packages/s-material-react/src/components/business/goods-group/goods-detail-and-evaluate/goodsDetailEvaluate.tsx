@@ -4,8 +4,7 @@ import { NoData } from '@/common/noData';
 
 export const GoodsDetailEvaluate = ({ evaluateArr }: any) => {
   const { View } = useComponent();
-
-
+  console.log(7, evaluateArr);
   return (
     <View className={'goodsDetailEvaluate'}>
       {evaluateArr.length ? (

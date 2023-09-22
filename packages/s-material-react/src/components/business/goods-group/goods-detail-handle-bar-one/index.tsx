@@ -21,6 +21,7 @@ const GoodsDetailHandleBarInitial = {
   popupVisible: false,
   dispatchPageStore: noop,
   skuCode: '',
+  platform: '',
   scene: ''
 };
 
@@ -38,12 +39,13 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
     rBtnStyle,
     dispatchPageStore,
     skuCode,
-    scene
+    scene,
+     platform
   }) => {
     const { View, IconMobile } = useComponent();
     const { rsSkuDomainList } = useGoodDetail(skuCode, scene);
     const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
-    const { servicePopup } = useService();
+    const { servicePopup } = useService(platform);
     const { addCardPopup, buyOpenPopup } = popupImplement(dispatchPageStore);
     return (
       <View className={'goodsDetailHandleBarOne'}>

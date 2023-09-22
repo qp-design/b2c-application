@@ -25,7 +25,7 @@ export const useService = (platform = 'b2c') => {
       case 'b2c':
         return await queryOcsconfigList();
       case 'b2b':
-        return (await queryOcserviceConfPageByMember().list) || [];
+        return (await queryOcserviceConfPageByMember().then((res: any)=> res.list));
     }
   };
 
@@ -33,7 +33,7 @@ export const useService = (platform = 'b2c') => {
     if (list.length === 0) return ['未知客服信息'];
     let arr: string[] = [];
     if (platform === 'b2c') {
-      const target = get(list[0], 'ocsOcserviceReDomain.ocsOcserviceConfReDomainList') || [];
+      const target = get(list[0], 'ocsOcserviceReDomain.ocsOcserviceConfReDomainList', []);
       for (let i = 0; i < target.length; i++) {
         const item = target[i];
         arr.push(`${get(item, 'ocserviceConfRemark')}: ${get(item, 'ocserviceConfValue')}`);
@@ -49,12 +49,12 @@ export const useService = (platform = 'b2c') => {
     const Taro = getTaro();
     Taro.showActionSheet({
       itemList: list,
-      success: function (res: any) {
-        console.log(res.tapIndex);
-      },
-      fail: function (res: any) {
-        console.log(res.errMsg);
-      }
+      // success: function (res: any) {
+      //   console.log(res.tapIndex);
+      // },
+      // fail: function (res: any) {
+      //   console.log(res.errMsg);
+      // }
     });
   };
 

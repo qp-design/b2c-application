@@ -7,7 +7,6 @@ import { fixPrice } from '@/utils';
 import { PromotionPopup } from './common/promotionPopup';
 import { NoData } from '@/common/noData';
 import { isEmpty } from 'lodash-es';
-import { useStore } from '@brushes/shared-store';
 
 interface CardItemType {
   goodsName: string;
@@ -74,8 +73,7 @@ const ItemImage = memo(({ dataPic, dataState, skuCode }: { dataPic: string; data
         src={dataPic}
         onClick={() =>
           navigatorHandler('goodDetail', {
-            skuCode,
-            scene: '123123123'
+            skuCode
           })
         }
       />
