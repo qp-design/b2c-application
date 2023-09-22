@@ -38,7 +38,7 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
     dispatchPageStore,
     skuCode,
     platform,
-    scene,
+    scene
   }) => {
     const { View, IconMobile, Text } = useComponent();
     const offShelf = useGoodSkuStore((state) => state['offShelf']);

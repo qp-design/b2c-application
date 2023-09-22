@@ -20,7 +20,7 @@ export const useService = (platform = 'b2c') => {
       case 'b2c':
         return await queryOcsconfigList();
       case 'b2b':
-        return (await queryOcserviceConfPageByMember().then((res: any)=> res.list));
+        return await queryOcserviceConfPageByMember().then((res: any) => res.list);
     }
   };
 
@@ -43,7 +43,7 @@ export const useService = (platform = 'b2c') => {
     if (!flag) return;
     const Taro = getTaro();
     Taro.showActionSheet({
-      itemList: list,
+      itemList: list
       // success: function (res: any) {
       //   console.log(res.tapIndex);
       // },

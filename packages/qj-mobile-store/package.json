@@ -16,7 +16,7 @@
   "devDependencies": {
     "@brushes/shared-utils": "^0.0.7",
     "@types/lodash-es": "^4.17.7",
-    "@brushes/utils": "^0.2.4",
+    "@brushes/utils": "^0.2.5",
     "rollup-plugin-typescript2": "^0.34.1",
     "typescript": "^5.0.2",
     "tsconfig": "*",

@@ -30,7 +30,7 @@ export function CartItem({ list }: { list: Array<any> }) {
               src={item.dataPic}
               onClick={() =>
                 navigatorHandler('goodDetail', {
-                  skuCode: item.skuCode,
+                  skuCode: item.skuCode
                 })
               }
             />

@@ -12,7 +12,7 @@ export const GoodsDetailBanner: React.FC<typeof GoodsDetailBannerInitial & { [v:
   autoplay,
   vertical,
   skuCode,
-  scene,
+  scene
 }) => {
   const { rsGoodsFileDomainList = [] } = useGoodDetail(skuCode, scene);
 

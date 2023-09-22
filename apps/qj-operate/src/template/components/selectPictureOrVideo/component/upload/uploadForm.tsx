@@ -18,6 +18,7 @@ const UploadForm = ({ onSubmit }: { onSubmit: () => void }) => {
               {fileType === 'picture' ? '建议上传1Mb以内的图片' : '建议上传20Mb以内的视频'}
             </span>
           ),
+          onPreview: () => false,
           accept: fileType === 'picture' ? 'image/*' : '*.mp4*, *.ogg',
           maxCount: 1,
           listType: 'picture-card',

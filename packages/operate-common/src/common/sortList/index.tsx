@@ -56,24 +56,21 @@ export const SortList = ({
   };
 
   const add = () => {
-    setList((prevState) => {
-      const result = [...list, initItem.current];
-      form.setFieldValue(name, result);
-      const values = form.getFieldsValue();
-      monitorInstance.updateNode(values);
-      return result;
-    });
+    const valueParams = form.getFieldValue(name);
+    const result = [...valueParams, initItem.current];
+    form.setFieldValue(name, result);
+    const values = form.getFieldsValue();
+    monitorInstance.updateNode(values);
+    setList(result);
   };
 
   const del = (index: number) => {
-    setList((prevState) => {
-      const result = [...prevState];
-      result.splice(index, 1);
-      form.setFieldValue(name, result);
-      const values = form.getFieldsValue();
-      monitorInstance.updateNode(values);
-      return result;
-    });
+    const result = [...list];
+    result.splice(index, 1);
+    form.setFieldValue(name, result);
+    const values = form.getFieldsValue();
+    monitorInstance.updateNode(values);
+    setList(result);
   };
 
   return (
@@ -81,7 +78,7 @@ export const SortList = ({
       <ul>
         {list.map((item: any, index: number) => {
           return (
-            <li key={item.id} className={'sortItem'}>
+            <li key={index} className={'sortItem'}>
               <div className={'lPart'}>
                 <div className={'sortItemTitle'}>{item.label}</div>
                 {item.link ? (

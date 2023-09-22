@@ -11,7 +11,7 @@ const GoodsDetailAndEvaluateInitial = {
   evaluateImgShow: true,
   evaluateImg: 2,
   skuCode: '',
-  scene: '',
+  scene: ''
 };
 
 interface TabsProps {

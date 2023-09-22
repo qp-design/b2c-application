@@ -17,7 +17,7 @@ export const GoodsDetailInfo: React.FC<typeof GoodsDetailInfoInitial> = ({
   skuCode,
   priceShow,
   collectionShow,
-  scene,
+  scene
 }) => {
   const { View, SmoothView } = useComponent();
   const { rsSkuDomainList } = useGoodDetail(skuCode, scene);

@@ -28,6 +28,7 @@ export const CouponJsx = ({
   // rowSelection objects indicates the need for row selection
   const rowSelection: TableRowSelection<any> = {
     onChange: (selectedRowKeys) => {
+      //@ts-ignore
       ref.current = selectedRowKeys;
     },
     defaultSelectedRowKeys: form.getFieldValue(name)

@@ -40,7 +40,7 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
     dispatchPageStore,
     skuCode,
     scene,
-     platform
+    platform
   }) => {
     const { View, IconMobile } = useComponent();
     const { rsSkuDomainList } = useGoodDetail(skuCode, scene);
