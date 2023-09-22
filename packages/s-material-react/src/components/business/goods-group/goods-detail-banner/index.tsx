@@ -11,9 +11,10 @@ const GoodsDetailBannerInitial = {
 export const GoodsDetailBanner: React.FC<typeof GoodsDetailBannerInitial & { [v: string]: any }> = ({
   autoplay,
   vertical,
-  skuCode
+  skuCode,
+  scene,
 }) => {
-  const { rsGoodsFileDomainList = [] } = useGoodDetail(skuCode);
+  const { rsGoodsFileDomainList = [] } = useGoodDetail(skuCode, scene);
 
   const banner = useBanner(rsGoodsFileDomainList);
   return (

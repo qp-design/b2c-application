@@ -2,9 +2,9 @@
 import { useComponent } from '@brushes/simulate-component';
 import { useGoodDetail, useGoodSpecAndPrice, usePromotion } from 'qj-mobile-store';
 
-export const GoodsDetailPromotion = ({ skuCode }) => {
+export const GoodsDetailPromotion = ({ skuCode, scene }) => {
   const { View, Text } = useComponent();
-  const { rsSkuDomainList } = useGoodDetail(skuCode);
+  const { rsSkuDomainList } = useGoodDetail(skuCode, scene);
   const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
   const promotionList = usePromotion(rsSkuDomainList, goodInfo.skuCode);
 

@@ -139,8 +139,11 @@ export const LIBARY = {
   // 查看所有优惠券
   QUERY_PROMOTION_PAGE_FULL_REDUCTION: 'web/pm/promotion/queryPromotionPageFullReduction.json',
   GET_PFS_TAG_VALUE_DATA_BY_TG_INFO: 'web/pfs/pfsmodeltagvalue/getPfsModelTagValueDataByTginfo.json',
-  UPDATE_PFS_MODEL_TAG_VALUE_DATA_DOMAIN: 'web/pfs/pfsmodeltagvalue/updatePfsModelTagValueDataDomain.json'
+  UPDATE_PFS_MODEL_TAG_VALUE_DATA_DOMAIN: 'web/pfs/pfsmodeltagvalue/updatePfsModelTagValueDataDomain.json',
+  GET_SETS_UP_DIS_UTIL: '/web/pm/promotion/getSetsupDisUtil.json'
 };
+
+export const getSetsupDisUtil = (params = {}) => post(LIBARY.GET_SETS_UP_DIS_UTIL, cacheParams(params));
 
 export const getContractNumbers = (params = {}) => get(LIBARY.GET_CONTRACT_NUMBERS, params);
 

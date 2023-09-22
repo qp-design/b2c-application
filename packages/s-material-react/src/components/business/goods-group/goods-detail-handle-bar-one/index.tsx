@@ -20,7 +20,8 @@ const GoodsDetailHandleBarInitial = {
   rBtnStyle: 1,
   popupVisible: false,
   dispatchPageStore: noop,
-  skuCode: ''
+  skuCode: '',
+  scene: ''
 };
 
 const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
@@ -36,10 +37,11 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
     rBtnColor,
     rBtnStyle,
     dispatchPageStore,
-    skuCode
+    skuCode,
+    scene
   }) => {
     const { View, IconMobile } = useComponent();
-    const { rsSkuDomainList } = useGoodDetail(skuCode);
+    const { rsSkuDomainList } = useGoodDetail(skuCode, scene);
     const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
     const { servicePopup } = useService();
     const { addCardPopup, buyOpenPopup } = popupImplement(dispatchPageStore);
@@ -94,9 +96,10 @@ export const GoodsDetailHandleBarOne: React.FC<typeof GoodsDetailHandleBarInitia
   popupVisible = false,
   dispatchPageStore = noop,
   skuCode,
+  scene,
   ...rest
 }) => {
-  const { rsSpecValueDomainList, goodsCode, rsSkuDomainList } = useGoodDetail(skuCode);
+  const { rsSpecValueDomainList, goodsCode, rsSkuDomainList } = useGoodDetail(skuCode, scene);
   const skuInfo = useGoodSku(rsSpecValueDomainList, rsSkuDomainList);
 
   return (

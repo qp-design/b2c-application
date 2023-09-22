@@ -10,7 +10,8 @@ const GoodsDetailAndEvaluateInitial = {
   evaluateShow: true,
   evaluateImgShow: true,
   evaluateImg: 2,
-  skuCode: ''
+  skuCode: '',
+  scene: '',
 };
 
 interface TabsProps {
@@ -60,11 +61,12 @@ export const GoodsDetailAndEvaluate: React.FC<typeof GoodsDetailAndEvaluateIniti
   evaluateShow,
   evaluateImgShow,
   evaluateImg,
-  skuCode
+  skuCode,
+  scene
 }) => {
   const { View } = useComponent();
   const [tabActive, setTabActive] = useState(0);
-  const { goodsRemark, goodsCode } = useGoodDetail(skuCode);
+  const { goodsRemark, goodsCode } = useGoodDetail(skuCode, scene);
   const evaluate = useEvaluate(goodsCode);
   return (
     <View className={'goodsDetailTab'}>

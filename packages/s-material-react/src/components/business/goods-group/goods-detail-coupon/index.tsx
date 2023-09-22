@@ -6,9 +6,9 @@ import { useCoupon, useGoodDetail, useGoodSpecAndPrice } from 'qj-mobile-store';
 import { ScrollWrap } from '@/common/scrollWrap';
 import { NoData } from './component';
 
-export const GoodsDetailCoupon = ({ skuCode, ...rest }) => {
+export const GoodsDetailCoupon = ({ skuCode, scene, ...rest }) => {
   const { View, Text, Popup, Image } = useComponent();
-  const { rsSkuDomainList } = useGoodDetail(skuCode);
+  const { rsSkuDomainList } = useGoodDetail(skuCode, scene);
   const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
   const { coupon, visible, setVisible } = useCoupon(rsSkuDomainList, goodInfo.skuCode);
   return (

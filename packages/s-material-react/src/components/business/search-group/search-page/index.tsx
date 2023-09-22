@@ -12,7 +12,6 @@ import {
 } from '@brushes/utils';
 import { SEARCH } from '@/static';
 import { QjMobileIcon } from '@/common/icon';
-import { isEmpty } from 'lodash-es';
 
 interface SearchPageType {
   placeholder: number;
@@ -39,10 +38,12 @@ const SearchPageJsx: FC<SearchPageType> = ({
   const searchGoodsImpl = useImmutableCallback(async (e: any) => {
     if (!flag) return;
     setHistory((prevState) => {
-      if (isEmpty(e.detail.value)) return prevState;
-      const data = prevState.concat(e.detail.value);
-      setStorage('history', data);
-      return data;
+      if (!prevState.includes(e.detail.value) && e.detail.value) {
+        const data = prevState.concat(e.detail.value);
+        setStorage('history', data);
+        return data;
+      }
+      return prevState;
     });
     navigator(e.detail.value);
   });

@@ -21,7 +21,8 @@ const GoodsDetailHandleBarInitial = {
   },
   skuCode: '',
   dispatchPageStore: noop,
-  platform: ''
+  platform: '',
+  scene: ''
 };
 
 const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
@@ -36,11 +37,12 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
     rPartStyle,
     dispatchPageStore,
     skuCode,
-    platform
+    platform,
+    scene,
   }) => {
     const { View, IconMobile, Text } = useComponent();
     const offShelf = useGoodSkuStore((state) => state['offShelf']);
-    const { rsSkuDomainList, goodPro } = useGoodDetail(skuCode);
+    const { rsSkuDomainList, goodPro } = useGoodDetail(skuCode, scene);
     const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
     const { servicePopup } = useService(platform);
     const { addCardPopup, buyOpenPopup } = popupImplement(dispatchPageStore);
@@ -105,9 +107,10 @@ export const GoodsDetailHandleBar: React.FC<typeof GoodsDetailHandleBarInitial> 
   $_dataSource = {},
   dispatchPageStore = noop,
   skuCode,
+  scene,
   ...rest
 }) => {
-  const { rsSpecValueDomainList, goodsCode, rsSkuDomainList } = useGoodDetail(skuCode);
+  const { rsSpecValueDomainList, goodsCode, rsSkuDomainList } = useGoodDetail(skuCode, scene);
   const skuInfo = useGoodSku(rsSpecValueDomainList, rsSkuDomainList);
   const { popupVisible } = $_dataSource;
   return (

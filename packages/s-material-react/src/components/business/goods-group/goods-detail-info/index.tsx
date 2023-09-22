@@ -1,4 +1,3 @@
-//@ts-nocheck
 import React from 'react';
 import { fixPrice } from '@/utils';
 import { GoodsDetailCollection } from './goodsDetailCollection';
@@ -10,21 +9,20 @@ const GoodsDetailInfoInitial = {
   mPriceShow: true,
   salesVolumeShow: true,
   collectionShow: true,
-  skuCode: ''
+  skuCode: '',
+  scene: ''
 };
 
 export const GoodsDetailInfo: React.FC<typeof GoodsDetailInfoInitial> = ({
   skuCode,
   priceShow,
   collectionShow,
-  ...rest
+  scene,
 }) => {
   const { View, SmoothView } = useComponent();
-  const { rsSkuDomainList } = useGoodDetail(skuCode);
+  const { rsSkuDomainList } = useGoodDetail(skuCode, scene);
   const { goodInfo } = useGoodSpecAndPrice(rsSkuDomainList);
   useGoodFootprint(skuCode);
-
-  console.log(26, goodInfo);
   return (
     <View className={'goodsDetail-topInfo'}>
       <View className={'lPart'}>

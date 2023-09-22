@@ -74,7 +74,8 @@ const ItemImage = memo(({ dataPic, dataState, skuCode }: { dataPic: string; data
         src={dataPic}
         onClick={() =>
           navigatorHandler('goodDetail', {
-            skuCode
+            skuCode,
+            scene: '123123123'
           })
         }
       />
