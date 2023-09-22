@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { getEnv, getStorage, getTaro } from '@brushes/utils';
+import { getEnv, getTaro } from '@brushes/utils';
 import { queryOcsconfigList } from 'qj-b2c-api';
 import { queryOcserviceConfPageByMember } from 'qj-b2b-api';
 import { get } from 'lodash-es';

@@ -13,8 +13,6 @@ export const useEvaluate = (goodsCode: string) => {
           page: 1,
           rows: 10
         });
-
-        // @ts-ignore
         setEvaluate(data.list || []);
       } catch (err) {}
     })();
