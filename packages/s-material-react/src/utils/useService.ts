@@ -10,13 +10,8 @@ export const useService = (platform = 'b2c') => {
 
   useEffect(() => {
     (async () => {
-      const val = getStorage('service');
-      if (val) {
-        setList(handleList(val));
-      } else {
-        const result = await handlePlatformData();
-        setList(handleList(result));
-      }
+      const result = await handlePlatformData();
+      setList(handleList(result));
     })();
   }, []);
 
