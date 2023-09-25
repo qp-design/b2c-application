@@ -1,7 +1,8 @@
-import { queryUsePfsModelPage, getPfsModel } from 'qj-b2b-api';
-import { use } from './use';
-import { get, orderBy } from 'lodash-es';
+import {getPfsModel, queryUsePfsModelPage} from 'qj-b2b-api';
+import {use} from './use';
+import {get, orderBy} from 'lodash-es';
 import lz from 'lzutf8';
+
 const query = queryUsePfsModelPage();
 
 let cache = new Map();
@@ -42,7 +43,6 @@ export const useMaterialHooks = () => {
     return orderBy(ids, ['menuOpcode']);
   };
 
-  const ids = IdsImpl();
-  ids.splice(1, 0, ids[0]);
-  return ids;
+  // ids.splice(1, 0, ids[0]);
+  return IdsImpl();
 };
