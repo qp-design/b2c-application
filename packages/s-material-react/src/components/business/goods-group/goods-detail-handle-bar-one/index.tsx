@@ -86,7 +86,7 @@ const HandlerBar: React.FC<Partial<typeof GoodsDetailHandleBarInitial>> = memo(
               borderRadius: rBtnStyle === 1 ? '20px' : '0'
             }}
           >
-            {goodInfo.goodsPro === '10' ? '预售抢购' : '1立即购买'}
+            {goodInfo.goodsPro === '10' ? '预售抢购' : '立即购买'}
           </View>
         </View>
       </View>
