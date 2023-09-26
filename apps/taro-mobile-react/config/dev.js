@@ -3,7 +3,7 @@ module.exports = {
   env: {
     NODE_PLATFORM: '"MOBILE_TERMINAL"',
     NODE_ENV: '"development"',
-    REACT_APP_BASE_URL: '"https://b2cweappb6defd2be4fb4f84b2d0e71228b44b6c.saas.qjclouds.com/"',
+    REACT_APP_BASE_URL: '"https://b2clch529d7cf847b4449a8a64991deea6df8ce.saas.qjclouds.com/"',
     WEAPP: '"https://b2clch5602e8be22bda48f68a550544e6ef42c1.saas.qjclouds.com/"',
     WEB: '"https://b2clch5cbaf0d729c1b4c7285b05271a454a4ff.saas.qjclouds.com/"',
     REACT_APP_SESSION_KEY: '"saas-token"',
