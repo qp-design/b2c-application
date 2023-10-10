@@ -1243,6 +1243,18 @@
     "@babel/helper-validator-identifier" "^7.22.19"
     to-fast-properties "^2.0.0"
 
+"@brushes/form@*":
+  version "0.1.4"
+  resolved "https://registry.npmjs.org/@brushes/form/-/form-0.1.4.tgz#d301cf25affae9169b4c9e9aea18ee38cb4dc152"
+  integrity sha512-pdnK6jJwsXNIJme3phc2IAijc2+v+IMODMYW4P3zttbQL0U6pFwcJGggA33Q33TpKdydSMlPcQsKep/VsImyFQ==
+
+"@brushes/mobile-form@*":
+  version "0.0.5"
+  resolved "https://registry.npmjs.org/@brushes/mobile-form/-/mobile-form-0.0.5.tgz#78616671fe917c9cae9d8882f43871be9f68a998"
+  integrity sha512-4k/dSCg6kZFS+ct52FKvFvp+xQpyH0gS/PBs783UfHBQRlAnn+oI/xyX42nsad3pEzTMSa2CGkTPBPNEPS8xiA==
+  dependencies:
+    lodash-es "^4.17.21"
+
 "@brushes/mobile-form@^0.0.3":
   version "0.0.3"
   resolved "https://registry.npmjs.org/@brushes/mobile-form/-/mobile-form-0.0.3.tgz#d97a6c639184d72fc21511f0e3705c9a2dc6bd26"
@@ -1270,7 +1282,7 @@
     rxjs "^7.5.6"
     sortablejs "^1.15.0"
 
-"@brushes/request@*", "@brushes/request@^0.2.1", "@brushes/request@latest":
+"@brushes/request@^0.2.1", "@brushes/request@latest":
   version "0.2.1"
   resolved "https://registry.npmjs.org/@brushes/request/-/request-0.2.1.tgz#6ef1fc64254b4c7948d870cd4a84a2d6e741248d"
   integrity sha512-F0vm750foMe07xW4B4lFJcgrhvrycpQCyULk+1H8AGoQL1jlf0GeYjwNh+/iEgCMC3wsr4YWJ92W7etttILwhA==
@@ -1278,10 +1290,15 @@
     flyio "^0.6.14"
     qs "6.5.3"
 
-"@brushes/share-resource@^1.0.3", "@brushes/share-resource@^1.1.2":
+"@brushes/share-resource@^1.1.2":
   version "1.1.2"
   resolved "https://registry.npmjs.org/@brushes/share-resource/-/share-resource-1.1.2.tgz#9cd4c53902072ab28a3207ef72b6818e11ac21d1"
   integrity sha512-cH47eoiXgx9vRAFyddK51pbcctcJlze3Ed78mNuo+YMG0W6Qo3NLQT5EP8Yd9OXqMrmTrWe19SschGFXp5cfDQ==
+
+"@brushes/shared-store@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.npmjs.org/@brushes/shared-store/-/shared-store-0.0.5.tgz#97b54c8663680d1314caf08943f6813898614f5e"
+  integrity sha512-DXjSj2PWwBXG37gE8FIrwa6NOU4JkTlv2tt5FTAHGvxVr4B7q+FnM0dUB7lmAJScxSSoAC8JXFsULrxmroX/vg==
 
 "@brushes/shared-utils@^0.0.7":
   version "0.0.7"
@@ -1295,12 +1312,17 @@
   dependencies:
     antd-mobile "^5.24.2"
 
-"@brushes/taro-hooks@^0.3.2", "@brushes/taro-hooks@^0.3.3":
+"@brushes/taro-component@*":
+  version "0.0.9"
+  resolved "https://registry.npmjs.org/@brushes/taro-component/-/taro-component-0.0.9.tgz#c1b415a3f98be7163e2c42d5d6cfc72cf26fa611"
+  integrity sha512-G9KZPyjiX1kfc5oBmofUrhExXZqvHTaAP6ix1BixIP2FMZGCSWdbRBuTL+rcRgbAB/o90VJvOXKdqEg6d6IaUA==
+
+"@brushes/taro-hooks@^0.3.3":
   version "0.3.3"
   resolved "https://registry.npmjs.org/@brushes/taro-hooks/-/taro-hooks-0.3.3.tgz#d36c877ac414398975765d824a72e1834e0e126a"
   integrity sha512-OmEDMC/vc3OOil3boNHc4TLqHhaWiHaPy88D98hsIT2oD8CGzB/dLSO6lgVB8NkrDOTNZMrwaDpEeWhTvojnTw==
 
-"@brushes/utils@*", "@brushes/utils@^0.2.5":
+"@brushes/utils@^0.2.5":
   version "0.2.5"
   resolved "https://registry.npmjs.org/@brushes/utils/-/utils-0.2.5.tgz#f0a3bf08148c058bf32e3188155d595882443e15"
   integrity sha512-OcKC1lJMRq3RHEkPWHMJcicYJx5dil2h/4TvRf4RdmgxGmvcBiXsDlHwuhBtvJDu+z4xdZ+0gDR+MPkpKXRo1g==
@@ -3381,7 +3403,7 @@ antd-mobile-v5-count@^1.0.1:
   resolved "https://registry.npmjs.org/antd-mobile-v5-count/-/antd-mobile-v5-count-1.0.1.tgz#85f20c46d1635c24e856bcf5ad55e8c98e44a523"
   integrity sha512-YGsiEDCPUDz3SzfXi6gLZn/HpeSMW+jgPc4qiYUr1fSopg3hkUie2TnooJdExgfiETHefH3Ggs58He0OVfegLA==
 
-antd-mobile@^5.24.2, antd-mobile@^5.32.0:
+antd-mobile@^5.24.2:
   version "5.32.4"
   resolved "https://registry.npmjs.org/antd-mobile/-/antd-mobile-5.32.4.tgz#0dfaf5d700441f5394a992bff6dd4f93a3166b88"
   integrity sha512-8/jcFRXD/+1qw5bnBMun6gC/XSHSExDHfmZ/OexzhKRzdJxLPr5oxzfO5TwPtV/EPt3H2c0/KVRvSyMyJYkydA==
@@ -3404,7 +3426,7 @@ antd-mobile@^5.24.2, antd-mobile@^5.32.0:
     tslib "^2.5.0"
     use-sync-external-store "^1.2.0"
 
-antd@^5.6.4, antd@^5.8.3, antd@^5.9.1:
+antd@^5.8.3, antd@^5.9.1:
   version "5.9.2"
   resolved "https://registry.npmjs.org/antd/-/antd-5.9.2.tgz#16dc2120523245a471afd2bc684611ef64b18ac0"
   integrity sha512-+ecGt8nDCjvNvKkalJQc4eBGtfdQuZ/WLXrk7X4FbhAhMplctrey4/SOvHeXjEjBnyNC/KSdF4EzKYKq01egbA==
