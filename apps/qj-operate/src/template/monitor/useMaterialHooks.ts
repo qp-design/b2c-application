@@ -1,6 +1,6 @@
-import {getPfsModel, queryUsePfsModelPage} from 'qj-b2b-api';
-import {use} from './use';
-import {get, orderBy} from 'lodash-es';
+import { getPfsModel, queryUsePfsModelPage } from 'qj-b2b-api';
+import { use } from './use';
+import { get, orderBy } from 'lodash-es';
 import lz from 'lzutf8';
 
 const query = queryUsePfsModelPage();
