@@ -57,7 +57,9 @@ export function useOrderAddress(refreshNum: string, goodsNum: number, skuId: str
       payload = { skuIdStr: JSON.stringify([{ skuId, goodsNum }]) };
     }
     try {
+      const isTaro = getEnv();
       const data = await calculateFreightFare({
+        isLocalMock: !isTaro,
         ...payload,
         areaCode
       });

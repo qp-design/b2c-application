@@ -1,6 +1,6 @@
 {
   "name": "qj-mobile-store",
-  "version": "1.4.0",
+  "version": "1.4.2",
   "type": "module",
   "main": "dist/index.js",
   "license": "MIT",
@@ -15,13 +15,13 @@
   },
   "devDependencies": {
     "@brushes/shared-utils": "^0.0.7",
-    "@types/lodash-es": "^4.17.7",
     "@brushes/utils": "^0.2.5",
-    "rollup-plugin-typescript2": "^0.34.1",
-    "typescript": "^5.0.2",
-    "tsconfig": "*",
-    "qj-b2c-api": "*",
+    "@types/lodash-es": "^4.17.7",
     "lodash-es": "^4.17.21",
-    "react": "^18.2.0"
+    "qj-b2c-api": "*",
+    "react": "^18.2.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "tsconfig": "*",
+    "typescript": "^5.0.2"
   }
 }

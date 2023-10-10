@@ -1,6 +1,6 @@
 {
   "name": "s-material-react",
-  "version": "1.6.0",
+  "version": "1.6.6",
   "description": "'组件库'",
   "main": "dist/index.js",
   "sideEffects": [
@@ -27,10 +27,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@brushes/simulate-component": "^0.3.1",
     "classnames": "^2.3.2"
   },
   "devDependencies": {
-    "@brushes/simulate-component": "^0.3.1",
     "@brushes/mobile-form": "*",
     "@brushes/request": "^0.2.1",
     "@brushes/shared-utils": "^0.0.7",

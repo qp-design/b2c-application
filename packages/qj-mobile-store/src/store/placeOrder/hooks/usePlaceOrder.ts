@@ -232,6 +232,7 @@ export function usePlaceOrder({ skuId, goodsNum, shoppingGoodsId }: PaymentOrder
     }
     try {
       const data = await calculateFreightFare({
+        isLocalMock: !isTaro,
         ...payload
         // areaCode: 110000
       });
