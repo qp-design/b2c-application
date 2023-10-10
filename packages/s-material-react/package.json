@@ -27,10 +27,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@brushes/simulate-component": "^0.2.8",
     "classnames": "^2.3.2"
   },
   "devDependencies": {
+    "@brushes/simulate-component": "^0.3.1",
     "@brushes/mobile-form": "*",
     "@brushes/request": "^0.2.1",
     "@brushes/shared-utils": "^0.0.7",

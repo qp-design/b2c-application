@@ -29,7 +29,7 @@ function App({ children }: PropsWithChildren<any>) {
     safeArea()
 
     if(Taro.getEnv() === 'WEB'){
-      fly.engine= XMLHttpRequest
+      fly.engine = XMLHttpRequest
     } else {
       wxEngine()
     }

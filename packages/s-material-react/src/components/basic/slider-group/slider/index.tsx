@@ -59,6 +59,7 @@ const SwiperJsx: React.FC<SwiperType> = ({
   ImgShadow = false,
   Position = 'top'
 }) => {
+  console.log(62, loop);
   const { View } = useComponent();
   const classWrap = useMemo(() => {
     return classNames(

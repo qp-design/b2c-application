@@ -1295,6 +1295,13 @@
   dependencies:
     antd-mobile "^5.24.2"
 
+"@brushes/simulate-component@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.npmjs.org/@brushes/simulate-component/-/simulate-component-0.3.1.tgz#6c2c586a999fe55fbcf2666cf13f0197a0bfb3a8"
+  integrity sha512-Ds3fWrC8PfsT7SPntYieBpis/sZ/ZGr8ip6Ck7FNJbUlor8qW8hC7+0hZhyIbKCGLQTg67giDyl1hKtjqi1k/g==
+  dependencies:
+    antd-mobile "^5.24.2"
+
 "@brushes/taro-hooks@^0.3.2", "@brushes/taro-hooks@^0.3.3":
   version "0.3.3"
   resolved "https://registry.npmjs.org/@brushes/taro-hooks/-/taro-hooks-0.3.3.tgz#d36c877ac414398975765d824a72e1834e0e126a"
