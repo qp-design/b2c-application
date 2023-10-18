@@ -6,6 +6,7 @@ module.exports = {
     REACT_APP_BASE_URL: '"https://b2cweapp6dff6fda8bf545fe99c23ae0a0e94730.saas.qjclouds.cn/"',
     REACT_APP_SESSION_KEY: '"saas-token"',
     REACT_APP_APPLICATION: '""',
+    REACT_IMG_PATH: 'paas/shop/'
   },
   defineConstants: {
   },
