@@ -51,7 +51,7 @@ function Items({
           <List.Item>
             <div className={'pic'}>
               <div className={'checkBox'}>
-                <Radio value={baseUrl + path + item.fileUrl}></Radio>
+                <Radio value={item.fileUrl}></Radio>
               </div>
               {fileType === 'picture' ? (
                 <Image

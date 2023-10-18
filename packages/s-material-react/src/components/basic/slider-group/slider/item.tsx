@@ -1,16 +1,17 @@
 //@ts-nocheck
-import { memo, useMemo } from 'react';
+import { memo } from 'react';
 import { itemType } from './index';
 import { useComponent } from '@brushes/simulate-component';
 import { navigatorHandler } from '@brushes/utils';
-import classNames from 'classnames';
+import {useFullPath} from '@/hooks';
 
 export const Items = memo(({ item, position, direction }: { item: itemType; position: string; direction: string }) => {
   const { Image, View } = useComponent();
+  const fullPath = useFullPath(item.imgUrl)
   return (
     <Image
       mode={'scaleToFill'}
-      src={item.imgUrl}
+      src={fullPath}
       style={{
         width: '100%',
         height: '100%',

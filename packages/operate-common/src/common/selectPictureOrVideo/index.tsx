@@ -8,9 +8,11 @@ import {
   ContextProvider,
   useFileContext
 } from '@/common/selectPictureOrVideo/store';
+import {useFullPath} from '@/hooks';
 
 const FilePreview = ({ value }: { value: string }) => {
   const fileType = useFileContext();
+  const urlFile = useFullPath(value);
   return (
     <>
       {fileType === 'picture' ? (
@@ -21,7 +23,7 @@ const FilePreview = ({ value }: { value: string }) => {
           }}
           width={86}
           height={86}
-          src={value}
+          src={urlFile}
         />
       ) : (
         <div className={'video'}>
@@ -31,7 +33,7 @@ const FilePreview = ({ value }: { value: string }) => {
               height: 86,
               objectFit: 'cover'
             }}
-            src={value}
+            src={urlFile}
             autoPlay={false}
             controls={false}
           />

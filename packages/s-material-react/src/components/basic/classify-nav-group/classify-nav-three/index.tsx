@@ -1,8 +1,9 @@
-import { useComponent } from '@brushes/simulate-component';
-import React, { memo } from 'react';
-import { ClassifyItemType } from '@/components';
-import { useCube } from 'qj-mobile-store';
-import { navigatorHandler } from '@brushes/utils';
+import {useComponent} from '@brushes/simulate-component';
+import React, {memo} from 'react';
+import {ClassifyItemType} from '@/components';
+import {useCube} from 'qj-mobile-store';
+import {navigatorHandler} from '@brushes/utils';
+import {useFullPath} from '@/hooks';
 
 const initialClassifyNavThree = {
   defaultValue: [],
@@ -22,24 +23,69 @@ const initialClassifyNavThree = {
   marginBottom: 10
 };
 
+const ImgJsx = (props: any) => {
+  const {
+    imgRadius,
+    imgBoxShadow,
+    fontSize,
+    fontColor,
+    tagBgColor,
+    otherStyle,
+    item,
+    layout
+  } = props;
+  const {View} = useComponent();
+  const fullPath = useFullPath(item.imgUrl)
+
+  return (
+    <View
+      className={'classifyNav-three-item'}
+      onClick={() => navigatorHandler(item.link?.value, item.link?.params)}
+      style={{
+        backgroundImage: `url(${fullPath})`,
+        borderRadius: imgRadius,
+        boxShadow: imgBoxShadow ? '0px 0px 20px 5px #EEE' : 'none',
+        width: layout === 4 ? '74px' : '60px',
+        height: layout === 4 ? '74px' : '60px'
+      }}
+    >
+      <View
+        className={'classifyNav-three-item-tag'}
+        style={{
+          backgroundColor: tagBgColor
+        }}
+      >
+        <View
+          className={['classifyNav-three-item-txt', ...otherStyle].join(' ')}
+          style={{
+            fontSize,
+            color: fontColor
+          }}
+        >
+          {item.title}
+        </View>
+      </View>
+    </View>
+  )
+}
 const ClassifyNavThreeJsx: React.FC<typeof initialClassifyNavThree> = ({
-  defaultValue,
-  selectClassifyNav,
-  navRadius,
-  navBorderColor,
-  navBgColor,
-  navBoxShadow,
-  imgRadius,
-  imgBoxShadow,
-  fontSize,
-  fontColor,
-  tagBgColor,
-  otherStyle,
-  layout,
-  marginTop,
-  marginBottom
-}) => {
-  const { View } = useComponent();
+                                                                         defaultValue,
+                                                                         selectClassifyNav,
+                                                                         navRadius,
+                                                                         navBorderColor,
+                                                                         navBgColor,
+                                                                         navBoxShadow,
+                                                                         imgRadius,
+                                                                         imgBoxShadow,
+                                                                         fontSize,
+                                                                         fontColor,
+                                                                         tagBgColor,
+                                                                         otherStyle,
+                                                                         layout,
+                                                                         marginTop,
+                                                                         marginBottom
+                                                                       }) => {
+  const {View} = useComponent();
   const list = useCube<ClassifyItemType>(defaultValue, selectClassifyNav);
 
   return (
@@ -55,39 +101,19 @@ const ClassifyNavThreeJsx: React.FC<typeof initialClassifyNavThree> = ({
         marginBottom
       }}
     >
-      {list.map((item, index) => {
-        return (
-          <View
-            key={index}
-            className={'classifyNav-three-item'}
-            onClick={() => navigatorHandler(item.link?.value, item.link?.params)}
-            style={{
-              backgroundImage: `url(${item.imgUrl})`,
-              borderRadius: imgRadius,
-              boxShadow: imgBoxShadow ? '0px 0px 20px 5px #EEE' : 'none',
-              width: layout === 4 ? '74px' : '60px',
-              height: layout === 4 ? '74px' : '60px'
-            }}
-          >
-            <View
-              className={'classifyNav-three-item-tag'}
-              style={{
-                backgroundColor: tagBgColor
-              }}
-            >
-              <View
-                className={['classifyNav-three-item-txt', ...otherStyle].join(' ')}
-                style={{
-                  fontSize,
-                  color: fontColor
-                }}
-              >
-                {item.title}
-              </View>
-            </View>
-          </View>
-        );
-      })}
+      {list.map((item, index) => (
+        <ImgJsx
+          layout={layout}
+          key={index}
+          item={item}
+          imgRadius={imgRadius}
+          imgBoxShadow={imgBoxShadow}
+          fontSize={fontSize}
+          fontColor={fontColor}
+          tagBgColor={tagBgColor}
+          otherStyle={otherStyle}
+        />
+      ))}
     </View>
   );
 };
