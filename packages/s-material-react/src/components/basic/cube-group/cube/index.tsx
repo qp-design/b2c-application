@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
 import { useCube } from 'qj-mobile-store';
 import { navigatorHandler } from '@brushes/utils';
-import {useFullPath} from '@/hooks';
+import { useFullPath } from '@/hooks';
 interface ImgType {
   imgUrl: string;
   link: string;
@@ -22,9 +22,19 @@ interface CubeType {
   selectImg: Array<ImgType>;
 }
 
-const ItemJsx = ({outerShadow, type, item, borderRadius }: {borderRadius: number; outerShadow: boolean; type: number; item: any}) => {
+const ItemJsx = ({
+  outerShadow,
+  type,
+  item,
+  borderRadius
+}: {
+  borderRadius: number;
+  outerShadow: boolean;
+  type: number;
+  item: any;
+}) => {
   const { Image } = useComponent();
-  const fullPath = useFullPath(item.imgUrl)
+  const fullPath = useFullPath(item.imgUrl);
   return (
     <Image
       className={`block ${outerShadow ? 'outer-shadow' : ''}`}
@@ -37,7 +47,7 @@ const ItemJsx = ({outerShadow, type, item, borderRadius }: {borderRadius: number
       //@ts-ignore
       onClick={() => navigatorHandler(item.link?.value, item.link?.params)}
     />
-  )
+  );
 };
 
 const CubeJsx: React.FC<CubeType> = ({
@@ -66,9 +76,7 @@ const CubeJsx: React.FC<CubeType> = ({
     >
       <View className={`cube-type${type}`} style={{ paddingLeft, paddingRight, gap: picGap }}>
         {list.map((item, index) => {
-          return (
-            <ItemJsx key={index} borderRadius={borderRadius} item={item} outerShadow={outerShadow} type={type} />
-          );
+          return <ItemJsx key={index} borderRadius={borderRadius} item={item} outerShadow={outerShadow} type={type} />;
         })}
       </View>
     </View>

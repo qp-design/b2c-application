@@ -18,7 +18,8 @@ const initialGoodsSlideshow = {
   btnText: '',
   btnBg: '',
   btnColor: '',
-  btnRadius: ''
+  btnRadius: '',
+  apiKey: 'goodsCode'
 };
 
 const GoodsSlideshowJsx: React.FC<typeof initialGoodsSlideshow> = ({
@@ -29,6 +30,7 @@ const GoodsSlideshowJsx: React.FC<typeof initialGoodsSlideshow> = ({
   goodsName,
   salesNum,
   price,
+  apiKey = 'goodsCode',
   goodsRadius,
   goodsBorder,
   goodsShadow,
@@ -38,7 +40,7 @@ const GoodsSlideshowJsx: React.FC<typeof initialGoodsSlideshow> = ({
   btnRadius
 }) => {
   const flag = useMemo(() => getEnv(), []);
-  const { list } = useGoods({ defaultValue, goods });
+  const { list } = useGoods({ defaultValue, goods }, apiKey);
   const { SmoothSwiper, View, Image } = useComponent();
   const [coe, setCoe] = useState(0);
   const change = (item: any) => {

@@ -30,6 +30,7 @@ const GoodsSliderJsx: React.FC<typeof initialGoodsSlider> = ({
   price,
   marketPrice,
   cart,
+  apiKey = 'goodsCode',
   wrapRadius,
   wrapBorderColor,
   wrapBgColor,
@@ -43,7 +44,7 @@ const GoodsSliderJsx: React.FC<typeof initialGoodsSlider> = ({
   marginRight
 }) => {
   const { View } = useComponent();
-  const { list } = useGoods({ defaultValue, goods });
+  const { list } = useGoods({ defaultValue, goods }, apiKey);
 
   return (
     <View

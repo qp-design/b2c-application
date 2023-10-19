@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
 import { useCube } from 'qj-mobile-store';
 import { navigatorHandler } from '@brushes/utils';
-import {useFullPath} from '@/hooks';
+import { useFullPath } from '@/hooks';
 
 export interface ClassifyItemType {
   imgUrl: string;
@@ -18,9 +18,9 @@ interface ClassifyNavType {
   selectClassifyNav: Array<ClassifyItemType>;
 }
 
-const ImgJsx = ({src, borderRadius}: {src: string; borderRadius: number}) => {
+const ImgJsx = ({ src, borderRadius }: { src: string; borderRadius: number }) => {
   const { Image } = useComponent();
-  const fullPath = useFullPath(src)
+  const fullPath = useFullPath(src);
   return (
     <Image
       src={fullPath}
@@ -30,8 +30,8 @@ const ImgJsx = ({src, borderRadius}: {src: string; borderRadius: number}) => {
         borderRadius: `${borderRadius}px`
       }}
     />
-  )
-}
+  );
+};
 const ClassifyNavJsx: React.FC<ClassifyNavType> = ({
   defaultValue,
   borderRadius,

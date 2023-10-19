@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@brushes/form": "*",
-    "@brushes/operate-webstore": "^0.0.2",
+    "@brushes/operate-webstore": "^0.0.4",
     "@brushes/qj-shared-library": "^0.1.2",
     "@brushes/share-resource": "^1.1.2",
     "@brushes/shared-store": "^0.0.5",

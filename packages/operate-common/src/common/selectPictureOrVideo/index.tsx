@@ -8,7 +8,7 @@ import {
   ContextProvider,
   useFileContext
 } from '@/common/selectPictureOrVideo/store';
-import {useFullPath} from '@/hooks';
+import { useFullPath } from '@/hooks';
 
 const FilePreview = ({ value }: { value: string }) => {
   const fileType = useFileContext();

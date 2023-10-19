@@ -31,14 +31,14 @@
   "peerDependencies": {},
   "devDependencies": {
     "@brushes/form": "*",
-    "@brushes/operate-webstore": "^0.0.2",
+    "@brushes/operate-webstore": "^0.0.4",
     "@brushes/qj-shared-library": "*",
-    "@tanstack/react-query": "*",
+    "@tanstack/react-query": "^4.0.10",
     "@types/node": ">18.0.0",
     "antd": "^5.9.1",
     "lzutf8": "^0.6.3",
     "prettier": "^2.7.1",
-    "qj-b2b-api": "^0.0.8",
+    "qj-b2b-api": "*",
     "react": "^18.0.0",
     "rollup-plugin-typescript2": "^0.34.1",
     "typescript": ">4.0.0"

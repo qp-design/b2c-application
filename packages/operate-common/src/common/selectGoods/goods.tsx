@@ -1,6 +1,8 @@
 import { Button, FormInstance, Space, Table } from 'antd';
 import { useGoods } from '@brushes/operate-webstore';
 import { SpacingJsx } from '../spacing';
+import { goodsQuery } from 'qj-b2c-api';
+import { queryRsSkuPageForRetGoods } from 'qj-b2b-api';
 import { SearchMaterials } from '../search';
 import { defaultFormConfig, defaultColumns } from './config';
 import React, { useRef } from 'react';
@@ -17,13 +19,18 @@ export const GoodsJsx = ({
   handleCancel: Function;
 }) => {
   const monitorInstance = useLowCodeGraph();
+  const flag = window.location.href.includes('platform=B2B');
   const {
     data = {},
     pagination,
     isLoading,
     queryImpl,
     onChange
-  } = useGoods(name + '', { pbCode: '0004', dataState: 2 });
+  } = useGoods(
+    name + '',
+    { pbCode: '0004', dataState: 2 },
+    flag ? queryRsSkuPageForRetGoods : goodsQuery
+  );
   const ref = useRef<Array<string | number>>([]);
   // rowSelection objects indicates the need for row selection
   const rowSelection: TableRowSelection<any> = {
@@ -59,7 +66,7 @@ export const GoodsJsx = ({
               sticky
               rowSelection={{ ...rowSelection }}
               onChange={onChange}
-              rowKey={'goodsCode'}
+              rowKey={flag ? 'skuNo' : 'goodsCode'}
               columns={columns}
               dataSource={data.list}
               pagination={pagination}

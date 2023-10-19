@@ -3,10 +3,10 @@ module.exports = {
   env: {
     NODE_PLATFORM: '"MOBILE_TERMINAL"',
     NODE_ENV: '"production"',
-    REACT_APP_BASE_URL: '"https://b2cweapp6dff6fda8bf545fe99c23ae0a0e94730.saas.qjclouds.cn/"',
+    REACT_APP_BASE_URL: '"https://b2cweapp5aac143f01f94ec29116a7d7a1d7d0c6.saas.qjclouds.com/"',
     REACT_APP_SESSION_KEY: '"saas-token"',
     REACT_APP_APPLICATION: '""',
-    REACT_IMG_PATH: 'paas/shop/'
+    REACT_IMG_PATH: '"paas/shop/"'
   },
   defineConstants: {
   },

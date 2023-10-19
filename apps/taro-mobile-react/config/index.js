@@ -31,19 +31,19 @@ const config = {
     type: 'webpack5',
     prebundle: {
       force: true,
-      // enable: false,
-      exclude: [
-        '@brushes/taro-component',
-        '@brushes/taro-hooks',
-        '@brushes/request',
-        'antd-mobile',
-        '@brushes/utils',
-        'lodash-es',
-        '@brushes/simulate-component',
-        's-material-react',
-        "qj-mobile-store",
-        "qj-b2c-api"
-      ]
+      enable: false,
+      // exclude: [
+      //   '@brushes/taro-component',
+      //   '@brushes/taro-hooks',
+      //   '@brushes/request',
+      //   'antd-mobile',
+      //   '@brushes/utils',
+      //   'lodash-es',
+      //   '@brushes/simulate-component',
+      //   's-material-react',
+      //   "qj-mobile-store",
+      //   "qj-b2c-api"
+      // ]
     }
   },
   cache: {

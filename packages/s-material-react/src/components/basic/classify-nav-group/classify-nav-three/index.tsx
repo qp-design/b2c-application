@@ -1,9 +1,9 @@
-import {useComponent} from '@brushes/simulate-component';
-import React, {memo} from 'react';
-import {ClassifyItemType} from '@/components';
-import {useCube} from 'qj-mobile-store';
-import {navigatorHandler} from '@brushes/utils';
-import {useFullPath} from '@/hooks';
+import { useComponent } from '@brushes/simulate-component';
+import React, { memo } from 'react';
+import { ClassifyItemType } from '@/components';
+import { useCube } from 'qj-mobile-store';
+import { navigatorHandler } from '@brushes/utils';
+import { useFullPath } from '@/hooks';
 
 const initialClassifyNavThree = {
   defaultValue: [],
@@ -24,18 +24,9 @@ const initialClassifyNavThree = {
 };
 
 const ImgJsx = (props: any) => {
-  const {
-    imgRadius,
-    imgBoxShadow,
-    fontSize,
-    fontColor,
-    tagBgColor,
-    otherStyle,
-    item,
-    layout
-  } = props;
-  const {View} = useComponent();
-  const fullPath = useFullPath(item.imgUrl)
+  const { imgRadius, imgBoxShadow, fontSize, fontColor, tagBgColor, otherStyle, item, layout } = props;
+  const { View } = useComponent();
+  const fullPath = useFullPath(item.imgUrl);
 
   return (
     <View
@@ -66,26 +57,26 @@ const ImgJsx = (props: any) => {
         </View>
       </View>
     </View>
-  )
-}
+  );
+};
 const ClassifyNavThreeJsx: React.FC<typeof initialClassifyNavThree> = ({
-                                                                         defaultValue,
-                                                                         selectClassifyNav,
-                                                                         navRadius,
-                                                                         navBorderColor,
-                                                                         navBgColor,
-                                                                         navBoxShadow,
-                                                                         imgRadius,
-                                                                         imgBoxShadow,
-                                                                         fontSize,
-                                                                         fontColor,
-                                                                         tagBgColor,
-                                                                         otherStyle,
-                                                                         layout,
-                                                                         marginTop,
-                                                                         marginBottom
-                                                                       }) => {
-  const {View} = useComponent();
+  defaultValue,
+  selectClassifyNav,
+  navRadius,
+  navBorderColor,
+  navBgColor,
+  navBoxShadow,
+  imgRadius,
+  imgBoxShadow,
+  fontSize,
+  fontColor,
+  tagBgColor,
+  otherStyle,
+  layout,
+  marginTop,
+  marginBottom
+}) => {
+  const { View } = useComponent();
   const list = useCube<ClassifyItemType>(defaultValue, selectClassifyNav);
 
   return (

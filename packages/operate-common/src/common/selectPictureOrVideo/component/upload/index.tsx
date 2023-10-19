@@ -22,6 +22,7 @@ const UploadImg = ({ name }: { name: NamePath }) => {
     const [value, suc] = args;
     suc();
     setIsModalVisible(false);
+    // @ts-ignore
     queryClient.invalidateQueries([name + '']);
   };
 

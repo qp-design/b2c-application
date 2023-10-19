@@ -45,6 +45,7 @@ const GoodsJsx: React.FC<GoodsType> = ({
   cell,
   showSales = true,
   gap = 10,
+  apiKey = 'goodsCode',
   goods = [],
   markedPrice,
   paddingTop,
@@ -70,7 +71,7 @@ const GoodsJsx: React.FC<GoodsType> = ({
     }
     (async () => {
       try {
-        const data = await find({ goodsCode: goods.toString(), distinctField: 'goodsNo' });
+        const data = await find({ [apiKey]: goods.toString(), distinctField: 'goodsNo' });
         const list = get(data, 'list', []);
         setList(list);
       } catch (err) {

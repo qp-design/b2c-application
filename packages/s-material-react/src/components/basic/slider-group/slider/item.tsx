@@ -3,11 +3,11 @@ import { memo } from 'react';
 import { itemType } from './index';
 import { useComponent } from '@brushes/simulate-component';
 import { navigatorHandler } from '@brushes/utils';
-import {useFullPath} from '@/hooks';
+import { useFullPath } from '@/hooks';
 
 export const Items = memo(({ item, position, direction }: { item: itemType; position: string; direction: string }) => {
   const { Image, View } = useComponent();
-  const fullPath = useFullPath(item.imgUrl)
+  const fullPath = useFullPath(item.imgUrl);
   return (
     <Image
       mode={'scaleToFill'}

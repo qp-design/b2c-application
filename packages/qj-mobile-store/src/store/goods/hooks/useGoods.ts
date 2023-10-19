@@ -7,7 +7,7 @@ interface useGoodsType {
   goods: Array<any>;
 }
 
-export const useGoods = ({ defaultValue, goods }: useGoodsType) => {
+export const useGoods = ({ defaultValue, goods }: useGoodsType, apiKey: string) => {
   const [list, setList] = useState<Array<any>>(defaultValue);
   const preGoods = useRef<Array<any>>();
 
@@ -20,7 +20,7 @@ export const useGoods = ({ defaultValue, goods }: useGoodsType) => {
     }
     (async () => {
       try {
-        const data = await find({ goodsCode: goods.toString(), distinctField: 'goodsNo' });
+        const data = await find({ [apiKey]: goods.toString(), distinctField: 'goodsNo' });
         setList(data.list);
       } catch (err) {
         setList(defaultValue);
