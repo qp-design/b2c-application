@@ -1,6 +1,6 @@
 {
   "name": "qj-b2c-api",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "type": "module",
   "description": "'b2c-api'",
   "main": "dist/index.js",

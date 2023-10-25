@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getGoodDetail } from '@/store/goodsDetail/utils';
-import { getUserInfoAuth } from 'qj-b2c-api';
+import { getSetsupDisUtil } from 'qj-b2c-api';
 
 export const initialValue = {
   rsGoodsFileDomainList: [],
@@ -30,7 +30,7 @@ export const useGoodDetail = (skuCode: string, scene: string = '') => {
       try {
         let sku = skuCode;
         if (scene) {
-          const data = await getUserInfoAuth({ key: scene });
+          const data = await getSetsupDisUtil({ key: scene });
           let params = data.split('_');
           sku = params[0];
         }
