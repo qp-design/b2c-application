@@ -1,3 +1,5 @@
+@import '../../basic/textLine';
+
 .goodsSlider {
   margin: 0 10px;
   overflow-x: auto;
@@ -28,6 +30,7 @@
       box-sizing: border-box;
 
       .title {
+        @include titleLine(1);
       }
 
       .info {
