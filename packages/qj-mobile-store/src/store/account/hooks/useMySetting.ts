@@ -1,6 +1,6 @@
 import { miniLogout } from 'qj-b2c-api';
-import { navigatorHandler, getTaro } from '@brushes/utils';
-import { routerMap, showToast, routerMapArr } from '@/utils';
+import { navigatorHandler, getTaro, navigatorBackImpl } from '@brushes/utils';
+import { routerMap, showToast } from '@/utils';
 
 export const useMySetting = () => {
   const mySettingGoBind = () => {
@@ -16,7 +16,7 @@ export const useMySetting = () => {
       });
       showToast(result.msg);
       setTimeout(() => {
-        navigatorHandler(routerMapArr[0]);
+        navigatorBackImpl(1);
       }, 1000);
     } catch (err) {
       console.log(err);
