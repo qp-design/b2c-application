@@ -1,15 +1,20 @@
 import Taro from "@tarojs/taro";
 import {View, Image, Button, Checkbox, CheckboxGroup} from '@tarojs/components';
 import {useAgreement, useAuth} from "@/account/hooks";
-
+import { useEffect } from 'react';
 import './index.scss';
+import {resetStatus} from '@brushes/request';
 
 
 const Index = () => {
   const {bg, logo, agree, agreeFunc, setAgree, getPhone} = useAuth();
   const {goDetail} = useAgreement();
 
-
+  useEffect(() => {
+    return () => {
+      resetStatus()
+    }
+  }, []);
   const goLogin = () => {
     Taro.navigateTo({
       url: `/account/mobileLogin/index`

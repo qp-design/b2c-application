@@ -1,7 +1,6 @@
 {
   "name": "qj-mobile-store",
-  "version": "1.4.8",
-  "type": "module",
+  "version": "1.4.9",
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {

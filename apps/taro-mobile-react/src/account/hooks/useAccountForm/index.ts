@@ -96,12 +96,14 @@ export const useAccountForm = (type?: string) => {
         success: (res) => {
           console.log('调用前', res);
           errorCallback();
+          setSubmitLock(false)
         }
       })
     } catch (err) {
+      setSubmitLock(false)
       console.log(27, err);
     } finally {
-      setSubmitLock(false)
+
     }
   }
 

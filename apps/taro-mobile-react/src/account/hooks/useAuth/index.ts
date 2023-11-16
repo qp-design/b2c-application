@@ -34,6 +34,7 @@ export const useAuth = () => {
   }
 
   const getPhone = async (e) => {
+    console.log(37, e);
     if(!e.detail.code) return;
 
     Taro.login({
