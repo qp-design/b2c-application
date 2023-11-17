@@ -6,7 +6,7 @@ import prodConfig from './prod'
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig(async (merge, { command, mode }) => {
   const baseConfig: UserConfigExport = {
-    projectName: 'myApp',
+    projectName: 'b2c-mobile-cli',
     date: '2023-11-16',
     designWidth: 375,
     deviceRatio: {

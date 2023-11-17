@@ -5,7 +5,7 @@ export default {
   env: {
     NODE_PLATFORM: '"MOBILE_TERMINAL"',
     NODE_ENV: '"production"',
-    REACT_APP_BASE_URL: '"http://b2clch5b947aca405b34798b29b395b757d3457.saas.qjclouds.com/"',
+    REACT_APP_BASE_URL: '"https://b2cweapp17e3e531af0f47aabeace951a3954840.saas.qjclouds.cn/"',
     REACT_APP_SESSION_KEY: '"saas-token"',
     REACT_APP_APPLICATION: '""',
     REACT_IMG_PATH: '"paas/shop/"'
