@@ -38,6 +38,7 @@ export function useOrderResultResult(code: string) {
   useEffect(() => {
     (async () => {
       const menuOpcode = get(taroModule, 'taroMenu[0].menuOpcode', 'index');
+      console.log(41, taroModule);
       if (isWeapp) {
         const Taro = getTaro();
         Taro.setStorageSync('menuOpcode', menuOpcode);

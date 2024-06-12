@@ -21,11 +21,11 @@ const App = ({
   const expGraph = useMaterialGraph();
   const tep = useMemo(() => {
     const flag = location.href.includes('platform=B2C') && process.env.NODE_ENV === 'development';
-    const path = window.location.host.includes('lc.') ? 'lc' : 'lcdev';
+    const path = window.location.host.includes('lcdev') ? 'dev' : '';
     return {
       url: flag
         ? 'http://localhost:4002/remoteEntry.js'
-        : `http://operate.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
+        : `https://operate${path}.saas.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
       scope: `qj_operate`,
       module: './template'
     };

@@ -45,6 +45,7 @@ export const useCartListNext = (refresh: number, updateCount: number, dispatchPa
   const dispatchImpl = (shoppingGoodsList: Array<any>, isFirst: string) => {
     const { list, disMoney } = computedGoods(shoppingGoodsList);
     localList.current = list;
+    console.log('48=====>', list);
     const ids = localList.current.map((item: any) => item.shoppingGoodsId + '');
     const isAppendParams = {} as any;
 
@@ -127,6 +128,7 @@ export const useCartListNext = (refresh: number, updateCount: number, dispatchPa
   };
 
   const onChange = (e: { detail: { value: string[] } }) => {
+    console.log(131, e);
     dispatchPageStore((prevState: any) => {
       updateGoodCheck(e.detail.value, prevState.select);
       return {

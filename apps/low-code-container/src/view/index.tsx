@@ -10,9 +10,9 @@ const Index = () => {
   }, []);
   const [coe, setCoe] = useState(1);
   const port = useMemo(() => {
-    const path = window.location.host.includes('lcdev') || process.env.NODE_ENV === 'development' ? 'lcdev' : 'lc';
+    const path = window.location.host.includes('lcdev') || process.env.NODE_ENV === 'development' ? 'dev' : '';
     return {
-      // url: `http://container.${path}.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
+      // url: `https://container${path}.saas.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
       url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,
       scope: 'app_container',
       module: './low-code'
@@ -31,11 +31,12 @@ const Index = () => {
   ]);
 
   const clickImpl = (value: number) => {
-    if (isNeedJump && value === 2) {
-      openIpml();
-    } else {
-      setCoe(value);
-    }
+    setCoe(value);
+    // if (isNeedJump && value === 2) {
+    //   openIpml();
+    // } else {
+    //   setCoe(value);
+    // }
   };
 
   const openIpml = () => {
@@ -62,14 +63,20 @@ const Index = () => {
         {coe === 1 ? (
           <Root isDevelop={process.env.NODE_ENV === 'development'} port={port} />
         ) : (
-          <iframe
-            className={`contentO active`}
-            referrerPolicy="no-referrer-when-downgrade"
-            src={`${localStorage.getItem('operate') || ''}paas/b2c-bus-pc-saas/index.html#/dashboard?host=${(
-              localStorage.getItem('operate') || ''
-            ).slice(0, -1)}&token=${localStorage.getItem('operate-info')}`}
-            title={'后台'}
-          />
+          <Root isDevelop={process.env.NODE_ENV === 'development'} port={{
+            url: `http://localhost:9090/remoteEntry.js?id=${new Date().valueOf()}`,
+            // url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,
+            scope: 'react_with_vue',
+            module: './web-application'
+          }} />
+          // <iframe
+          //   className={`contentO active`}
+          //   referrerPolicy="no-referrer-when-downgrade"
+          //   src={`${localStorage.getItem('operate') || ''}paas/b2c-bus-pc-saas/index.html#/dashboard?host=${(
+          //     localStorage.getItem('operate') || ''
+          //   ).slice(0, -1)}&token=${localStorage.getItem('operate-info')}`}
+          //   title={'后台'}
+          // />
         )}
       </div>
     </div>

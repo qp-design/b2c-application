@@ -93,6 +93,8 @@ const ItemCheck = memo(
     dataState: number;
     select: Array<any>;
   }) => {
+
+    console.log(97, shoppingGoodsId, cartIsEditor, dataState, select)
     const { View, Checkbox } = useComponent();
     const checked = useMemo(() => {
       if (!cartIsEditor) {
@@ -274,6 +276,7 @@ export const CartList: React.FC<CartListType> = ({
   __link__ = {},
   cartItemRadius = '10px'
 }) => {
+  console.log(279, refreshNum, dispatchPageStore, $_dataSource, cartItemRadius)
   const { SmoothCheckbox, WrapLoading, View } = useComponent();
   const { cartSelect, cartUpdateCount, cartIsEditor } = $_dataSource;
   const { loading, cartList, onChange, handleStep, updatePm } = useCartListNext(
