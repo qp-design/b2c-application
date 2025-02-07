@@ -6,7 +6,6 @@
     "second": "webpack --mode production --config scripts/build.js",
     "prebuild:pro": "npm run first",
     "prebuild": "npm run first",
-    "build:pro": "npm run second",
     "build": "npm run second",
     "postbuild": "node ./scripts/push.js --branch=dev",
     "postbuild:pro": "node ./scripts/push.js --branch=master",

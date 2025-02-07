@@ -48,6 +48,9 @@ module.exports = {
     // }),
     new ModuleFederationPlugin({
       name: "kezi",
+      remotes: {
+        aaa: 'taro_app_library@http://172.16.21.171:10086/remoteEntry.js'
+      },
       shared: {
         ...deps,
         "@brushes/shared-store": {

@@ -14,7 +14,7 @@ const Index = () => {
     return {
       // url: `https://container${path}.saas.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
       url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,
-      scope: 'app_container',
+      scope: 'taro_app_library',
       module: './low-code'
     };
   }, []);
