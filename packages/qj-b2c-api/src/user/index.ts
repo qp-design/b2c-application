@@ -1,5 +1,5 @@
 //@ts-nocheck
-import { get, post, cacheParams } from '@brushes/request';
+import { get, post, cacheParams } from '@brushes/optimize';
 
 const MINI = {
   QUERY_NEW_TGINFO_MENU_TREE: 'web/cms/tginfoMenu/queryNewTginfoMenuTree.json',
