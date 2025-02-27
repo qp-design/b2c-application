@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
 // import {DynamicForm} from '@brushes/form';
-import Root from './view/a';
+import Root from './view/index';
 const root = ReactDOM.createRoot(document.getElementById('app') as HTMLElement);
 
 // const Root = () => {
