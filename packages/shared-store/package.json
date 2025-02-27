@@ -1,0 +1,29 @@
+{
+  "name": "@brushes/shared-store",
+  "version": "0.0.3",
+  "type": "module",
+  "description": "'@brushes/shared-store'",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "rollup -c -w && prettier --write src",
+    "build": "rm -rf dist/ && prettier --write src/ && rollup -c",
+    "push": "git add . && git commit -m",
+    "postpush": "git push",
+    "prepublishOnly": "echo 我们准备发布npm包",
+    "publishOnly": "npm run build && npm run push",
+    "postpublishOnly": "npm version patch && npm publish && git push"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@brushes/utils": "*",
+    "@types/node": ">18.0.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "tsconfig": "*",
+    "prettier": "^2.7.1",
+    "typescript": ">4.0.0"
+  }
+}

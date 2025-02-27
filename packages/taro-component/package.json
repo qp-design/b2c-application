@@ -1,0 +1,35 @@
+{
+  "name": "@brushes/taro-component",
+  "version": "0.0.3",
+  "type": "module",
+  "description": "'@brushes/taro-component'",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "rollup -c -w",
+    "build": "rm -rf dist/ && prettier --write src/ && rollup -c",
+    "push": "git add . && git commit -m",
+    "postpush": "git push",
+    "prepublishOnly": "echo 我们准备发布npm包",
+    "publishOnly": "npm run build && npm run push",
+    "postpublishOnly": "npm version patch && npm publish && git push"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@brushes/simulate-component": "*",
+    "@brushes/taro-hooks": "^0.2.6",
+    "@brushes/utils": "^0.2.2",
+    "@tarojs/components": "3.6.6",
+    "@tarojs/taro": "3.6.6",
+    "@types/node": ">18.0.0",
+    "lodash-es": "^4.17.21",
+    "prettier": "^2.7.1",
+    "qj-mobile-store": "*",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "tsconfig": "*",
+    "typescript": ">4.0.0"
+  }
+}
