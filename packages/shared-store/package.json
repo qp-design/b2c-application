@@ -1,6 +1,6 @@
 {
   "name": "@brushes/shared-store",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "type": "module",
   "description": "'@brushes/shared-store'",
   "main": "dist/index.js",

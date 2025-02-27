@@ -1,6 +1,6 @@
 {
   "name": "@brushes/taro-component",
-  "version": "0.0.3",
+  "version": "0.0.9",
   "type": "module",
   "description": "'@brushes/taro-component'",
   "main": "dist/index.js",
@@ -19,9 +19,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@brushes/simulate-component": "*",
-    "@brushes/taro-hooks": "^0.2.6",
-    "@brushes/utils": "^0.2.2",
+    "@brushes/simulate-component": "^0.3.1",
+    "qj-b2b-api": "*",
+    "@brushes/taro-hooks": "^0.3.2",
+    "@brushes/utils": "^0.2.5",
     "@tarojs/components": "3.6.6",
     "@tarojs/taro": "3.6.6",
     "@types/node": ">18.0.0",

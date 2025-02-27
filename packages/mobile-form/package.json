@@ -13,7 +13,7 @@
     "iconfont"
   ],
   "scripts": {
-    "start": "concurrently npm:start:*",
+    "start": "concurrently npm:start:* --bundleConfigAsCjs",
     "start:ts": "rollup -c -w",
     "build": "rm -rf dist/ && prettier --write src/ && rollup -c",
     "push": "git add . && git commit -m",

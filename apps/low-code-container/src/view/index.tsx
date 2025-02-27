@@ -63,12 +63,15 @@ const Index = () => {
         {coe === 1 ? (
           <Root isDevelop={process.env.NODE_ENV === 'development'} port={port} />
         ) : (
-          <Root isDevelop={process.env.NODE_ENV === 'development'} port={{
-            url: `http://localhost:9090/remoteEntry.js?id=${new Date().valueOf()}`,
-            // url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,
-            scope: 'react_with_vue',
-            module: './web-application'
-          }} />
+          <Root
+            isDevelop={process.env.NODE_ENV === 'development'}
+            port={{
+              url: `http://localhost:9090/remoteEntry.js?id=${new Date().valueOf()}`,
+              // url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,
+              scope: 'react_with_vue',
+              module: './web-application'
+            }}
+          />
           // <iframe
           //   className={`contentO active`}
           //   referrerPolicy="no-referrer-when-downgrade"
