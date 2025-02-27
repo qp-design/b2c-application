@@ -12,9 +12,9 @@ const Index = () => {
   const port = useMemo(() => {
     const path = window.location.host.includes('lcdev') || process.env.NODE_ENV === 'development' ? 'dev' : '';
     return {
-      // url: `https://container${path}.saas.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
-      url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,
-      scope: 'taro_app_library',
+      url: `https://container${path}.saas.qjclouds.com/remoteEntry.js?id=${new Date().valueOf()}`,
+      // url: `http://localhost:7777/remoteEntry.js?id=${new Date().valueOf()}`,
+      scope: 'app_container',
       module: './low-code'
     };
   }, []);
