@@ -1,19 +1,47 @@
-import { Select } from 'antd';
+import { FormInstance, Select } from 'antd';
+import { useState, useEffect } from 'react';
+import { NamePath } from '@/components';
 
 const { Option } = Select;
 
-const SelectFields = ({
+const SelectFieldSearch = ({
   options = [],
   optionsName = 'label',
   optionsKey = 'value',
+  form,
+  allowClear = true,
+  dependencies,
   ...restProps
 }: {
-  options?: Array<{ [v: string]: string | number }>;
+  dependencies?: NamePath;
+  form: FormInstance;
+  allowClear?: boolean;
+  options?:
+    | Array<{ [v: string]: string | number }>
+    | ((e: any) => Promise<any>);
   optionsName?: string | undefined;
   optionsKey?: string | undefined;
 }) => {
+  const [option, setOption] = useState<Array<{ [v: string]: string | number }>>(
+    []
+  );
+  const value = dependencies ? form.getFieldValue(dependencies) : '';
+  useEffect(() => {
+    (async () => {
+      try {
+        const data = await (typeof options !== 'function'
+          ? Promise.resolve(options)
+          : options(value));
+        setOption(data);
+      } catch (e) {
+        setOption([]);
+      }
+    })();
+  }, [value]);
+
   return (
     <Select
+      allowClear={allowClear}
       {...restProps}
       optionLabelProp="label"
       optionFilterProp="children"
@@ -25,7 +53,7 @@ const SelectFields = ({
         }
       }}
     >
-      {options.map((item) => (
+      {option.map((item) => (
         <Option
           key={item[optionsKey]}
           disabled={Boolean(item.disabled)}
@@ -38,4 +66,4 @@ const SelectFields = ({
     </Select>
   );
 };
-export default SelectFields;
+export default SelectFieldSearch;

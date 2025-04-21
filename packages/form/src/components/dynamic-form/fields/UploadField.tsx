@@ -59,7 +59,6 @@ export default function UploadField({
     }
     return [];
   }, [fileList]) as UploadFile[];
-  console.log(62, maxCount);
   return (
     <>
       {isFunction(prefixicon) ? prefixicon(form) : prefixicon}

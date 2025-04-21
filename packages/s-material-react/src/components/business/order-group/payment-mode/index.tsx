@@ -44,7 +44,7 @@ const PaymentModeJsx: FC<PaymentModeProps> = ({
         <View className={'topInfo'}>
           <Text className={'title'}>
             <IconMobile value={'roundcheck'} />
-            订单提交成功
+            订单提交成功2123123123123
           </Text>
           <View className={'info'}>
             订单号：{contract.current.contractBillcode} | 总金额：{fixPrice(contract.current.dataBmoney)}元

@@ -1,21 +1,29 @@
-import { Form, FormInstance, Space, Button, FormProps } from 'antd';
-import { useEffect, useState, memo, Fragment } from 'react';
+import {
+  ConfigProvider,
+  Form,
+  FormInstance,
+  Space,
+  Button,
+  FormProps
+} from 'antd';
+import { useEffect, useState, memo, Fragment, ReactNode } from 'react';
 import {
   Action,
   FieldType,
-  submitType,
+  submitFunType,
   TransformType
 } from '@/components/types';
 import { dynamicFormFields } from '@/components/dynamicFormFields';
 import { useFormImpl } from '@/components/hooks';
 import { useImmutableCallback } from '@/util';
+import type { ValidateMessages } from 'rc-field-form/es/interface';
 
 export interface FormAddProps extends FormProps {
   saveText?: string;
   name?: string;
   resetText?: string;
   initialValues?: { [v: string]: unknown };
-  onSubmit: (...args: submitType) => void;
+  onSubmit: submitFunType;
   fields: Array<FieldType>;
   transformSubmitDataConfig?: Array<TransformType>;
   otherAction?: Array<Action>;
@@ -106,6 +114,20 @@ export const NoFormDynamic = memo(
     <>{dynamicFormFields(fields, form)}</>
   )
 );
+
+export const FormWithValidate: React.FC<{
+  children: ReactNode;
+  validateMessages?: ValidateMessages;
+}> = ({
+  children,
+  validateMessages = {
+    required: '${label}不能为空'
+  }
+}) => {
+  return (
+    <ConfigProvider form={{ validateMessages }}>{children}</ConfigProvider>
+  );
+};
 
 export const DynamicForm = memo(DynamicFormJsx);
 

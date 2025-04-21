@@ -9,69 +9,66 @@ export function dynamicFormFields(
   form: FormInstance,
   indx?: number
 ) {
-  return fields.map(
-    (
-      {
-        name: transformName,
-        type,
-        extraProps = {},
-        calIsVisible = () => true,
-        ...rest
-      }: FieldType,
-      idx: number
-    ) => {
-      const {
-        shouldUpdate = (prevValues: any, curValues: any) => false,
-        dependencies,
-        ...extraPropsRest
-      } = extraProps;
-      const FormItem = Form.Item;
-      let name = (
-        isUndefined(indx) ? transformName : [indx, transformName]
-      ) as NamePath;
-      const formItemProps: { [k: string]: unknown } = {
-        name,
-        type,
-        dependencies,
-        valuePropName: ['checkbox', 'switch'].includes(type)
-          ? 'checked'
-          : 'value',
-        ...rest
+  return fields.map((rootItem, idx: number) => {
+    const {
+      name: transformName,
+      type,
+      extraProps = {},
+      calIsVisible = () => true,
+      ...rest
+    }: FieldType = typeof rootItem === 'function' ? rootItem(form) : rootItem;
+    const {
+      dependencies,
+      shouldUpdate = (prevValues: any, curValues: any) => false,
+      ...extraPropsRest
+    } = extraProps;
+    const inObj = isUndefined(dependencies)
+      ? { shouldUpdate }
+      : { dependencies };
+    const FormItem = Form.Item;
+    let name = (
+      isUndefined(indx) ? transformName : [indx + '', transformName]
+    ) as NamePath;
+    const formItemProps: { [k: string]: unknown } = {
+      name,
+      type,
+      valuePropName: ['checkbox', 'switch'].includes(type)
+        ? 'checked'
+        : 'value',
+      ...rest
+    };
+    if (type === 'upload') {
+      formItemProps.valuePropName = 'fileList';
+      formItemProps.getValueFromEvent = (e: any) => {
+        return e.fileList;
       };
-      if (type === 'upload') {
-        formItemProps.valuePropName = 'fileList';
-        formItemProps.getValueFromEvent = (e: any) => {
-          return e.fileList;
-        };
-      }
-      const FieldComponent = get(
-        FieldTypeComponent,
-        type,
-        FieldTypeComponent.text
-      );
-      return (
-        <FormItem
-          shouldUpdate={shouldUpdate}
-          key={(name || idx).toString()}
-          noStyle
-        >
-          {() =>
-            calIsVisible(form) ? (
-              <FormItem
-                style={{
-                  marginBottom: ['slot'].includes(type) ? 0 : 24
-                }}
-                {...(['formList', 'extend'].includes(type)
-                  ? {}
-                  : formItemProps)}
-                noStyle={['formList', 'extend'].includes(type)}
-              >
-                <FieldComponent form={form} name={name} {...extraPropsRest} />
-              </FormItem>
-            ) : null
-          }
-        </FormItem>
-      );
     }
-  );
+    const FieldComponent = get(
+      FieldTypeComponent,
+      type,
+      FieldTypeComponent.text
+    );
+    return (
+      <FormItem {...inObj} key={(name || idx).toString()} noStyle>
+        {() =>
+          calIsVisible(form) ? (
+            <FormItem
+              style={{
+                marginBottom: ['slot'].includes(type) ? 0 : 24
+              }}
+              {...(['formList', 'extend'].includes(type) ? {} : formItemProps)}
+              noStyle={['formList', 'extend'].includes(type)}
+            >
+              <FieldComponent
+                dependencies={dependencies}
+                form={form}
+                name={name}
+                {...extraPropsRest}
+              />
+            </FormItem>
+          ) : null
+        }
+      </FormItem>
+    );
+  });
 }

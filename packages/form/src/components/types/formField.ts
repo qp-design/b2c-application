@@ -21,20 +21,25 @@ type formType =
   | 'color'
   | 'slot';
 
-type callResolver = (msg?: string) => void;
+export type callResolver = (msg?: string | any) => void;
 export type submitType<T = any> = [T, callResolver, callResolver];
-
+export type submitFunType<T = any> = (
+  value: T,
+  suc: callResolver,
+  error: callResolver
+) => void;
 export type NamePath = string | number | (string | number)[];
 
-export interface FieldType {
+export type FieldType = FieldTypeObj | ((form: FormInstance) => FieldTypeObj);
+
+interface FieldTypeObj {
   name: string | number | (string | number)[];
   noStyle?: boolean;
   colon?: boolean;
   type: formType;
-  label?: string;
+  label?: ReactNode;
   labelCol?: { span: number };
   wrapperCol?: { span: number };
-  shouldUpdate?: boolean;
   calIsVisible?: (form: FormInstance) => boolean;
   rules?: Array<
     { required?: boolean; message?: string; pattern?: RegExp } | any
@@ -45,13 +50,18 @@ export interface FieldType {
   loading?: boolean;
   extraProps?: {
     dependencies?: NamePath;
-    options?: { [v: string]: any }[];
+    options?:
+      | Array<{ [v: string]: string | number | ReactNode }>
+      | ((
+          e: any
+        ) =>
+          | Promise<any>
+          | Array<{ [v: string]: string | number | ReactNode }>);
     optionsName?: string | 'label'; // select
     optionsKey?: string | 'value'; // select
     uid?: string | 'uid'; //upload
     url?: string | 'url'; //upload
     urlName?: string | 'name'; //upload
-    api?: () => Promise<any>;
     shouldUpdate?: (prevValue: any, curValue: any) => boolean;
     [k: string]: unknown;
     placeholder?: string;
@@ -81,6 +91,5 @@ export interface Action extends ButtonProps {
   name: string;
   callback: Function;
   isNeedValidate?: boolean;
-
   [v: string]: unknown;
 }

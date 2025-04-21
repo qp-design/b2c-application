@@ -3,14 +3,16 @@ import dayjs from 'dayjs';
 
 export default function DatePickerField({
   value,
+  format = 'YYYY/MM/DD',
   ...extraProps
 }: {
+  format?: string;
   value?: string;
 }) {
   return (
     <DatePicker
-      format={'YYYY/MM/DD'}
-      value={value ? dayjs(value, 'YYYY-MM-DD') : null}
+      format={format}
+      value={value ? dayjs(value, format) : null}
       {...extraProps}
     />
   );

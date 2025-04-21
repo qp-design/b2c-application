@@ -3,7 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { saveOrderToPay, syncContractState, syncContractBatchState, paymentCommit } from '@/utils/payment';
 import { reLaunchHandler, setStorage, taroMessage } from '@brushes/utils';
 import { getEnv } from '@brushes/utils';
+import { isMobileTerminal } from '@brushes/utils';
 
+console.log(8, isMobileTerminal());
 interface payType {
   ptradeSeqno: string;
   contractBlance: string;
@@ -37,7 +39,7 @@ export function useOrderResult({ contractBillcode, contractBbillcode }: { contra
           contractBillcode: contract.current.contractBillcode ?? '',
           isLocalMock: !isWeapp
         });
-
+        console.log(40, res.payChannelList)
         setChannelList(res.payChannelList);
         result.current = res;
       } catch (err) {

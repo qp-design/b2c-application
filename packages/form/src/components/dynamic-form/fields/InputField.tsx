@@ -1,13 +1,5 @@
-import { Input, FormInstance } from 'antd';
-import { ReactNode } from 'react';
+import { Input } from 'antd';
 
-export default function InputField({
-  form,
-  addonAfter,
-  ...extraProps
-}: {
-  form?: FormInstance;
-  addonAfter?: ((form: FormInstance | undefined) => ReactNode) | undefined;
-}) {
-  return <Input addonAfter={addonAfter?.(form)} {...extraProps} />;
+export default function InputField({ ...extraProps }) {
+  return <Input {...extraProps} />;
 }
