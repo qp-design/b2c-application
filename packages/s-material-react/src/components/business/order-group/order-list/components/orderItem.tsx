@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { useComponent, antdMobile } from '@brushes/simulate-component';
 import { navigatorHandler } from '@brushes/utils';
-import { orderStatusImpl, orderType } from 'qj-mobile-store';
+import { orderStatusImpl, orderType } from 'qj-b2c-store';
 import { CardJsx } from '@/common/card';
 import FooterComponent from '@/components/business/order-group/order-detail/component/footer';
 import { useCountDown } from '@/hooks';

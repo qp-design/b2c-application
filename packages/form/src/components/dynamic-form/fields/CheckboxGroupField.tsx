@@ -1,37 +1,64 @@
-import { Checkbox, FormInstance, Space } from 'antd';
+import { Checkbox, FormInstance } from 'antd';
+import { useEffect, useMemo, useState } from 'react';
+import { NamePath } from '@/components';
 
-type emums = 'vertical' | 'horizontal';
 export default function CheckboxGroupField({
   form,
   options = [],
   optionsName = 'label',
   optionsKey = 'value',
-  description,
-  direction = 'horizontal',
+  dependencySingle,
+  dependencies,
   ...extraProps
 }: {
   form: FormInstance;
-  direction?: emums;
-  options?: Array<any>;
-  description?: {
-    key: string;
-    func: Function;
-  };
+  options?:
+    | Array<{ [v: string]: string | number }>
+    | ((e: any) => Promise<any>);
+  dependencies?: NamePath;
+  dependencySingle?: NamePath;
   optionsName?: string | undefined;
   optionsKey?: string | undefined;
 }) {
-  return (
-    <Checkbox.Group {...extraProps}>
-      <Space direction={direction}>
-        {options.map(({ direction = 'horizontal', ...restItem }, idx) => (
-          <Space key={idx} direction={direction}>
-            <Checkbox value={restItem[optionsKey]}>
-              {restItem[optionsName]}
-            </Checkbox>
-            {description && description.func(restItem[description.key])}
-          </Space>
-        ))}
-      </Space>
-    </Checkbox.Group>
-  );
+  const [option, setOption] = useState<
+    Array<{
+      // @ts-ignore
+      direction?: 'horizontal' | 'vertical';
+      [v: string]: string | number;
+    }>
+  >([]);
+
+  const value =
+    dependencySingle || dependencies
+      ? form.getFieldValue(dependencySingle ? dependencySingle : dependencies)
+      : '';
+
+  useEffect(() => {
+    if (typeof options !== 'function') {
+      setOption(options);
+    }
+  }, [options]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const data = await (typeof options !== 'function'
+          ? Promise.resolve(options)
+          : options(value));
+        setOption(data);
+      } catch (e) {
+        setOption([]);
+      }
+    })();
+  }, [value]);
+
+  const newOption = useMemo(() => {
+    return option.map((item) => ({
+      ...item,
+      label: item[optionsName],
+      value: item[optionsKey]
+    }));
+  }, [option]);
+
+  return <Checkbox.Group {...extraProps} options={newOption}></Checkbox.Group>;
 }

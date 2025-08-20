@@ -2,7 +2,7 @@
 import React, { memo, useState } from 'react';
 import { useComponent } from '@brushes/simulate-component';
 import { PromotionListItem, PromotionListTab } from './components';
-import { useMarketingPromotion } from 'qj-mobile-store';
+import { useMarketingPromotion } from 'qj-b2c-store';
 import { ScrollWrap } from '@/common/scrollWrap';
 import { config } from './components/config';
 

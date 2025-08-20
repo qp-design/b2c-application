@@ -1,6 +1,6 @@
 //@ts-nocheck
 import { useComponent } from '@brushes/simulate-component';
-import { useGoodDetail, useGoodSpecAndPrice, usePromotion } from 'qj-mobile-store';
+import { useGoodDetail, useGoodSpecAndPrice, usePromotion } from 'qj-b2c-store';
 
 export const GoodsDetailPromotion = ({ skuCode, scene }) => {
   const { View, Text } = useComponent();

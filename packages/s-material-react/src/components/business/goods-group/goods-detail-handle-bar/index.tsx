@@ -3,7 +3,7 @@ import { useComponent } from '@brushes/simulate-component';
 import { navigatorHandler } from '@brushes/utils';
 import { useService } from '@/utils';
 import { GoodsDetailPopup } from '../common/goodsDetailPopup';
-import { useGoodSku, popupImplement, useGoodDetail, useGoodSpecAndPrice, useGoodSkuStore } from 'qj-mobile-store';
+import { useGoodSku, popupImplement, useGoodDetail, useGoodSpecAndPrice, useGoodSkuStore } from 'qj-b2c-store';
 import { noop } from 'lodash-es';
 import { memo } from 'react';
 

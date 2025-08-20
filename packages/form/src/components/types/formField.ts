@@ -7,13 +7,17 @@ type formType =
   | 'textarea'
   | 'number'
   | 'checkbox'
+  | 'rate'
   | 'select'
+  | 'opt'
+  | 'password'
   | 'radioGroup'
   | 'checkboxGroup'
   | 'complex'
   | 'range'
   | 'date'
   | 'cascader'
+  | 'cascaderComplex'
   | 'innerForm'
   | 'upload'
   | 'mention'
@@ -48,8 +52,10 @@ interface FieldTypeObj {
   readOnly?: boolean;
   minLength?: number;
   loading?: boolean;
+  layout?: 'horizontal' | 'vertical';
   extraProps?: {
-    dependencies?: NamePath;
+    dependencies?: NamePath; // 如果依赖多个值 需要明确哪个依赖更新数据值  可以使用dependencySingle  特殊情况   一般不用到
+    dependencySingle?: NamePath;
     options?:
       | Array<{ [v: string]: string | number | ReactNode }>
       | ((

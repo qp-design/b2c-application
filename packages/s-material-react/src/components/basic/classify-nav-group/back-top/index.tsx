@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
 import { QjMobileIcon } from '@/common/icon';
 import { getEnv } from '@brushes/utils';
-import { useGoTop } from 'qj-mobile-store';
+import { useGoTop } from 'qj-b2c-store';
 const initialBackTop = {
   position: 10,
   bg: '',

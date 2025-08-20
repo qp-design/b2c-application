@@ -1,6 +1,6 @@
 import { memo, type FC } from 'react';
 import { useComponent } from '@brushes/simulate-component';
-import { useCouponList } from 'qj-mobile-store';
+import { useCouponList } from 'qj-b2c-store';
 import { CouponItem } from './components';
 import { ScrollWrap } from '@/common/scrollWrap';
 

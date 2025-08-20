@@ -1,6 +1,6 @@
 import React, { memo, useMemo, useState } from 'react';
 import { useComponent } from '@brushes/simulate-component';
-import { useGoods } from 'qj-mobile-store';
+import { useGoods } from 'qj-b2c-store';
 import { getEnv } from '@brushes/utils';
 import { navigatorHandler } from '@brushes/utils';
 import { fixPrice } from '@/utils';

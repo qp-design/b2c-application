@@ -1,5 +1,5 @@
 import { useComponent } from '@brushes/simulate-component';
-import { useGoodSkuStore } from 'qj-mobile-store';
+import { useGoodSkuStore } from 'qj-b2c-store';
 import classNames from 'classnames';
 
 export interface SkuItemType {

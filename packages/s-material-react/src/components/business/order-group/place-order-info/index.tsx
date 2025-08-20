@@ -1,6 +1,6 @@
 import { useComponent } from '@brushes/simulate-component';
 import { fixPrice } from '@/utils';
-import { useOrderInfo, orderGoodValue, useOrderGood } from 'qj-mobile-store';
+import { useOrderInfo, orderGoodValue, useOrderGood } from 'qj-b2c-store';
 
 export const PlaceOrderInfo = ({ refreshNum, goodsNum, skuId, shoppingGoodsId }: Partial<typeof orderGoodValue>) => {
   const { SmoothView, View } = useComponent();

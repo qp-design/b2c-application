@@ -1,7 +1,7 @@
 import { Upload, Button, FormInstance } from 'antd';
 import type { UploadFile } from 'antd';
 import { NamePath } from '@/components/types/formField';
-import { isFunction } from 'lodash-es';
+import { isFunction } from 'lodash';
 import { QjIcon } from '@brushes/share-resource';
 import { useMemo } from 'react';
 
@@ -63,6 +63,7 @@ export default function UploadField({
     <>
       {isFunction(prefixicon) ? prefixicon(form) : prefixicon}
       <Upload
+        disabled={disabled}
         maxCount={maxCount}
         fileList={newFileList}
         {...extraProps}

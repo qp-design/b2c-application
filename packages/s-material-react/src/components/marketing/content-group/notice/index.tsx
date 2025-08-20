@@ -1,6 +1,6 @@
 import React from 'react';
 import { NoticeBar } from '@brushes/simulate-component';
-import { useNotice } from 'qj-mobile-store';
+import { useNotice } from 'qj-b2c-store';
 
 export const Notice: React.FC<NoticeType> = ({ direction, speed, num, color }) => {
   const { content, navigator } = useNotice(num);

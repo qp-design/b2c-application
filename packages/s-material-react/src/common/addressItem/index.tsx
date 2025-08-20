@@ -1,6 +1,6 @@
 //@ts-nocheck
 import { useComponent } from '@brushes/simulate-component';
-import { useAddressItem } from 'qj-mobile-store';
+import { useAddressItem } from 'qj-b2c-store';
 
 const Item = ({ setDefault, checked }: any) => {
   const { SmoothCheckbox, Checkbox } = useComponent();

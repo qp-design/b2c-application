@@ -2,7 +2,7 @@
 import { useComponent } from '@brushes/simulate-component';
 import { THREE_DOTS } from '@/static';
 import { Coupon } from '@/common/coupon';
-import { useCoupon, useGoodDetail, useGoodSpecAndPrice } from 'qj-mobile-store';
+import { useCoupon, useGoodDetail, useGoodSpecAndPrice } from 'qj-b2c-store';
 import { ScrollWrap } from '@/common/scrollWrap';
 import { NoData } from './component';
 

@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { Fragment, memo, useRef } from 'react';
 import { useComponent, antdMobile } from '@brushes/simulate-component';
-import { useEvaluateDetail } from 'qj-mobile-store';
+import { useEvaluateDetail } from 'qj-b2c-store';
 import { Rate } from '@/common/rate';
 interface EvaluateDetail {
   code: string;

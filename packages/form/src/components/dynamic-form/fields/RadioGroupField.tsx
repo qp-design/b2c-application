@@ -1,4 +1,6 @@
-import { FormInstance, Radio, Space } from 'antd';
+import { FormInstance, Radio } from 'antd';
+import { useEffect, useMemo, useState } from 'react';
+import { NamePath } from '@/components';
 
 type emums = 'vertical' | 'horizontal';
 export default function RadioGroupField({
@@ -6,24 +8,59 @@ export default function RadioGroupField({
   options = [],
   optionsName = 'label',
   optionsKey = 'value',
+  dependencySingle,
+  dependencies,
   direction = 'horizontal',
   ...extraProps
 }: {
   form: FormInstance;
+  dependencies?: NamePath;
+  dependencySingle?: NamePath;
   direction?: emums;
-  options?: Array<any>;
+  options?:
+    | Array<{ [v: string]: string | number }>
+    | ((e: any) => Promise<any>);
   optionsName?: string | undefined;
   optionsKey?: string | undefined;
 }) {
-  return (
-    <Radio.Group {...extraProps}>
-      <Space direction={direction}>
-        {options.map(({ direction = 'horizontal', ...restItem }, idx) => (
-          <Space key={idx} direction={direction}>
-            <Radio value={restItem[optionsKey]}>{restItem[optionsName]}</Radio>
-          </Space>
-        ))}
-      </Space>
-    </Radio.Group>
-  );
+  const [option, setOption] = useState<
+    Array<{
+      // @ts-ignore
+      direction?: 'horizontal' | 'vertical';
+      [v: string]: string | number;
+    }>
+  >([]);
+
+  const value =
+    dependencySingle || dependencies
+      ? form.getFieldValue(dependencySingle ? dependencySingle : dependencies)
+      : '';
+
+  useEffect(() => {
+    if (typeof options !== 'function') {
+      setOption(options);
+    }
+  }, [options]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const data = await (typeof options !== 'function'
+          ? Promise.resolve(options)
+          : options(value));
+        setOption(data);
+      } catch (e) {
+        setOption([]);
+      }
+    })();
+  }, [value]);
+
+  const newOption = useMemo(() => {
+    return option.map((item) => ({
+      ...item,
+      label: item[optionsName],
+      value: item[optionsKey]
+    }));
+  }, [option]);
+  return <Radio.Group {...extraProps} options={newOption}></Radio.Group>;
 }

@@ -1,5 +1,5 @@
 import { useComponent } from '@brushes/simulate-component';
-import { useOrderGood, useOrderPay } from 'qj-mobile-store';
+import { useOrderGood, useOrderPay } from 'qj-b2c-store';
 import { fixPrice } from '@/utils';
 
 const OrderOerate = {

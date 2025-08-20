@@ -1,7 +1,7 @@
 import React from 'react';
 import { useComponent } from '@brushes/simulate-component';
 import { Item, Type } from './components';
-import { useAfterSalesChooseType } from 'qj-mobile-store';
+import { useAfterSalesChooseType } from 'qj-b2c-store';
 import { MCAfterSalesType } from './context';
 
 const initialAfterSalesType = {

@@ -1,6 +1,6 @@
 import { useComponent } from '@brushes/simulate-component';
 import { Dispatch, useMemo } from 'react';
-import { useCartOperate } from 'qj-mobile-store';
+import { useCartOperate } from 'qj-b2c-store';
 import { fixPrice } from '@/utils';
 
 interface CartOperateType {

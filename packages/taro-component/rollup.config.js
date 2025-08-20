@@ -21,7 +21,7 @@ export default {
     "qj-b2b-api",
     "@brushes/shared-store",
     "lodash-es",
-    "qj-mobile-store",
+    "qj-b2c-store",
     "@tarojs/taro"],
   plugins: [
     ts({}),

@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { antdMobile, useComponent } from '@brushes/simulate-component';
 import classNames from 'classnames';
-import { useOrderOperate } from 'qj-mobile-store';
+import { useOrderOperate } from 'qj-b2c-store';
 
 const { Button } = antdMobile;
 

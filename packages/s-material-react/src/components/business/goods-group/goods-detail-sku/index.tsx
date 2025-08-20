@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { useComponent } from '@brushes/simulate-component';
 import { THREE_DOTS } from '@/static';
-import { useGoodSkuStore, popupImplement } from 'qj-mobile-store';
+import { useGoodSkuStore, popupImplement } from 'qj-b2c-store';
 import { memo } from 'react';
 
 const GoodSkuInfo = memo(() => {

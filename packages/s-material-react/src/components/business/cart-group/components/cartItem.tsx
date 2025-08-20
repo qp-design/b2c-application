@@ -1,6 +1,6 @@
 //@ts-nocheck
 import { useComponent } from '@brushes/simulate-component';
-import { useCartItem, useStore } from 'qj-mobile-store';
+import { useCartItem, useStore } from 'qj-b2c-store';
 import { navigatorHandler } from '@brushes/utils';
 
 export function CartItem({ list }: { list: Array<any> }) {

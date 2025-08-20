@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react';
 import { useComponent } from '@brushes/simulate-component';
-import { useGoodsClassify } from 'qj-mobile-store';
+import { useGoodsClassify } from 'qj-b2c-store';
 import { ClassifyOneContent, ClassifyOneHeader } from './components';
 import { MC } from './components/context';
 

@@ -2,7 +2,7 @@ import { useComponent } from '@brushes/simulate-component';
 import React, { memo } from 'react';
 import { CardJsx } from '@/common/card';
 import { getState } from './state';
-import { useAfterSalesDetail } from 'qj-mobile-store';
+import { useAfterSalesDetail } from 'qj-b2c-store';
 import dayjs from 'dayjs';
 import { SenderWrite } from './components';
 import { MCAfterSalesDetail } from './context';

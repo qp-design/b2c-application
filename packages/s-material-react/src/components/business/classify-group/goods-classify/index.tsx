@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { useComponent, antdMobile } from '@brushes/simulate-component';
 import { ClassifyFloor } from './components';
-import { useGoodsClassify } from 'qj-mobile-store';
+import { useGoodsClassify } from 'qj-b2c-store';
 import { ScrollWrap } from '@/common/scrollWrap';
 
 const { SideBar } = antdMobile;

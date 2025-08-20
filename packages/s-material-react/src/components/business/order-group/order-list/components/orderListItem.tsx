@@ -4,7 +4,7 @@ import { useComponent } from '@brushes/simulate-component';
 import { Item } from './orderItem';
 import { TabItemType } from '@brushes/simulate-component';
 import { ScrollWrap } from '@/common/scrollWrap';
-import { useOrderList } from 'qj-mobile-store';
+import { useOrderList } from 'qj-b2c-store';
 import { navigatorHandler } from '@brushes/utils';
 import { NoData } from './NoData';
 function OrderListItemJsx({

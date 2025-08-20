@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
 import { OrderListItem } from './components';
-import { orderStatusList } from 'qj-mobile-store';
+import { orderStatusList } from 'qj-b2c-store';
 
 interface OrderListType {
   borderRadius?: boolean;

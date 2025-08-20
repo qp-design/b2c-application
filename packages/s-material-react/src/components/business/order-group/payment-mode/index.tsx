@@ -2,7 +2,7 @@
 import { memo, type FC, useMemo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
 import { getEnv } from '@brushes/utils';
-import { useOrderResult } from 'qj-mobile-store';
+import { useOrderResult } from 'qj-b2c-store';
 import { fixPrice } from '@/utils';
 interface PaymentModeProps {
   contractBillcode: string;

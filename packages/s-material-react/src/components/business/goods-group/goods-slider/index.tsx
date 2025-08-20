@@ -2,7 +2,7 @@
 import React, { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
 import { QjMobileIcon } from '@/common/icon';
-import { useGoods } from 'qj-mobile-store';
+import { useGoods } from 'qj-b2c-store';
 import { navigatorHandler } from '@brushes/utils';
 import { fixPrice } from '@/utils';
 const initialGoodsSlider = {

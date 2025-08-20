@@ -4,7 +4,7 @@ import { GoodsDetailEvaluate } from './goodsDetailEvaluate';
 import { GoodsDetailInfo } from './goodsDetailInfo';
 import { useComponent } from '@brushes/simulate-component';
 import { Dispatch, Fragment, useState } from 'react';
-import { useGoodDetail, useEvaluate } from 'qj-mobile-store';
+import { useGoodDetail, useEvaluate } from 'qj-b2c-store';
 
 const GoodsDetailAndEvaluateInitial = {
   evaluateShow: true,

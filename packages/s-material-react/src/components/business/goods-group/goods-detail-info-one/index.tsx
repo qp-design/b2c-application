@@ -1,7 +1,7 @@
 //@ts-nocheck
 import React, { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
-import { useGoodDetail, useGoodFootprint, useGoodSkuStore, useGoodSpecAndPrice } from 'qj-mobile-store';
+import { useGoodDetail, useGoodFootprint, useGoodSkuStore, useGoodSpecAndPrice } from 'qj-b2c-store';
 import { HandleBar } from './handleBar';
 import { fixPrice } from '@/utils';
 

@@ -46,7 +46,7 @@ export default defineConfig(async (merge, { command, mode }) => {
         //   'lodash-es',
         //   '@brushes/simulate-component',
         //   's-material-react',
-        //   "qj-mobile-store",
+        //   "qj-b2c-store",
         //   "qj-b2c-api"
         // ]
       }

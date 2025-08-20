@@ -2,7 +2,7 @@ import { ExpressInfoStep, ExpressInfoTop } from './components';
 import { useComponent } from '@brushes/simulate-component';
 import type { FC } from 'react';
 import { memo } from 'react';
-import { useExpressInfo } from 'qj-mobile-store';
+import { useExpressInfo } from 'qj-b2c-store';
 export interface ExpressInfoProps {
   defaultValue: {
     message: string;

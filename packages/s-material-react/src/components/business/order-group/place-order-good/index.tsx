@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { useComponent } from '@brushes/simulate-component';
 import { CardJsx } from '@/common/card';
-import { useOrderGood, orderGoodValue } from 'qj-mobile-store';
+import { useOrderGood, orderGoodValue } from 'qj-b2c-store';
 
 export const PlaceOrderGood = ({ refreshNum, goodsNum, skuId, shoppingGoodsId }: Partial<typeof orderGoodValue>) => {
   const { View } = useComponent();

@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { FieldType, NamePath } from '@/components/types';
 import { Form, FormInstance } from 'antd';
-import { get, isUndefined } from 'lodash-es';
+import { get, isUndefined } from 'lodash';
 import { FieldTypeComponent } from './common';
 
 export function dynamicFormFields(

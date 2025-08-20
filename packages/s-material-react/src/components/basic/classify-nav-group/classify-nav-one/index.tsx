@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Image, useComponent } from '@brushes/simulate-component';
-import { useCube } from 'qj-mobile-store';
+import { useCube } from 'qj-b2c-store';
 import { ClassifyItemType } from '@/components';
 import { navigatorHandler } from '@brushes/utils';
 import { useFullPath } from '@/hooks';

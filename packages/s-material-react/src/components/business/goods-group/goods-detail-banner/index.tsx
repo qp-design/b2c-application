@@ -1,6 +1,6 @@
 import React from 'react';
 import { SliderInner } from '@/components/basic/slider-group/slider/slider';
-import { useGoodDetail, useBanner } from 'qj-mobile-store';
+import { useGoodDetail, useBanner } from 'qj-b2c-store';
 
 const GoodsDetailBannerInitial = {
   autoplay: false,

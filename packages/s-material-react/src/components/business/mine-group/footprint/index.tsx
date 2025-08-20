@@ -1,4 +1,4 @@
-import { useFootprint } from 'qj-mobile-store';
+import { useFootprint } from 'qj-b2c-store';
 import { FootprintGroup } from './components';
 import { useComponent } from '@brushes/simulate-component';
 import { ScrollWrap } from '@/common/scrollWrap';

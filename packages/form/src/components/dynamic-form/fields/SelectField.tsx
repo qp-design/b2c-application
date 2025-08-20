@@ -9,6 +9,7 @@ const SelectFieldSearch = ({
   optionsName = 'label',
   optionsKey = 'value',
   form,
+  dependencySingle,
   allowClear = true,
   dependencies,
   ...restProps
@@ -16,6 +17,7 @@ const SelectFieldSearch = ({
   dependencies?: NamePath;
   form: FormInstance;
   allowClear?: boolean;
+  dependencySingle?: NamePath;
   options?:
     | Array<{ [v: string]: string | number }>
     | ((e: any) => Promise<any>);
@@ -25,7 +27,17 @@ const SelectFieldSearch = ({
   const [option, setOption] = useState<Array<{ [v: string]: string | number }>>(
     []
   );
-  const value = dependencies ? form.getFieldValue(dependencies) : '';
+  const value =
+    dependencySingle || dependencies
+      ? form.getFieldValue(dependencySingle ? dependencySingle : dependencies)
+      : '';
+
+  useEffect(() => {
+    if (typeof options !== 'function') {
+      setOption(options);
+    }
+  }, [options]);
+
   useEffect(() => {
     (async () => {
       try {

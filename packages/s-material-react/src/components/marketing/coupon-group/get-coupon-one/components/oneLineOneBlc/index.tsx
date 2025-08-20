@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
-import { useAllCoupon } from 'qj-mobile-store';
+import { useAllCoupon } from 'qj-b2c-store';
 import { get } from 'lodash-es';
 import dayjs from 'dayjs';
 

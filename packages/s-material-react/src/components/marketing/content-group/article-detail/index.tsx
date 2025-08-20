@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { useArticleDetail } from 'qj-mobile-store';
+import { useArticleDetail } from 'qj-b2c-store';
 import { useComponent } from '@brushes/simulate-component';
 import { ScrollWrap } from '@/common/scrollWrap';
 

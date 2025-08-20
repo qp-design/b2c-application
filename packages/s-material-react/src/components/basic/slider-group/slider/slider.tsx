@@ -2,7 +2,7 @@
 import React, { memo, useState, useEffect, useMemo } from 'react';
 import { useComponent, useImageHeight } from '@brushes/simulate-component';
 import { Items } from './item';
-import { useCube } from 'qj-mobile-store';
+import { useCube } from 'qj-b2c-store';
 import classNames from 'classnames';
 
 export interface itemType {

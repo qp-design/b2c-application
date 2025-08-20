@@ -1,5 +1,5 @@
 import { useComponent } from '@brushes/simulate-component';
-import { useCartListNext } from 'qj-mobile-store';
+import { useCartListNext } from 'qj-b2c-store';
 import { type Link, navigatorLink } from '@brushes/shared-utils';
 import { navigatorHandler } from '@brushes/utils';
 import { Dispatch, Fragment, memo, useMemo, useState } from 'react';

@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
 import { getStorage, navigatorHandler } from '@brushes/utils';
-import { useOrderResultResult } from 'qj-mobile-store';
+import { useOrderResultResult } from 'qj-b2c-store';
 import { fixPrice } from '@/utils';
 
 interface PlaceOrderResult {

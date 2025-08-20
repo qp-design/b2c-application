@@ -3,7 +3,7 @@ import { memo, type FC } from 'react';
 import { config, transformConfig } from './config';
 import { useComponent, antdMobile } from '@brushes/simulate-component';
 import { DynamicForm } from '@brushes/mobile-form';
-import { useEditAddress } from 'qj-mobile-store';
+import { useEditAddress } from 'qj-b2c-store';
 
 interface AddressDetailProps {
   addressId?: string;

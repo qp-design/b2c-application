@@ -12,7 +12,7 @@ export default function DatePickerField({
   return (
     <DatePicker
       format={format}
-      value={value ? dayjs(value, format) : null}
+      value={value ? dayjs(value) : null}
       {...extraProps}
     />
   );

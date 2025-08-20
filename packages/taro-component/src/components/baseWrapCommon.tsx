@@ -4,7 +4,7 @@ import Taro from '@tarojs/taro';
 import { ScrollView } from '@tarojs/components';
 import { CommonJsx } from './index';
 import { TabBarWeb } from '../custom-tab-web';
-import { ApplicationContext, useApplicationContext } from 'qj-mobile-store';
+import { ApplicationContext, useApplicationContext } from 'qj-b2c-store';
 import { Provider } from '@brushes/shared-store';
 
 type BaseWrapCommonProps = {

@@ -10,7 +10,7 @@ export default {
     }
   ],
   cache: false,
-  external: ['antd', 'dayjs', 'react', '@brushes/shared-store', 'react/jsx-runtime', 'qj-b2c-api', 'qj-mobile-store',
+  external: ['antd', 'dayjs', 'react', '@brushes/shared-store', 'react/jsx-runtime', 'qj-b2c-api', 'qj-b2c-store',
     '@brushes/shared-utils', '@brushes/simulate-component', 'qj-b2b-api', 'classnames', '@brushes/utils',
     'lodash-es', '@brushes/mobile-form'],
   plugins: [

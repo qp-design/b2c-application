@@ -1,5 +1,5 @@
 import { useComponent } from '@brushes/simulate-component';
-import { useCartTop } from 'qj-mobile-store';
+import { useCartTop } from 'qj-b2c-store';
 import { Dispatch, useMemo } from 'react';
 interface cartTopType {
   dispatchPageStore: Dispatch<any>;

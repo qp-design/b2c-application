@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { memo, useMemo } from 'react';
 import dayjs from 'dayjs';
-import { useAddCoupon, initialCoupon } from 'qj-mobile-store';
+import { useAddCoupon, initialCoupon } from 'qj-b2c-store';
 import { useComponent } from '@brushes/simulate-component';
 
 const CouponJsx = ({

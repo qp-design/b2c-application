@@ -2,7 +2,7 @@ import { memo, type FC } from 'react';
 import { useComponent } from '@brushes/simulate-component';
 // import { navigatorHandler } from '@brushes/utils';
 import { AddressItem } from '@/common/addressItem';
-import { useAddressList } from 'qj-mobile-store';
+import { useAddressList } from 'qj-b2c-store';
 import { Skull } from './components';
 import { NoData } from '@/common/noData';
 

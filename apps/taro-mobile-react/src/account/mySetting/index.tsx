@@ -3,7 +3,7 @@ import { HeaderJsx } from "@brushes/taro-component";
 import {IconMobile} from '@brushes/simulate-component';
 import Taro from '@tarojs/taro';
 import {miniLogout} from 'qj-b2c-api';
-import {routerMap} from "qj-mobile-store";
+import {routerMap} from "qj-b2c-store";
 import './index.scss'
 
 const Index = () => {

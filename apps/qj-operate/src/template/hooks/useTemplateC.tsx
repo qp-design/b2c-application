@@ -31,6 +31,7 @@ const columns = (conditions: Array<boolean>) =>
   new Array(conditions.map((item) => Number(item)).reduce((pre, next) => (pre += next), 0)).fill('auto').join(' ') +
   ' auto';
 export const useTemplateC = (form: FormInstance) => {
+  const searchParams = new URLSearchParams(window.location.search);
   const [module, setModule] = useStore((state) => state['module']);
   const [isUpdate] = useStore((state) => state['isUpdate']);
   const [, setThemeConfig] = useStore((state) => state['theme']);
@@ -65,6 +66,7 @@ export const useTemplateC = (form: FormInstance) => {
     const { list = [] } =
       (await queryPfsMmodelPage({
         page: controlled_page ?? page,
+        proappCode: searchParams.get('type') === 'qj-wemini' ? '027' : '025',
         rows: controlled_rows ?? '50' //暂时处理 后面这里要调整
       })) || {};
     findOActiveModule(list);

@@ -3,7 +3,7 @@ import React, { memo, useMemo, useState } from 'react';
 import { useComponent } from '@brushes/simulate-component';
 import { Filter } from './components';
 import { type Link, navigatorLink } from '@brushes/shared-utils';
-import { useGoodsList } from 'qj-mobile-store';
+import { useGoodsList } from 'qj-b2c-store';
 import { ScrollWrap } from '@/common/scrollWrap';
 import classNames from 'classnames';
 import { fixPrice } from '@/utils';

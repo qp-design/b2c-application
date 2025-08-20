@@ -2,7 +2,7 @@
 import React, { memo } from 'react';
 import { useComponent, antdMobile } from '@brushes/simulate-component';
 import { ScrollWrap } from '@/common/scrollWrap';
-import { useGoodsClassify } from 'qj-mobile-store';
+import { useGoodsClassify } from 'qj-b2c-store';
 import { GoodsClassifyTwoContent } from './components/goodsClassifyTwoContent';
 
 const { SideBar } = antdMobile;

@@ -2,7 +2,7 @@ import React from 'react';
 import { fixPrice } from '@/utils';
 import { GoodsDetailCollection } from './goodsDetailCollection';
 import { useComponent } from '@brushes/simulate-component';
-import { useGoodFootprint, useGoodDetail, useGoodSpecAndPrice } from 'qj-mobile-store';
+import { useGoodFootprint, useGoodDetail, useGoodSpecAndPrice } from 'qj-b2c-store';
 
 const GoodsDetailInfoInitial = {
   priceShow: true,

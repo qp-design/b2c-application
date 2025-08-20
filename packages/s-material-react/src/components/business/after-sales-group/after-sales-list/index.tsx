@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
-import { afterSalesTabConfig } from 'qj-mobile-store';
+import { afterSalesTabConfig } from 'qj-b2c-store';
 import { TabContent } from './components';
 
 const initialAfterSalesList = {

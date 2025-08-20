@@ -89,7 +89,7 @@ const DynamicFormJsx = ({
       }}
     >
       {dynamicFormFields(fields, form)}
-      <Form.Item label=" " colon={false}>
+      <Form.Item label={layout !== 'vertical' ? ' ' : ''} colon={false}>
         <Space size={'middle'}>
           {saveText && (
             <Button

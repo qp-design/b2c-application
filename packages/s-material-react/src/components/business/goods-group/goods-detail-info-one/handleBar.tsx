@@ -1,7 +1,7 @@
 //@ts-nocheck
 import React, { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
-import { useGoodCollection, CollectProps, useGoodsShare } from 'qj-mobile-store';
+import { useGoodCollection, CollectProps, useGoodsShare } from 'qj-b2c-store';
 import { isEmpty } from 'lodash-es';
 
 const HandleBarJsx: React.FC<any> = (props: CollectProps) => {

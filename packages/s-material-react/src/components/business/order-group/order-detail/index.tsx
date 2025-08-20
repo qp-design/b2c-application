@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
-import { useOrderDetail, orderStatusImpl } from 'qj-mobile-store';
+import { useOrderDetail, orderStatusImpl } from 'qj-b2c-store';
 import { CardJsx } from '@/common/card';
 import { QjMobileIcon } from '@/common/icon';
 import FooterComponent from '@/components/business/order-group/order-detail/component/footer';

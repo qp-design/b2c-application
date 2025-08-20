@@ -1,7 +1,7 @@
 import { useComponent } from '@brushes/simulate-component';
 import { THREE_DOTS } from '@/static';
 import { Coupon } from '@/common/coupon/index-next';
-import { orderGoodValue, useOrderGood, useOrderCoupon } from 'qj-mobile-store';
+import { orderGoodValue, useOrderGood, useOrderCoupon } from 'qj-b2c-store';
 import { ScrollWrap } from '@/common/scrollWrap';
 
 export const PlaceOrderCoupon = ({ refreshNum, goodsNum, skuId, shoppingGoodsId }: Partial<typeof orderGoodValue>) => {

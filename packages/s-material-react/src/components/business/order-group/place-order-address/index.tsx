@@ -1,7 +1,7 @@
 import { navigatorHandler } from '@brushes/utils';
 import { OrderAddress } from './orderAddress';
 import { useComponent } from '@brushes/simulate-component';
-import { useOrderAddress } from 'qj-mobile-store';
+import { useOrderAddress } from 'qj-b2c-store';
 
 export const PlaceOrderAddress = ({
   refreshNum,

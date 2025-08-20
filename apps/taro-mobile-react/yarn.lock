@@ -10140,9 +10140,9 @@ qj-b2c-api@*:
   dependencies:
     "@brushes/optimize" "^1.0.5"
 
-qj-mobile-store@*:
+qj-b2c-store@*:
   version "1.4.9"
-  resolved "https://registry.npmjs.org/qj-mobile-store/-/qj-mobile-store-1.4.9.tgz#1dc058d3dcd0f0d5d955ff8748b2b2193eb9ab2a"
+  resolved "https://registry.npmjs.org/qj-b2c-store/-/qj-b2c-store-1.4.9.tgz#1dc058d3dcd0f0d5d955ff8748b2b2193eb9ab2a"
   integrity sha512-4rEKsZNwuz0/r162BzTtK3BDS3wpWRvltKTOxrSYw5XX3y09m7335IaMovAoIobHkMVIaXMgi8fJKlQICySqDg==
 
 qs@6.11.0:

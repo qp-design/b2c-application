@@ -5,7 +5,7 @@ import {saveUmuserPhone, saveUmuserPhoneVCode, login, updateUmuserPw, checkVerif
 import {errorCallback} from '@brushes/request';
 import {setStorage} from '@brushes/utils';
 import {accountConst} from "@/account/constans";
-import {routerMap} from "qj-mobile-store";
+import {routerMap} from "qj-b2c-store";
 
 export const stackLength = () => {
   const arr = Taro.getCurrentPages();

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
-import { useNoticeDetail } from 'qj-mobile-store';
+import { useNoticeDetail } from 'qj-b2c-store';
 
 const initialNoticeDetail = {
   noticeId: '',

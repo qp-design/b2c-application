@@ -1,4 +1,4 @@
-import { isFunction, noop } from 'lodash-es';
+import { isFunction, noop } from 'lodash';
 import { useRef, useCallback } from 'react';
 
 // 技术站统一之后  统一迁入tools

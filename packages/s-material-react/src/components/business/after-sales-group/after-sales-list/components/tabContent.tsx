@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
 import { ScrollWrap } from '@/common/scrollWrap';
-import { useAfterSalesList } from 'qj-mobile-store';
+import { useAfterSalesList } from 'qj-b2c-store';
 import { Item } from './item';
 import { NoData } from './noData';
 

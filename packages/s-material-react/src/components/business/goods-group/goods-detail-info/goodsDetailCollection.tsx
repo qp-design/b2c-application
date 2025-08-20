@@ -1,7 +1,7 @@
 import { QjMobileIcon } from '@/common/icon';
 import { useComponent } from '@brushes/simulate-component';
 import { isEmpty } from 'lodash-es';
-import { useGoodCollection, CollectProps } from 'qj-mobile-store';
+import { useGoodCollection, CollectProps } from 'qj-b2c-store';
 
 export const GoodsDetailCollection = (props: CollectProps) => {
   const { SmoothView, View } = useComponent();

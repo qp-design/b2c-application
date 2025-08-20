@@ -1,6 +1,6 @@
 import { useImmutableCallback } from '@/util';
 import { TransformType } from '../types';
-import { cloneDeep, hasIn, omit, get, set } from 'lodash-es';
+import { cloneDeep, hasIn, omit, get, set } from 'lodash';
 
 export const useDataComputed = (
   transformSubmitDataConfig: Array<TransformType> = []

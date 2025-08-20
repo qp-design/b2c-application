@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { useComponent } from '@brushes/simulate-component';
-import { useMySetting } from 'qj-mobile-store';
+import { useMySetting } from 'qj-b2c-store';
 import { QjMobileIcon } from '@/common/icon';
 
 export const MySettingJsx: React.FC = () => {

@@ -1,5 +1,5 @@
 import { useComponent } from '@brushes/simulate-component';
-import { actionName, useAddShopping, useGoodSkuStore, useGoodSpecAndPrice } from 'qj-mobile-store';
+import { actionName, useAddShopping, useGoodSkuStore, useGoodSpecAndPrice } from 'qj-b2c-store';
 import { SkuItems, SkuItemType } from './skuItem';
 import { ScrollWrap } from '@/common/scrollWrap';
 import { fixPrice } from '@/utils';

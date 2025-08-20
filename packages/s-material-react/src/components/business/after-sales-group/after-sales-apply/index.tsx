@@ -1,7 +1,7 @@
 import React from 'react';
 import { useComponent } from '@brushes/simulate-component';
 import { Tip, FillIn, SubFillIn } from './components';
-import { useAfterSalesApply } from 'qj-mobile-store';
+import { useAfterSalesApply } from 'qj-b2c-store';
 import { MCAfterSalesApply } from './context';
 
 const initialAfterSalesApply = {
