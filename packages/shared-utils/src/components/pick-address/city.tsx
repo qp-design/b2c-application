@@ -1,7 +1,7 @@
 import { dynamicFormFields, FormInstance, NamePath } from '@brushes/mobile-form';
 import { useCity } from '@/hooks';
 import { extendAddressData } from '@/localData';
-export const CityComponent = ({ form, name, label = '' }: { form: FormInstance; name: NamePath; label?: string }) => {
+export const CityComponent = ({ form, name, label = '', ...restProps }: { form: FormInstance; name: NamePath; label?: string }) => {
   const { options } = useCity(form);
   return (
     <>
@@ -25,7 +25,8 @@ export const CityComponent = ({ form, name, label = '' }: { form: FormInstance; 
             ],
             extraProps: {
               placeholder: '请选择市',
-              options
+              options,
+              ...restProps
             }
           }
         ],

@@ -1,6 +1,6 @@
 {
   "name": "@brushes/shared-store",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "type": "module",
   "description": "'@brushes/shared-store'",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@brushes/utils": "*",
+    "@brushes/utils2": "*",
     "@types/node": ">18.0.0",
     "rollup-plugin-typescript2": "^0.34.1",
     "tsconfig": "*",

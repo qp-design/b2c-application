@@ -1,4 +1,4 @@
-import { createFastContext } from '@brushes/utils';
+import { createFastContext } from '@brushes/utils2';
 
 type Module = {
   module: string; // 模版Code

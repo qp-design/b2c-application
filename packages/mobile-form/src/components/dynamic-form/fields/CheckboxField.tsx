@@ -15,10 +15,13 @@ export default function CheckboxField({
   const { SmoothCheckbox, Checkbox } = useComponent();
   const { value: optionValue, label: labelInfo } = initialValue;
   const onChangeImpl = (e: any) => {
-    const { value } = e.detail;
-    onChange(value[0]);
+    if (e.detail) {
+      const { value } = e.detail;
+      onChange(value[0]);
+    } else {
+      onChange(e[0]);
+    }
   };
-
   return (
     <SmoothCheckbox value={value} onChange={onChangeImpl} {...restProps}>
       <Checkbox value={optionValue}></Checkbox>

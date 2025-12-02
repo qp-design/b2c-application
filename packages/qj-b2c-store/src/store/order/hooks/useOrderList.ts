@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { queryContractPageC, cancelUnpayOrder } from 'qj-b2c-api';
-import { getEnv, useImmutableCallback } from '@brushes/utils';
+import { useImmutableCallback } from '../../../utils';
+import { getEnv } from '@brushes/utils';
 import { isEmpty } from 'lodash-es';
 
 const orderGoodsItem = {

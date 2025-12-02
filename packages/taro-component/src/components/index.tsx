@@ -14,11 +14,10 @@ export const CommonJsx = ({ route, menuOpCode, ...rest }: { route: string; menuO
       title: title || '首页'
     });
   }, [title]);
-  console.log(17, node, rest);
   return (
     <FastContextProvider value={initialValue}>
       <HeaderJsx navigationBarTitle={title} />
-      <DynamicComponent node={node} {...rest} />
+      <DynamicComponent node={node} {...rest} menuOpCode={menuOpCode} />
     </FastContextProvider>
   );
 };

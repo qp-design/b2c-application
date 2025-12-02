@@ -1,6 +1,6 @@
 {
   "name": "qj-b2c-store",
-  "version": "1.4.9",
+  "version": "1.5.2",
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {

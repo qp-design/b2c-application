@@ -16,7 +16,6 @@ export const ScrollWrap: FC<ScrollWrapType> = ({ bottomHeight, children, id, hei
   const heightSize = useDynamicHeight(id);
   const extraHeight = useSafeTabBar(bottomHeight);
   const { View } = useComponent();
-
   const height = useMemo(() => {
     if (!isTaro) {
       return id ? { height: '100%' } : { maxHeight: '50vh', overflow: 'auto' };

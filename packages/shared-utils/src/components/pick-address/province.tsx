@@ -1,7 +1,7 @@
 import { dynamicFormFields, FormInstance, NamePath } from '@brushes/mobile-form';
 import { useProvince } from '@/hooks';
 import { extendAddressData } from '@/localData';
-export const ProvinceComponent = ({ form, name, label = '' }: { form: FormInstance; name: NamePath; label?: string }) => {
+export const ProvinceComponent = ({ form, name, label = '', ...restProps }: { form: FormInstance; name: NamePath; label?: string }) => {
   const { options } = useProvince();
 
   return (
@@ -26,7 +26,8 @@ export const ProvinceComponent = ({ form, name, label = '' }: { form: FormInstan
             ],
             extraProps: {
               placeholder: '请选择省',
-              options
+              options,
+              ...restProps
             }
           }
         ],

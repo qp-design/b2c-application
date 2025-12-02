@@ -1,7 +1,10 @@
 import { memo } from 'react';
 
 function SlotField({ render, ...extraProps }: { render?: Function }) {
-  return render?.(extraProps);
+  if (render) {
+    return render?.(extraProps);
+  }
+  return '';
 }
 
 export default memo(SlotField);

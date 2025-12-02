@@ -6,15 +6,17 @@ const PickField = ({
   options = [],
   placeholder = '请选择',
   value = '',
+  disabled,
   onChange = (e: any) => {}
 }: {
   placeholder?: string;
   options: Array<{ label: string; value: string }>;
   value?: string;
+  disabled?: boolean;
   onChange: (e: any) => void;
 }) => {
   const isTaro = getEnv();
-  const { Picker, View } = useComponent();
+  const { View, Picker } = useComponent();
   const optionName = useMemo(
     () => options.map((item) => item.label),
     [options]
@@ -35,7 +37,13 @@ const PickField = ({
   return (
     <View className={'pickWrap'}>
       {isTaro ? (
-        <Picker mode="selector" range={optionName} onChange={changeImpl}>
+        <Picker
+          className={disabled ? 'disabled' : ''}
+          disabled={disabled}
+          mode="selector"
+          range={optionName}
+          onChange={changeImpl}
+        >
           {!value ? placeholder : showName}
         </Picker>
       ) : (

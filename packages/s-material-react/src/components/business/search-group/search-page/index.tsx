@@ -4,7 +4,6 @@ import { useComponent } from '@brushes/simulate-component';
 import {
   navigatorHandler,
   navigatorBackImpl,
-  useImmutableCallback,
   getEnv,
   getTaro,
   getStorage,
@@ -35,7 +34,8 @@ const SearchPageJsx: FC<SearchPageType> = ({
   const [historyItem, setHistory] = useState(() => {
     return getStorage('history') || [];
   });
-  const searchGoodsImpl = useImmutableCallback(async (e: any) => {
+
+  const searchGoodsImpl = async (e: any) => {
     if (!flag) return;
     setHistory((prevState) => {
       if (!prevState.includes(e.detail.value) && e.detail.value) {
@@ -46,13 +46,13 @@ const SearchPageJsx: FC<SearchPageType> = ({
       return prevState;
     });
     navigator(e.detail.value);
-  });
+  };
 
-  const navigator = useImmutableCallback((value: string) => {
+  const navigator = (value: string) => {
     navigatorHandler('goodList', {
       searchParam: value
     });
-  });
+  };
 
   const removeHistory = async () => {
     const Taro = await getTaro();

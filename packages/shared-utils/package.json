@@ -1,7 +1,6 @@
 {
   "name": "@brushes/shared-utils",
-  "version": "0.0.4",
-  "type": "module",
+  "version": "0.0.95",
   "description": "'@brushes/shared-utils'",
   "main": "dist/index.js",
   "files": [
@@ -9,7 +8,7 @@
   ],
   "scripts": {
     "start": "rollup -c -w && prettier --write src",
-    "build": "rm -rf dist/ && prettier --write src/ && rollup -c",
+    "build": "./scripts/build.sh",
     "push": "git add . && git commit -m",
     "postpush": "git push",
     "prepublishOnly": "echo 我们准备发布npm包",

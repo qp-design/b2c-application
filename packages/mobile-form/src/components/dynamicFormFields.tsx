@@ -55,7 +55,6 @@ export function dynamicFormFields(
           {...extraPropsRest}
         />
       );
-
       return (
         <FormItem
           shouldUpdate={shouldUpdate}

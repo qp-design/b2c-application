@@ -10,7 +10,7 @@ export default {
     }
   ],
   cache: false,
-  external: ['react', 'react/jsx-runtime', '@brushes/utils'],
+  external: ['react', 'react/jsx-runtime', '@brushes/utils2'],
   plugins: [
     ts({}),
     terser(),

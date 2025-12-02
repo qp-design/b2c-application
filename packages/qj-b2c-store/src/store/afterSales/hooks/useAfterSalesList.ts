@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { queryRefundPageBuy } from 'qj-b2c-api';
-import { useImmutableCallback } from '@brushes/utils';
+import { useImmutableCallback } from '../../../utils';
 import { navigatorHandler } from '@brushes/utils';
 import { isEmpty } from 'lodash-es';
 import { getEnv } from '@brushes/utils';

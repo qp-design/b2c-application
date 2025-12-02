@@ -23,12 +23,16 @@ const ComponentNoContext = memo(({ component_devil_type, withPageStore, ...rest 
 const ComponentItem = memo(({ type, props, ...rest }: { type: string; props: Object }) => {
   const { propsType, withPageStore } = useDataSource(type, props, rest);
   const appendParams = useDataPageQueryNext(propsType);
+  console.log(26, appendParams, propsType);
   return <Fragment>{withPageStore.size > 0 ? <ComponentWithContext {...appendParams} /> : <ComponentNoContext {...appendParams} />}</Fragment>;
 });
 
 const getDistance = (base: any) => {
   if (base) {
-    return `${Taro.getStorageSync('safeArea') + Taro.getStorageSync('tabBarHeight')}px`;
+    if (Taro.getEnv() === 'WEB') {
+      return 60;
+    }
+    return `${Taro.getStorageSync('safeArea') + Taro.getStorageSync('tabBarHeight') || 60}px`;
   }
   return `${Taro.getStorageSync('safeArea')}px`;
 };

@@ -1,7 +1,7 @@
 import { dynamicFormFields, FormInstance, NamePath } from '@brushes/mobile-form';
 import { useArea } from '@/hooks';
 import { extendAddressData } from '@/localData';
-export const AreaComponent = ({ form, name, label = '' }: { form: FormInstance; name: NamePath; label?: string }) => {
+export const AreaComponent = ({ form, name, label = '', ...restProps }: { form: FormInstance; name: NamePath; label?: string }) => {
   const { options } = useArea(form);
   console.log('update');
   return (
@@ -26,7 +26,8 @@ export const AreaComponent = ({ form, name, label = '' }: { form: FormInstance; 
             ],
             extraProps: {
               placeholder: '请选择区',
-              options
+              options,
+              ...restProps
             }
           }
         ],

@@ -1,6 +1,6 @@
 {
   "name": "@brushes/mobile-form",
-  "version": "0.0.5",
+  "version": "0.0.9",
   "description": "'组件库'",
   "main": "dist/index.js",
   "sideEffects": [
@@ -30,7 +30,7 @@
   "peerDependencies": {},
   "devDependencies": {
     "@types/node": ">18.0.0",
-    "antd-mobile": "^5.32.0",
+    "antd-mobile": "^5.41.1",
     "prettier": "^2.7.1",
     "react": "^18.0.0",
     "rollup-plugin-typescript2": "^0.34.1",

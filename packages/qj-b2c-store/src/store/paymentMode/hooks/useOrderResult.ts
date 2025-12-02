@@ -39,7 +39,7 @@ export function useOrderResult({ contractBillcode, contractBbillcode }: { contra
           contractBillcode: contract.current.contractBillcode ?? '',
           isLocalMock: !isWeapp
         });
-        console.log(40, res.payChannelList)
+        console.log(40, res.payChannelList);
         setChannelList(res.payChannelList);
         result.current = res;
       } catch (err) {

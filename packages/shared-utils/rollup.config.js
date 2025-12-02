@@ -10,7 +10,7 @@ export default {
     }
   ],
   cache: false,
-  external: ['react', 'react/jsx-runtime', 'qj-b2c-api', '@brushes/simulate-component', '@brushes/mobile-form', '@brushes/utils', '@brushes/request'],
+  external: ['react', 'react/jsx-runtime', 'lodash-es', 'qj-b2c-api', '@brushes/simulate-component', '@brushes/mobile-form', '@brushes/utils', '@brushes/request'],
   plugins: [
     ts({}),
     terser(),

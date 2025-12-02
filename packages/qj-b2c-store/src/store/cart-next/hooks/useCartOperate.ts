@@ -1,6 +1,7 @@
 import { deleteShoppingGoodsBatch, queryShoppingToContract } from 'qj-b2c-api';
 import { Dispatch, useMemo } from 'react';
-import { navigatorHandler, taroMessage, useImmutableCallback } from '@brushes/utils';
+import { navigatorHandler, taroMessage } from '@brushes/utils';
+import { useImmutableCallback } from '../../../utils';
 import { noop } from 'lodash-es';
 import { removeRequestCacheByKey } from '@brushes/optimize';
 
