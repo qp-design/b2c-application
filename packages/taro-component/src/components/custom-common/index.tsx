@@ -4,10 +4,8 @@ import { useMenu } from '@brushes/taro-hooks';
 import { navigatorHandler } from '@brushes/utils';
 import Taro from '@tarojs/taro';
 
-const TabBar = () => {
+const TabBar = ({ selectedColor, color }: { selectedColor: string; color: string }) => {
   const { path } = Taro.useRouter();
-  const [color] = useState('#b8b8b8');
-  const [selectedColor] = useState('#000000');
   const menuList = useMenu();
 
   const switchTab = (menuOpcode: string) => {

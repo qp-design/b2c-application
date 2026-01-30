@@ -12,15 +12,16 @@ export const fixPrice = (num: number = 0, icon = '￥') => {
 };
 
 export const fullPath = (value = '') => {
+  if (!value) {
+    return value;
+  }
   if (value.startsWith('http')) {
     return value;
   }
   if (value.startsWith('paas') || value.startsWith('/paas')) {
     return process.env.REACT_APP_BASE_URL + value;
   }
-  if (!value) {
-    return value;
-  }
+
   return process.env.REACT_APP_BASE_URL + '/paas/shop/' + value;
 };
 

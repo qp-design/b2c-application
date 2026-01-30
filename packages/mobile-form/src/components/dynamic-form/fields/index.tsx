@@ -6,5 +6,6 @@ export { default as CheckboxListField } from './CheckboxListField';
 export { default as SelectField } from './SelectField';
 export { default as PickerField } from './PickerField';
 export { default as RadioGroupField } from './RadioGroupField';
+export { default as UploadField } from './Upload';
 export { default as SlotField } from './SlotField';
 export { default as SwitchField } from './SwitchField';

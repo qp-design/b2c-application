@@ -23,7 +23,7 @@ const PickField = ({
   );
 
   const showName = useMemo(() => {
-    const { label = '重新选择' } =
+    const { label = placeholder } =
       options.find((item: any) => item.value === value) || {};
     return label;
   }, [value, options]);
@@ -44,7 +44,7 @@ const PickField = ({
           range={optionName}
           onChange={changeImpl}
         >
-          {!value ? placeholder : showName}
+          {showName || placeholder} <span style={{ display: 'none' }}>1</span>
         </Picker>
       ) : (
         <View>{!value ? placeholder : showName}</View>

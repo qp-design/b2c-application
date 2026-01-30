@@ -23,7 +23,6 @@ const ComponentNoContext = memo(({ component_devil_type, withPageStore, ...rest 
 const ComponentItem = memo(({ type, props, ...rest }: { type: string; props: Object }) => {
   const { propsType, withPageStore } = useDataSource(type, props, rest);
   const appendParams = useDataPageQueryNext(propsType);
-  console.log(26, appendParams, propsType);
   return <Fragment>{withPageStore.size > 0 ? <ComponentWithContext {...appendParams} /> : <ComponentNoContext {...appendParams} />}</Fragment>;
 });
 

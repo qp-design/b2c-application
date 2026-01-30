@@ -8,6 +8,7 @@ import {
   SelectField,
   RadioGroupField,
   SlotField,
+  UploadField,
   SwitchField
 } from './dynamic-form/fields';
 
@@ -21,7 +22,8 @@ export const FieldTypeComponent = {
   checkboxGroup: CheckboxGroupField,
   select: SelectField,
   radioGroup: RadioGroupField,
-  slot: SlotField
+  slot: SlotField,
+  upload: UploadField
 };
 
 // export const fetchFormComponents = () => FieldTypeComponent;

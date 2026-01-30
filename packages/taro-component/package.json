@@ -1,6 +1,6 @@
 {
   "name": "@brushes/taro-component",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "type": "module",
   "description": "'@brushes/taro-component'",
   "main": "dist/index.js",
