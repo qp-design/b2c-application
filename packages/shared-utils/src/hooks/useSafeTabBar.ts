@@ -7,11 +7,11 @@ export function useSafeTabBar(bottomHeight: number | string = ''): number {
     if (!isTaro) return 0;
 
     const Taro = getTaro();
-    const safe = getStorage('safeArea');
-    const tabBarHeight = getStorage('tabBarHeight') || 0;
-    const tabBar = Taro.getCurrentPages().at(-1).$taroPath.indexOf('pages/') >= 0 ? tabBarHeight : 0;
+    const safe = +getStorage('safeArea');
+    const tabBarHeight = +(getStorage('tabBarHeight') || 0);
+    const tabBar = Taro.getCurrentPages()[Taro.getCurrentPages().length - 1].$taroPath.indexOf('pages/') >= 0 ? tabBarHeight : 0;
     const bottomHeightNum = bottomHeight ? +bottomHeight : 0;
 
-    return Number(safe + tabBar + bottomHeightNum) || 0;
+    return safe + tabBar + bottomHeightNum;
   }, []);
 }

@@ -1,6 +1,6 @@
 {
   "name": "@brushes/shared-utils",
-  "version": "0.0.96",
+  "version": "0.0.97",
   "description": "'@brushes/shared-utils'",
   "main": "dist/index.js",
   "files": [

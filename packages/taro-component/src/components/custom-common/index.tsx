@@ -1,10 +1,9 @@
-import { useState } from 'react';
 import { CoverView, CoverImage } from '@tarojs/components';
 import { useMenu } from '@brushes/taro-hooks';
 import { navigatorHandler } from '@brushes/utils';
 import Taro from '@tarojs/taro';
 
-const TabBar = ({ selectedColor, color }: { selectedColor: string; color: string }) => {
+const TabBar = ({ selectedColor = '#000000', color = '#b8b8b8', menuImg = [] }: { menuImg?: Array<{ selectedIconPath: string; iconPath: string }>; selectedColor?: string; color?: string }) => {
   const { path } = Taro.useRouter();
   const menuList = useMenu();
 
@@ -18,7 +17,7 @@ const TabBar = ({ selectedColor, color }: { selectedColor: string; color: string
       {menuList.map((item, index) => {
         return (
           <CoverView key={index} className="tab-bar-item" onClick={() => switchTab(item.menuOpcode)}>
-            <CoverImage className="tab-bar-item-img" src={path.includes(item.pagePath) ? item.selectedIconPath : item.iconPath} />
+            <CoverImage className="tab-bar-item-img" src={path.includes(item.pagePath) ? (menuImg[index] || item).selectedIconPath : (menuImg[index] || item).iconPath} />
             <CoverView className="tab-bar-item-view" style={{ color: path.includes(item.pagePath) ? selectedColor : color }}>
               {item.text}
             </CoverView>

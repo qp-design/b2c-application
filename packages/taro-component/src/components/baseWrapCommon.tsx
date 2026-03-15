@@ -9,6 +9,12 @@ import { Provider } from '@brushes/shared-store';
 
 type BaseWrapCommonProps = {
   base?: boolean;
+  selectedColor?: string;
+  color?: string;
+  menuImg?: Array<{
+    selectedIconPath: string;
+    iconPath: string;
+  }>;
 };
 
 const BaseWrapCommonInner = (props: BaseWrapCommonProps) => {
@@ -68,7 +74,7 @@ const BaseWrapCommonInner = (props: BaseWrapCommonProps) => {
       >
         <CommonJsx route={path} base={props.base} {...params} />
       </ScrollView>
-      <TabBarWeb base={props.base || false} />
+      <TabBarWeb {...props} />
     </Fragment>
   );
 };

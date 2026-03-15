@@ -1,4 +1,4 @@
-import { getTaro } from '@brushes/utils';
+import {getTaro, navigatorHandler} from '@brushes/utils';
 import { errorCallback } from '@brushes/request';
 
 export const stackLength = () => {
@@ -24,8 +24,13 @@ export const stackLength = () => {
 
 export const callback = () => {
   const Taro = getTaro();
+  const i = stackLength();
+  if(i === 0) {
+    navigatorHandler('index');
+    return;
+  }
   Taro.navigateBack({
-    delta: stackLength(),
+    delta: i,
     success: function () {
       errorCallback();
     }
