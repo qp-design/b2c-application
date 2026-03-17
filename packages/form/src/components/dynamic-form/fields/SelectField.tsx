@@ -3,12 +3,8 @@ import { useState, useEffect } from 'react';
 import { NamePath } from '@/components';
 import { set } from 'lodash';
 
-const { Option } = Select;
-
 const SelectFieldSearch = ({
   options = [],
-  optionsName = 'label',
-  optionsKey = 'value',
   form,
   allowClear = true,
   dependencies,
@@ -20,8 +16,6 @@ const SelectFieldSearch = ({
   options?:
     | Array<{ [v: string]: string | number }>
     | ((e: any) => Promise<any>);
-  optionsName?: string | undefined;
-  optionsKey?: string | undefined;
 }) => {
   const [option, setOption] = useState<Array<{ [v: string]: string | number }>>(
     []
@@ -60,10 +54,11 @@ const SelectFieldSearch = ({
       }
     })();
   }, [value]);
-
+  console.log(63, 1123);
   return (
     <Select
       allowClear={allowClear}
+      options={option}
       {...restProps}
       optionLabelProp="label"
       optionFilterProp="children"
@@ -74,18 +69,7 @@ const SelectFieldSearch = ({
           return document.body;
         }
       }}
-    >
-      {option.map((item) => (
-        <Option
-          key={item[optionsKey]}
-          disabled={Boolean(item.disabled)}
-          label={item[optionsName]}
-          value={item[optionsKey]}
-        >
-          {item[optionsName]}
-        </Option>
-      ))}
-    </Select>
+    ></Select>
   );
 };
 export default SelectFieldSearch;

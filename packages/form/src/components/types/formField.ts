@@ -51,6 +51,7 @@ interface FieldTypeObj {
   initialValue?: string | number | boolean | Array<string | number>;
   readOnly?: boolean;
   minLength?: number;
+  hidden?: boolean; //是否隐藏字段
   loading?: boolean;
   layout?: 'horizontal' | 'vertical';
   extraProps?: {
@@ -63,14 +64,19 @@ interface FieldTypeObj {
         ) =>
           | Promise<any>
           | Array<{ [v: string]: string | number | ReactNode }>);
-    optionsName?: string | 'label'; // select
-    optionsKey?: string | 'value'; // select
     uid?: string | 'uid'; //upload
     url?: string | 'url'; //upload
     urlName?: string | 'name'; //upload
     shouldUpdate?: (prevValue: any, curValue: any) => boolean;
     [k: string]: unknown;
     placeholder?: string;
+    fieldNames?: {
+      label?: string;
+      value?: string;
+      children?: string;
+    };
+    optionsName?: string | 'label'; // checkbox | radio 其他字段不需要
+    optionsKey?: string | 'value'; // checkbox | radio 其他字段不需要
     render?: ({
       name,
       form,

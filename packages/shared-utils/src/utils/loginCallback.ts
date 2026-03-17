@@ -1,4 +1,4 @@
-import {getTaro, navigatorHandler} from '@brushes/utils';
+import { getTaro, navigatorHandler } from '@brushes/utils';
 import { errorCallback } from '@brushes/request';
 
 export const stackLength = () => {
@@ -19,18 +19,21 @@ export const stackLength = () => {
       break;
     }
   }
-  return obj.pageIndex;
+  return {
+    key: obj.pageIndex,
+    i: Taro.getCurrentPages().length
+  };
 };
 
 export const callback = () => {
   const Taro = getTaro();
-  const i = stackLength();
-  if(i === 0) {
+  const { key, i } = stackLength();
+  if (i === 0) {
     navigatorHandler('index');
     return;
   }
   Taro.navigateBack({
-    delta: i,
+    delta: key,
     success: function () {
       errorCallback();
     }
