@@ -5,20 +5,24 @@ import { NamePath } from '@/components';
 export default function CheckboxGroupField({
   form,
   options = [],
-  optionsName = 'label',
-  optionsKey = 'value',
+  fieldNames = {
+    label: 'label',
+    value: 'value'
+  },
   dependencySingle,
   dependencies,
   ...extraProps
 }: {
   form: FormInstance;
+  fieldNames?: {
+    label?: string;
+    value?: string;
+  };
   options?:
     | Array<{ [v: string]: string | number }>
     | ((e: any) => Promise<any>);
   dependencies?: NamePath;
   dependencySingle?: NamePath;
-  optionsName?: string | undefined;
-  optionsKey?: string | undefined;
 }) {
   const [option, setOption] = useState<
     Array<{
@@ -51,14 +55,14 @@ export default function CheckboxGroupField({
       }
     })();
   }, [value]);
-
   const newOption = useMemo(() => {
     return option.map((item) => ({
       ...item,
-      label: item[optionsName],
-      value: item[optionsKey]
+      label: item[fieldNames.label || 'label'],
+      value: item[fieldNames.value || 'value']
     }));
   }, [option]);
+  console.log(50, newOption, fieldNames);
 
   return <Checkbox.Group {...extraProps} options={newOption}></Checkbox.Group>;
 }

@@ -6,8 +6,10 @@ type emums = 'vertical' | 'horizontal';
 export default function RadioGroupField({
   form,
   options = [],
-  optionsName = 'label',
-  optionsKey = 'value',
+  fieldNames = {
+    label: 'label',
+    value: 'value'
+  },
   dependencySingle,
   dependencies,
   direction = 'horizontal',
@@ -20,8 +22,10 @@ export default function RadioGroupField({
   options?:
     | Array<{ [v: string]: string | number }>
     | ((e: any) => Promise<any>);
-  optionsName?: string | undefined;
-  optionsKey?: string | undefined;
+  fieldNames?: {
+    label?: string;
+    value?: string;
+  };
 }) {
   const [option, setOption] = useState<
     Array<{
@@ -58,8 +62,8 @@ export default function RadioGroupField({
   const newOption = useMemo(() => {
     return option.map((item) => ({
       ...item,
-      label: item[optionsName],
-      value: item[optionsKey]
+      label: item[fieldNames.label || 'label'],
+      value: item[fieldNames.value || 'value']
     }));
   }, [option]);
   return <Radio.Group {...extraProps} options={newOption}></Radio.Group>;

@@ -27,8 +27,9 @@ export function dynamicFormFields(
       : { dependencies };
     const FormItem = Form.Item;
     let name = (
-      isUndefined(indx) ? transformName : [indx + '', transformName]
+      isUndefined(indx) ? transformName : [indx + ''].concat(transformName)
     ) as NamePath;
+
     const formItemProps: { [k: string]: unknown } = {
       name,
       type,
@@ -56,8 +57,10 @@ export function dynamicFormFields(
               style={{
                 marginBottom: ['slot'].includes(type) ? 0 : 24
               }}
-              {...(['formList', 'extend'].includes(type) ? {} : formItemProps)}
-              noStyle={['formList', 'extend'].includes(type)}
+              {...(['formList', 'extend'].includes(type)
+                ? { label: formItemProps.label }
+                : formItemProps)}
+              noStyle={['extend'].includes(type)}
             >
               <FieldComponent
                 dependencies={dependencies}
