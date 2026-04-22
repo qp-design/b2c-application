@@ -6,6 +6,8 @@ import { set } from 'lodash';
 const SelectFieldSearch = ({
   options = [],
   form,
+  optionsName,
+  optionsKey,
   allowClear = true,
   dependencies,
   ...restProps
@@ -13,6 +15,8 @@ const SelectFieldSearch = ({
   dependencies?: NamePath[];
   form: FormInstance;
   allowClear?: boolean;
+  optionsName?: string | undefined;
+  optionsKey?: string | undefined;
   options?:
     | Array<{ [v: string]: string | number }>
     | ((e: any) => Promise<any>);
@@ -27,7 +31,16 @@ const SelectFieldSearch = ({
 
   useEffect(() => {
     if (typeof options !== 'function') {
-      setOption(options);
+      if (optionsName && optionsKey) {
+        setOption(
+          options.map((item) => ({
+            label: item[optionsName],
+            value: item[optionsKey]
+          }))
+        );
+      } else {
+        setOption(options);
+      }
     }
   }, [options]);
 
@@ -48,19 +61,27 @@ const SelectFieldSearch = ({
         const data = await (typeof options !== 'function'
           ? Promise.resolve(options)
           : options(params));
-        setOption(data);
+        if (optionsName && optionsKey) {
+          setOption(
+            data.map((item: any) => ({
+              label: item[optionsName],
+              value: item[optionsKey]
+            }))
+          );
+        } else {
+          setOption(data);
+        }
       } catch (e) {
         setOption([]);
       }
     })();
   }, [value]);
+
   return (
     <Select
       allowClear={allowClear}
       options={option}
       {...restProps}
-      optionLabelProp="label"
-      optionFilterProp="children"
       getPopupContainer={(trigger) => {
         if (trigger) {
           return trigger.parentNode;

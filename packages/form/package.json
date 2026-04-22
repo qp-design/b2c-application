@@ -1,6 +1,6 @@
 {
   "name": "@brushes/form",
-  "version": "3.0.41",
+  "version": "3.0.43",
   "description": "'组件库'",
   "main": "dist/index.js",
   "files": [
