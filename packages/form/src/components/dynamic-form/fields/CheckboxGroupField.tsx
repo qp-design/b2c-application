@@ -62,7 +62,6 @@ export default function CheckboxGroupField({
       value: item[fieldNames.value || 'value']
     }));
   }, [option]);
-  console.log(50, newOption, fieldNames);
 
   return <Checkbox.Group {...extraProps} options={newOption}></Checkbox.Group>;
 }
